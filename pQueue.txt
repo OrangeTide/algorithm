@@ -1,0 +1,50 @@
+pQueue -- Priority Queue for Functions
+
+pQueueAdd() -- Used for adding to the pQueue to execute.
+pQueueRun() -- Run all the things that need to executed.
+pQueueDump() -- Dump some info about the items in the pQueue.
+pQueueFixTime() -- Helper function that is used for calculating the times.
+
+FLAGS:
+PQUE_NOW     -- Execute this now.
+PQUE_DATE    -- The time passed is a date.
+PQUE_SECONDS -- The time passed is in seconds.
+PQUE_MINUTES -- The time passed is in minutes.
+PQUE_HOURS   -- The time passed is in hours.
+PQUE_DAYS    -- The time passed is in days.
+PQUE_MONTHS  -- The time passed is in months (30 day months.)
+PQUE_WEEKS   -- The time passed is in weeks.
+PQUE_YEARS   -- The time passed is in years.
+
+
+
+Example:
+
+#include "pQueue.h"
+
+int run(char *myChar)
+{
+  printf("%s\n\n", myChar);
+  return 1;
+}
+
+int main()
+{
+  struct pQueue *myQueue;
+
+  myQueue = NULL;
+
+  /* Add an item to the queue that will execute 'run', in 5 seconds. */
+  pQueueAdd(&myQueue, 5, PQUE_SECONDS, run, "First");
+  
+  /* Add an item to the queue that will execute 'run', in 60 minutes. */
+  pQueueAdd(&myQueue, 60, PQUE_MINUTES, run, "Second");
+  
+  /* Dump the queue to see what's there. */
+  pQueueDump(&myQueue);
+  
+  /* Run any commands that are queued up for the next 60 minutes. */
+  pQueueRun(&myQueue, 60, PQUE_MINUTES);
+ 
+  return 0;
+}

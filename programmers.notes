@@ -1,0 +1,61 @@
+Theory of Operation:
+
+This botcode is based upon an event driven model.
+
+I start out by doing some basic initialisations in a function
+called prep(). These only need to be performed once during the
+execution of the program. This consists of loading the config,
+users, and calc database files. Any other preparations that are
+added later should be placed here. Everything else goes into the
+three major loops.
+
+
+The Loops:
+The first loop has its root in main() and is a "network" layer loop.
+It starts by trying to connect to the irc server, setting the bots
+name, joining any channels, etc. Once everything is ok, control
+is passed on to the second loop, known as main_loop().
+
+The second loop, aka main_loop(), is the irc protocol layer
+loop. It ensures basic network connectivity and assembles
+possibly fragmented irc messages. If there are network
+problems, control drops back to the first loop. If a full
+irc protocol message is received, then control is passed
+on to the third loop.
+
+The third loop is the "event" loop for the bot. This is the
+"interactive human message" layer. The loop starts out
+with a complete irc protocol message and passes it onto a parser
+called, oddly enough, parse_incoming(). Once the protocol message
+has been parsed into its base components, control is passed on
+to make_a_decision(). This is where event triggers are placed.
+All functions, except the init functions, either reside directly
+in the three loops or are called out from them.
+
+
+Stubs:
+The make_a_decision() switch statement would be unreadable if
+it held code for each of the cases. What I do is call "stubs"
+that do all of the work of passing on certain arguments and
+such. the ease of reading/modifying the source outweighs
+the trivial impact of the extra function calls... in this
+instance anyways. :)
+
+
+Helper functions:
+I wrote a few utility type functions to suit my needs. I needed
+a replacement for strtok() so i wrote chop(). I also needed a
+way to get rid of any non-printable characters to avoid having
+people do unexpected things with the bot, clean_message() is
+the function that satisfies this requirement.
+
+
+Layout:
+The files are named appropriate to their useage. you will find
+the functions dealing with users in users.c etc. The file bot.c
+is rather confusing though. I placed main() at the bottom like a
+good little programmer should. I placed the single use functions
+above main() in the order that they are called. The loops start
+out at the very top with main_loop() and are generally laid out
+in the order that they are called. Misc functions and such lie
+between those two sections.

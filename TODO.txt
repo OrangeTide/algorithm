@@ -1,0 +1,19 @@
+- DCC feature to download calc database
+- SQLite calc database
+- SQLite user database
+- channel log files (place into SQLite)
+- web stats
+- slick config file
+- recognize other bots in the channel. 
+    calc:
+    * if something repeats the same calc then put a delay on calc
+    * if a response appears in the channel identical to the calc, don't do a
+      calc.
+
+    +v
+    * if something +v's someone after you have, then put a bigger delay on +v
+    * if something +v's something you already planned on, then don't +v
+- +v support (don't +v if there was a -v on them)
+- AES user certificates
+- +o bans (take-over protection)
+- persistent bans. use pQueue to maintain
