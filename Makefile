@@ -1,6 +1,7 @@
-LIBS = -lm -lsqlite
+LIBS:= -lm -lsqlite
 LDFLAGS:=$(LIBS)
-CFLAGS = -Wall -O2
+CFLAGS:= -Wall -O2 -pedantic # -DNDEBUG
+CPPFLAGS:=
 
 EXEC:=bot
 SRCS:=bot.c calcdb.c users.c dcalc.c rpn.c rc.c md5crypt.c pQueue.c

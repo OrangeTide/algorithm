@@ -31,8 +31,8 @@
 #define IDENT_MAX    16384 /* buffer used for idents */
 #define STRING_MAX    65536 /* buffer used to hold a string */
 
-#define MUST(x)        { if((x)<=0) return 0; }
-#define OPTIONAL(x)    { if((x)==EOF) return EOF; }
+#define MUST(x)        { DEBUG("MUST: " #x "\n"); if((x)<=0) return 0; }
+#define OPTIONAL(x)    { DEBUG("OPTIONAL: " #x "\n"); if((x)==EOF) return EOF; }
 
 static int isident_first(char ch)
 {
@@ -194,7 +194,7 @@ static int expr(FILE *f,int *line, struct config_node **head, struct config_node
     if(*prev) (*prev)->next=newchild; else *head=newchild;
     *prev=newchild;
     MUST( ws(f,line) );
-    MUST( chm(f,'=') );
+    OPTIONAL( chm(f,'=') );
     MUST( ws(f,line) );
 
     ch=fgetc(f); /* peek some input */
