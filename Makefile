@@ -1,6 +1,6 @@
 LIBS:= -lm -lsqlite
 LDFLAGS:=$(LIBS)
-CFLAGS:= -Wall -O2 -pedantic # -DNDEBUG
+CFLAGS:= -std=gnu99 -Wall -O2 -pedantic # -DNDEBUG
 CPPFLAGS:=
 
 EXEC:=bot

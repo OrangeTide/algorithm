@@ -1,19 +1,34 @@
 - DCC feature to download calc database
 - SQLite calc database
 - SQLite user database
+- export/import database as XML (then you can use XSLT on a webpage to browse
+  the database)
 - channel log files (place into SQLite)
 - web stats
 - slick config file
 - recognize other bots in the channel. 
     calc:
-    * if something repeats the same calc then put a delay on calc
+    * if something repeats the same calc that you just did then put a delay on
+      calc (back-off on collision feature)
     * if a response appears in the channel identical to the calc, don't do a
-      calc.
+      calc. (collision feature)
 
     +v
     * if something +v's someone after you have, then put a bigger delay on +v
+      (up to a threshold of perhaps 30 seconds?)
     * if something +v's something you already planned on, then don't +v
 - +v support (don't +v if there was a -v on them)
 - AES user certificates
+- perm authorization (reset on /part /quit /join )
 - +o bans (take-over protection)
 - persistent bans. use pQueue to maintain
+- -v on bold/colors with a 'calc bold' sent to the offender. make +o immune
+- SILC protocol support
+- permaban requests
+- improved command syntax
+    command -u user -p password -c channel -s server-network parameters
+    perhaps allow the authorization formats:
+        server:#channel:user/password 
+        #channel:user/password
+        user/password
+        password

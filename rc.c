@@ -2,6 +2,7 @@
 /* CONTEXT-FREE PARSER */
 
 /* TODO:
+ * - make use of the current_operation string for better diagnostic output
  * - support the following datatypes: numbers, strings, arrays/lists, flags 
  * - move loop out of parser into expr()
  * - support C style comments
@@ -15,6 +16,7 @@
  * - basic parse syntax
  * - C++ style comments
  * - make ; optional at the end of a group or list or assignment
+ * - make = optional
  * 
  */
 
@@ -31,8 +33,19 @@
 #define IDENT_MAX    16384 /* buffer used for idents */
 #define STRING_MAX    65536 /* buffer used to hold a string */
 
+#define MUST(x)        { if((x)<=0) return 0; }
+#define OPTIONAL(x)    { if((x)==EOF) return EOF; }
+/* debug versions
 #define MUST(x)        { DEBUG("MUST: " #x "\n"); if((x)<=0) return 0; }
 #define OPTIONAL(x)    { DEBUG("OPTIONAL: " #x "\n"); if((x)==EOF) return EOF; }
+*/
+
+static char current_operation[64] = "doing nothing"; 
+
+static void reset_current_operation(void)
+{
+    strcpy(current_operation,"doing nothing");
+}
 
 static int isident_first(char ch)
 {
@@ -86,6 +99,7 @@ static int comment(FILE *f, int *line)
 static int ws(FILE *f, int *line) /* parse whitespaces. just throw them away */
 {
     int ch;
+    strcpy(current_operation,"eating whitespace");
     while((ch=fgetc(f))!=EOF)
     {
         if(!isspace(ch)) {
@@ -138,6 +152,7 @@ static int ident(FILE *f,char *buf,int buf_max)
 static int chm(FILE *f, int ch)
 {
     int ch_tmp;
+    snprintf(current_operation,sizeof current_operation,"looking for character '%c'",ch);
     ch_tmp=fgetc(f);
     if(ch_tmp==EOF) return EOF; /* EOF */
     if(ch_tmp==ch) {
@@ -154,6 +169,7 @@ static int num(FILE *f)
     int ret;
     int ch;
     int neg;
+    strcpy(current_operation,"parsing a number");
     total=0;
     ret=0;
     neg=0;
@@ -203,6 +219,7 @@ static int expr(FILE *f,int *line, struct config_node **head, struct config_node
         case '{': /* it's a sub-structure */
             {
                 struct config_node *curr=0;
+                strcpy(current_operation,"parsing a structure");
                 while(1) {
                     result=expr(f,line,&newchild->child,&curr);
                     if(result<=0) return 0; /* can't EOF here! */
@@ -216,6 +233,7 @@ static int expr(FILE *f,int *line, struct config_node **head, struct config_node
                 char str[STRING_MAX];
                 int stri;
                 int ch_tmp;
+                strcpy(current_operation,"parsing a quoted string");
                 stri=0;
                 while((ch_tmp=fgetc(f))!=EOF) {
                     if(ch_tmp=='"') goto found_quote;
@@ -298,10 +316,11 @@ struct config_node *config_parser(const char *filename)
     while((result=expr(f,&line,&root,&curr))>0) ;
 
     if(result==EOF) { 
+        reset_current_operation();
         DEBUG("Success!\n");
         return root; /* success */
     } else if(result==0) {
-        ERROR("Line %d:Parse Error\n",line);
+        ERROR("Line %d:Parse Error while %s\n",line,current_operation);
     } else if(result==1) {
         ERROR("Line %d:Trailing garbage\n",line);
     }
