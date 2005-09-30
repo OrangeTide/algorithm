@@ -45,6 +45,7 @@
 #include "calcdb.h"
 #include "bot.h"
 #include "users.h"
+#include "strcasestr.h"
 
 
 /*
@@ -146,7 +147,8 @@ void searchcalc( char *searchkey, char *dbindex )
       index = chop( *(calc + x), calcname, 0, ' ' );
       index = chop( *(calc + x), calcowner, index, '|' );
       index = chop( *(calc + x), calcdata, index, '\0' );
-      ptr = strstr( calcdata, string );
+      // strstr() for case-sensitive search, strcasestr() for case-insensitive.
+      ptr = strcasestr( calcdata, string );
       if( ptr == NULL ) continue;
       if( (strlen(tmpray) + strlen(calcname)) > (MAXDATASIZE - 50) ) break;
       if( (strlen(tmpray) + strlen(calcname)) > (MAXDATASIZE - 50) ) break;

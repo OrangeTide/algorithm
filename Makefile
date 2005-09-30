@@ -1,10 +1,10 @@
-LIBS:= -lm -lsqlite
+LIBS:= -L/usr/local/lib -lm -lsqlite
 LDFLAGS:=$(LIBS)
 CFLAGS:= -std=gnu99 -Wall -O2 -pedantic # -DNDEBUG
 CPPFLAGS:=
 
 EXEC:=bot
-SRCS:=bot.c calcdb.c users.c dcalc.c rpn.c rc.c md5crypt.c pQueue.c
+SRCS:=bot.c calcdb.c users.c dcalc.c rpn.c rc.c md5crypt.c pQueue.c strcasestr.c
 OBJS:=$(SRCS:%.c=%.o)
 
 $(EXEC) : $(OBJS)
