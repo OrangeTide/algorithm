@@ -135,7 +135,7 @@ void searchcalc( char *searchkey, char *dbindex )
    char calcowner[MAXDATASIZE];
    char calcdata[MAXDATASIZE];
    char string[MAXDATASIZE];
-   char *ptr = NULL;
+   const char *ptr = NULL;
 
 
    if( !searchkey[0] ) strncpy( string, MSGTO, MAXDATASIZE );
