@@ -49,8 +49,6 @@
 #include <strings.h>
 #include <stdarg.h>
 
-#include <crypt.h>
-
 #include <unistd.h>
 #include "bot.h"
 
