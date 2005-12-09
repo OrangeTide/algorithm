@@ -295,7 +295,7 @@ int savedb( char *filename )
    register int x;
 
    fp = fopen( filename, "w" );
-   if( !fp ) { puts( "could not open calcs" ); return 1; }
+   if( !fp ) { perror(filename); return 1; }
 
    for( x = 0; x < total_calcs; x++ ) {
       if( !(*(calc + x)) ) break;
@@ -318,7 +318,7 @@ int loaddb( char *filename, int maxdbsize )
    MAXCALCS = maxdbsize;
 
    fp = fopen( CALCDB, "r" );
-   if( !fp ) { puts( "could not open calcs" ); return 1; }
+   if( !fp ) { perror(CALCDB); return 1; }
 
    calc = calloc( sizeof( char * ), MAXCALCS );
    if( !calc ) { puts( "inital allocation error in loaddb()." ); return 1; }
