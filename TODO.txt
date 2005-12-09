@@ -1,5 +1,5 @@
 TODO:
-- ident/login feature
+- ident/login feature / perm authorization (reset on /part /quit /join )
 - nuke the old command syntax
 - remove case sensitive calcs
 - user permissions
@@ -9,16 +9,6 @@ TODO:
   the database)
 - user profiles
 - add/remove auto kick-bans
-- more effecient calcdb access
-- regex calc searching
-- auto-voice feature
-- dice rolling
-- some commands require the nick to be used "algorithm: roll 2d6"
-- DCC feature to download calc database
-- SQLite calc database
-- SQLite user database
-- channel log files (place into SQLite)
-- web stats
 - recognize other bots in the channel. 
     calc:
     * if something repeats the same calc that you just did then put a delay on
@@ -30,21 +20,26 @@ TODO:
     * if something +v's someone after you have, then put a bigger delay on +v
       (up to a threshold of perhaps 30 seconds?)
     * if something +v's something you already planned on, then don't +v
+- more effecient calcdb access
+- regex calc searching
+- auto-voice feature
+- dice rolling
+- some commands require the nick to be used "algorithm: roll 2d6"
+- DCC feature to download calc database
+- SQLite calc database
+- SQLite user database
+- channel log files (place into SQLite)
+- web stats
 - +v support (don't +v if there was a -v on them)
-- AES user certificates
-- perm authorization (reset on /part /quit /join )
-- +o bans (take-over protection)
+- crypto user certificates
+- +o/-o bans (take-over protection)
 - persistent bans. use pQueue to maintain
 - -v on bold/colors with a 'calc bold' sent to the offender. make +o immune
 - SILC protocol support
 - permaban requests
-- improved command syntax
-    command -u user -p password -c channel -s server-network parameters
-    perhaps allow the authorization formats:
-        server:#channel:user/password 
-        #channel:user/password
-        user/password
-        password
 
 DONE:
 + slick config file
++ run connect/startup script
++ configurable DEF_CHAN (default channel)
++ change the 3 space indentation to tab indentation
