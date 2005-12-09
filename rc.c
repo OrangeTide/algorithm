@@ -213,6 +213,7 @@ static int expr(FILE *f,int *line, struct config_node **head, struct config_node
         case '{': /* it's a sub-structure */
             {
                 struct config_node *curr=0;
+				newchild->type=NODETYPE_TREE;
                 strcpy(current_operation,"parsing a structure");
                 while(1) {
                     result=expr(f,line,&newchild->child,&curr);
