@@ -75,7 +75,8 @@
    static   char USER[MAXDATASIZE];    /* the USER irc protocol message */
    static   int  MAXCALCS = 5000;      /* make the default max database size conservative */
    static   char CALCDB[MAXDATASIZE];  /* name of, and possibly path to, the calc database file */
-
+   static   char DEF_CHAN[MAXDATASIZE]; /* name of default channel to talk on */
+	static   char ON_CONNECT_SCRIPT[MAXDATASIZE]; /* execute this on connect */
 
 
 /* other misc local globals that are needed. i fail to see any non-hacked way
@@ -139,9 +140,14 @@ int process_out( void )
 
    fgets( tmp, MAXDATASIZE - 1, stdin );
    if( tmp[0] == '/' ) strncpy( ray, (tmp + 1), MAXDATASIZE );
-   else snprintf( ray, MAXDATASIZE, "PRIVMSG %s :%s", DEF_CHAN, tmp );
-   send_irc_message( ray );
-
+   else {
+      if(DEF_CHAN[0]) {
+		   snprintf( ray, MAXDATASIZE, "PRIVMSG %s :%s", DEF_CHAN, tmp );
+         send_irc_message( ray );
+		} else {
+			printf("Warning. no default channel selected. Ignoring message\n");
+		}
+	}
    return 0;
 }
 
@@ -360,9 +366,14 @@ void oppeople_stub()
 		return;
 	}
 	/* op only in the default channel */
-	if( cur_msg.msgarg3[0] ) oppeople( DEF_CHAN, cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.nick );
-	else oppeople( DEF_CHAN, cur_msg.msgarg2, cur_msg.nick, cur_msg.nick );
+	if( DEF_CHAN[0] ) {
+	   if( cur_msg.msgarg3[0] )
+			oppeople( DEF_CHAN, cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.nick );
+	   else
+			oppeople( DEF_CHAN, cur_msg.msgarg2, cur_msg.nick, cur_msg.nick );
+	}
 	return;
+
 }
 
 
@@ -620,11 +631,11 @@ void rawirc( void )
    int y;
    char tmpray[MAXDATASIZE];
 
-   if( !valid_login( cur_msg.msgarg3, cur_msg.msgarg2 ) ){
+   if( !valid_login( cur_msg.msgarg3, cur_msg.msgarg2 ) ) {
       snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :failed login", cur_msg.nick );
       send_irc_message( tmpray );
       return;
-     }
+   }
 
    /* this is the same parsing technique described in mkcalc_stub() */
    y = chop( cur_msg.fulltext, tmpray, 0, ' ' );
@@ -745,7 +756,24 @@ int host_connect( char *exthost, int extport, int extsockfd )
 
 }
 
+int run_script( const char *filename ) 
+{ 
+   char ray[MAXDATASIZE];
+   FILE *f;
 
+	f=fopen( filename, "r" );
+	if( !f ) {
+		perror( filename );
+		return 1;
+	}
+
+	while( fgets( ray, sizeof ray, f ) ) {
+      send_irc_message( ray );
+	}
+
+	fclose( f );
+	return 0;
+}
 
 /* connect to the irc server and register.
  * ugly ugly ugly
@@ -798,12 +826,8 @@ int irc_connect( void )
    snprintf( ray, MAXDATASIZE, "mode %s +i", BOTNAME );
    send_irc_message( ray );
 
-   memset( ray, '\0', sizeof(ray) );
-   snprintf( ray, MAXDATASIZE, "join %s", DEF_CHAN );
-   send_irc_message( ray );
+   run_script(ON_CONNECT_SCRIPT);
 
-   send_irc_message( "join #code-poets" );
-/*   send_irc_message( "join #code-cafe" );*/
    return 0;
 }
 
@@ -858,8 +882,14 @@ int load_cfg( void )
         && load_item_str(curr,"alt_nick", sizeof NICK2, NICK2, "alternate nick")
         && load_item_str(curr,"userline", sizeof USER, USER, "user line")
         && load_item_int(curr,"max_db", &MAXCALCS, "max db entries")
-        && load_item_str(curr,"database", sizeof CALCDB, CALCDB, "calc database filename"));
+        && load_item_str(curr,"database", sizeof CALCDB, CALCDB, "calc database filename")
+        && load_item_str(curr,"default_channel", sizeof DEF_CHAN, DEF_CHAN, "default channel")
+        && load_item_str(curr,"on_connect", sizeof ON_CONNECT_SCRIPT, ON_CONNECT_SCRIPT, "script for connect"));
        puts( "\n--------------- data loaded ---------------\n" );
+
+		 if( !DEF_CHAN[0] )
+			printf("Warning. No default channel selected. Some commands may not work.\n");
+   
    } else {
       ret=1;
    }

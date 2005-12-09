@@ -137,6 +137,4 @@ struct message {
 #define SEARCHCALC "searchcalc substring index. will search the calc data field for an occurrence of substring. index can be used to start the search at other than the beginning of the database."
 #define WHOIS "whois username."
 
-#define DEF_CHAN "#c"
-
 #endif /* !_BOT_H */
