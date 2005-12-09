@@ -1,4 +1,4 @@
-LIBS:= -L/usr/local/lib -lm -lsqlite
+LIBS:= -lm
 LDFLAGS:=$(LIBS)
 CFLAGS:= -std=gnu99 -Wall -O2 -pedantic # -DNDEBUG
 CPPFLAGS:=
