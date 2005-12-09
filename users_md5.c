@@ -51,6 +51,7 @@
 
 #include "users.h"
 #include "bot.h"
+#include "md5crypt.h"
 
 extern char MSGTO[MAXDATASIZE];
 
@@ -148,8 +149,7 @@ void rmuser( char *passwd, char *name, char *rmname )
 void adduser( char *pass, char *name, char *newupass, char *newuname )
 {
    char sndmsg[MAXDATASIZE];
-   char salt[MAXDATASIZE];
-   char *hash;
+   const char *hash;
 
    /* validate user before we do what they want */
    if( valid_login( name, pass ) ) {
@@ -183,9 +183,7 @@ void adduser( char *pass, char *name, char *newupass, char *newuname )
    trv = lag->next;
    trv->next = NULL;
 
-   get_salt( salt );
-
-   hash = crypt( newupass, salt );
+   hash = crypt_md5( newupass , saltgen_md5(rand()+getpid()));
 
    snprintf( trv->data, MAXDATASIZE, "%s %s 0", newuname, hash );
 
@@ -204,8 +202,7 @@ void chpass( char *passwd, char *name, char *newpass )
    int x;
    char sndmsg[MAXDATASIZE];
    char tmpray[MAXDATASIZE];
-   char salt[MAXDATASIZE];
-   char *hash;
+   const char *hash;
 
    /* validate user before we do what they want */
    if( !valid_login( name, passwd ) ) {
@@ -224,9 +221,8 @@ void chpass( char *passwd, char *name, char *newpass )
    x = chop( trv->data, tmpray, x, ' ' ); /* these two calls to chop() are to init x. the data is discarded */
    strncpy( tmpray, &trv->data[x], MAXDATASIZE );
 
-   get_salt( salt );
+   hash = crypt_md5( newpass, saltgen_md5(rand()+getpid()));
 
-   hash = crypt( newpass, salt );
    snprintf( trv->data, MAXDATASIZE, "%s %s %s", name, hash, tmpray );
 
    snprintf( sndmsg, MAXDATASIZE, "privmsg %s :password changed.", MSGTO );
@@ -287,19 +283,11 @@ int valid_password( char *passwd )
 {
    int x;
    char checklistpword[MAXDATASIZE];
-   char salt[MAXDATASIZE];
-   char *hash;
 
    x = chop( trv->data, checklistpword, 0, ' ' );
    x = chop( trv->data, checklistpword, x, ' ' ); /* this now holds the password in hashed form. */
 
-   salt[0] = checklistpword[0]; /* the salt is held in the first two characters */
-   salt[1] = checklistpword[1];
-   salt[2] = '\0'; /* since this is address space on the stack, i will null terminate it explicitly */
-
-   hash = crypt( passwd, salt );
-
-   if( strcmp( hash, checklistpword ) ) return 0; /* passwd hashes don't match */
+   if( !compare_md5( passwd, checklistpword ) ) return 0; /* passwd hashes don't match */
    return 1;
 }
 
