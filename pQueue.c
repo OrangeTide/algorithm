@@ -55,7 +55,7 @@ pQueueTime_t pQueueRealtime(void)
  *
  * Returns: success
 */
-int pQueueAdd(struct pQueue **theQueue, pQueueTime_t executeTime, void *func, void *args)
+int pQueueAdd(struct pQueue **theQueue, pQueueTime_t executeTime, void (*func)(void*), void *args)
 {
   struct pQueue *cur, *prv, *tmp;
 	
