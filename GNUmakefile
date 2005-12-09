@@ -1,5 +1,7 @@
 LIBS:= -lm
-CFLAGS:= -std=gnu99 -Wall -O2 -pedantic # -DNDEBUG
+CFLAGS:= -Wall -O2 -pedantic -D_XOPEN_SOURCE 
+# CFLAGS+= -DNDEBUG
+CFLAGS+= -std=gnu99 
 CPPFLAGS:=
 
 EXEC:=bot

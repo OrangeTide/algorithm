@@ -1,7 +1,8 @@
 TODO:
 - ident/login feature / perm authorization (reset on /part /quit /join )
+- add /QUERY command to change DEF_CHAN (even to a user)
 - nuke the old command syntax
-- remove case sensitive calcs
+- remove all warnings
 - user permissions
 - change puts to perror when dealing with errors
 - list users
@@ -43,3 +44,4 @@ DONE:
 + run connect/startup script
 + configurable DEF_CHAN (default channel)
 + change the 3 space indentation to tab indentation
++ remove case sensitive calcs
