@@ -139,8 +139,10 @@ int process_out( void )
 	char ray[MAXDATASIZE], tmp[MAXDATASIZE];
 
 	fgets( tmp, MAXDATASIZE - 1, stdin );
-	if( tmp[0] == '/' ) strncpy( ray, (tmp + 1), MAXDATASIZE );
-	else {
+	if( tmp[0] == '/' ) {
+		strncpy( ray, (tmp + 1), MAXDATASIZE );
+		send_irc_message( ray );
+	} else {
 		if(DEF_CHAN[0]) {
 			snprintf( ray, MAXDATASIZE, "PRIVMSG %s :%s", DEF_CHAN, tmp );
 			send_irc_message( ray );
