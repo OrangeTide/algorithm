@@ -852,14 +852,13 @@ int load_cfg( void )
 
        puts( "\n--------------- bot.cfg data ---------------\n" );
 
-       ret= load_item_str(curr,"server",sizeof SERVER, SERVER, "irc server")
+       ret= !(load_item_str(curr,"server",sizeof SERVER, SERVER, "irc server")
         && load_item_int(curr,"port", &PORT, "server port")
         && load_item_str(curr,"nick", sizeof NICK1, NICK1, "nick")
         && load_item_str(curr,"alt_nick", sizeof NICK2, NICK2, "alternate nick")
         && load_item_str(curr,"userline", sizeof USER, USER, "user line")
         && load_item_int(curr,"max_db", &MAXCALCS, "max db entries")
-        && load_item_str(curr,"database", sizeof CALCDB, CALCDB, "calc database filename");
-
+        && load_item_str(curr,"database", sizeof CALCDB, CALCDB, "calc database filename"));
        puts( "\n--------------- data loaded ---------------\n" );
    } else {
       ret=1;

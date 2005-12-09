@@ -70,15 +70,6 @@ static struct config_node *createnode(const char *name)
     return ret;
 }
 
-#if 0 /* WHAT WAS THIS FOR AGAIN ? */
-static void addchild(struct config_node *p, struct config_node *c)
-{
-    /*assume the child has no parent*/
-    c->next=p->child;
-    p->child=c;
-}
-#endif /* WHAT WAS THIS FOR AGAIN ? */
-
 static void straddch(char *str, int *idx, char ch)
 {
     str[(*idx)++]=ch;
@@ -163,7 +154,7 @@ static int chm(FILE *f, int ch)
     }
 }
 
-static int num(FILE *f)
+static int num(FILE *f, struct config_node *newchild)
 {
     int total;
     int ret;
@@ -188,6 +179,9 @@ static int num(FILE *f)
     if(ch==EOF) return EOF;
     if(ret) {
         if(neg) total= -total;
+
+		newchild->type=NODETYPE_NUMBER;
+		newchild->value.number=total;
         return 1;
     } else {
         return 0;
@@ -244,6 +238,8 @@ static int expr(FILE *f,int *line, struct config_node **head, struct config_node
                 found_quote:
                 straddch(str,&stri,0);
                 DEBUG("STR: '%s'=\"%s\"\n",buf,str); /* TODO: put in tree */
+				newchild->type=NODETYPE_STRING;
+				newchild->value.str=strdup(str);
             }
             break;
         case '0': /* it's a number */
@@ -257,7 +253,7 @@ static int expr(FILE *f,int *line, struct config_node **head, struct config_node
         case '8':
         case '9':
             ungetc(ch,f); /* stuff the digit back in the buffer */
-            MUST( num(f) );
+            MUST( num(f, newchild) );
             break;
     }
     OPTIONAL( chm(f,';') ); /* semi-colons are annoying */
@@ -301,7 +297,7 @@ void config_free(struct config_node *root)
 
 struct config_node *config_parser(const char *filename)
 {
-        FILE *f;
+	FILE *f;
     int line;
     int result;
     struct config_node *root = 0;
