@@ -5,7 +5,7 @@ CFLAGS+= -std=gnu99
 CPPFLAGS:=
 
 EXEC:=bot
-SRCS:=bot.c calcdb.c dcalc.c rpn.c rc.c strcasestr.c
+SRCS:=bot.c calcdb.c dcalc.c rpn.c rc.c strcasestr.c calcnotfound.c
 
 # use the following for MD5 style passwords
 # SRCS+=md5crypt.c users_md5.c

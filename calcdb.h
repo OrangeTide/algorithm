@@ -57,6 +57,7 @@ void mkcalc( char *pass, char *name, char *newcalc, char *newcalctext );
 void owncalc( char *name, char *index, char *nick );
 void listcalc( char *name, char *dbindex, char *nick );
 void searchcalc( char *searchkey, char *dbindex );
+void calcnotfound(char *response, int max, char *calcstring);
 
 
 

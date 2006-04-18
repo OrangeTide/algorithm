@@ -251,6 +251,68 @@ void mkcalc( char *pass, char *name, char *newcalc, char *newcalcdata )
 
 
 
+void calcnotfound(char *response, int max, char *calcstring)
+{
+	/* Create the randomized "not found" response. */
+
+	struct random_response {
+		double probability;  	/* This is relative to the sum of */
+				     	/* all probabilities in the table. */
+					/* E.g. 0.1 will be 10% is sum is 1.0*/
+					/* but 1% if sum is 10.0 */
+		char *response;   /* %s will be substituted to calcstring */
+	};
+
+	static struct random_response responses[] = {
+	    { 0.1,    "what is %s ?" },
+	    { 0.1,    "wtf is %s ?" },
+	    { 0.1,    "google it yourself" },
+	    { 0.1,    "how would I know ?" },
+	    { 0.1,    "I don't know" },
+	    { 0.1,    "nope, don't know" },
+	    { 0.01,   "SOMBRERO!" },
+	    { 0.01,   "say that again" },
+	    { 0.05,   "oh my god, oh my god" }, 
+	    { 0.1,    "*You* tell me what is %s" },
+	    { 0.1,    "forget it" },
+
+	    /* total of all probabilities need not be exactly 1.0 */
+	    /* (it's auto-scaled). But for clarity, we'll keep it */
+	    /* not far from 1.0 */
+	};
+#define NUMRESP (sizeof(responses) / sizeof(responses[0]))
+	static int sum_initialized = 0;
+	static double total = 0.0;
+	int k;
+	double rrand;
+
+	if( ! sum_initialized ) {
+							/* auto-scale */
+		total = 0.0;
+		for( k = 0; k < NUMRESP; k++ ) {
+			total += responses[k].probability;
+		}
+		sum_initialized = 1; /* hope we are not multithreaded */
+	}
+
+
+	strncpy( response, "calc not found.", max); /* safe net responde */
+
+	rrand = (double)rand() / (double)RAND_MAX;
+
+	for( k = 0; k < NUMRESP; k++ ) {
+		rrand -= responses[k].probability;
+		if( rrand <= 0.0 || k == NUMRESP - 1) {
+			snprintf( response, max, 
+				  responses[k].response, calcstring );
+			break;
+		}
+	}
+#undef NUMRESP
+}
+
+
+
 void docalc( char *calcstring )
 {
 	int x, y;
@@ -263,7 +325,7 @@ void docalc( char *calcstring )
 		y = chop( (*(calc + x)), calcray, y, '|' );
 		y = chop( (*(calc + x)), calcray, y, '\n' );
 	  }
-	else strncpy( calcray, "calc not found.", MAXDATASIZE );
+	else calcnotfound( calcray, MAXDATASIZE, calcstring );
 
 	snprintf( tmpray, MAXDATASIZE,"privmsg %s :%s", MSGTO, calcray );
 
