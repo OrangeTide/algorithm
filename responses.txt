@@ -1,0 +1,25 @@
+# Probabilities are auto-scaled.
+# Each record is 1 line.
+# 1st field is probability which is double number.
+#     It is relative to sum of all probabilities.
+# 2nd field is text, which goes till end of line.
+#     There is no continuation lines, no multiline records.
+# Empty lines and lines with '#' in 1st column are ignored.
+
+    656 *You* tell me what is foo
+    392 404
+    675 Answer to 'foo' is not in the database, Sir
+    647 I don't know
+    132 Le CALC non trouve dans la base de donnees.
+     62 SOMBRERO!
+    350 calc nicht gefunden
+    331 errno=ENOENT
+   1000 google it
+   1073 google it yourself
+    702 how would I know ?
+    680 naa, you don't need that
+    657 nope, don't know
+    642 record not found, sir.
+    671 what is foo ?
+    663 why don't you google it ?
+    667 wtf is foo ?
