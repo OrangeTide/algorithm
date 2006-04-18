@@ -1,8 +1,7 @@
 LIBS:= -lm
 CFLAGS:= -Wall -O2 -pedantic
+# enable to remove debugging tests
 # CFLAGS+= -DNDEBUG
-CFLAGS+= -std=gnu99 
-CPPFLAGS:= -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED
 
 EXEC:=bot
 SRCS:=\
@@ -15,19 +14,14 @@ SRCS:=\
 	strcasestr.c \
 	calcnotfound.c
 
-# use the following for MD5 style passwords
-# SRCS+=md5crypt.c users_md5.c
-
-# use the following for crypt() passwords
-SRCS+= users.c 
-LIBS+= -lcrypt
+include conf-$(shell uname -s).mk
 
 OBJS:=$(SRCS:%.c=%.o)
 
 $(EXEC) : LDFLAGS:=$(LIBS)
 $(EXEC) : $(OBJS)
 
-.PHONY: clean backup
+.PHONY: clean clean-all backup
 
 clean:
 	-$(RM) $(OBJS)
