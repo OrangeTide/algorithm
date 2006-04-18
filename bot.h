@@ -82,6 +82,7 @@ void do_ctcp( void );
 void clean_message( char *msg );
 int prep( void );
 int dcalc_stub( void );
+int wcalc_stub( void );
 void rawirc( void );
 int rpn_stub( void );
 void help( void );

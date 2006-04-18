@@ -57,6 +57,7 @@
 #include "users.h"
 #include "calcdb.h"
 #include "dcalc.h"
+#include "wcalc.h"
 #include "rpn.h"
 #include "rc.h"
 
@@ -290,6 +291,7 @@ void make_a_decision( void )
 		  if( !strncasecmp( "owncalc", cur_msg.msgarg1, MAXDATASIZE ) ) { owncalc_stub(); return; }
 		case 'w':
 		  if( !strncasecmp( "whois", cur_msg.msgarg1, MAXDATASIZE ) ) { whois_stub(); return; }
+		  if( !strncasecmp( "wcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { wcalc_stub(); return; }
 		case 'a':
 		  if( !strncasecmp( "adduser", cur_msg.msgarg1, MAXDATASIZE ) ) { adduser_stub(); return; }
 		case 'h':
@@ -494,6 +496,24 @@ int dcalc_stub( void )
 
 
   plaint = dcalc(&v, cur_msg.fulltext + (strlen( cur_msg.msgarg1 ) + 1) );
+
+  if( plaint ) snprintf( tmpray, MAXDATASIZE, "privmsg %s :answer: %s", MSGTO, plaint);
+  else snprintf( tmpray, MAXDATASIZE, "privmsg %s :answer: %.16g", MSGTO, v);
+
+  send_irc_message( tmpray );
+
+  return 0;
+}
+
+
+int wcalc_stub( void )
+{
+  char tmpray[MAXDATASIZE];
+  double v;
+  const char *plaint;
+
+
+  plaint = wcalc(&v, cur_msg.fulltext + (strlen( cur_msg.msgarg1 ) + 1) );
 
   if( plaint ) snprintf( tmpray, MAXDATASIZE, "privmsg %s :answer: %s", MSGTO, plaint);
   else snprintf( tmpray, MAXDATASIZE, "privmsg %s :answer: %.16g", MSGTO, v);

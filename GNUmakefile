@@ -1,11 +1,19 @@
 LIBS:= -lm
-CFLAGS:= -Wall -O2 -pedantic -D_XOPEN_SOURCE 
+CFLAGS:= -Wall -O2 -pedantic
 # CFLAGS+= -DNDEBUG
 CFLAGS+= -std=gnu99 
-CPPFLAGS:=
+CPPFLAGS:= -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED
 
 EXEC:=bot
-SRCS:=bot.c calcdb.c dcalc.c rpn.c rc.c strcasestr.c calcnotfound.c
+SRCS:=\
+	bot.c \
+	calcdb.c \
+	dcalc.c \
+	wcalc.c \
+	rpn.c \
+	rc.c \
+	strcasestr.c \
+	calcnotfound.c
 
 # use the following for MD5 style passwords
 # SRCS+=md5crypt.c users_md5.c
@@ -28,7 +36,7 @@ clean-all: clean
 	-$(RM) $(EXEC) depend.mk *~
 
 depend.mk : $(SRCS)
-	$(CC) -MM $^ >$@
+	$(CC) $(CPPFLAGS) -MM $^ >$@
 
 -include depend.mk
 

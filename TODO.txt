@@ -4,6 +4,10 @@ TODO:
 - nuke the old command syntax
 - remove all warnings
 - user permissions
+- transition to MD5 passwords
+	on any authorization attempt:
+	* check if the password is a DES crypt()
+	* if it is, use the plain-text password and MD5crypt it, then save 
 - change puts to perror when dealing with errors
 - list users
 - export/import database as XML (then you can use XSLT on a webpage to browse
