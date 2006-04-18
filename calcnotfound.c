@@ -25,7 +25,6 @@ void calcnotfound(char *response, int max, char *calcstring)
 	    { 0.1,    "nope, don't know" },
 	    { 0.01,   "SOMBRERO!" },
 	    { 0.1,    "why don't you google it ?" },
-	    { 0.05,   "it's you again?" },
 	    { 0.1,    "*You* tell me what is %s" },
 	    { 0.1,    "forget it" },
 	    { 0.1,    "naa, you don't need that" },
