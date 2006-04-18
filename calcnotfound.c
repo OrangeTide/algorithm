@@ -26,9 +26,13 @@ void calcnotfound(char *response, int max, char *calcstring)
 	    { 0.01,   "SOMBRERO!" },
 	    { 0.1,    "why don't you google it ?" },
 	    { 0.1,    "*You* tell me what is %s" },
-	    { 0.1,    "forget it" },
 	    { 0.1,    "naa, you don't need that" },
-	    { 0.1,    "ask me not" },
+	    { 0.1,    "Answer to '%s' is not in the database, Sir" },
+	    { 0.1,    "record not found, sir." },
+	    { 0.06,   "404" },
+	    { 0.05,   "errno=ENOENT" },
+	    { 0.05,   "calc nicht gefunden" },
+	    { 0.02,   "Le Calc non trouve dans la base de donnees." },
 
 	    /* total of all probabilities need not be exactly 1.0 */
 	    /* (it's auto-scaled). But for clarity, we'll keep it */
@@ -65,8 +69,9 @@ void calcnotfound(char *response, int max, char *calcstring)
 #undef NUMRESP
 }
 
-#if 0
-void main() { /* probabilities tester for calcnotfound() */
+
+
+void calcnotfound_test() { /* probabilities tester for calcnotfound() */
     int k;
     char resp[1000];
     FILE *fp;
@@ -85,4 +90,3 @@ void main() { /* probabilities tester for calcnotfound() */
     if( fp != stdout)
         pclose(fp);
 }
-#endif

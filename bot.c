@@ -924,6 +924,10 @@ int main(int argc, char *argv[])
 {
 	int x = 0;
 
+	if( argc > 1 && 0 == strcmp("-T", argv[1])) {
+		calcnotfound_test();
+		exit(0);
+	}
 
 	if( argc ) printf( "%s is loading, please wait...\n\n", argv[0] );
 
