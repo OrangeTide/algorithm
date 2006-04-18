@@ -3,7 +3,7 @@
 #include "users.h"
 #include "strcasestr.h"
 
-static void calcnotfound(char *response, int max, char *calcstring)
+void calcnotfound(char *response, int max, char *calcstring)
 {
 	/* Create the randomized "not found" response. */
 
