@@ -123,7 +123,7 @@ minesweeper `CYCO|http://www.microsoft.com/ie/most/howto/layout/minesweeper/mine
 kick bjarne|Kick - What will happen if anyone else does stupid calcs to waste bandwidth.
 cbooks bjarne|http://www.cbooks.com is an excellent source of C/C++ related programming books. Full reviews are given for each book.
 rejoiner Teckla|wow! nobody has *ever* tried to regain his voice by parting and rejoining!  did you think of that all by yourself?
-vim bjarne|http://www.math.fu-berlin.de/~guckes/vim/
+ch-stats Setzer|http://dragon-ware.com/~steve/code-help/stats.html
 - bjarne|Logical Negation Operator!
 lpg bjarne|Linux Programmer's Guide - http://linuxwww.db.erau.edu/LPG/
 dragon_book bjarne|Compilers: Principles, Techniques, Tools. ISBN: 0 201 10088 6
@@ -390,7 +390,7 @@ sharedlib jamiroqui|a) make your position independant object files: gcc -c -fpic
 staticlib: jamiroqui|a) make your object files: gcc -O3 foo.c b) archive them in a library: ar cr libzog.a foo.o bar.o baz.o c) create a TOC in the library: ranlib libzog.a
 CFAQ gambit-|ftp://rtfm.mit.edu/pub/usenet/comp.lang.c/ or ftp://ftp.uu.net/usenet/news.answers/C-faq/ or http://www.eskimo.com/~scs/C-faq/top.html
 sequence gambit-|In an expression, the value of an object may be modified at most once. The only exceptions to this are the following "intermediate sequence points": || && ?: , and immediately before a function call. Thus, in practice in an expression only one access to an object may be to modify its value. All others must be for computing the value only, and they should be demonstrably before the modification. -  c.faq  3.1-3.8
-socket-faq megaton|http://kipper.york.ac.uk/~vic/sock-faq/html/unix-socket-faq.html
+geek myrddin|the stereotype of programmers being geeky, socially ineffective nerds is a tired, inaccurate, and grossly outdated cliche.
 c.faq zhivago|ftp://rtfm.mit.edu/pub/usenet/comp.lang.c/ or ftp://ftp.uu.net/usenet/news.answers/C-faq/ or http://www.eskimo.com/~scs/C-faq/top.html
 Swing eponymous|JFC -- an enhancement/upgrade to AWT. works with JDK 1.1.3 and up!
 RealDev.COM `CYCO|go to "http://www.realdev.com" for #java and #c channel stats... select #java or #c from the pulldown list.
@@ -679,7 +679,7 @@ cpics `CYCO|#C Pictures Gallery: "http://www.RealDev.COM"
 PI400 _Secret|http://www.hepl.phys.nagoya-u.ac.jp/~mitsuru/pi-e.html PI to 400 Million Digits!
 directx-tute Teckla|http://www.xgames3d.com/articles/dxtasy/areaddxt.htm
 violation dhartmei|E-PARKING VIOLATION: You are in violation of code SPAM3010-02, "Taking up excessive cyberspace with pointless, verbose, arrogant drivelling." Your keyboard has been towed.
-c-tute zhivago| http://www.sanford.com/ism3232/inter.c/outline.htm
+onlytwo palisade|"There are only two mistakes one can make along the road to truth; not going all the way, and not starting." -- Buddha
 c-refr zhivago|http://www.sanford.com/ism3232/inter.c/outline.htm  pointers,  stacks,
 gnome SaintN|http://www.gnome.org/
 faq myrddin|You'll probably find your answer in an FAQ.  Try http://www.eskimo.com/~scs/C-faq/top.html   or   http://faq.cprogramming.com/cgi-bin/smartfaq.cgi
@@ -700,7 +700,7 @@ p-curve Gambit-|A P-curve (or Probability Curve) is the finite number graph of t
 after-life Gambit-|Determining the afterlife is a divide-by-0 problem.
 macos Gambit-|http://members.xoom.com/yaro/macos/unload.htm
 TeX Xgc|TeX/Metafont info can be obtained at ftp.uni-passau.de or ftp.dante.de
-_Secret _Secret|http://www.nauticom.net/www/secret 150+ Web Links, Source Code, Win32 Asm Tutor, demos, Programmer's Message Board and more!
+memaketoo palisade|<Dmi> HEY! they let me make calcs, too! <Gambit-> Dmi, obviously we haven't improved :)
 nppl ThaDragon|Numerous Postponed Projects Listing(tm ThaDragon): Its always a good idea to keep a list of projects you might wanna do later, this is a postponed projects listing. When it gets as long as mine, its a NPPL ;}.
 punctuation Ape|Lameness is directly proportional to the amount of excess punctuation used. Keep it up.
 draft redfox-|ISO C Draft as of August 3, 1998 -> http://wwwold.dkuug.dk/JTC1/SC22/WG14/www/docs/n843.txt
@@ -957,7 +957,7 @@ quincy99 cout|Quincy 99 - a Windows 9x and NT hosted Integrated Development Envi
 vide cout|A freeware C++ GUI framework for Windows, X, and OS/2.  See http://www.objectcentral.com.
 grasp cout|Graphical Representations of Algorithms, Structures and Processes (Auburn University).  See http://www.eng.auburn.edu/department/cse/research/grasp/
 real Triffid|Real (adj.): In a way similiar to me, like I do, where I live, me, my things, my way, my ideas, my manhood, womanhood, sexual preferences, job, significant other, favorite spoken language, favorite programming language and operating system.
-ctutorials amalgam|http://www.dotc0m.com/csearch contains a searchable list of c tutorials available on the internet.
+pfft Gambit-|Pffft!  I express disdain and disgust at your highbrow notions and moral superiority!
 pope cout|I and the pope are one, therefore x = x, QED.
 radiocat MaineCoon|A radioactive cat has 18 half-lives.
 asp Myrdraal|A dangerous and poisonous snake. Avoid if at all possible.
@@ -1109,7 +1109,7 @@ A* Troi|Java demo at: http://www.ccg.leeds.ac.uk/james/aStar/
 sockets Pennywise|simple sockets: http://www.ecst.csuchico.edu/~beej/guide/
 RandomNumber Setz|Definition of a random number: A number sequence that we cannot predict with a significant predictive power.
 join_my_coding_group Troi|If you want help from #C, you better have money in your hand. Your hand better be vertically above our hands, and opening. We better receive the bills that move at 9.8m/s^2 from your hand to ours. Get the idea?
-foot Gambit-|Go ahead, try to shoot yourself in the foot!  We dare you -- http://www.cs.orst.edu/~crowl/programming/foot1.html
+testing-faq cout|http://www.faqs.org/faqs/software-eng/testing-faq/
 netlib cout|Netlib is a collection of mathematical software, papers, and databases.  See http://www.netlib.org
 med_dict Gambit-|A great Online Medical Dictionary (OMD) is at http://www.graylab.ac.uk/cgi-bin/omd
 90-90 Gambit-|Ninety-Ninety Rule n.  "The first 90% of the code accoutns for the first 90% of the development time.  The remaining 10% of the code accounts for the other 90% of the development time." -- Tom Cargill of Bell Labs
@@ -1154,7 +1154,7 @@ regex Gambit-|_Mastering Regular Expressions_, Jefry Friedl, O'Reilly. ISBN: 1-5
 gravity flub|learn C is 24 hours * 9.8 m/s^2
 signals megaton|a signal tutorial by the great beej:  http://www.ecst.csuchico.edu/~beej/guide/ipc/signals.html
 traffic flub|I have two lights on the way to work- the kitchen light and the bathroom light
-thinkc++ SNIBRIL|Thinking in C++, Second Edition, Online beta version - http://www.EckelObjects.com/ThinkingInCPP2e.html
+hello Gambit-|Hello.  Is it us you're looking for?
 echo Myrdraal|Echo... cho... ho... o... .  .   .   .
 techsupport megaton|<angel_X> leave me alone, i do tech support :/ maybe i should find a nice relaxing job..like handfeeding rabid pitbulls.
 3dengines wem|3D engines list (lists 500+ 3d engines for various platforms useing differnt techneques, apis, hardware, and languages.) http://cg.cs.tu-berlin.de/~ki/engines.html
@@ -1177,7 +1177,7 @@ helpme Gambit-|Try asking a question. You wouldn't be here if you didn't need he
 pcu Perly|Politically Correct UNIX: http://www.patsjokes.com/computer/unixpc.html
 trick glamdring|TRICK QUESTION!  *bing bing bing bing bing*
 OS_development Troi|For the basics of OS development, more /usr/src/linux/*
-nopaste alycat|Do not paste here. You will be banned. 
+nice cout|Nice is an extension of the Java language that makes coding for the JVM much less painful - see http://nice.sourceforge.net/
 morepain Gambit-|"Rock climbing, Crow."  "Sand storm, Joel."
 10x Gambit-|10x? 10x as lame, stupid.
 fate blahh|You will visit the Dung Pits of Glive soon.
@@ -1269,7 +1269,7 @@ bilingual blahh|EYE KAN SPEEK IN MANNY DIVVRUNT LUNGAGAGES , MUCHAHASAQ
 orion Teckla|Orion Web Server - http://orion.evermind.net
 smileys zhivago|http://www.zourek.com/index.html
 files Gambit-|<CyrixBoy> you can open them in a hat, you can open them with a bat, you can see them with some glue, you can see them yes you do!
-swcp blahh|Great newbie C Tutorial: http://www.swcp.com/~dodrill/cdoc/clist.htm, make sure you download the source code (bottom of table of contents) and you do the assigments they give you. You will come out of this tutorial with the knowledge to write even some advanced programs.
+retardo OrngeTide|<mauke> YOU CAN'T JUST MAKE SHIT UP AND EXPECT THE COMPUTER TO MAGICALLY KNOW WHAT YOU MEAN, RETARDO!
 risc Wazm|"RISC was "invented" at Roswell in the late 40's." -comp.arch
 esad megaton|this space for rent. :P
 Integrator Wazm|http://www.integrals.com/
@@ -1410,7 +1410,7 @@ rinetd OrngeTide|redirecting inetd. http://www.boutell.com/rinetd/
 clear_screen kcin|\x1b[2J is the ansi code to clear the screen.
 deported dePorted|\De*ported"\ To transport; to carry away; to exile; to send into banishment. ~~ http://members.xoom.com/edmonton1998/images/deported.jpg
 opinion dePorted|"Everyone has a right to their opinion - even if it's wrong." --Anonymous
-marinoland dePorted|Fairly good C tutorials - http://chris.marino.net/programming/tut/c/index.htm
+compiler OrngeTide|You can get the following compilers/IDEs for free: Code::Blocks http://codeblocks.org/ ; Cygwin http://cygwin.com/ ; Dev-C++ http://www.bloodshed.net/ ; Borland C++Builder(command-line only) http://www.borland.com/bcppbuilder/freecompiler/ ; lcc http://www.cs.princeton.edu/software/lcc/ ; MSVC command-line tools www.winprog.org/tutorial/msvc.html ; Miracle C compiler(win32) http://c-compiler.com/
 wank dePorted|WANK (brit. y vulg.) v.i. 1 masturbarse, mene rsela. s.c. 2 masturbaci n, paja, (Am.) pu eta
 sailors undone|No one here programs, this channel is about the ocean, we just abbreviate "sea" to 'c'.
 nsa Tybstar|Interested in a career with the NSA? Call your mother and tell her. An informational packet will arrive a short time later.
@@ -1948,7 +1948,7 @@ mscode OrngeTide|<Perly> if you apply to microsoft, they'll re-teach you program
 banned Wazm|Hey stupid.. YOU'RE BANNED.
 chars OrngeTide|<mEAt> chars are just itty bitty integers anyway
 typedef zhivago|typedef declaration; makes  alias to the type of declaration with the name of the declaration. ie typedef int i32; or typedef void (*fun)(int, ...); alias to i32, and fun respectively.
-tutorials Xgc|Newbie C Tutorial, http://www.swcp.com/~dodrill/cdoc/clist.htm www.strath.ac.uk/CC/Courses/NewCcourse/ccourse.html Network Sockets, http://www.ecst.csuchico.edu/~beej/guide/ More Tutorials, http://www.jarmaug.com/teach/TYT14FI.HTM More on sockets, http://www.gustavo.net/programming/c.shtml www.aul.fiu.edu/tech/visualc.html
+niv palisade|<niv_> i really despise the new case for the G5... give me an x86 with a brushed steel case, a side window and a cathode blue light and i'm happy!
 moo DrgdHmstr|MOOOO!
 botdesires undone|[03:05] <terr2> I wish Bjarne had bigger boobs
 wrox-tutes OrngeTide|www.wrox.com - Programming Tutorials, downloadable books.
@@ -2006,7 +2006,7 @@ open_source3 Palisade|<PsychoOne> Open source must die. Its key advocates drawn 
 shortaclc Perly|Long calcs suck. Short calcs swallow.
 software_rain Palisade|"In the Linux storm washing across the Internet landscape, each of us is a drop of rain. Only together, does our might become apparent." -- Matt Michie "Software from the sky"
 conspiracy Palisade|<Palisade> the great thing about conspiracy theory is that it might not be a theory
-kwvdial palisade|KWvDial is a ppp dialer for linux, you don't have to worry about Chat Scripts, Secrets files, or any of the other ugliness that has characterized Un*x Telecommunications since the beginning of time. KWvDial takes care of all that. And since it uses the WvDial intelligent dialler, you don't have to worry about how to connect to your ISP. It just does it. -- http://www.carillonis.com/~ppatters/kwvdi
+uandzoo palisade|<OEks> it's "fuck, fuck, fuck a duck, screw a kangaroo! finger bang an orangutan, support your local zoo!"
 shortcalc nossenus|Short calcs are perferred.
 linux-technology palisade|Nice link site to visit that lists some embedded linux devices and information. -- http://www.linuxdevices.com/
 homonims Palisade|<Teckla> Palisade: You might want to change your "insults" calc to say that insulting someone during a debate is called an "ad hominem" attack.
@@ -2050,7 +2050,7 @@ madlib aerid|see adlib
 DROMFP aerid|don't rain on my fucknig parade!
 adlib Palisade|according to darklord, neither adlibs nor madlib exist
 STLPort aerid|www.stlport.org -- a cross platform _working_ ANSI/ISO C++ compliaint STL.
-wellhung Palisade|<OGL> Pali: I guess now you'll deny that you said you wanted to suck hitler's dick  <Palisade> actually... i hear hitler was pretty hung
+firefox palisade|A better web experience, faster browsing, automatic updates, tabbed browsing, popup blocking, searching, security, live bookmarks, and customization through plugins. Best browser ever: http://www.mozilla.com/firefox/
 undones_caffeine_rule undone|"caffeine".  If you're going to worship it, you're going to spell it correctly.
 zhiv_celebration undone|<Zhivago:#c> I must celebrate by going shopping and buying frozen yoghurt and soap
 proggedin OGL|if you think you will gain useful information by asking "what was such and such programmed in?", then you're an idiot
@@ -2291,7 +2291,7 @@ mexicans poorboy| Why kill all the mexicans?  Then you won't have anyone to mow 
 ddjcresource OrngeTide|Dr.Dobb Journal. Links to C/C++ resources, specifications and tutorials: http://www.ddj.com/topics/cpp/
 freebsd poorboy|Not just a teletype based hobbyist os!  but one of the damn good ones... FreeBSD (http://www.freebsd.org)
 logic undone|Logic, I hate you. / You promised me everything, / but gave me nothing.
-compiler OrngeTide|You can get the following compilers for free: Win32 Miracle C http://www.c-compiler.com/ ; lcc http://www.cs.princeton.edu/software/lcc/ ; cygwin http://sources.redhat.com/cygwin/ ; TurboC 2.01 http://community.borland.com/museum/ ; Borland C++Builder(command-line only) http://www.borland.com/bcppbuilder/freecompiler/ ; Bloodshed Dev 4.0(Win32 C/C++) http://www.bloodshed.net/
+boner palisade|8========================================================================================================================================================D~~~
 noecho Glammie|http://rm-f.net/~aedinius/files/getpass.c
 crap_code Setzer| Crap Code: Yes, your code.  If you are in here asking for help, then it's obviously crap.
 prime2 dave117|main(i,j){for(;i<99;j||printf("%d,",i))for(j=i++;i%j--;);}
@@ -2445,7 +2445,7 @@ social Triffix|<zerog_> I only give names and emails to porno sites and even the
 cv noss|Curriculum Vitæ, n00b.
 sms noss|Text messages (70 bytes max, yielding at most 160 chars with the GSM codepage) between GSM terminals. (Short Messaging Service)
 aedi aedinius|amy not found
-disgrunt SgtUnix|Gollum.
+vim Teckla|http://www.vim.org/
 andykessler SgtUnix|Andy Kessler: http://www.andykessler.com
 hyperbole OrngeTide|Hyperbolism: The act of extrapolating an idea to an absurd extreme for the purpose of defending or promoting an invalid point of view.
 me SgtUnix|No, I won't calc you.  Go away.
@@ -2644,7 +2644,7 @@ sscanf aedinius|the 's' is for "secure"
 ouch aedinius|owowowowowoooooohooohohohicantbreatheoowowhohwowh
 oldfriend palisade|"There's a war out there, old friend. A world war! And it's not about who has the most bullets. It's about who controls the information. What we see, what we hear, how we work, how we feel... it's all about who controls the INFORMATION." -- Ben Kinsley, SNEAKERS
 javatutorial OrngeTide|RTFT at http://java.sun.com/tutorial/
-tutorial OrngeTide|See Also: ctut, c++-tute, swcp, pipes, threads, tutorials, sockets-tute, java-tute, javatutorial, PERL-tut, asm-tute, ps-tut, sql-tute, corba-tut, motif-tute, att_syntax, nehe, http://stommel.tamu.edu/~baum/programming.html
+mish Gambit-|mish not found.
 pants Setzer|I'm not wearing any pants!
 jedi aedinius|There is no emotion; there is peace.There is no ignorance; there is knowledge.There is no passion; there is serenity.There is no death; there is the Force.
 zombo aedinius|you can do ANYTHING at zombo com ... yes ... this is zombo com! this is zombo com and welcome to YOU at zombo com
@@ -2663,7 +2663,7 @@ baiting juri|Baiting the channel to answer your question (EG: <idiot> Guess no-o
 bible41 cout|He who plots evil will be known as a Schemer. (Proverbs 24:8)
 thread_saftey_dance2 juri|o/~ We can thread! We can thread! / Processess out of control! / We can thread! We can thread! / Doing it from poll() to poll()! / We can thread! We can thread! / everyone, look at your man(1)s. / We can thread! We can thread! / Use your old libs and take a cha-aa-aa-a-ance! o/~
 love_and_peace juri|LOVE-U AND-O PEACE-SU!
-c89 OrngeTide|ANSI/ISO 9899-1989: The C Programming Language. http://dev.unicals.com/papers/c89-draft.html
+kimmoa Gambit-|<KimmoA> I used to be all about linked lists. Now I know better, I stay away from linked lists.
 cynic juri|<lmb> I'm not cynical, I merely have experience, which is about the same thing
 stryst OrngeTide|http://www.dict.org/bin/Dict?Form=Dict2&Database=gcide&Query=Megalomania
 redundant2 juri|"Why should we subsidize intellectual curiosity?" -Ronald Reagan
@@ -2681,7 +2681,7 @@ xml juri|<winston> Violence is like xml. If the problem's not yet solved, use so
 devoice aedinius|You have been devoiced. Leaving and rejoining won't give voice back; someone has to explicitly give it back.
 UNFPS-375 juri|Unlikely Names For Punk Songs #375: "stab me in the nads."- By the Linux Kernel (zen][)
 lhhpu aedinius|Leather, high heels, and pink underwear.
-paste Teckla|Please paste your code here: http://rafb.net/paste/
+nopaste cout|Do not paste your code to the channel or you will be banned.  Use a paste site such as http://rafb.net/paste/ instead.
 orts OrngeTide|ORTS: Original/Open/Orange/Obsolete/Obtuse Real-Time Strategy. A small project in C that all skilled and unskilled hackers are welcome to play with. http://orts.rm-f.net/ (please see OrngeTide for more info)
 copy OrngeTide|To copy a file on a POSIX system see http://rafb.net/paste/results/bEv1lr89.html
 cbtree OrngeTide|Counted B-Tree: a short article about counted b-trees, which are useful for storing hex editor data. MIT licensed example source. http://www.chiark.greenend.org.uk/~sgtatham/algorithms/cbtree.html
@@ -2692,7 +2692,7 @@ foxpro juri|<juri> think "what if VB and access tried to have an unholy child, t
 juribot aedinius|oh, my god. Becky, look at her bot. it is so big. she looks like one of those professors girlfriends. who understands real AI, they only talk to her because she acts like a total eliza. i mean, her bot. its just so big. i cant believe its so round. it sticks out there. i mean, its toast. look, she's just so slack.
 enthusiasm juri|<juri> "look, its raining shit!" "yaaay!" "look, the shit is on FIRE!" "WOOHOO! YIPPIE! lets RUN ARROUND IN IT!"
 gambit_law juri|<Gambit-> it's a fork with a stick of dynamite attached to it, of course it's legal!
-dupstr Teckla|char *dupstr(const char *str) { char *tmp = malloc(strlen(str) + 1); if (tmp} { strcpy(tmp, str); } return tmp; }
+foot cout|Go ahead, try to shoot yourself in the foot!  We dare you -- http://www.reed.edu/~tuckers/jokes/foot.html
 skins mauke|"Also, whenever a programmer thinks, 'Hey, skins, what a cool idea', their computer's speakers should create some sort of cock-shaped soundwave and plunge it repeatedly through their skulls." --makali
 fish Gambit-|Give a man a fish, and he'll eat for a day.  Teach a man to fish, and he'll ask you questions for the rest of your life.  Give a man a fishing pole and a kick in the ass, and he'll never bother you again.
 PAB Setzer|PAB = Punk Ass Bitch.
@@ -2702,6 +2702,26 @@ donkey Teckla|Would you like to pet my Stryst?
 monogamy aedinius|<+disgrunt> Sounds like aedinius needs another girlfriend.... for when his first is busy. This is just proof that man was not meant to be monogomous. 
 main Teckla|Thou shalt declare main() in one of the two following ways: 1. int main(void) -or- 2. int main(int argc, char *argv[])
 aly.flood alycat|a flood is anything that alycat deems to be a flood ex post facto
-retardo OrngeTide|<mauke> YOU CAN'T JUST MAKE SHIT UP AND EXPECT THE COMPUTER TO MAGICALLY KNOW WHAT YOU MEAN, RETARDO!
-pfft Gambit-|Pffft!  I express disdain and disgust at your highbrow notions and moral superiority!
-memaketoo palisade|<Dmi> HEY! they let me make calcs, too! <Gambit-> Dmi, obviously we haven't improved :)
+castmalloc Teckla|What's wrong with casting malloc's value?  See here for answer: http://www.c-faq.com/malloc/mallocnocast.html
+groovy cout|Groovy is a dynamic language that compiles to JVM code - see http://groovy.codehaus.org/
+paste cout|Please paste your code (or a complete example that demonstrates your problem) here: http://rafb.net/paste/
+socket-faq Gambit-|http://www.cs.rpi.edu/courses/sysprog/sockets/sock.html
+disgrunt Gambit-|<SgtUnix> disgrunt: Soft little furball.
+bithacks SgtUnix|Bit Twiddling Hacks at: http://graphics.stanford.edu/~seander/bithacks.html
+c89 Teckla|ANSI/ISO 9899-1989: The C Programming Language - http://rm-f.net/~orange/devel/specifications/c89-draft.html
+ohfuck palisade|<b1999> fuck..now i have 1000 processes because of bad programming
+fourcc cout|There's lots of video codec information available at http://www.fourcc.org/
+thecbook aedinius|Free C Book: http://publications.gbdirect.co.uk/c_book/
+dupstr Teckla|char *dupstr(const char *str) { char *tmp = malloc(strlen(str) + 1); if (tmp) { strcpy(tmp, str); } return tmp; }
+kawfee SgtUnix|<kawfee> I am a troll.
+obhelp myrddin|[OrngeTide] the @ is equivalent to a Home Depot apron.
+xcc mauke|gcc -std=c89 -pedantic -Wall -W -Wundef -Wendif-labels -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wdisabled-optimization -fstrict-aliasing -O2 -pipe
+specifications SgtUnix|http://rm-f.net/~orange/devel/specifications/
+specs SgtUnix|http://rm-f.net/~orange/devel/specifications/
+btdt mauke|Been There Done That
+ianal SgtUnix|I Am Not A Lawyer
+wheresmybeer aedinius|<+CrayZed_> aedinius: With a few beers I could fuck you.
+:) Gambit-|We may be evil, but at least we're happy!
+saber aedinius|I want a light saber!
+jews OrngeTide|http://www.jewfaq.org/
+fgets.help Mish|fgets(char*,size_t,FILE*);
