@@ -6,9 +6,9 @@
 #     There is no continuation lines, no multiline records.
 # Empty lines and lines with '#' in 1st column are ignored.
 
-    656 *You* tell me what is foo
+    656 *You* tell me what is %s
     392 404
-    675 Answer to 'foo' is not in the database, Sir
+    675 Answer to '%s' is not in the database, Sir
     647 I don't know
     132 Le CALC non trouve dans la base de donnees.
      62 SOMBRERO!
@@ -20,6 +20,6 @@
     680 naa, you don't need that
     657 nope, don't know
     642 record not found, sir.
-    671 what is foo ?
+    671 what is %s ?
     663 why don't you google it ?
-    667 wtf is foo ?
+    667 wtf is %s ?
