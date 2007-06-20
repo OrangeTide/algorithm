@@ -95,6 +95,7 @@ void adduser_stub( void );
 void rmuser_stub( void );
 void rmcalc_stub( void );
 void mkcalc_stub( void );
+void chcalc_stub( void );
 void listcalc_stub( void );
 void searchcalc_stub( void );
 
@@ -123,13 +124,14 @@ struct message {
 
 
 #define HELPHELP "you should /msg me help commands or help <command-name>."
-#define COMMANDS "calc, op, chpass, whois, rmcalc, mkcalc, owncalc, searchcalc, listcalc, rmuser, adduser, rawirc. Try, help syntax or help commandname."
+#define COMMANDS "calc, op, chpass, whois, rmcalc, mkcalc, chcalc, owncalc, searchcalc, listcalc, rmuser, adduser, rawirc. Try, help syntax or help commandname."
 #define SYNTAX "Most user commands take the form of COMMAND PASSWORD USERNAME ARGUMENT/S. The op command requires only a password if your nick is the same as your username."
 #define ADDUSER "adduser yourpass yourlogin newpass newlogin"
 #define CHPASS "chpass yourpass yourlogin newpass"
 #define RMUSER "rmuser yourpass yourlogin username-to-delete"
 #define RMCALC "rmcalc yourpass yourlogname calc-to-delete"
 #define MKCALC "mkcalc yourpass yourlogname calckey calcdata"
+#define CHCALC "chcalc yourpass yourlogname calckey calcdata"
 #define OP "op #channel yourpass yourlogin, or merely, op yourpass, if your nick, username, and default channel all synchronize."
 #define CHATTR "chattr yourpass yourlogin username attributes."
 #define RAWIRC "rawirc yourpass yourlogin raw-irc-protocol   no leading / is needed."

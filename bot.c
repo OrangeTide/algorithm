@@ -286,6 +286,7 @@ void make_a_decision( void )
 		  if( !strncasecmp( "chpass", cur_msg.msgarg1, MAXDATASIZE ) ) { chpass_stub(); return; }
 		  if( !strncasecmp( "calc", cur_msg.msgarg1, MAXDATASIZE ) ) { docalc_stub(); return; }
 		  if( !strncasecmp( "clac", cur_msg.msgarg1, MAXDATASIZE ) ) { docalc_stub(); return; }
+		  if( !strncasecmp( "chcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { chcalc_stub(); return; }
 		case 'o':
 		  if( !strncasecmp( "op", cur_msg.msgarg1, MAXDATASIZE ) ) { oppeople_stub(); return; }
 		  if( !strncasecmp( "owncalc", cur_msg.msgarg1, MAXDATASIZE ) ) { owncalc_stub(); return; }
@@ -301,6 +302,7 @@ void make_a_decision( void )
 		  if( !strncasecmp( "rmcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { rmcalc_stub(); return; }
 		  if( !strncasecmp( "rawirc", cur_msg.msgarg1, MAXDATASIZE ) ) { rawirc(); return; }
 		  if( !strncasecmp( "rcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { rpn_stub(); return; }
+		  if( !strncasecmp( "recalc", cur_msg.msgarg1, MAXDATASIZE ) ) { chcalc_stub(); return; }
 		case 'm':
 		  if( !strncasecmp( "mkcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { mkcalc_stub(); return; }
 		case 'l':
@@ -449,6 +451,23 @@ void mkcalc_stub()
 }
 
 
+void chcalc_stub()
+{
+	int y;
+	char newcalctext[MAXDATASIZE];
+
+	y = chop( cur_msg.fulltext, newcalctext, 0, ' ' );
+	y = chop( cur_msg.fulltext, newcalctext, y, ' ' );
+	y = chop( cur_msg.fulltext, newcalctext, y, ' ' );
+	y = chop( cur_msg.fulltext, newcalctext, y, ' ' );
+	y = chop( cur_msg.fulltext, newcalctext, y, '\0' );
+	
+	chcalc( cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.msgarg4, newcalctext );
+	return;
+}
+
+
+
 /* listcalc stub finished */
 
 void listcalc_stub()
@@ -581,6 +600,11 @@ void help( void )
 	  }
 	if( !strncasecmp( cur_msg.msgarg2, "mkcalc", MAXDATASIZE ) ) {
 		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, MKCALC );
+		send_irc_message( tmpray );
+		return;
+	  }
+	if( !strncasecmp( cur_msg.msgarg2, "chcalc", MAXDATASIZE ) ) {
+		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, CHCALC );
 		send_irc_message( tmpray );
 		return;
 	  }

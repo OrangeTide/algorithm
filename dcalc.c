@@ -67,7 +67,7 @@ static Value run()
 			case SUB: sp[1] -= sp[0]; ++sp; break;
 			case MUL: sp[1] *= sp[0]; ++sp; break;
 			case DIV: sp[1] /= sp[0]; ++sp; break;
-			case MOD: (long)sp[1] %= (long)sp[0]; ++sp; break;
+			case MOD: sp[1] = fmod( sp[1], sp[0]); ++sp; break;
 			case POWER: sp[1] = pow (sp[1], sp[0]); ++sp; break;
 			default: assert (0);
 			}

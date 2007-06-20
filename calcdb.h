@@ -54,6 +54,7 @@ void docalc( char *calcstring );
 int findcalc( char *string );
 void rmcalc( char *passwd, char *name, char *rmstring );
 void mkcalc( char *pass, char *name, char *newcalc, char *newcalctext );
+void chcalc( char *pass, char *name, char *calcname, char *newcalctext );
 void owncalc( char *name, char *index, char *nick );
 void listcalc( char *name, char *dbindex, char *nick );
 void searchcalc( char *searchkey, char *dbindex );

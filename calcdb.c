@@ -65,6 +65,39 @@ static char CALCDB[MAXDATASIZE]; /* passed into loaddb, path/filename of the cal
 
 
 
+/* before 2007-06-20, calc owner was single nick */
+/* after  2007-06-20, calc owner is comma-seapaated list of nicks (chcalc adds to the list) */
+
+int getowners( int dbindex, char *owners, int max )
+{
+	char calcname[MAXDATASIZE];
+	char calcowners[MAXDATASIZE];
+	int k;
+
+	strcpy(owners, "");
+	if( dbindex < 0 || dbindex >= total_calcs || *(calc + dbindex) == NULL)
+		return -1;
+	k = chop( *(calc + dbindex), calcname, 0, ' ' );
+	k = chop( *(calc + dbindex), calcowners, k, '|' );
+	strncpy(owners, calcowners, max);
+	owners[max-1] = 0;
+
+	return 0;
+}
+
+
+
+int is_owner( char *calc_owners, char *qowner)
+{
+	char enclosed_owners[MAXDATASIZE];
+	char enclosed_query[MAXDATASIZE];
+
+	snprintf(enclosed_owners, MAXDATASIZE, ",%s,", calc_owners);
+	snprintf(enclosed_query, MAXDATASIZE, ",%s,", qowner);
+	return 0 == strcasestr( enclosed_owners, enclosed_query);
+}
+
+
 
 void owncalc( char *name, char *dbindex, char *nick )
 {
@@ -72,7 +105,7 @@ void owncalc( char *name, char *dbindex, char *nick )
 	register int x, index;
 	char tmpray[MAXDATASIZE];
 	char calcname[MAXDATASIZE];
-	char calcowner[MAXDATASIZE];
+	char calcowners[MAXDATASIZE];
 
 	if( name[0] ) strncpy( string, name, MAXDATASIZE );
 	else strncpy( string, nick, MAXDATASIZE );
@@ -81,9 +114,9 @@ void owncalc( char *name, char *dbindex, char *nick )
 	for( x = atol( dbindex ); (x < total_calcs) && (x >= 0); x++ ) {
 		if( !(*(calc + x)) ) return;
 		index = chop( *(calc + x), calcname, 0, ' ' );
-		index = chop( *(calc + x), calcowner, index, '|' );
+		index = chop( *(calc + x), calcowners, index, '|' );
 		if( !strncasecmp( string, calcname, MAXDATASIZE ) ) {
-			strncat( tmpray, calcowner, (MAXDATASIZE - 50) );
+			strncat( tmpray, calcowners, (MAXDATASIZE - 50) );
 			strncat( tmpray, " ", (MAXDATASIZE - 50) );
 		 }
 	  }
@@ -101,7 +134,7 @@ void listcalc( char *name, char *dbindex, char *nick )
 	register int x, index;
 	char tmpray[MAXDATASIZE];
 	char calcname[MAXDATASIZE];
-	char calcowner[MAXDATASIZE];
+	char calcowners[MAXDATASIZE];
 	char string[MAXDATASIZE];
 
 
@@ -112,8 +145,10 @@ void listcalc( char *name, char *dbindex, char *nick )
 	for( x = atol( dbindex ); (x < total_calcs) && (x >= 0); x++ ) {
 		if( !(*(calc + x)) ) return;
 		index = chop( *(calc + x), calcname, 0, ' ' );
-		index = chop( *(calc + x), calcowner, index, '|' );
-		if( strncasecmp( string, calcowner, MAXDATASIZE ) ) continue;
+		index = chop( *(calc + x), calcowners, index, '|' );
+			/* after 2007-06-20, calcowners is comma-separated list */
+		/* if( strncasecmp( string, calcowner, MAXDATASIZE ) ) continue; */
+		if( !is_owner( calcowners, string )) continue;
 		if( (strlen(tmpray) + strlen(calcname)) > (MAXDATASIZE - 50) ) break;
 		strncat( tmpray, calcname, (MAXDATASIZE - 50) );
 		strncat( tmpray, " ", (MAXDATASIZE - 50) );
@@ -132,7 +167,7 @@ void searchcalc( char *searchkey, char *dbindex )
 	register int x, index;
 	char tmpray[MAXDATASIZE];
 	char calcname[MAXDATASIZE];
-	char calcowner[MAXDATASIZE];
+	char calcowners[MAXDATASIZE];
 	char calcdata[MAXDATASIZE];
 	char string[MAXDATASIZE];
 	const char *ptr = NULL;
@@ -145,7 +180,7 @@ void searchcalc( char *searchkey, char *dbindex )
 	for( x = atol( dbindex ); (x < total_calcs) && (x >= 0); x++ ) {
 		if( !(*(calc + x)) ) return;
 		index = chop( *(calc + x), calcname, 0, ' ' );
-		index = chop( *(calc + x), calcowner, index, '|' );
+		index = chop( *(calc + x), calcowners, index, '|' );
 		index = chop( *(calc + x), calcdata, index, '\0' );
 		// strstr() for case-sensitive search, strcasestr() for case-insensitive.
 		ptr = strcasestr( calcdata, string );
@@ -186,6 +221,17 @@ void rmcalc( char *passwd, char *name, char *rmstring )
 
 	total_calcs--;
 
+#if 0 /* "mish"lerner. 
+       *   the code till end of the function can rewritten mush shorter as: */
+       * and ptr is not needed */
+	free( *(calc + x) );
+	if( x != total_calcs )
+		*(calc + x) = *(calc + total_calcs);
+	snprintf( sndmsg, MAXDATASIZE, "PRIVMSG %s :%s removed.", MSGTO, rmstring );
+	send_irc_message( sndmsg );
+	savedb( CALCDB );
+	return;
+#endif
 	if( x == total_calcs ) {
 		free( *(calc + x) );
 		snprintf( sndmsg, MAXDATASIZE, "PRIVMSG %s :%s removed.", MSGTO, rmstring );
@@ -199,6 +245,58 @@ void rmcalc( char *passwd, char *name, char *rmstring )
 	free( ptr );
 	ptr = NULL;
 	snprintf( sndmsg, MAXDATASIZE, "PRIVMSG %s :%s removed.", MSGTO, rmstring );
+	send_irc_message( sndmsg );
+
+	savedb( CALCDB );
+
+	return;
+}
+
+
+
+void chcalc( char *pass, char *name, char *calcname, char *newcalcdata )
+{
+	char sndmsg[MAXDATASIZE];
+	char owners[MAXDATASIZE];
+	int x;
+
+	if( calcname[0] == '\0' ) {
+		snprintf( sndmsg, MAXDATASIZE, "PRIVMSG %s :No calc name provided.", MSGTO );
+		send_irc_message( sndmsg );
+		return;
+	  }
+
+	if( (x = findcalc( calcname )) == -1) {
+		snprintf( sndmsg, MAXDATASIZE, "PRIVMSG %s :no such calc", MSGTO );
+		send_irc_message( sndmsg );
+		return;
+	  }
+
+	if( !valid_login( name, pass ) ){
+		snprintf( sndmsg, MAXDATASIZE, "PRIVMSG %s :failed login", MSGTO );
+		send_irc_message( sndmsg );
+		return;
+	  }
+
+	if( newcalcdata[0] == '\0' ) {
+		snprintf( sndmsg, MAXDATASIZE, "PRIVMSG %s :You can not make an empty calc.", MSGTO );
+		send_irc_message( sndmsg );
+		return;
+	  }
+
+		/* add nick to the calc_owners list if it's not already there */
+	getowners(x, owners, sizeof(owners));
+	if( ! is_owner( owners, name)) {
+		strncat( owners, ",", (MAXDATASIZE - 50) );
+		strncat( owners, name, (MAXDATASIZE - 50) );
+	}
+
+	    /* we rely on the fact that *(calc + x) is already allocated to the max size */
+	    /* Indeed, that's how loaddb() and mkcalc() allocate the lines. */
+	    /* If loaddb() and mkcalc() allocated at actual size, we'd need to realoc here */
+
+	snprintf( *(calc + x), MAXDATASIZE, "%s %s|%s", calcname, owners, newcalcdata );
+	snprintf( sndmsg, MAXDATASIZE, "PRIVMSG %s :calc %s changed.", MSGTO, calcname );
 	send_irc_message( sndmsg );
 
 	savedb( CALCDB );
