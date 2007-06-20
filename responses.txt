@@ -1,9 +1,10 @@
-# Probabilities are auto-scaled.
-# Each record is 1 line.
+# Each record is 1 line. Fields are:
 # 1st field is probability which is double number.
 #     It is relative to sum of all probabilities.
 # 2nd field is text, which goes till end of line.
 #     There is no continuation lines, no multiline records.
+#     %s is replaces with the queried term.
+# Probabilities are auto-scaled to total 1.0
 # Empty lines and lines with '#' in 1st column are ignored.
 # The total is approximately around 10,000
 

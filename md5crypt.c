@@ -263,7 +263,7 @@ static void MD5Transform(uint32_t buf[4], uint32_t const in[16])
 }
 
 #endif
-/* $Id: md5crypt.c,v 1.1 2004-05-26 19:20:08 orange Exp $
+/* $Id: md5crypt.c,v 1.2 2007-06-20 20:14:23 mish Exp $
  *
  * ----------------------------------------------------------------------------
  * "THE BEER-WARE LICENSE" (Revision 42):
