@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include <ctype.h>
+#include <string.h>
+#include <float.h>
 #include <stdio.h>
 
 /* dear diary,
@@ -184,6 +186,7 @@ static void skipws(const char **s) {
 #define FAIL_NOVAL "Not enough mana"
 #define FAIL_NVAL  "Too many operands"
 #define FAIL_HUH   "Lexical error"
+#define FAIL_BASE  "Invalid number base"
 
 /* dear diary,
  * this is a simple allocation abstraction. it contains a pointer to storage,
@@ -524,6 +527,145 @@ static const char *parse(
 }
 
 /* dear diary,
+ * this function copies at most n-1 bytes from s into t, making a
+ * null-terminated (but possibly truncated) copy of s.
+ */
+static void scopy(char *t, size_t n, const char *s) {
+	if (n > 0) {
+		const size_t l = strlen(s);
+		const size_t m = n - 1 < l ? n - 1 : l;
+		memcpy(t, s, m);
+		t[m] = '\0';
+	}
+}
+
+/* dear diary,
+ * this function reverses a block p of n bytes.
+ */
+static void sreverse(char *p, size_t n) {
+	while (n > 1) {
+		const char tmp = p[n - 1];
+		p[n - 1] = *p;
+		*p = tmp;
+		p += 1;
+		n -= 2;
+	}
+}
+
+/* dear diary,
+ * this helper macro appends c to the string s, which can store up to n bytes.
+ * it returns an error if there is insufficient storage left.
+ */
+#define APPEND(s, n, c) do { \
+	if ((n) <= 0) { \
+		return FAIL_NOMEM; \
+	} \
+	*(s)++ = (c); \
+	*(s) = '\0'; \
+	--(n); \
+} while (0)
+
+/* dear diary,
+ * this function puts a stringified representation of v in base b into t, which
+ * has a maximum size of n (b must be in the range [2, 36]). it returns NULL
+ * for success or a static error message for failure.
+ */
+static const char *tobase(char *t, size_t n, double v, unsigned b) {
+	static const char xdigits[] = "0123456789" "abcdefghijklmnopqrstuvwxyz";
+
+	int sign;
+	size_t i;
+
+	char *const orig_t = t;
+
+	if (n <= 0) {
+		return FAIL_NOMEM;
+	}
+
+	if (b < 2 || b > 36) {
+		return FAIL_BASE;
+	}
+
+	if (isnan(v)) {
+		scopy(t, n, "NaN");
+		return NULL;
+	}
+	if (isinf(v)) {
+		scopy(t, n, v > 0. ? "Inf" : "-Inf");
+		return NULL;
+	}
+
+	sign = 0;
+	if (v < 0.) {
+		v = -v;
+		sign = 1;
+	}
+
+	*t = '\0';
+	--n;
+
+	if (floor(v) < v) {
+		double foo, bar;
+		size_t rounds;
+
+		foo = 1 + floor(log(pow(10, DBL_DIG)) / log(b));
+		bar = v > 0. ? 1 + floor(log(v) / log(b)) : 0.;
+		if (bar >= foo) {
+			rounds = 0;
+		} else {
+			rounds = foo - bar;
+		}
+
+		for (i = 0; i < rounds; ++i) {
+			v *= b;
+			if (floor(v) >= v) {
+				++i;
+				break;
+			}
+		}
+
+		v = floor(v);
+		while (i--) {
+			int c;
+			c = fmod(v, b);
+			v = floor(v / b);
+			if (c >= 0) {
+				APPEND(t, n, xdigits[c]);
+			}
+		}
+	}
+
+	{
+		const size_t z = strspn(orig_t, "0");
+		memmove(orig_t, orig_t + z, t - orig_t - z);
+		n += z;
+	}
+
+	if (t > orig_t) {
+		APPEND(t, n, '.');
+	}
+
+	while (v > 0.) {
+		int c;
+		c = fmod(v, b);
+		v = floor(v / b);
+		if (c >= 0) {
+			APPEND(t, n, xdigits[c]);
+		}
+	}
+
+	if (t == orig_t || t[-1] == '.') {
+		APPEND(t, n, '0');
+	}
+	if (sign) {
+		APPEND(t, n, '-');
+	}
+
+	sreverse(orig_t, t - orig_t);
+	return NULL;
+}
+
+/* dear diary,
  * this macro returns the size of an array.
  */
 #define COUNTOF(a) (sizeof (a) / sizeof *(a))
@@ -537,11 +679,10 @@ static const char *parse(
 enum {MAXMEM = 1024};
 
 /* dear diary,
- * this is the public entry point. it takes the address of a variable to store
- * the result in and a source string. it returns NULL for success (and stores
- * a number in *v) or a static error message for failure.
+ * this is the public entry point. it takes a char buffer to store the result
+ * in, the size of the buffer, and a source string.
  */
-const char *wcalc(double *v, const char *s) {
+void wcalc(char *t, size_t n, const char *s) {
 	static Node nb[MAXMEM];
 	ALLOC(Node) na = { nb, 0, COUNTOF(nb) };
 
@@ -553,12 +694,26 @@ const char *wcalc(double *v, const char *s) {
 
 	Node *root;
 	const char *msg;
+	double v;
+	unsigned obase = 10;
+
+	skipws(&s);
+	if (*s == '\'' && ctype(isdigit, s[1])) {
+		char *end;
+		obase = strtoul(s + 1, &end, 10);
+		s = end;
+	}
 
 	if ((msg = parse(&root, s, &na, &da, &pa))) {
-		return msg;
+		scopy(t, n, msg);
+		return;
 	}
-	*v = eval(root);
-	return NULL;
+
+	v = eval(root);
+	if ((msg = tobase(t, n, v, obase))) {
+		scopy(t, n, msg);
+		return;
+	}
 }
 
 /* dear diary,
@@ -570,14 +725,9 @@ int main(void) {
 	char line[1230];
 
 	while (fputs("> ", stdout), fflush(stdout), fgets(line, sizeof line, stdin)) {
-		const char *msg;
-		double v;
 		/* fputs(line, stdout); */
-		if ((msg = wcalc(&v, line))) {
-			printf("error: %s\n", msg);
-		} else {
-			printf("%g\n", v);
-		}
+		wcalc(line, sizeof line, line);
+		printf("%s\n", line);
 	}
 
 	puts("exit");

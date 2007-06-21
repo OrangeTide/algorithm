@@ -528,14 +528,11 @@ int dcalc_stub( void )
 int wcalc_stub( void )
 {
   char tmpray[MAXDATASIZE];
-  double v;
-  const char *plaint;
+  size_t len;
 
-
-  plaint = wcalc(&v, cur_msg.fulltext + (strlen( cur_msg.msgarg1 ) + 1) );
-
-  if( plaint ) snprintf( tmpray, MAXDATASIZE, "privmsg %s :answer: %s", MSGTO, plaint);
-  else snprintf( tmpray, MAXDATASIZE, "privmsg %s :answer: %.16g", MSGTO, v);
+  snprintf(tmpray, MAXDATASIZE, "privmsg %s : ", MSGTO);
+  len = strlen(tmpray);
+  wcalc(tmpray + len, MAXDATASIZE - len - 1, cur_msg.fulltext + (strlen( cur_msg.msgarg1 ) + 1) );
 
   send_irc_message( tmpray );
 
