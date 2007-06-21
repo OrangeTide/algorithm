@@ -236,6 +236,70 @@ static void insert(Node **proot, Node *p, ALLOC(ppNode) *leaves) {
 	*proot = p;
 }
 
+static const char xdigits[] = "0123456789" "abcdefghijklmnopqrstuvwxyz";
+
+/* dear diary,
+ * this function reads a floating point number in base from s into r. it
+ * returns NULL for success, or a static error message for failure. if it
+ * succeeds, *s will point to the first character after the number that was
+ * read.
+ */
+static const char *frombase(const char **s, unsigned base, double *r) {
+	double p;
+	int sign;
+	const char *tmp;
+
+	if (base < 2 || base > 36) {
+		return FAIL_BASE;
+	}
+	/* skipws(s); */
+
+	sign = 0;
+	if (**s == '-') {
+		sign = 1;
+		++*s;
+	} else if (**s == '+') {
+		++*s;
+	}
+
+	p = 0.0;
+	for (; **s; ++*s) {
+		if (
+			(tmp = strchr(xdigits, ctype(tolower, **s))) &&
+			(unsigned)(tmp - xdigits) < base
+		) {
+			p *= base;
+			p += tmp - xdigits;
+		} else {
+			break;
+		}
+	}
+
+	if (**s == '.') {
+		double shift = 1.0;
+
+		for (++*s; **s; ++*s) {
+			if (
+				(tmp = strchr(xdigits, ctype(tolower, **s))) &&
+				(unsigned)(tmp - xdigits) < base
+			) {
+				shift *= base;
+				p *= base;
+				p += tmp - xdigits;
+			} else {
+				break;
+			}
+		}
+
+		p /= shift;
+	}
+
+	if (sign) {
+		p = -p;
+	}
+	*r = p;
+	return NULL;
+}
 /* dear diary,
  * horrible helper macros follow. they're only used in the parser function. I
  * can't just make them functions because they use "return" to signal failure.
@@ -327,11 +391,21 @@ static const char *parse(
 	PUSH_MEM(mlocs, &root);
 
 	while (skipws(&s), *s) {
-		if (ctype(isdigit, *s) || (*s == '.' && ctype(isdigit, s[1]))) {
-			char *tmp;
-			/* we need tmp because &s has the wrong type: const char **
-			 * instead of char ** as required by strtod().
-			 */
+		char *tmp;
+		/* we need tmp because &s has the wrong type: const char **
+		 * instead of char ** as required by strto*().
+		 */
+		if (ctype(isdigit, *s) && s[strspn(s, "0123456789")] == '\'') {
+			const char *msg;
+			double x;
+			const unsigned base = strtoul(s, &tmp, 10);
+			s = tmp + 1;
+			if ((msg = frombase(&s, base, &x))) {
+				return msg;
+			}
+			PUSH_MEM(mvals, x);
+			continue;
+		} else if (ctype(isdigit, *s) || (*s == '.' && ctype(isdigit, s[1]))) {
 			PUSH_MEM(mvals, strtod(s, &tmp));
 			s = tmp;
 			continue;
@@ -571,8 +645,6 @@ static void sreverse(char *p, size_t n) {
  * for success or a static error message for failure.
  */
 static const char *tobase(char *t, size_t n, double v, unsigned b) {
-	static const char xdigits[] = "0123456789" "abcdefghijklmnopqrstuvwxyz";
-
 	int sign;
 	size_t i;
 
@@ -637,8 +709,9 @@ static const char *tobase(char *t, size_t n, double v, unsigned b) {
 
 	{
 		const size_t z = strspn(orig_t, "0");
-		memmove(orig_t, orig_t + z, t - orig_t - z);
+		memmove(orig_t, orig_t + z, t - orig_t - z + 1);
 		n += z;
+		t -= z;
 	}
 
 	if (t > orig_t) {
@@ -695,7 +768,7 @@ void wcalc(char *t, size_t n, const char *s) {
 	Node *root;
 	const char *msg;
 	double v;
-	unsigned obase = 10;
+	unsigned obase = 0;
 
 	skipws(&s);
 	if (*s == '\'' && ctype(isdigit, s[1])) {
@@ -710,9 +783,13 @@ void wcalc(char *t, size_t n, const char *s) {
 	}
 
 	v = eval(root);
-	if ((msg = tobase(t, n, v, obase))) {
-		scopy(t, n, msg);
-		return;
+	if (obase == 0) {
+		snprintf(t, n, "%.16g", v);
+	} else {
+		if ((msg = tobase(t, n, v, obase))) {
+			scopy(t, n, msg);
+			return;
+		}
 	}
 }
 
