@@ -35,7 +35,9 @@ typedef enum {
 	St1_TAN,
 	St1_ASIN,
 	St1_ACOS,
-	St1_ATAN
+	St1_ATAN,
+	St1_FLOOR,
+	St1_CEIL
 } Subtype1;
 
 /* dear diary,
@@ -122,19 +124,21 @@ static double eval(const Node *p) {
 		case NT_ARG1: {
 			double x = eval(p->right);
 			switch (p->aux.n1.type) {
-				case St1_NEG:  return -x;
-				case St1_ABS:  return fabs(x);
-				case St1_SQRT: return sqrt(x);
-				case St1_EXP:  return exp(x);
-				case St1_LD:   return log(x) / log(2.0);
-				case St1_LN:   return log(x);
-				case St1_LG:   return log10(x);
-				case St1_SIN:  return sin(x);
-				case St1_COS:  return cos(x);
-				case St1_TAN:  return tan(x);
-				case St1_ASIN: return asin(x);
-				case St1_ACOS: return acos(x);
-				case St1_ATAN: return atan(x);
+				case St1_NEG:   return -x;
+				case St1_ABS:   return fabs(x);
+				case St1_SQRT:  return sqrt(x);
+				case St1_EXP:   return exp(x);
+				case St1_LD:    return log(x) / log(2.0);
+				case St1_LN:    return log(x);
+				case St1_LG:    return log10(x);
+				case St1_SIN:   return sin(x);
+				case St1_COS:   return cos(x);
+				case St1_TAN:   return tan(x);
+				case St1_ASIN:  return asin(x);
+				case St1_ACOS:  return acos(x);
+				case St1_ATAN:  return atan(x);
+				case St1_FLOOR: return floor(x);
+				case St1_CEIL:  return ceil(x);
 			}
 			break;
 		}
@@ -490,9 +494,19 @@ static const char *parse(
 				break;
 
 			case 'c':
-				if (s[1] == 'o' && s[2] == 's') {
-					MAKE_UNOP(COS);
-					NEXT(3);
+				switch (s[1]) {
+					case 'e':
+						if (s[2] == 'i' && s[3] == 'l') {
+							MAKE_UNOP(CEIL);
+							NEXT(4);
+						}
+						break;
+					case 'o':
+						if (s[2] == 's') {
+							MAKE_UNOP(COS);
+							NEXT(3);
+						}
+						break;
 				}
 				break;
 
@@ -508,6 +522,13 @@ static const char *parse(
 					default:
 						PUSH_MEM(mvals, exp(1.0));
 						NEXT(1);
+				}
+				break;
+
+			case 'f':
+				if (s[1] == 'l' && s[2] == 'o' && s[3] == 'o' && s[4] == 'r') {
+					MAKE_UNOP(FLOOR);
+					NEXT(5);
 				}
 				break;
 
