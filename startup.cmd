@@ -1,2 +1,2 @@
-join #c c
+join #c
 join #code-poets

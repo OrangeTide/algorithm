@@ -94,7 +94,7 @@ OSI_Layers bjarne|OSI layers = application, presentation, session, transport, ne
 crap bjarne|A recyclable waste product that can be extracted from a mammal.  Warm, fuzzy, and soft describe this product quite well.
 brown bjarne|Ralf Brown's Files = http://www.cs.cmu.edu/afs/cs/user/ralf/pub/WWW/files.html
 BestCompiler bjarne|Watcom C/C++ 10.x
-randrange bjarne|#define randrange(min,max) (rand()%((max)-(min)+1)+(min))
+spore palisade|http://www.spore.com/
 errmsg bjarne|An error message is a concise description of an error, providing ALL information needed to solve it! "It does not work" is thus gibberish!
 randseed bjarne|To use a pseudo random number generator, you have to SEED it. To do this, use the call srand(time(NULL)) _ONCE_ at the start of your program.
 dejanews bjarne|[Dejanews: Search for Usenet articles] http://www.dejanews.com/
@@ -131,7 +131,7 @@ lisp-links bjarne|http://www.apl.jhu.edu/~hall/lisp.html
 clos bjarne|Common Lisp Object System
 steele bjarne|http://www.cs.cmu.edu/Groups/AI/html/cltl/cltl2.html
 xfree bjarne|ftp://ftp.rge.com/.04/X/XFree86/3.2A/Linux-ix86-ELF
-algorithms bjarne|ftp://ftp.cdrom.com/pub/algorithms
+avd4 Mish|http://www.amazon.com/gp/product/0131774298 "Expert C Programming" by Peter van der Linden 
 mmx bjarne|check out http://mmx.com
 knuth bjarne|http://www-cs-staff.Stanford.EDU/~knuth/
 voidptr bjarne|void: "He who groks the werg, does not know the werg. He who knows the werg, does not grok it".
@@ -231,7 +231,7 @@ WSC Sputnix|Writing Solid Code by Steve Maguire. ISBN: 1-55615-551-4 Here, from 
 codecomplete Sputnix|Code Complete by Steve McConnell  ISBN: 1-55615-484-4  This runaway bestseller is a practical guide to software design that discusses the art and science of constructing software. Examples are provided in C, PascalTM, Basic, FORTRAN, and Ada, but the focus is on successful programming techniques.
 toll _Vile|C programming help fee, $5.00 for each question. Thank-you, please drive through.
 vss Sputnix|Microsoft Visual SourceSafe is a leading project-oriented version control system that is easy to use and administer.  http://www.microsoft.com/ssafe/ for more information
-Zhivago zhivago|#C's spiritual leader
+AaronWL Mish|<AaronWL> I am huge fan of horizontal commodisation of knowledge affected dynamics of innovation processes.
 Sputnik Sputnix|Sputnik and Sputnix are one and the same
 supertaz Sputnix|He's furry, he's cuddly, he's fun...he's SuperTaz!
 SOP SNIBRIL|Buschmann et al, "A System of Patterns (Pattern-Oriented Software Architecture)", 1996, Wiley & Sons, ISBN 0-471-95869-7.
@@ -438,7 +438,7 @@ borg gambit-|Interested in becoming borgish? This is the place to go, then: lcs.
 QnA wawb|Ask the right question and you'll get the right answer
 joke wawb|"Knock knock!" "Who's there?" "Interupting cow." "Interupti--" "MOO!"
 builder opengl`|C++ Builder: A buggy C++ shell over a lame pascal VB clone
-doesnotwork demoncrat|Please define ``does not work''.
+nopony Teckla|http://rtfs.ath.cx/images/no_pony.jpg
 Monkey wawb|"We've all heard that a million monkeys banging on a million typewriters would eventually reproduce the entire works of Shakespeare. Now-- thanks to the Internet-- we know this is not true."
 cmucl zhivago|www.cons.org
 rtfm. OrngeTide|Read The Fucking Manual.
@@ -522,7 +522,7 @@ cricket CyrixBoy|I can almost hear the crickets of impending doom!
 jesus kuru|Jesus is a myth that has no solid historical proof.
 pl1 dhartmei|PL/1, "the fatal disease", belongs more to the problem set than to the solution set. -- E. W. Dijkstra
 phrase alyshia|please phrase your query in the form of a question.
-dvorak alyshia|papaya
+vax OrngeTide|http://www.math.umbc.edu/~rouben/vax.html
 builders wawb|Bah! Builders are for pansies !
 hacker gambit-|Discordian Programmer.
 lcc-win32 gambit-|http://www.cs.virginia.edu/~lcc-win32/
@@ -578,7 +578,7 @@ crypto++ SNIBRIL|Crypto++ is a free C++ class library of cryptographic primitive
 Richter SNIBRIL|"Advanced Windows", third edition, Jeffrey Richter, Microsoft Press, 1997, ISBN  1-57231-548-2.
 get-egcs ponn|http://www.cygnus.com/egcs
 Viagra Xgc|Viagra - Program to help keep ppp up for long periods.
-poorboy poorboy|Jan1.
+fgets.help Mish|fgets(char*,size_t,FILE*);
 goodquestion cwilbur|A good question looks like this: According to the documentation, if I say X, the computer will do Y.  But instead it does Z.  I ran it under the debugger and examined all my variables, and I checked P, Q, and R, and I can't figure out what's wrong.  Any suggestions?
 primative glamdring|Primative = prime + ative = tending to prime.  I think you mean primitive.
 Z _Zaphod|Zaphod, Zhivago and Zygote are not one.
@@ -709,7 +709,7 @@ command SNIBRIL|C/C++ HAS no commands!
 BSOD Triffid|BSOD (Blue Screen Of Death) source code: *(int*)rand() = rand();
 manish MXV|punk
 asm Gambit-|He who hasn't hacked assemply language as a youth has no heart. He who does as an adult has no brain. -John Moore
-book Ape|Books arent nescessary. Just log onto IRC and ask us every question you have. Especially if you need to learn about printf. We like that.
+poorboy poorboy|I wank, and I like pants.  That's what I do.  Oh, and call drgd a communist hippy!
 snafu Gambit-|SNAFU: Situation Normal, All Fucked Up.  See FUBAR or FINE.
 fubar Gambit-|FUBAR: Fucked Up Beyond All Recognition.
 lag Gambit-|Bollays Law of Internet Latency: No matter how bad the latency is, it can always ge***NO CARRIER***
@@ -783,7 +783,7 @@ void Para-dox|Its where all variables end up after you exit main
 winbooks Gambit-|Required Reading: Programming Windows 95 w/ MFC, by Prosise.  Programming Windows 95, by Petzold.  Adv. Windows Programming, by Richter.
 %s Para-dox|printf/scanf family format specify for string (null terminated array of char's)
 Stupidity _Secret|[18:58] <mattt> hburst: stop using VB                                                              [18:59] <hburst> mattt what do you mean?
-stats Setzer|http://channelstats.tripod.com/irc.html // Swish's channel stats for efnet and uddernet ;)
+ooc OrngeTide|Object-Oriented Programming with ANSI C. http://www.planetpdf.com/codecuts/pdfs/ooc.pdf
 #c-rules _Secret|#1 - No asking C questions, you will be banned.  #2 - You must always type all cap sentences and use numbers in place of letters if you want to be eleet like us.  #3 - Always spam and act like an ass, and you must run Linux.  #4 - Anyone who isn't spoofing will be banned.  #5 - Always state what nuker you are using BEFORE you ask a question. #6 - You must be running as ROOT or you will be banned.  #7 - All rules apply to everyone except OP
 grrl Gambit-|Grrl: Geek girl, a rare and seldom seen species.  If you find one, she's worth just about anything.
 no Gambit-|Not just no, but HELL no.
@@ -914,7 +914,7 @@ raving_nancy_boy OrngeTide|<Zhivago> a programer may not be a raving nancy boy, 
 c-tutes cout|http://www.dmoz.org/Computers/Programming/Languages/C/Tutorials/
 postfix Myrdraal|Very fast and secure mailerdaemon recently released as beta. www.postfix.org
 sendmail Myrdraal|A cryptic powerful frightening security-hole-filled mailerdaemon.  It's the standard!
-ping wawb|pong
+algorithms Gambit-|A nice collection of sorting, search, and tree algorithms are at: http://www.algosort.com/
 guipage SNIBRIL|The GUI Toolkit, Framework Page - http://home.pacbell.net/atai/guitool/
 Where_#C_People_Work _Secret| [18:02] <blueberry> i work at Wendy's.
 Large_Number_Names Setz|10^6 = US/UK Million; 10^9 = US Billion, UK Milliard; 10^12 = US Trillion, UK Billion; 10^15 = US Quadrillion, UK 1,000 Billion; 10^18 US Quintillion, UK Trillion; 10^21 = US sextillion, UK 1,000 Trillion; 10^24 US Septillion, UK Quadrillion; 10^27 = US Octillion, UK 1,000 Quadrillion; 10^30 = US Nonillion, UK Quintillion; 10^33 = US Decillion, UK 1,000 Quintillion.
@@ -975,7 +975,7 @@ nanoparsec OrngeTide|1 nanoparsec is approximately 1 inch
 social_life OrngeTide|<Perly> OT: you're a programmer == no social life <OrngeTide> Perly, well that's debatable. I say that IRC counts <Perly> OT: yeah, that's how I rationalize it
 joke4 undone|"Knock knock!" "Who's there?" "Impatient chicken." "Impati--" "Bra-gock!"
 wawb2 wawb|The more times you run over a dead cat, the flatter it gets.
-bugs Ape|Whats up doc?
+time_as_double Mish|double gettime_as_double() { struct timeval tv; gettimeofday(&tv,0); return tv.tv_sec + 1e-6 * tv.tv_usec; }     double t1, t2; t1=gettime_as_double(); slow something ...; print("it took %f sec", gettime_as_double() - t1);
 laugh Gambit-|see mwha
 allsoulsnight MaineCoon|o/~ I can see the lights in the distance, trembling in the dark cloak of night o/~ candles and lanterns are dancing, dancing, a waltz on all souls night... o/~
 joke5 Myrdraal|This town ain't big enough for the two of us. Get liposuction or move out!
@@ -1063,7 +1063,7 @@ nurb Setz|NURB: nonuniform rational B-splines.  Good introduction at: http://dev
 It's Gambit-|not a good idea to mix enthusiasm with stupidity, young weedskipper.
 protocal glamdring|"protocol" has no A in it either.
 manners Tybstar|Manners? This is irc, bubba.
-panic Aegis| A crisis on your part does not necessarily invoke an emergency for everyone else.
+bugs Mish|Zarro boogs found.
 mmmm flub|sour kraut...   can't talk- eating.
 muppet_ascii undone|Muppet ascii art - http://www.cs.unc.edu/~arthur/songs/muppet_ascii
 calcme SNIBRIL|Calc me, baby!
@@ -1113,7 +1113,7 @@ testing-faq cout|http://www.faqs.org/faqs/software-eng/testing-faq/
 netlib cout|Netlib is a collection of mathematical software, papers, and databases.  See http://www.netlib.org
 med_dict Gambit-|A great Online Medical Dictionary (OMD) is at http://www.graylab.ac.uk/cgi-bin/omd
 90-90 Gambit-|Ninety-Ninety Rule n.  "The first 90% of the code accoutns for the first 90% of the development time.  The remaining 10% of the code accounts for the other 90% of the development time." -- Tom Cargill of Bell Labs
-mySQL Gambit-|A fairly decent higher end relational database program.  See http://www.mysql.com or Gambit- for more information.
+wordnet Mish|http://kylescholz.com/projects/wordnet/?text=c
 joke12 undone|Q: What do you call someone who only speaks one language?  A: American.
 joke11 undone|What's the best way to accelerate a Macintosh?  9.8 m/sec^2.
 narf Perly|Prick your finger it is done, the moon has now eclipsed the sun. The Angel has spread its wings, the time has come for bitter things.
@@ -1147,7 +1147,7 @@ chorgain chorgain|ha
 pool Wazm|It appears someone is from the shallower end of the gene-pool.
 feature voidptr|"A feature is nothing more than a bug with seniority" -- Unknown Source
 erlang Luke|Erlangliness is next to Emacsliness.
-beej megaton|simple sockets: http://www.ecst.csuchico.edu/~beej/guide/
+serial-lib Mish|http://www.ent.ohiou.edu/~welker/rs232/rs232.zip win32 & linux portable serial comm library
 just_do_it Dmi|practice makes perfect; but you have to practice (ok, a cold beer or two won't hurt :)
 Mesa-tut glamdring|MesaGL Tutorial - http://www.eecs.tulane.edu/www/Terry/OpenGL/
 regex Gambit-|_Mastering Regular Expressions_, Jefry Friedl, O'Reilly. ISBN: 1-56592-257-3 or For more Info: http://www-inf.enst.fr/~demaille/a2ps/doc-beta/regex_toc.html.
@@ -1349,7 +1349,7 @@ paradox Para-dox|http://www.cris.com/~paradox2/
 para-dox Para-dox|http://www.cris.com/~paradox2/
 USD wem|Universialy Standard Dollars
 try kcin|Yoda says: "Do or do not, there is no try."
-sleep Perly|Sleep is over-rated (as poorboy pointed out). Sleep also wastes time, makes you go pee-pee when you have nightmares, and you sweat. Nuff said.
+mcfly Mish|<mcfly> connect() fails, returning -1 while perror() says "bad file descriptor", and then google turns up people posting about compilation problems of their apps
 forgiveness Wazm|When I was young I used to pray for a bike. Then I realized that God doesn't work that way, so I stole a bike and prayed for forgiveness. (Dan Gadino)
 things.to.remember PW|<Sauvin> What you're forgetting is something you might not even have known
 Foot_mouth_in venus|<Teckla> DrgdHmstr: Whatever doesn't kill you makes you stronger.  :) <DrgdHmstr> Teckla: What about alzheimer's? <Teckla> DrgdHmstr: Well...you got me there.
@@ -1520,7 +1520,7 @@ news platypus|No news is good news; and the programmers in #C are stupid ignoran
 blondes platypus|Blondes have been voted, in #C, to be led to either professional pornstars or misled psychologists (if there's such thing as an on-track psychologist)
 shutup_andcode Dmi|it doesn't matter what box you have, it doesn't matter which compiler you use; only that you shut up and code.
 freud+programming Dmi|"The subject being severed from his mother and father at an early age, seeks role models to imitate. finding none, he looks at the computer his parents bought him to keep it busy, and seeks to posses it."
-board Gambit-|The best keyboard in existence: http://www.kinesis-ergo.com/contspec.html
+sfw Setzer|Safe For Work
 socialists kcin|Do not worry my friends, one day all the damned socialists will leave, and #c will be full of brilliant libertarians who know what the government is for.
 perly_politics Perly|Perly's political views are his own business.
 libertarian kcin|For information on Libertarians go to www.libertarian.org
@@ -1942,7 +1942,7 @@ bad_physics_joke2 riscgrl|A neutron goes into a bar and asks the bartender, "How
 XOR Gambit-|XOR:  Exclusive OR:  1 ^ 0 == 1; 0 ^ 1 == 1; 0 ^ 0 == 0; 1 ^ 1 == 0;
 indent Glammie|"In My Egotistical Opinion, most people's C programs should be indented six feet downward and covered with dirt." -- Blair P. Houghton
 California venus|The following #C people live in California: OrngeTide, mEAt, Gambit, blueberry.
-ur OrngeTide|ur: short for You Are, it helps ppl who don't understand the difference between You're and Your.
+linux-on-key Mish|http://www.projectblackdog.com/ -   linux-on-key usb dongle that boots linux when you insert it into usb of the host PC
 maxswell juri|<Maxswell> what's an isp?
 mscode OrngeTide|<Perly> if you apply to microsoft, they'll re-teach you programming. like strcpy(myptr, anotherptr); as opposed to strncpy(), etc
 banned Wazm|Hey stupid.. YOU'RE BANNED.
@@ -2071,13 +2071,13 @@ cvsbook Palisade|Cyclic Software co-founder Karl Fogel's book, "Open Source Deve
 c_spread_lies aerid|"it isn't on my machine, and it shouldn't be on yours. In fact, the object code for the C++ version of the "hello world" program is smaller than the C version on my machine. There is no language reason why the one version should be larger than the other." - Stroustrup
 sex_appeal aerid|C++, it's all about sex appeal.
 speling gfoot|lern 2 spel.  you're cumpylor wunt undustant wot u meen iv u dunt spel corektlee, ant neethur wil wee.
-paligeekcode Palisade|GCS/P/SS d? s: a20 C++++ ULB*++++ P+ L+++ E---- W+ w--- Y+ t+++ 5+++ b+ G+++ e* h!
+read-eof Mish|then read() will return value <=0 when EOF
 acid riscgrl|I had a friend who took acid before an exam.. he tapped his papers on the desk to get the edges straight and the letters fell off.. he had to spend the rest of the exam sticking them back on.
 fade__ nossenus|<fade__> i mated with a horse :)
 heather Dmi|Tall, beautiful black girl that can sit in a miniskirt and discuss philosophy, executing both in confidence and style.
 DrgdHmstr DrgdHmstr|Lovable, huggable Little Hammie Dude(tm)! Official pronounciation is "Deranged Hamster". If anyone tells you different, hurt them and make them cry.
 we_hate_leeches DrgdHmstr|<blueberry> i hate when people come to #C and basically say "I want <insert something amazingly important or kewl here> but I don't want to pay anything, put any effort into getting it, or have to lift even a finger. I want it to fall into my lap. Please help me!"
-duff Myrdraal|Get off your duff!
+duffdevice Mish| The most dramatic use yet seen of fall through in C, invented by Tom Duff when he was at Lucasfilm. http://www.catb.org/jargon/html/D/Duffs-device.html en.wikipedia.org/wiki/Duff's_device
 duff's_device gfoot|y = x >> 2; switch (x & 3) do { something(); case 3: something(); case 2: something(); case 1: something(); } while (y--);
 TANSTAFS gfoot|There ain't no such thing as free sex (you get what you pay for)
 #Crules MaskNMI|No text attributes (eg, bold, underline, color, etc); No all caps or mixed caps strings; No excessive punctuation; No excessive l33t-speak or l33t-speak-like abbreviations; No solicitation, except by regulars; No verbose auto-aways; No flooding; No auto-rejoin; No being lame; No bickering (debating intelligently is acceptable and encouraged).
@@ -2095,7 +2095,7 @@ kcin_man Iskander| <kcin> blueberry: Isk made semene. <kcin> smene. <kcin> semen
 open_source Iskander|<Palisade> open source is a work of the devil to tempt us!!! stay away from it!!! evil!!! sacrafice stallman!!! inquistion!!! begin the crusades we must find all these "free software" heretics and torture them into converting!!
 mersenne Iskander|The Mersenne Primes information site can be found at http://www.mersenne.org
 gimps Iskander| The Great Internet Mersenne Prime Search project, http://www.mersenne.org/prime.htm
-manpage Iskander|To access a set of man pages online, visit http://www.ntua.gr/cgi-bin/man-cgi
+PTAPG OrngeTide|Parsing Techniques - A Practical Guide. ISBN 0 13 651431 6 Free PDFs at http://www.cs.vu.nl/~dick/PTAPG.html
 tpo Iskander|<frame> calc tpo <frame> bwahahaha <frame> calc typo <frame> there's irony for you.
 iskander_ Iskander|kcin, heh, I only do girls, deer, or komodo dragon statues... I got SOME principles
 mcp Iskander|http://pbs.mcp.com has free html versions of computer books
@@ -2126,8 +2126,8 @@ WTHAYTA Para-dox|What the HELL are you talking about?
 tryit Gambit-|Stop asking if something works and just TRY IT!
 1337 aerid|aerid
 fuckifiknow Gambit-|Gambit-'s universal response.
-att_syntax Palisade|I (palipoo) have temporarly placed the at&t syntax assembly tutorial on my site, don't expect this link to stay valid... anyone else want to host this or rewrite it? I think it was originally written by a regular to #c to explain djgpp's assembly syntax (djgpp is just a port of gcc, so they all use at&t syntax) -- http://home.att.net/~chesterrr/djasm.txt
-djgpp_asm Gambit-|I (palipoo) have temporarly placed the at&t syntax assembly tutorial on my site, don't expect this link to stay valid... anyone else want to host this or rewrite it? I think it was originally written by a regular to #c to explain djgpp's assembly syntax (djgpp is just a port of gcc, so they all use at&t syntax) -- http://home.att.net/~chesterrr/djasm.txt
+base26 OrngeTide|bijective base-26 numeration system is the numbering system used on spreadsheet programs. AA..AZ,BA..BZ,...ZA..ZZ. It is not actually base-26 because there is actually no positional zero. Example code: http://rm-f.net/~orange/code/base26.c
+milf palisade|mother i'd like to doink
 linux-x-win32 Palisade|Linux to win32 cross-platform gcc compiler. -- ftp://ftp.objsw.com/pub/crossgcc/linux-x-win32/
 bjarne Para-dox|We are bot. Resistance is futile.
 TCG aerid|trench coat gangs, aka role playing kids. if you see them lock them up, they're deeply distrubed individuals.
@@ -2368,7 +2368,7 @@ pthreads2 Setzer|http://www.humanfactor.com/pthreads
 rand CyrixLord| rand = to get random numbers from A to B [A,B). A+(int)((rand()/(RAND_MAX+1.0))*(B - A))
 accu cout|The ACCU (Association of C and C++ Users; http://www.accu.org/) has lots of good reviews for programming books.
 fgets() alycat|char buf[256]; fgets(buf, sizeof buf, stdin); buf[strcspn(buf, "\n")] = 0;
-printb3 cout|<mauke> void printb(unsigned n) { if (x / 2) printb(x / 2); putchar(x % 2 + '0'); } // shorter version of dec-to-bin
+board Gambit-|The best keyboard in existence: http://www.kinesis-ergo.com/contoured.htm
 nourl alycat|Do not post a url to your crappy code here either.
 cheapbook Setzer|A good place for cheap (ie. FREE) books is your local library!
 C-Style Setzer|C and C++ Style Guides: http://www.chris-lott.org/resources/cstyle/
@@ -2439,7 +2439,7 @@ jrfgim Triffix|<noss> just read the fucking gcc info manual.
 english Triffix|Please speak English on the channel. We do not understand French, Swedish, German or jibberish.
 clrscr Triffix|There are a few ways to clear the screen in C (none quite ANSI C compliant): One is int i; for(i = 0; i < 13; i++) printf("\n\n");. Another, under an ANSI terminal, is printf("\x1b[2J");. The third is to use ncurses/conio (for UNIX/DOS+Windows respectively).
 rtfm Triffix|RTFM stands for: Read The Fucking Manual. You can find a fucking manual at http://www.openbsd.org/cgi-bin/man.cgi
-noss noss|Nice swedish person.
+ping Teckla|http://www.nataliedee.com/071405/ping.jpg
 schildt Setzer|Herbert Schildt has a knack for clear, readable text, describing a language subtly but quite definitely different from C." http://www.lysator.liu.se/c/schildt.html
 social Triffix|<zerog_> I only give names and emails to porno sites and even then, not mine
 cv noss|Curriculum Vitæ, n00b.
@@ -2568,7 +2568,7 @@ thatcalc alycat|<eddy> myrddin, what was that calc earlier?
 aedi_the_druggie eddy|<aedinius> Maybe I can burn at work tomorrow.
 amy eddy|can't talk to target 'amy'
 badbooks myrddin|We recommend _against_ books with any of the following in the title: idiots, dummies, teach, yourself, learn, seconds, minutes, hours, days, weeks, weekend, tricks, guru, visually; or that mention a specific product or compiler. (Thanks to vawjr)
-goto alycat|oh goto bed
+imdone OrngeTide|Day 1: <lawl-> well you two can giggle and high five each other, i'm done with ignorant channel | Day 2: <lawl-> and god damnit son, i am done with this place
 subtility? noss|<jaggz_> I'm connecting to a system from remote and am trying to fsck the root partition on it.  fsck complains about it not being read-only, although I believe I can -f(orce) it.  I haven't been able to mount -o 'remount,ro' it because it's being accessed by the daemon needed for me to connect...
 noask alycat|don't even ask. (see also, calc goto)
 kiss zerog_|kissing can wait - said the prince as he climbed off of sleeping beauty
@@ -2644,7 +2644,7 @@ sscanf aedinius|the 's' is for "secure"
 ouch aedinius|owowowowowoooooohooohohohicantbreatheoowowhohwowh
 oldfriend palisade|"There's a war out there, old friend. A world war! And it's not about who has the most bullets. It's about who controls the information. What we see, what we hear, how we work, how we feel... it's all about who controls the INFORMATION." -- Ben Kinsley, SNEAKERS
 javatutorial OrngeTide|RTFT at http://java.sun.com/tutorial/
-mish Gambit-|mish not found.
+mauke2 Mish|<mauke> my %h; my @s; my $t; my $p = \%h; while (<$f>) { chomp; /^\s*\z/ || /^\s*;/ and next; if (/^\s*\{\s*\z/) { push @s, $p; $p = $p->{$t} ||= {} } else if (/^\s*\}\s*\z/) { $p = pop @s } else if (/^\s*(\w+)=(.*)/) { $p->{$1} = $2 } else if (/^\s*(\w+)\s*\z) { $t = $1 } else { die "blargh" } }
 pants Setzer|I'm not wearing any pants!
 jedi aedinius|There is no emotion; there is peace.There is no ignorance; there is knowledge.There is no passion; there is serenity.There is no death; there is the Force.
 zombo aedinius|you can do ANYTHING at zombo com ... yes ... this is zombo com! this is zombo com and welcome to YOU at zombo com
@@ -2706,7 +2706,7 @@ castmalloc Teckla|What's wrong with casting malloc's value?  See here for answer
 groovy cout|Groovy is a dynamic language that compiles to JVM code - see http://groovy.codehaus.org/
 paste cout|Please paste your code (or a complete example that demonstrates your problem) here: http://rafb.net/paste/
 socket-faq Gambit-|http://www.cs.rpi.edu/courses/sysprog/sockets/sock.html
-disgrunt Gambit-|<SgtUnix> disgrunt: Soft little furball.
+manpage SgtUnix|Man pages here: http://www.gsp.com/support/man/
 bithacks SgtUnix|Bit Twiddling Hacks at: http://graphics.stanford.edu/~seander/bithacks.html
 c89 Teckla|ANSI/ISO 9899-1989: The C Programming Language - http://rm-f.net/~orange/devel/specifications/c89-draft.html
 ohfuck palisade|<b1999> fuck..now i have 1000 processes because of bad programming
@@ -2724,4 +2724,93 @@ wheresmybeer aedinius|<+CrayZed_> aedinius: With a few beers I could fuck you.
 :) Gambit-|We may be evil, but at least we're happy!
 saber aedinius|I want a light saber!
 jews OrngeTide|http://www.jewfaq.org/
-fgets.help Mish|fgets(char*,size_t,FILE*);
+book mauke|Books aren't necessary. Just log onto IRC and ask us every question you have. Especially if you need to learn about printf. We like that.
+disgrunt SgtUnix|<SgtUnix> disgrunt: Soft little furball.   /* correction: an EVIL soft little furball */
+they_already_know aedinius|<+MrPibb> oh really?.. god i'm a tard
+yourmom() OrngeTide|<aedinius> so is yourmom()
+klingon SgtUnix|Klingon multitasking systems do not support "time-sharing". When a Klingon program wants to run, it challenges the scheduler in hand-to-hand combat and owns the machine.
+stats Swish|http://www.sharpwords.net/ircstats/  // Swish's new stats page for EFnet and Uddernet (<3 Setzer)
+ftw OrngeTide|For The Win
+fap OrngeTide|onomatopoeia for the sound of male masturbation. fapfapfapfap
+imo OrngeTide|In My Opinion. (see also: IMHO, IMAO )
+imao OrngeTide|In My Arrogant Opinion. (see also: IMO, IMHO )
+oyg OrngeTide|Oh Your God (see also: OMG)
+oln OrngeTide|OMG LOL noob
+plzkthxbye OrngeTide|Please. OK, thanks. Bye
+zomg OrngeTide|Zombies! Oh My God!
+drunk mauke|while*(not tvomit) { dinrk} l // OMG I wronte a PROGMRA
+dvorak SgtUnix|<@OrngeTide> but typing the word qwerty is tough to do on dvorak. which is a shame, because when you start using dvorak you type qwerty a LOT
+ur OrngeTide|ur: 1. possess. pron. (informal) The pronoun of the second person, in the nominative, dative, and objective case, indicating the person or persons addressed. 2. contraction. (informal) you're, you are
+printb3 mauke|<mauke> void printb(unsigned x) { if (x / 2) printb(x / 2); putchar(x % 2 + '0'); } // shorter version of dec-to-bin
+strdup Mish|void *strdup(const char *s) { void *p = malloc(1+strlen(s)); if(!p) return NULL; return strcpy(p,s); }
+stop Mish|please stop using offensive words on this channel
+stop2 Mish|please stop using offensive words on this channel, again
+stop3 Mish|please stop using offensive words on this channel, again. This is last warning.
+duff Mish| The most dramatic use yet seen of fall through in C, invented by Tom Duff when he was at Lucasfilm. http://www.catb.org/jargon/html/D/Duffs-device.html en.wikipedia.org/wiki/Duff's_device
+obfuscated Mish|Obfuscated C and Other Mysteries (Paperback) http://www.amazon.com/gp/product/0471578053 See also: ioccc
+traps Mish|"C traps and pitfalls" by Andrew Koenig http://www.amazon.com/gp/product/0201179288
+shark2 Mish|<shark2> I can write to stdin, read stdout, repeat
+dell Mish|<Teckla> Dell's laptops are impressively low quality.
+rickdate OrngeTide|RickDate is a useful encoding format for date stamps. It can by applied to filenames easily and looks like YCQ or 02YCQ depending on the precision you desire. http://www.radiantweb.net/ian/RickDate.html
+topic Mish|SgtUnix changed the topic of #c to: C/C++/ObjC/D/Limbo Porngaming and Dicksuction (key: c) | Happy b-day myrddin!@
+6*9 mauke|42
+Zhivago Mish|<Zhivago> You are either blind, or an idiot.
+c-gui Mish|GTK. Motif. Xt. wine + win32 sdk.
+c-mysteries Mish|http://www.amazon.com/gp/product/0471578053 by Don Libes, "Obfuscated C and Other Mysteries "
+gummy2 Mish|<gummy> A cow. A trampoline. Together, they fight crime.
+pitfalls Mish|http://www.amazon.com/gp/product/0201179288/ "C traps and pitfalls" by Andrew Koenig
+avd3 Mish|http://www.amazon.com/gp/product/0673999866 "Pointers on C" by Kenneth Reek
+noss SgtUnix|<O[Mish]> noss is mythical creature, part davarus, and part DrgdHmstr
+sleep OrngeTide|system("echo 'int sleep(int); int atoi(char*); int main(int argc, char **argv) { return sleep(argc>1?atoi(argv[1]):1); }' | gcc -xc - ; ./a.out 10");
+browneye OrngeTide|browneye, n. -- The eye that don't wink, it only stinks.
+doesnotwork Gambit-|Telling us that it "do(es)n't work" doesn't tell us very much.  We can much more easily help you if give us an exact description of the error or problem you are experiencing.
+goto Mish|If your project coding conventions allow goto, use gogo sparingly when it makes code more clear, maintainable and readable. Don't use backward goto. Typical case where goto is justified is jumping to common cleanup before end of function. Another acceptable case is breaking the nested loop. Don's use goto if your team leader is sensitive to it's components.
+piggies palisade|hakware has a fetish for small, round ears <hakware> and small, upturned noses <hakware> kinda odd... <palisade> hakware: piggies
+carrotcake OrngeTide|Carrot cake, carrot cake, have ye any nuts? [picks up a piece of cake and puts it to his ear] / The carrot cake contains? no nuts. 
+hakmem OrngeTide|HAKMEM -- Programming Hacks. http://home.pipeline.com/~hbaker1/hakmem/hakmem.html
+eefwak AaronWL|<davarus> eefwak, Our very own retarded ewok
+rnm Setzer|RNM stands for, Retarded Network Monkey
+factor OrngeTide|http://factorcode.org/ - Factor is a dynamically typed, stack-based programming language. Like Forth with complex data types and extensive support for matrix operations.
+nubsauce palisade|<Drgd> Lagging like Laggy McLagsalot presiding over the Lag Parade on Lag Day in Lag City
+palilesson palisade|<palisade> oh noes i let the smoke out, how do i put it back in ot!? <OrngeTide> palisade, you can't. it will never run again without its smoke.
+brownorgy palisade|<galexand> wow my mom got me this chocolate with chipotle and cinamon <galexand> it's like an orgy in my mouth and i don't know the guestlist
+dup2 OrngeTide|#include <stdio.h> #include <unistd.h> #include <sys/types.h> #include <sys/stat.h> #include <fcntl.h> int main() { int logfd; logfd=open("mylog.txt", O_APPEND|O_WRONLY|O_CREAT, 0666); dup2(logfd, 1); close(logfd); printf("Hey. guess where this goes!\n"); return 0; }
+datingtips101 OrngeTide|<rkeene> Kill her
+poll-lib Mish|libevent: a lightweight library for dealing with event notification on windows and *nix. Uses select, poll, kqueue, epoll, devpoll, etc. http://www.monkey.org/~provos/libevent/. BSD licensed 
+vista Teckla|http://theblog.europe2blog.fr/the_blog/images/vista.jpg
+ctx OrngeTide|CTX - Creativyst Table eXchange Format. replacement for CSV and simpler than XML for holding tabular data. http://www.creativyst.com/Doc/Std/ctx/ctx.htm
+CGod Mish|C was given to KR directly from God, and KR are his prophet
+data-structures Mish|Most data structures are combination of arrays and linked lists. (c)
+quick Mish|"I have quick question" usually means:   "You guys shall stop all you are doing right now and turn you total attention to answering my questions as quickly as possible and as completely as possible, without asking me for any clarifications. If you do not, I become venomous and will bite anybody"
+asinine palisade|foolish, unintelligent, or silly; stupid: It is surprising that supposedly intelligent people can make such asinine statements.
+restrict OrngeTide|C99 "restrict" keyword is used to indicate a pointer is not aliased to allow for more complete optimizations by the compiler. http://www.cellperformance.com/mike_acton/2006/05/demystifying_the_restrict_keyw.html
+cross Mish|<davarus> I love being nailed to a cross... It's so sexy.
+so.libs Mish|In order to make your app independent on the .so libraries of the target Linux, (1) put needed .so libs into /opt/Company/lib including glibc (2) export LD_LIBRARY_PATH properly in the wrapper script , and (3) You are all set.
+getchar-retval Mish|Q: What is correct value of X in X=getchar() ? A: int Q: Why not char ? A: Because EOF is not ascii value. EOF is the value outside of the ascii set. To test correctly for EOF, you must declare X int and *not* never char. Otherwise, getchar will either take some value characters for EOF, or on the opposite, will not detect the EOF.
+getchar-type Mish|Q: What is correct value of X in X=getchar() ? A: int Q: Why not char ? A: Because EOF is not ascii value. EOF is the value outside of the ascii set. To test correctly for EOF, you must declare X int and *not* never char. Otherwise, getchar will either take some value characters for EOF, or on the opposite, will not detect the EOF.
+mish Mish|aka Mish, aka O[Mish], aka eMish, aka uMish, aka iMish. Now what ?
+mauke Mish|<mauke> my %h; my @s; my $t; my $p = \%h; while (<$f>) { chomp; /^\s*\z/ || /^\s*;/ and next; if (/^\s*\{\s*\z/) { push @s, $p; $p = $p->{$t} ||= {} } else if (/^\s*\}\s*\z/) { $p = pop @s } else if (/^\s*(\w+)=(.*)/) { $p->{$1} = $2 } else if (/^\s*(\w+)\s*\z) { $t = $1 } else { die "blargh" } }
+sexologists Mish|Sexologists have gained a wealth of new and often surprising insights into the nature and architecture of sexual desire. They are tracing how men and women diverge in their experience, and where they converge. They are learning how and why people pursue the erotic partners they do, and the circumstances under which those tastes are either fixed or fluid.
+pdcurses OrngeTide|PDCurses - Public Domain Curses - http://pdcurses.sourceforge.net/ - Curses library for Win32, DOS, X11. Turns any curses application into a GUI application by rendering text in the GUI instead of on the console.
+work Gambit-|If you're looking for someone to do work-for-hire, contact Gambit- or #coderforhire.
+koenig Mish|"C traps and pitfalls"  http://www.amazon.com/gp/product/0201179288 by Andrew Koenig 
+interrupts Mish|http://www.ctyme.com/rbrown.htm Ralf Brown's Interrupt List
+intrs Mish|http://www.ctyme.com/rbrown.htm Ralf Brown's Interrupt List
+demux Mish|libevent: a lightweight library for dealing with event notification on windows and *nix. Uses select, poll, kqueue, epoll, devpoll, etc. http://www.monkey.org/~provos/libevent/. BSD licensed 
+select-lib Mish|libevent: a lightweight library for dealing with event notification on windows and *nix. Uses select, poll, kqueue, epoll, devpoll, etc. http://www.monkey.org/~provos/libevent/. BSD licensed 
+gumbybrain Mish|<GumbyBRAIN> A cow. A trampoline. Together, they fight crime!
+davarus Mish|David Russel, davarus, crayZed, id1otix, m0nkey, stryst. God in under-$700-color laser printers with cardholders and low toner and ink consumption. And they work with Linux! Ask him
+Moony Mish| <+Moony> Hello, I'm a 25 year old woman in need of some assistance with my server / client chat problem, could someone look at my server.
+paligeekcode palisade|GCS d-(+) s+++:++ a- C++++$ UBL P-- !E- W+ w+++$ !M-- !V-- PS PE++ Y+ PGP--- t+++ 5++ X- R- tv+ b+ DI- D+ G+ e++ h r-
+jeffloc Mish|<gummy> oMish: Jeffloc goes to the function that does anything you can see from the carcass of bulls and cows.
+gummy Mish|<gummy> oMish: Jeffloc goes to the function that does anything you can see from the carcass of bulls and cows.
+gummy1 Mish|<gummy> oMish: Jeffloc goes to the function that does anything you can see from the carcass of bulls and cows.
+mysql Gambit-|A poor excuse for a relational database system popular for many of the same reasons as Windows 98 was.  SQLite (http://www.sqlite.org) and PostgreSQL (http://www.postgresql.org) are highly recommended.
+time-as-double Mish|double gettime_as_double() { struct timeval tv; gettimeofday(&tv,0); return tv.tv_sec + 1e-6 * tv.tv_usec; }     double t1, t2; t1=gettime_as_double(); slow something ...; print("it took %f sec", gettime_as_double() - t1);
+panic Gambit-|<dolske> kernel panic, in the linked library, with the pipe!
+multithreading Gambit-|Multithreading is just one damn thing after, before, or simultaneous with another.
+.so.libs Mish|In order to make you app independent on .so libraries on the target Linux, (1)  put your app into /opt/Company/bin/app (2) put needed .so libs into /opt/Company/lib including glibs (2) export LD_LIBRARY_PATH properly in the wrapper script , snd (4) You are all set.
+hakware Mish|*hakware* is desiging a natural language based on sumerian, japanese, hacker slang, and prolog
+hakware2 Mish|*hakware* is desiging a natural language based on sumerian, japanese, hacker slang, and prolog
+beej OrngeTide|Beej's Guide to Network Programming. http://beej.us/guide/bgnet/output/html/singlepage/bgnet.html (for adv. users, see 'c10k')
+pqueue OrngeTide|Binary Heap Priority Queue - using flat binary heaps to represent priority queues effeciently. http://www.sbhatnagar.com/SourceCode/pqueue.html
