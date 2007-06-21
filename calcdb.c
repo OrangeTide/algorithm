@@ -68,6 +68,17 @@ static char CALCDB[MAXDATASIZE]; /* passed into loaddb, path/filename of the cal
 /* before 2007-06-20, calc owner was single nick */
 /* after  2007-06-20, calc owner is comma-seapaated list of nicks (chcalc adds to the list) */
 
+/* fix_owner(). '|' in nickname is valid, but would break calcdb format.
+ */
+
+void fix_owner(char *owners)
+{
+	int k;
+	for(k = 0; owners[k]; k++)
+		if( owners[k] == '|')
+			owners[k] = '-';
+}
+
 int getowners( int dbindex, char *owners, int max )
 {
 	char calcname[MAXDATASIZE];
@@ -81,6 +92,7 @@ int getowners( int dbindex, char *owners, int max )
 	k = chop( *(calc + dbindex), calcowners, k, '|' );
 	strncpy(owners, calcowners, max);
 	owners[max-1] = 0;
+	fix_owner(owners);
 
 	return 0;
 }
@@ -295,6 +307,7 @@ void chcalc( char *pass, char *name, char *calcname, char *newcalcdata )
 	    /* Indeed, that's how loaddb() and mkcalc() allocate the lines. */
 	    /* If loaddb() and mkcalc() allocated at actual size, we'd need to realoc here */
 
+	fix_owner(owners);
 	snprintf( *(calc + x), MAXDATASIZE, "%s %s|%s", calcname, owners, newcalcdata );
 	snprintf( sndmsg, MAXDATASIZE, "PRIVMSG %s :calc %s changed.", MSGTO, calcname );
 	send_irc_message( sndmsg );
@@ -337,6 +350,7 @@ void mkcalc( char *pass, char *name, char *newcalc, char *newcalcdata )
 	*(calc + total_calcs) = calloc( sizeof( char * ), MAXDATASIZE );
 	if( !(*(calc + total_calcs)) ) return;
 
+	fix_owner(name);
 	snprintf( *(calc + total_calcs), MAXDATASIZE, "%s %s|%s", newcalc, name, newcalcdata );
 	snprintf( sndmsg, MAXDATASIZE, "PRIVMSG %s :calc %s added.", MSGTO, newcalc );
 	send_irc_message( sndmsg );
