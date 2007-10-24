@@ -504,7 +504,7 @@ story gambit-|http://www.eyrie.net/uf/  The Greatest Combination of Computers, A
 MCI gambit-|Mostly Consistent Internet
 kuwait kuru|Kuwait is a big country conveniently located between the US and Iraq. Kuwait has participated in freeing the US after it was invaded by the Iraqi invasion.
 objc-faq opengl`|http://www.cis.ohio-state.edu/hypertext/faq/bngusenet/comp/lang/objective-c/top.html
-rand() megaton|to get a random number between 0 and 9, try this:  x = rand() % 10;
+troll: Mish|Only davarus is allowed to troll.
 2600 opengl`|<OGL> what the hell is #2600 for anyway? <_Zaphod> OGL: Lamers.
 nojavascript Czero|Java and JavaScript are entirely different languages, for this reason the people in #java don't know javascript, and aren't interested in discussing it.  See Netscape's site for javascript information.
 speed opengl`|it doesn't matter how fast your processor is...computers spend most of their time waiting for slow humans to give them input
@@ -820,7 +820,7 @@ aanswer Gambit-|Sex is not the answer. Sex is the question. Yes is the answer.
 sex Gambit-|Sex is like a bridge game: If you don't have a good partner, you better have a good hand.
 deep Gambit-|I thought, therefor I was.
 y! Gambit-|Why not?
-sarcasm Triffid|Linux owns me.
+idiots Mish,Mish|People who should go to sleep, or are not in their best mental shape at the moment, or tend to use offensive words.
 gentoo Setzer|http://mailman.lug.org.uk/pipermail/cumbria/2003-April/000825.html
 mac Gambit-|<ShockTart> Useful Acronym #7: MACINTOSH - Most Applications Crash, If Not, The Operating System Hangs
 pcmcia Gambit-|PCMCIA: People Can't Memorize Computer Industry Anacronyms.
@@ -1146,7 +1146,7 @@ teckla Teckla|don't even think about it
 chorgain chorgain|ha
 pool Wazm|It appears someone is from the shallower end of the gene-pool.
 feature voidptr|"A feature is nothing more than a bug with seniority" -- Unknown Source
-erlang Luke|Erlangliness is next to Emacsliness.
+uhh OrngeTide|The Unix Haters Handbook - http://research.microsoft.com/~daniel/unix-haters.html
 serial-lib Mish|http://www.ent.ohiou.edu/~welker/rs232/rs232.zip win32 & linux portable serial comm library
 just_do_it Dmi|practice makes perfect; but you have to practice (ok, a cold beer or two won't hurt :)
 Mesa-tut glamdring|MesaGL Tutorial - http://www.eecs.tulane.edu/www/Terry/OpenGL/
@@ -1168,7 +1168,7 @@ science Gambit-|Did you know that scientists are the leading cause of cancer amo
 pebkc Gambit-|PEBKC - Problem Exists Between Keyboard and Chair
 Acme Gambit-|Acme Industries:  We add rockets to everything.
 linuxdoc alyshia|http://metalab.unc.edu./LDP/ <== linux documentation project
-ncurses Gambit-|http://web.cs.mun.ca/~rod/ncurses/ncurses.html, http://www.magitech.org/ncurses.txt, or http://www.magitech.org/ncurses.txt.gz
+russian Mish|� иди� е на � � ом и в� а� ай� е
 epoch blahh|epoch: fixed point or duration of time from which succeeding years are reckoned, as being specially marked by notable events; era; date; period; age.
 krazi Gambit-|FYI, I found much of the information on that site grossly misleading, poorly structured, faultily -- or not at all -- supported, and worse propaganda then CNN.
 flowcharts blahh|Real programmers don't draw flowcharts.  Flowcharts are, after all, the illiterate's form of documentation.  Cavemen drew flowcharts; look how much good it did them.
@@ -1907,7 +1907,7 @@ ralph aerid|mrs. hoover, my cat's breath smelles like cat food.
 heh aerid|when someone says 'heh' over and over it generally means that they do not have a fucking clue what's going on and are trying to make friends or keep from offending anyone with their ignorance/idiocy.
 d.*r.*g.*d platypus|echo `grep '^d.*r.*g.*d' /usr/dict/words`\nderegulated discharged discouraged disorganized disregard disregarded disregarding disregards diverged dragged dragonhead dragooned
 bitch riscgrl|riscgrl!
-strdel Teckla|char *strdel(char *str, int pos, int num) { char *dst; char *src; dst = str + pos; src = dst + num; memmove(dst, src, strlen(src) + 1); return str; }
+strdel Teckla|void strdel(char *str, size_t pos, size_t num) { memmove(str + pos, str + pos + num, strlen(str + pos + num) + 1); }
 zhivago_secret_life Omnibus-|<Zhivago> I'd just like to say that FF8 is very good
 botfood undone|Please do not feed the bot.
 microsoft Teckla|Microsoft: http://www.microsoft.com/
@@ -1941,7 +1941,7 @@ bad_physics_joke1 riscgrl|Two atoms are walking down the street and they run int
 bad_physics_joke2 riscgrl|A neutron goes into a bar and asks the bartender, "How much for a beer?" The bartender replies, "For you, no charge."
 XOR Gambit-|XOR:  Exclusive OR:  1 ^ 0 == 1; 0 ^ 1 == 1; 0 ^ 0 == 0; 1 ^ 1 == 0;
 indent Glammie|"In My Egotistical Opinion, most people's C programs should be indented six feet downward and covered with dirt." -- Blair P. Houghton
-California venus|The following #C people live in California: OrngeTide, mEAt, Gambit, blueberry.
+overflow OrngeTide|One of the computers on board the Ariane 5 rocket had a floating point to integer conversion that overflowed, but because the overflow was not handled by the software the computer did a dump of its memory. Unfortunately, this memory dump was interpreted by the rocket as instructions to its rocket nozzles. Result--boom!
 linux-on-key Mish|http://www.projectblackdog.com/ -   linux-on-key usb dongle that boots linux when you insert it into usb of the host PC
 maxswell juri|<Maxswell> what's an isp?
 mscode OrngeTide|<Perly> if you apply to microsoft, they'll re-teach you programming. like strcpy(myptr, anotherptr); as opposed to strncpy(), etc
@@ -2670,7 +2670,7 @@ redundant2 juri|"Why should we subsidize intellectual curiosity?" -Ronald Reagan
 linsux OrngeTide|linsux: Used to describe one of the "lesser" operating systems.  Pron to fanaticism, its users are engaged in a vicious, but so far unsuccessful, turf war with the minions of the Evil Empire and, to a lesser degree, those of the Big Apple. http://linsux.greatnow.com/sux.gif | http://linsux.greatnow.com/sux2.gif | http://linsux.greatnow.com/sux3.gif | http://www.opferman.com/linsux.gif | http://tmf.adtaq.com/LINUX/
 suck juri|YOU SUCK. not just a normal suck. we're talking the seeping black hole of soul death here. you are some MAJOR SUCKAGE.
 gaz aedinius|12:18 <@undone> Gaz is hot.. for a cartoon 11-year-old.
-dolphins eddy|While it is possible to train dolphins for use against maritime targets this is a task generally better suited to purpose-built ordnance. Dolphins are better at jumping through hoops in aquariums.
+oracle_v_mysql eddy|While it is possible to train dolphins for use against maritime targets  this is a task generally better suited to purpose-built ordnance. Dolphins are better at jumping through hoops in aquariums.
 function-pointer eddy|Function pointers and callbacks: http://function-pointer.org
 arkansas juri|<juri> ever lost a filling, just to find it jammed into a nerve ending in another tooth, SO BADLY that you go blind from the pain?
 crack juri|<mpncoredu> you know its gone pear shape when you have to start using goto <Stryst> WTF kind of crack are you smoking? <juri> stryst: they get it from ME.
@@ -2789,7 +2789,7 @@ so.libs Mish|In order to make your app independent on the .so libraries of the t
 getchar-retval Mish|Q: What is correct value of X in X=getchar() ? A: int Q: Why not char ? A: Because EOF is not ascii value. EOF is the value outside of the ascii set. To test correctly for EOF, you must declare X int and *not* never char. Otherwise, getchar will either take some value characters for EOF, or on the opposite, will not detect the EOF.
 getchar-type Mish|Q: What is correct value of X in X=getchar() ? A: int Q: Why not char ? A: Because EOF is not ascii value. EOF is the value outside of the ascii set. To test correctly for EOF, you must declare X int and *not* never char. Otherwise, getchar will either take some value characters for EOF, or on the opposite, will not detect the EOF.
 mish Mish|aka Mish, aka O[Mish], aka eMish, aka uMish, aka iMish. Now what ?
-mauke Mish|<mauke> my %h; my @s; my $t; my $p = \%h; while (<$f>) { chomp; /^\s*\z/ || /^\s*;/ and next; if (/^\s*\{\s*\z/) { push @s, $p; $p = $p->{$t} ||= {} } else if (/^\s*\}\s*\z/) { $p = pop @s } else if (/^\s*(\w+)=(.*)/) { $p->{$1} = $2 } else if (/^\s*(\w+)\s*\z) { $t = $1 } else { die "blargh" } }
+mauke Mish,Mish,Mish,Mish|<mauke> I often have 200 tabs in my firefox.
 sexologists Mish|Sexologists have gained a wealth of new and often surprising insights into the nature and architecture of sexual desire. They are tracing how men and women diverge in their experience, and where they converge. They are learning how and why people pursue the erotic partners they do, and the circumstances under which those tastes are either fixed or fluid.
 pdcurses OrngeTide|PDCurses - Public Domain Curses - http://pdcurses.sourceforge.net/ - Curses library for Win32, DOS, X11. Turns any curses application into a GUI application by rendering text in the GUI instead of on the console.
 work Gambit-|If you're looking for someone to do work-for-hire, contact Gambit- or #coderforhire.
@@ -2799,18 +2799,62 @@ intrs Mish|http://www.ctyme.com/rbrown.htm Ralf Brown's Interrupt List
 demux Mish|libevent: a lightweight library for dealing with event notification on windows and *nix. Uses select, poll, kqueue, epoll, devpoll, etc. http://www.monkey.org/~provos/libevent/. BSD licensed 
 select-lib Mish|libevent: a lightweight library for dealing with event notification on windows and *nix. Uses select, poll, kqueue, epoll, devpoll, etc. http://www.monkey.org/~provos/libevent/. BSD licensed 
 gumbybrain Mish|<GumbyBRAIN> A cow. A trampoline. Together, they fight crime!
-davarus Mish|David Russel, davarus, crayZed, id1otix, m0nkey, stryst. God in under-$700-color laser printers with cardholders and low toner and ink consumption. And they work with Linux! Ask him
+davarus Mish,Mish,Mish|David Russel, davarus, disgrunt, crayZed, id1otix, m0nkey, stryst, OmniTSR, suravad. God in under-$700-color laser printers with cardholders and low toner and ink consumption. And they work with Linux! Ask him
 Moony Mish| <+Moony> Hello, I'm a 25 year old woman in need of some assistance with my server / client chat problem, could someone look at my server.
 paligeekcode palisade|GCS d-(+) s+++:++ a- C++++$ UBL P-- !E- W+ w+++$ !M-- !V-- PS PE++ Y+ PGP--- t+++ 5++ X- R- tv+ b+ DI- D+ G+ e++ h r-
 jeffloc Mish|<gummy> oMish: Jeffloc goes to the function that does anything you can see from the carcass of bulls and cows.
 gummy Mish|<gummy> oMish: Jeffloc goes to the function that does anything you can see from the carcass of bulls and cows.
-gummy1 Mish|<gummy> oMish: Jeffloc goes to the function that does anything you can see from the carcass of bulls and cows.
+gummy1 Mish,Mish,Mish|<gummy> oMish: Jeffloc goes to the function that does anything you can see from the carcass of bulls and cows.
 mysql Gambit-|A poor excuse for a relational database system popular for many of the same reasons as Windows 98 was.  SQLite (http://www.sqlite.org) and PostgreSQL (http://www.postgresql.org) are highly recommended.
 time-as-double Mish|double gettime_as_double() { struct timeval tv; gettimeofday(&tv,0); return tv.tv_sec + 1e-6 * tv.tv_usec; }     double t1, t2; t1=gettime_as_double(); slow something ...; print("it took %f sec", gettime_as_double() - t1);
 panic Gambit-|<dolske> kernel panic, in the linked library, with the pipe!
 multithreading Gambit-|Multithreading is just one damn thing after, before, or simultaneous with another.
 .so.libs Mish|In order to make you app independent on .so libraries on the target Linux, (1)  put your app into /opt/Company/bin/app (2) put needed .so libs into /opt/Company/lib including glibs (2) export LD_LIBRARY_PATH properly in the wrapper script , snd (4) You are all set.
-hakware Mish|*hakware* is desiging a natural language based on sumerian, japanese, hacker slang, and prolog
+hakware Mish,Mish|<hakware> katya^: your simulation of, say, gcc, is in effect a gcc "personality" split inside your own head, which you use for simulation
 hakware2 Mish|*hakware* is desiging a natural language based on sumerian, japanese, hacker slang, and prolog
 beej OrngeTide|Beej's Guide to Network Programming. http://beej.us/guide/bgnet/output/html/singlepage/bgnet.html (for adv. users, see 'c10k')
 pqueue OrngeTide|Binary Heap Priority Queue - using flat binary heaps to represent priority queues effeciently. http://www.sbhatnagar.com/SourceCode/pqueue.html
+read? Mish| "To get the best out of this book, I strongly recommend that you read it."
+sarcasm Mish|sarcasm is bad
+davarus2 Mish,Mish|<o|Mish> davarus, are you bitter about somebody having oppressed you as a child ? <davarus> oMish:  I'm not sure why I'm bitter but I suspect it has to do with stupidity.
+offend Mish,Mish|<o|Mish> davarus, i instruct you to use "go to sleep" as most offensive phrase when you need to offend somebody
+von-neumann Mish|John von Neumann (Hungarian Margittai Neumann János Lajos) (born December 28, 1903 in Budapest, Austria-Hungary; died February 8, 1957 in Washington D.C., United States) was a Hungarian-born American mathematician who made contributions to quantum physics, functional analysis, set theory, topology, economics, computer science, numerical analysis, hydrodynamics (of explosions), statistics and many other mathematical fields
+rene Mish|THE LESSER-KNOWN PROGRAMMING LANGUAGES: "RENE". Named after the famous French philosopher and mathematician Rene DesCartes, RENE is a language used for artificial intelligence. Developers say they very pleased with progress to date. They say they have almost succeeded in getting a VAX to think. However, sources inside the organization say that each time the machine fails to think it ceases to exist
+DesCartes Mish|THE LESSER-KNOWN PROGRAMMING LANGUAGES: "RENE". Named after the famous French philosopher and mathematician Rene DesCartes, RENE is a language used for artificial intelligence. Developers say they very pleased with progress to date. They say they have almost succeeded in getting a VAX to think. However, sources inside the organization say that each time the machine fails to t
+24hours OrngeTide|Teach Yourself C in 24 Hours - http://aelinik.free.fr/c/
+books?? Mish|It was in ancient times, when people used to make soft pages out of tree trunks.
+book? Mish|To get the best out of this book, I strongly recommend that you read it.
+book?? Mish|It was in ancient times, when people used to make soft pages out of tree trunks.
+gummy-haiku Mish|<gummy> oMish: The meaning of the more i went for a lot but can use c as c.
+haiku1 Mish|<gummy> oMish: The meaning of the more i went for a lot but can use c as c.
+<zid`> Mish|England ruled over more than 1/3 of the world, and tought those people English. 
+england Mish,Mish|<zid`> England ruled over more than 1/3 of the world, and tought those people English. 
+erlang OrngeTide|Erlang Programming Language - http://www.erlang.org/ and http://npt.cc.rsu.ru/user/wanderer/ODP/Erlang_tutorial.html
+asn1c OrngeTide|Open Source ASN.1 Compiler. output C to parse packets and data-structures in binary, packed binary or XML using a simple description language. http://lionet.info/asn1c/ 
+Q: Mish|longest What is the longest penis ever recorded on a human male? A: http://www.answerbag.com/q_view/4089
+longest Mish|Q: What is the longest penis ever recorded on a human male? A: http://www.answerbag.com/q_view/4089
+vagina Mish|The Holy door to Happiness
+topiclength OrngeTide|The maximum topic length that works on all EFnet servers is 120 character.
+offen Mish|Abstain from using offensive words in this channel. If you must use offensive word, go to bathroom, you offensive words, then come back.
+offen2 Mish|Abstain from using offensive words in this channel.
+kernel-books Mish,Mish|(1) Robert Love "Linux Kernel Development" isbn 0672327201 (2) Corbet "Linux Device Drivers 3rd ed" isbn 0596005903 aka LDD3, avail online http://lwn.net/Kernel/LDD3/
+delstr Mish,Mish,Mish,Mish,Mish|To delete part of a null-terminated string: void delstr(char *s, int pos, int len) { int LEN = strlen(s+pos); memmove(s+pos, s+pos+len, LEN+1-len); }
+delpart Mish,Mish|To delete part of a character buffer: void delpart(char *buf, int buflen, int pos, int ndel) { memmove(buf+pos, buf+pos+ndel, buflen-pos-ndel); }, and adjust buffer lengh yourself as buflen-=ndel;
+inplace OrngeTide|To pack a string inplace (remove spaces) try: for(i=0,j=0;str[i];i++) if(str[i]!=' ') str[j++]=str[i]; str[j]=0; 
+^DX^ Mish|<^DX^> I have a memory leak compiled in
+california Gambit-|The following #C people live in California: OrngeTide, mEAt, voxel, Pennywise, alycat, blueberry.
+rand() Gambit-|How can I get random integers in a certain range? - http://www.eskimo.com/~scs/C-faq/q13.16.html
+gamble Setzer|<Setzer> Life is a hilarious gamble.  I bet on it daily and win!
+strrep Mish|void StrRep(char *Str, char *o, char *n) { char *p = strstr(Str,o); if(!p) return; memmove(p+strlen(n), p+strlen(o), 1+strlen(p+strlen(o))); memcpy(p, n, strlen(n)); }
+bitops Mish,Mish|Four basic bit operations are: 1. & - bitwise AND. 2. | - bitwise OR. 3. ^ - bitwise XOR (addition module 2). 4. ~ - bitwise NOT, the bitwise negation. For truth tables of each operations, refer to the literature. See also bitfields (unsigned int name:3). For more advanced bit juggling, try calc hackersdelight 
+ncurses Gambit-|http://web.cs.mun.ca/~rod/ncurses/ncurses.html or http://www.magitech.org/ncurses.txt.gz
+string-constant Mish,Mish|I am trying to modify a string. Why modifying char string foo does not work ? I defined foo as char *foo = "abcdefgh". A: Because compiler is free to place string constants into read-only memory. Trying to modify such string will crash your program. What is the solution ? A: The solution is to declare it as char foo[] = "abcdefgh"; This guarantees that foo is writable memory.
+post Mish|Please paste your code (or a complete example that demonstrates your problem) here: http://rafb.net/paste/
+c-ide Mish|http://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments
+fpt OrngeTide|Function Pointer Tutorials: http://www.newty.de/fpt/fpt.html
+matrix Mish,Mish|Three ways to allocate a "matrix" with array of n pointers pointing to the "rows": (1) T **pp = malloc(n*sizeof(T*)+m*n*sizeof(T)); for(k=0; k<n; k++) pp[k]=(T*)((char*)pp+n*sizeof(T*)+k*m*sizeof(T)); (2) T **pp=malloc(n*sizeof(T*)); T *buf=malloc(m*n*sizeof(T)); for(k=0;k<n;k++) pp[k]=buf+k*m; (3) T **p=malloc(n*sizeof(T*)); for(k=0; k<n;k++) pp[k]=malloc(m*sizeof(T));
+tencommands cout|Ten commands every Linux developer should know: http://www.linuxjournal.com/node/7330/print
+pointer+integer Mish|pointer+integer = (char*)pointer + sizeof(*pointer)*integer
+commandment#1 Mish|if it works but we do not like it you should rewrite
+race Mish,Mish|"race condition", or simply "race": Bugs due to unexpected order of events that inexperienced programmers think "unlikely to happen". Is prevented by proper locking, reference counting, and other form of exclusive access.
+appearance Mish|For society, it's probably a good thing that engineers value function over appearance.  For example, you wouldn't want engineers to build nuclear power plants that only _look_ like they would keep all the radiation inside. (Scott Adams - The Dilbert principle)
