@@ -106,7 +106,7 @@ int is_owner( char *calc_owners, char *qowner)
 
 	snprintf(enclosed_owners, MAXDATASIZE, ",%s,", calc_owners);
 	snprintf(enclosed_query, MAXDATASIZE, ",%s,", qowner);
-	return 0 == strcasestr( enclosed_owners, enclosed_query);
+	return strcasestr( enclosed_owners, enclosed_query) != NULL;
 }
 
 
