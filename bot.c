@@ -60,6 +60,7 @@
 #include "wcalc.h"
 #include "rpn.h"
 #include "rc.h"
+#include <ctype.h>
 
 
 /* yeah, i know that globals are considered evil. byte me. */
@@ -218,8 +219,9 @@ int process_in( void )
 void parse_incoming( char *ptr )
 {
 	int position = 0;
+	int boot;
 
-	clean_message( ptr );
+	boot = clean_message( ptr );
 
 	if( ptr[0] == 'P' ) {  /* this is will catch server PINGs */
 		reply_ping( ptr );
@@ -257,6 +259,16 @@ void parse_incoming( char *ptr )
 	/* console output with simple formatting */
 	if( !strncasecmp( cur_msg.msgtype, "PRIVMSG", MAXDATASIZE ) ) printf( "|%s|  %s: %s\n", cur_msg.msgto, cur_msg.nick, cur_msg.fulltext );
 	else puts( ptr );
+
+	/* color and attribute boot */
+	if (boot && strncmp(cur_msg.msgto, BOTNAME, MAXDATASIZE) && strncmp(cur_msg.nick, BOTNAME, MAXDATASIZE)) {
+		char buffer[MAXDATASIZE];
+		snprintf(buffer, MAXDATASIZE, "kick %s %s :%s",
+			cur_msg.msgto, cur_msg.nick,
+			"No color or text attributes allowed.");
+		send_irc_message(buffer);
+	}
+
 	make_a_decision();
 	return;
 }
@@ -269,9 +281,9 @@ void parse_incoming( char *ptr )
 
 void make_a_decision( void )
 {
-
 	/* don't let it talk to itself, so make sure this is first in the list. */
 	if( !strncasecmp( BOTNAME, cur_msg.nick, MAXDATASIZE ) ) return;
+
 
 	/* this sets msgto to the msg sender's nick if it was a privmsg to the bot itself.*/
 	/* otherwise it makes it possible to talk to the channel that sent the message. */
@@ -697,18 +709,21 @@ void rawirc( void )
  * i really like pointer arithmetic, i apologise to those who find this unreadable.
  */
 
-void clean_message( char *msg )
+int clean_message( char *msg )
 {
 	register int x;
+	register int boot = 0;
 	for( x = 0; x < strlen(msg); x++ ) {
 		if( *(msg+x) == 1 ) continue;
 		if( !isprint( *(msg+x) ) ) {
 			if( *(msg+x) == '\r' ) { *(msg+x) = '\0'; continue; }
 			if( *(msg+x) == '\n' ) { *(msg+x) = '\0'; continue; }
+			if (isascii(*(msg+x)) && iscntrl(*(msg+x)))
+				boot = 1;
 			*(msg+x) = ' ';
 		  }
 	  }
-	return;
+	return boot;
 }
 
 

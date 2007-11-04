@@ -79,7 +79,7 @@ int irc_connect( void );
 int load_cfg( void );
 int main(int argc, char *argv[]);
 void do_ctcp( void );
-void clean_message( char *msg );
+int clean_message( char *msg );
 int prep( void );
 int dcalc_stub( void );
 int wcalc_stub( void );
