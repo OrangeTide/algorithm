@@ -226,7 +226,7 @@ void parse_incoming( char *ptr )
 	if( ptr[0] == 'P' ) {  /* this is will catch server PINGs */
 		reply_ping( ptr );
 		return;				  /* no need to continue parsing */
-	  }
+	}
 
 	memset( &cur_msg, 0, sizeof(cur_msg) );  /* clear the buffer... i want a safe default */
 
@@ -254,7 +254,7 @@ void parse_incoming( char *ptr )
 		if( *(ptr + position) != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg7, position, ' ' );
 		if( *(ptr + position) != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg8, position, ' ' );
 		if( *(ptr + position) != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg9, position, ' ' );
-	  }
+	}
 
 	/* console output with simple formatting */
 	if( !strncasecmp( cur_msg.msgtype, "PRIVMSG", MAXDATASIZE ) ) printf( "|%s|  %s: %s\n", cur_msg.msgto, cur_msg.nick, cur_msg.fulltext );
@@ -328,7 +328,7 @@ void make_a_decision( void )
 		  if( !strncasecmp( "searchcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { searchcalc_stub(); return; }
 		default:
 		  break;
-	  }
+	}
 
 	return;
 }
@@ -571,77 +571,77 @@ void help( void )
 		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, COMMANDS );
 		send_irc_message( tmpray );
 		return;
-	  }
+	}
 	if( !strncasecmp( cur_msg.msgarg2, "syntax", MAXDATASIZE ) ) {
 		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, SYNTAX );
 		send_irc_message( tmpray );
 		return;
-	  }
+	}
 	if( !strncasecmp( cur_msg.msgarg2, "adduser", MAXDATASIZE ) ) {
 		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, ADDUSER );
 		send_irc_message( tmpray );
 		return;
-	  }
+	}
 	if( !strncasecmp( cur_msg.msgarg2, "rmuser", MAXDATASIZE ) ) {
 		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, RMUSER );
 		send_irc_message( tmpray );
 		return;
-	  }
+	}
 	if( !strncasecmp( cur_msg.msgarg2, "op", MAXDATASIZE ) ) {
 		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, OP );
 		send_irc_message( tmpray );
 		return;
-	  }
+	}
 	if( !strncasecmp( cur_msg.msgarg2, "chpass", MAXDATASIZE ) ) {
 		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, CHPASS );
 		send_irc_message( tmpray );
 		return;
-	  }
+	}
 	if( !strncasecmp( cur_msg.msgarg2, "rmcalc", MAXDATASIZE ) ) {
 		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, RMCALC );
 		send_irc_message( tmpray );
 		return;
-	  }
+	}
 	if( !strncasecmp( cur_msg.msgarg2, "owncalc", MAXDATASIZE ) ) {
 		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, OWNCALC );
 		send_irc_message( tmpray );
 		return;
-	  }
+	}
 	if( !strncasecmp( cur_msg.msgarg2, "mkcalc", MAXDATASIZE ) ) {
 		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, MKCALC );
 		send_irc_message( tmpray );
 		return;
-	  }
+	}
 	if( !strncasecmp( cur_msg.msgarg2, "chcalc", MAXDATASIZE ) ) {
 		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, CHCALC );
 		send_irc_message( tmpray );
 		return;
-	  }
+	}
 	if( !strncasecmp( cur_msg.msgarg2, "rawirc", MAXDATASIZE ) ) {
 		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, RAWIRC );
 		send_irc_message( tmpray );
 		return;
-	  }
+	}
 	if( !strncasecmp( cur_msg.msgarg2, "whois", MAXDATASIZE ) ) {
 		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, WHOIS );
 		send_irc_message( tmpray );
 		return;
-	  }
+	}
 	if( !strncasecmp( cur_msg.msgarg2, "listcalc", MAXDATASIZE ) ) {
 		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, LISTCALC );
 		send_irc_message( tmpray );
 		return;
-	  }
+	}
 	if( !strncasecmp( cur_msg.msgarg2, "searchcalc", MAXDATASIZE ) ) {
 		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, SEARCHCALC );
 		send_irc_message( tmpray );
 		return;
-	  }
+	}
 	if( !strncasecmp( cur_msg.msgarg2, "chattr", MAXDATASIZE ) ) {
 		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, CHATTR );
 		send_irc_message( tmpray );
 		return;
-	  }
+	}
 
 
 	snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, HELPHELP );
@@ -669,7 +669,7 @@ void do_ctcp( void )
 		default:
 		  snprintf( ray, MAXDATASIZE, "NOTICE %s :%s\001", cur_msg.nick, cur_msg.msgarg1 );
 		  break;
-	  }
+	}
 
 	send_irc_message( ray );
 	return;
@@ -718,11 +718,13 @@ int clean_message( char *msg )
 		if( !isprint( *(msg+x) ) ) {
 			if( *(msg+x) == '\r' ) { *(msg+x) = '\0'; continue; }
 			if( *(msg+x) == '\n' ) { *(msg+x) = '\0'; continue; }
-			if (isascii(*(msg+x)) && iscntrl(*(msg+x)))
-				boot = 1;
-			*(msg+x) = ' ';
-		  }
-	  }
+			if( !isspace( *(msg+x) ) ) {
+				if (isascii(*(msg+x)) && iscntrl(*(msg+x)))
+					boot = 1;
+				*(msg+x) = ' ';
+			}
+		}
+	}
 	return boot;
 }
 
@@ -878,7 +880,7 @@ int irc_connect( void )
 			return 1;
 		 }
 		if( strstr( ray, "Nickname is already in use" ) ) { close( sockfd ); return 1; }
-	  }
+	}
 
 	memset( ray, '\0', sizeof(ray) );
 	snprintf( ray, MAXDATASIZE, "mode %s +i", BOTNAME );
@@ -990,7 +992,7 @@ int main(int argc, char *argv[])
 	if( prep() ) {
 		puts( "preparations failed. do you have a bot.cfg, calcdb.data, and user.list file?" );
 		return 10;
-	  }
+	}
 
 	for( ;; ) {
 		printf( "\n\nattempting to connect to %s, please wait...\n\n", SERVER );
@@ -999,11 +1001,11 @@ int main(int argc, char *argv[])
 		if( x ) {
 			puts("hm. i could not connect dude.");
 			continue;
-		  }
+		}
 		main_loop();
 		close( sockfd );
 		puts( "disconnected... retrying" );
-	  }
+	}
 }
 
 
