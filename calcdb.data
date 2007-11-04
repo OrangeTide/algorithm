@@ -1168,7 +1168,7 @@ science Gambit-|Did you know that scientists are the leading cause of cancer amo
 pebkc Gambit-|PEBKC - Problem Exists Between Keyboard and Chair
 Acme Gambit-|Acme Industries:  We add rockets to everything.
 linuxdoc alyshia|http://metalab.unc.edu./LDP/ <== linux documentation project
-russian Mish|Ñ Ð¸Ð´Ð¸Ñ Ðµ Ð½Ð° Ñ Ñ Ð¾Ð¼ Ð¸ Ð²Ñ Ð°Ñ Ð°Ð¹Ñ Ðµ
+russian Mish|                                              
 epoch blahh|epoch: fixed point or duration of time from which succeeding years are reckoned, as being specially marked by notable events; era; date; period; age.
 krazi Gambit-|FYI, I found much of the information on that site grossly misleading, poorly structured, faultily -- or not at all -- supported, and worse propaganda then CNN.
 flowcharts blahh|Real programmers don't draw flowcharts.  Flowcharts are, after all, the illiterate's form of documentation.  Cavemen drew flowcharts; look how much good it did them.
@@ -2363,7 +2363,7 @@ kthxl8r Pennywise|This is NOT #TextMessengerSpeak. Speak like an adult, not a mo
 memwatch Setzer|A memory debugger thingy: http://www.gnu.org/directory/devel/debug/memwatch.html
 support CyrixLord| Welcome to #C technical support. Before we get started please type your account name and password so that we can further assist you
 tempest Setzer|some spy vs spy thing: http://www.eskimo.com/~joelm/tempest.html
-sorry CyrixLord|Being sorry is not the same as appologizing: sor·ry adj. 1.Worthless or inferior; paltry: 2. Causing sorrow, grief, or misfortune; grievous while appologize is a·pol·o·gize intr.v.  : To make excuse for or regretful acknowledgment of a fault or offense.
+sorry CyrixLord|Being sorry is not the same as appologizing: sor ry adj. 1.Worthless or inferior; paltry: 2. Causing sorrow, grief, or misfortune; grievous while appologize is a pol o gize intr.v.  : To make excuse for or regretful acknowledgment of a fault or offense.
 pthreads2 Setzer|http://www.humanfactor.com/pthreads
 rand CyrixLord| rand = to get random numbers from A to B [A,B). A+(int)((rand()/(RAND_MAX+1.0))*(B - A))
 accu cout|The ACCU (Association of C and C++ Users; http://www.accu.org/) has lots of good reviews for programming books.
@@ -2442,7 +2442,7 @@ rtfm Triffix|RTFM stands for: Read The Fucking Manual. You can find a fucking ma
 ping Teckla|http://www.nataliedee.com/071405/ping.jpg
 schildt Setzer|Herbert Schildt has a knack for clear, readable text, describing a language subtly but quite definitely different from C." http://www.lysator.liu.se/c/schildt.html
 social Triffix|<zerog_> I only give names and emails to porno sites and even then, not mine
-cv noss|Curriculum Vitæ, n00b.
+cv noss|Curriculum Vit , n00b.
 sms noss|Text messages (70 bytes max, yielding at most 160 chars with the GSM codepage) between GSM terminals. (Short Messaging Service)
 aedi aedinius|amy not found
 vim Teckla|http://www.vim.org/
@@ -2818,7 +2818,7 @@ read? Mish| "To get the best out of this book, I strongly recommend that you rea
 sarcasm Mish|sarcasm is bad
 davarus2 Mish,Mish|<o|Mish> davarus, are you bitter about somebody having oppressed you as a child ? <davarus> oMish:  I'm not sure why I'm bitter but I suspect it has to do with stupidity.
 offend Mish,Mish|<o|Mish> davarus, i instruct you to use "go to sleep" as most offensive phrase when you need to offend somebody
-von-neumann Mish|John von Neumann (Hungarian Margittai Neumann JÃ¡nos Lajos) (born December 28, 1903 in Budapest, Austria-Hungary; died February 8, 1957 in Washington D.C., United States) was a Hungarian-born American mathematician who made contributions to quantum physics, functional analysis, set theory, topology, economics, computer science, numerical analysis, hydrodynamics (of explosions), statistics and many other mathematical fields
+von-neumann Mish|John von Neumann (Hungarian Margittai Neumann J  nos Lajos) (born December 28, 1903 in Budapest, Austria-Hungary; died February 8, 1957 in Washington D.C., United States) was a Hungarian-born American mathematician who made contributions to quantum physics, functional analysis, set theory, topology, economics, computer science, numerical analysis, hydrodynamics (of explosions), statistics and many other mathematical fields
 rene Mish|THE LESSER-KNOWN PROGRAMMING LANGUAGES: "RENE". Named after the famous French philosopher and mathematician Rene DesCartes, RENE is a language used for artificial intelligence. Developers say they very pleased with progress to date. They say they have almost succeeded in getting a VAX to think. However, sources inside the organization say that each time the machine fails to think it ceases to exist
 DesCartes Mish|THE LESSER-KNOWN PROGRAMMING LANGUAGES: "RENE". Named after the famous French philosopher and mathematician Rene DesCartes, RENE is a language used for artificial intelligence. Developers say they very pleased with progress to date. They say they have almost succeeded in getting a VAX to think. However, sources inside the organization say that each time the machine fails to t
 24hours OrngeTide|Teach Yourself C in 24 Hours - http://aelinik.free.fr/c/
@@ -2858,3 +2858,4 @@ pointer+integer Mish|pointer+integer = (char*)pointer + sizeof(*pointer)*integer
 commandment#1 Mish|if it works but we do not like it you should rewrite
 race Mish,Mish|"race condition", or simply "race": Bugs due to unexpected order of events that inexperienced programmers think "unlikely to happen". Is prevented by proper locking, reference counting, and other form of exclusive access.
 appearance Mish|For society, it's probably a good thing that engineers value function over appearance.  For example, you wouldn't want engineers to build nuclear power plants that only _look_ like they would keep all the radiation inside. (Scott Adams - The Dilbert principle)
+hmm Mish|hmm is short form of hmmm
