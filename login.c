@@ -41,6 +41,8 @@
 /* provided by many of the people from #c/efnet. I thank all of you sincerely. */
 /* user stuff. ugh! */
 
+#include <stdlib.h>
+
 #include "login.h"
 #include "bot.h"
 
@@ -125,7 +127,7 @@ void adduser( void )
 		return;
 	  }
 
-	lag->next = (struct user *)malloc( sizeof( struct user ) );
+	lag->next = malloc( sizeof( struct user ) );
 	trv = lag->next;
 	trv->next = NULL;
 

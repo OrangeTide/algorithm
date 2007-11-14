@@ -49,6 +49,8 @@
  * flag -lcrypto in the makefile. i have to in slackware but not in openbsd.
  */
 
+#include <stdlib.h>
+
 #include "users.h"
 #include "bot.h"
 
@@ -67,7 +69,7 @@ int loadusers( char *filename )
 	fp = fopen( filename, "r" );
 	if( !fp ) return 1;
 
-	usr = (struct user *)malloc( sizeof( struct user ) );
+	usr = malloc( sizeof( struct user ) );
 	if( !usr ) return( 1 );
 	lag = trv = usr;
 
@@ -77,7 +79,7 @@ int loadusers( char *filename )
 		if( !trv->data[0] ) break;
 		++total_users;
 		lag = trv;
-		trv->next = (struct user *)malloc( sizeof( struct user ) );
+		trv->next = malloc( sizeof( struct user ) );
 		trv = trv->next;
 		if(!trv) return( 1 );
 	  }
@@ -179,7 +181,7 @@ void adduser( char *pass, char *name, char *newupass, char *newuname )
 		return;
 	  }
 
-	lag->next = (struct user *)malloc( sizeof( struct user ) );
+	lag->next = malloc( sizeof( struct user ) );
 	trv = lag->next;
 	trv->next = NULL;
 
