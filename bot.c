@@ -234,7 +234,9 @@ void parse_incoming( char *ptr )
 
 	if( *(ptr + position) != '\0' ) position = chop( ptr, cur_msg.userline, 1, ' ' );  /* 1 to skip the leading colon */
 	if( *(ptr + position) != '\0' ) position = chop( ptr, cur_msg.msgtype, position, ' ' );
-	if( *(ptr + position) != '\0' ) position = chop( ptr, cur_msg.msgto, position, ' ' );
+	if (cur_msg.msgtype[0] == 'N' && cur_msg.msgtype[1] == 'I') ++position; /*skip a colon since there is no "to", msgto holds new /nick */
+	if( *(ptr + position) != '\0' ) position = chop( ptr, cur_msg.msgto, position, ' ' ); /* holds new NICK if previous statements succeeds */
+
 	if( *(ptr + position) != '\0' ) position = chop( ptr, cur_msg.fulltext, position + 1, '\n' );  /* + 1 to skip the colon */
 
 	/*break down the host/nick type stuff */
@@ -282,7 +284,12 @@ void parse_incoming( char *ptr )
 void make_a_decision( void )
 {
 	/* don't let it talk to itself, so make sure this is first in the list. */
-	if( !strncasecmp( BOTNAME, cur_msg.nick, MAXDATASIZE ) ) return;
+	if( !strncasecmp( BOTNAME, cur_msg.nick, MAXDATASIZE ) ) {
+		if (cur_msg.msgtype[0] == 'N' && cur_msg.msgtype[1] == 'I') {
+			strncpy(BOTNAME, cur_msg.msgto, MAXDATASIZE);
+		}
+		return;
+	}
 
 
 	/* this sets msgto to the msg sender's nick if it was a privmsg to the bot itself.*/
