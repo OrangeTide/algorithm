@@ -98,6 +98,7 @@ void mkcalc_stub( void );
 void chcalc_stub( void );
 void listcalc_stub( void );
 void searchcalc_stub( void );
+void lsusers_stub( void );
 
 
 /* this is what an irc message will be broken down to */

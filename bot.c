@@ -283,7 +283,7 @@ void parse_incoming( char *ptr )
 
 void make_a_decision( void )
 {
-	/* don't let it talk to itself, so make sure this is first in the list. */
+	/* don't let it talk to itself, so make sure this is first in the list. Changes botname if bot is changing its nick*/
 	if( !strncasecmp( BOTNAME, cur_msg.nick, MAXDATASIZE ) ) {
 		if (cur_msg.msgtype[0] == 'N' && cur_msg.msgtype[1] == 'I') {
 			strncpy(BOTNAME, cur_msg.msgto, MAXDATASIZE);
@@ -325,8 +325,9 @@ void make_a_decision( void )
 		case 'm':
 		  if( !strncasecmp( "mkcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { mkcalc_stub(); return; }
 		case 'l':
-		  if( !strncasecmp( "login", cur_msg.msgarg1, MAXDATASIZE ) ) { help(); return; }
 		  if( !strncasecmp( "listcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { listcalc_stub(); return; }
+		  if( !strncasecmp( "lsusers", cur_msg.msgarg1, MAXDATASIZE ) ) { lsusers_stub(); return; }
+		  if( !strncasecmp( "login", cur_msg.msgarg1, MAXDATASIZE ) ) { help(); return; }
 		case 'x':
 		  if( !strncasecmp( "xpln", cur_msg.msgarg1, MAXDATASIZE ) ) { docalc_stub(); return; }
 		case 'd':
@@ -360,6 +361,13 @@ void send_irc_message( char *sndmsg )
 
 
 /*******************************-----begin stubs-----************************************/
+
+/* lsusers */
+void lsusers_stub()
+{
+	send_irc_message( "privmsg megaton :lsusers is being worked on" );
+	return;
+}
 
 
 /* chpass stub finished */
