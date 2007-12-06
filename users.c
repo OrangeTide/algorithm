@@ -275,9 +275,9 @@ int valid_user( char *nickname )
 			lag = trv;
 			trv = trv->next;
 			continue;
-		  }
+		}
 		return 1;
-	  }
+	}
 
 	return 0;
 }
@@ -342,7 +342,7 @@ void oppeople( char *chan, char *passwd, char *name, char *nick )
 void get_salt( char *ray )
 {
 
-	long x;
+	long x = 0;
 
 	x = 1 + (rand() % 26);
 	x += 64;
@@ -354,4 +354,44 @@ void get_salt( char *ray )
 	*(ray + 2) = '\0';
 
 	return;
+}
+
+
+/* this function just lists all of the users in the database and messages it to the person who made the query.
+ * the magic number of twelve is used because no nick can go beyond nine and I want to append some custom
+ * characters to the end of the list. Code is more complex due to minimizing the number of messages.
+ */
+
+int list_users()
+{
+	long x = 0;
+	long position = 0;
+	char checklistname[USERINFO];
+	char nickstore[MAXDATASIZE];
+	char sndmsg[MAXDATASIZE];
+
+	nickstore[0] = '\0';
+	lag = usr;
+	trv = usr->next;
+
+	while( trv ){
+		if( position >= MAXDATASIZE - 40 ) {
+			snprintf( sndmsg, MAXDATASIZE, "privmsg %s :%s==MORE==", MSGTO, nickstore );
+			send_irc_message( sndmsg );
+			nickstore[0] = '\0';
+			position = 0;
+		}
+
+		x = chop( trv->data, checklistname, 0, ' ' );
+		strncat( nickstore, checklistname, 12 );
+		strncat( nickstore, " ", 12 );
+
+		position = position + x + 1; /* +1 to account for the space being added.*/
+		lag = trv;
+		trv = trv->next;
+	}
+	snprintf( sndmsg, MAXDATASIZE, "privmsg %s :%sare known to me.", MSGTO, nickstore );
+	send_irc_message( sndmsg );
+
+	return 0;
 }
