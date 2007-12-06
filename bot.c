@@ -365,7 +365,7 @@ void send_irc_message( char *sndmsg )
 /* lsusers */
 void lsusers_stub()
 {
-	send_irc_message( "privmsg megaton :lsusers is being worked on" );
+	send_irc_message( "privmsg megaton : lsusers is being worked on" );
 	return;
 }
 
