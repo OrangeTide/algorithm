@@ -99,6 +99,7 @@ void chcalc_stub( void );
 void listcalc_stub( void );
 void searchcalc_stub( void );
 void lsusers_stub( void );
+void rot13_stub( void );
 
 
 /* this is what an irc message will be broken down to */
@@ -125,7 +126,7 @@ struct message {
 
 
 #define HELPHELP "you should /msg me help commands or help <command-name>."
-#define COMMANDS "calc, op, chpass, whois, rmcalc, mkcalc, chcalc, owncalc, searchcalc, listcalc, rmuser, adduser, rawirc. Try, help syntax or help commandname."
+#define COMMANDS "calc, op, chpass, whois, rmcalc, mkcalc, chcalc, owncalc, searchcalc, listcalc, rmuser, adduser, rawirc, lsusers, rot13. Try, help syntax or help commandname."
 #define SYNTAX "Most user commands take the form of COMMAND PASSWORD USERNAME ARGUMENT/S. The op command requires only a password if your nick is the same as your username."
 #define ADDUSER "adduser yourpass yourlogin newpass newlogin"
 #define CHPASS "chpass yourpass yourlogin newpass"
@@ -140,5 +141,7 @@ struct message {
 #define LISTCALC "listcalc username index. will print a list of calcs owned by username. index can be used to start the search at other than the beginning of the database."
 #define SEARCHCALC "searchcalc substring index. will search the calc data field for an occurrence of substring. index can be used to start the search at other than the beginning of the database."
 #define WHOIS "whois username."
+#define LSUSERS "lsusers will list all known users in as few messages as possible."
+#define ROT13 "rot13 will repeat your message in rot13. usage: rot13 this sentence will be encrypted in rot13."
 
 #endif /* !_BOT_H */

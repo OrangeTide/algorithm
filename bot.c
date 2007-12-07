@@ -322,6 +322,7 @@ void make_a_decision( void )
 		  if( !strncasecmp( "rawirc", cur_msg.msgarg1, MAXDATASIZE ) ) { rawirc(); return; }
 		  if( !strncasecmp( "rcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { rpn_stub(); return; }
 		  if( !strncasecmp( "recalc", cur_msg.msgarg1, MAXDATASIZE ) ) { chcalc_stub(); return; }
+		  if( !strncasecmp( "rot13", cur_msg.msgarg1, MAXDATASIZE ) ) { rot13_stub(); return; }
 		case 'm':
 		  if( !strncasecmp( "mkcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { mkcalc_stub(); return; }
 		case 'l':
@@ -361,6 +362,43 @@ void send_irc_message( char *sndmsg )
 
 
 /*******************************-----begin stubs-----************************************/
+
+/* convert what is said to rot13 */
+
+void rot13_stub()
+{
+	char tmpray[MAXDATASIZE];
+	char data[MAXDATASIZE];
+	char *ptr = NULL;
+	int x = 0;
+
+	ptr = cur_msg.fulltext;
+	x = chop( cur_msg.fulltext, tmpray, 0, ' ' ); /* i use chop to find out where ptr should point */
+	ptr += x; /* skip the first argument but get the rest of the sentence */
+	x = 0; /* reset to 0 so it can be used in the loop below. */
+
+	memset( tmpray, '\0', MAXDATASIZE );
+	memset( data, '\0', MAXDATASIZE );
+
+	while( *ptr != '\0' ) {
+		data[x] = *ptr;
+		if( (data[x] >= 'A') && (data[x] <= 'Z') ) {
+			if( (data[x] >= 'A') && (data[x] <= 'M') ) data[x] += 13;
+			else data[x] = 'A' + (12 - ('Z' - data[x]) );
+		}
+		if( (data[x] >= 'a') && (data[x] <= 'z') ) {
+			if( (data[x] >= 'a') && (data[x] <= 'm') ) data[x] += 13;
+			else data[x] = 'a' + (12 - ('z' - data[x]) );
+		}
+		x++, ptr++;
+	}
+
+	snprintf( tmpray, MAXDATASIZE, "privmsg %s :rotated: %s", MSGTO, data );
+	send_irc_message( tmpray );
+
+	return;
+}
+
 
 /* lsusers */
 void lsusers_stub()
@@ -654,6 +692,16 @@ void help( void )
 	}
 	if( !strncasecmp( cur_msg.msgarg2, "chattr", MAXDATASIZE ) ) {
 		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, CHATTR );
+		send_irc_message( tmpray );
+		return;
+	}
+	if( !strncasecmp( cur_msg.msgarg2, "lsusers", MAXDATASIZE ) ) {
+		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, LSUSERS );
+		send_irc_message( tmpray );
+		return;
+	}
+	if( !strncasecmp( cur_msg.msgarg2, "rot13", MAXDATASIZE ) ) {
+		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, ROT13 );
 		send_irc_message( tmpray );
 		return;
 	}
