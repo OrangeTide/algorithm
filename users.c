@@ -362,7 +362,7 @@ void get_salt( char *ray )
  * characters to the end of the list. Code is more complex due to minimizing the number of messages.
  */
 
-int list_users()
+int list_users( char *nick )
 {
 	long x = 0;
 	long position = 0;
@@ -376,7 +376,7 @@ int list_users()
 
 	while( trv ){
 		if( position >= MAXDATASIZE - 40 ) {
-			snprintf( sndmsg, MAXDATASIZE, "privmsg %s :%s==MORE==", MSGTO, nickstore );
+			snprintf( sndmsg, MAXDATASIZE, "privmsg %s :%s==MORE==", nick, nickstore );
 			send_irc_message( sndmsg );
 			nickstore[0] = '\0';
 			position = 0;
@@ -390,7 +390,7 @@ int list_users()
 		lag = trv;
 		trv = trv->next;
 	}
-	snprintf( sndmsg, MAXDATASIZE, "privmsg %s :%sare known to me.", MSGTO, nickstore );
+	snprintf( sndmsg, MAXDATASIZE, "privmsg %s :%sare known to me.", nick, nickstore );
 	send_irc_message( sndmsg );
 
 	return 0;

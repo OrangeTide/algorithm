@@ -403,7 +403,7 @@ void rot13_stub()
 /* lsusers */
 void lsusers_stub()
 {
-	list_users();
+	list_users( cur_msg.nick );
 	return;
 }
 

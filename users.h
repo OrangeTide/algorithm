@@ -75,6 +75,6 @@ void saveusers( char *filename );
 void rmuser( char *passwd, char *name, char *rmname );
 void chpass( char *passwd, char *name, char *newpass );
 void get_salt( char *ray );
-int list_users( void );
+int list_users( char *nick );
 
 #endif /* !_USERS_H */
