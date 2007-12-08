@@ -1,0 +1,446 @@
+void assert(int expression);
+C89
+%
+int isalnum(int c);
+C89
+%
+int isalpha(int c);
+C89
+%
+int iscntrl(int c);
+C89
+%
+int isdigit(int c);
+C89
+%
+int isgraph(int c);
+C89
+%
+int islower(int c);
+C89
+%
+int isprint(int c);
+C89
+%
+int ispunct(int c);
+C89
+%
+int isspace(int c);
+C89
+%
+int isupper(int c);
+C89
+%
+int isxdigit(int c);
+C89
+%
+int tolower(int c);
+C89
+%
+int toupper(int c);
+C89
+%
+char *setlocale(int category, const char *locale);
+C89
+%
+struct lconv *localeconv(void);
+C89
+%
+double acos(double x);
+C89
+%
+double asin(double x);
+C89
+%
+double atan(double x);
+C89
+%
+double atan2(double y, double x);
+C89
+%
+double cos(double x);
+C89
+%
+double sin(double x);
+C89
+%
+double tan(double x);
+C89
+%
+double cosh(double x);
+C89
+%
+double sinh(double x);
+C89
+%
+double tanh(double x);
+C89
+%
+double exp(double x);
+C89
+%
+double frexp(double value, int *exp);
+C89
+%
+double ldexp(double x, int exp);
+C89
+%
+double log(double x);
+C89
+%
+double log10(double x);
+C89
+%
+double modf(double value, double *iptr);
+C89
+%
+double pow(double x, double y);
+C89
+%
+double sqrt(double x);
+C89
+%
+double ceil(double x);
+C89
+%
+double fabs(double x);
+C89
+%
+double floor(double x);
+C89
+%
+double fmod(double x, double y);
+C89
+%
+int setjmp(jmp_buf env);
+C89
+%
+void longjmp(jmp_buf env, int val);
+C89
+%
+void (*signal(int sig, void (*func)(int)))(int);
+C89
+%
+int raise(int sig);
+C89
+%
+void va_start(va_list ap, parmN);
+C89
+%
+type va_arg(va_list ap,  type);
+C89
+%
+void va_end(va_list ap);
+C89
+%
+int remove(const char *filename);
+C89
+%
+int rename(const char *old, const char *new);
+C89
+%
+FILE *tmpfile(void);
+C89
+%
+char *tmpnam(char *s);
+C89
+%
+int fclose(FILE *stream);
+C89
+%
+int fflush(FILE *stream);
+C89
+%
+FILE *fopen(const char *filename, const char *mode);
+C89
+%
+FILE *freopen(const char *filename, const char *mode, FILE *stream);
+C89
+%
+void setbuf(FILE *stream, char *buf);
+C89
+%
+int setvbuf(FILE *stream, char *buf, int mode, size_t size);
+C89
+%
+int fprintf(FILE *stream, const char *format, ...);
+C89
+%
+int fscanf(FILE *stream, const char *format, ...);
+C89
+%
+int printf(const char *format, ...);
+C89
+%
+int scanf(const char *format, ...);
+C89
+%
+int sprintf(char *s, const char *format, ...);
+C89
+%
+int sscanf(const char *s, const char *format, ...);
+C89
+%
+int vfprintf(FILE *stream, const char *format, va_list arg);
+C89
+%
+int vprintf(const char *format, va_list arg);
+C89
+%
+int vsprintf(char *s, const char *format, va_list arg);
+C89
+%
+int fgetc(FILE *stream);
+C89
+%
+char *fgets(char *s, int n, FILE *stream);
+C89
+%
+int fputc(int c, FILE *stream);
+C89
+%
+int fputs(const char *s, FILE *stream);
+C89
+%
+int getc(FILE *stream);
+C89
+%
+int getchar(void);
+C89
+%
+char *gets(char *s);
+C89
+%
+int putc(int c, FILE *stream);
+C89
+%
+int putchar(int c);
+C89
+%
+int puts(const char *s);
+C89
+%
+int ungetc(int c, FILE *stream);
+C89
+%
+size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);
+C89
+%
+size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
+C89
+%
+int fgetpos(FILE *stream, fpos_t *pos);
+C89
+%
+int fseek(FILE *stream, long int offset, int whence);
+C89
+%
+int fsetpos(FILE *stream, const fpos_t *pos);
+C89
+%
+long int ftell(FILE *stream);
+C89
+%
+void rewind(FILE *stream);
+C89
+%
+void clearerr(FILE *stream);
+C89
+%
+int feof(FILE *stream);
+C89
+%
+int ferror(FILE *stream);
+C89
+%
+void perror(const char *s);
+C89
+%
+double atof(const char *nptr);
+C89
+%
+int atoi(const char *nptr);
+C89
+%
+long int atol(const char *nptr);
+C89
+%
+double strtod(const char *nptr, char **endptr);
+C89
+%
+long int strtol(const char *nptr, char **endptr, int base);
+C89
+%
+unsigned long int strtoul(const char *nptr, char **endptr, int base);
+C89
+%
+int rand(void);
+C89
+%
+void srand(unsigned int seed);
+C89
+%
+void *calloc(size_t nmemb, size_t size);
+C89
+%
+void free(void *ptr);
+C89
+%
+void *malloc(size_t size);
+C89
+%
+void *realloc(void *ptr, size_t size);
+C89
+%
+void abort(void);
+C89
+%
+int atexit(void (*func)(void));
+C89
+%
+void exit(int status);
+C89
+%
+char *getenv(const char *name);
+C89
+%
+int system(const char *string);
+C89
+%
+void *bsearch(const void *key, const void *base, size_t nmemb, size_t size, int (*compar)(const void *, const void *));
+C89
+%
+void qsort(void *base, size_t nmemb, size_t size, int (*compar)(const void *, const void *));
+C89
+%
+int abs(int j);
+C89
+%
+div_t div(int numer, int denom);
+C89
+%
+long int labs(long int j);
+C89
+%
+ldiv_t ldiv(long int numer, long int denom);
+C89
+%
+int mblen(const char *s, size_t n);
+C89
+%
+int mbtowc(wchar_t *pwc, const char *s, size_t n);
+C89
+%
+int wctomb(char *s, wchar_t wchar);
+C89
+%
+size_t mbstowcs(wchar_t *pwcs, const char *s, size_t n);
+C89
+%
+size_t wcstombs(char *s, const wchar_t *pwcs, size_t n);
+C89
+%
+void *memcpy(void *s1, const void *s2, size_t n);
+C89
+%
+void *memmove(void *s1, const void *s2, size_t n);
+C89
+%
+char *strcpy(char *s1, const char *s2);
+C89
+%
+char *strncpy(char *s1, const char *s2, size_t n);
+C89
+%
+char *strcat(char *s1, const char *s2);
+C89
+%
+char *strncat(char *s1, const char *s2, size_t n);
+C89
+%
+int memcmp(const void *s1, const void *s2, size_t n);
+C89
+%
+int strcmp(const char *s1, const char *s2);
+C89
+%
+int strcoll(const char *s1, const char *s2);
+C89
+%
+int strncmp(const char *s1, const char *s2, size_t n);
+C89
+%
+size_t strxfrm(char *s1, const char *s2, size_t n);
+C89
+%
+void *memchr(const void *s, int c, size_t n);
+C89
+%
+char *strchr(const char *s, int c);
+C89
+%
+size_t strcspn(const char *s1, const char *s2);
+C89
+%
+char *strpbrk(const char *s1, const char *s2);
+C89
+%
+char *strrchr(const char *s, int c);
+C89
+%
+size_t strspn(const char *s1, const char *s2);
+C89
+%
+char *strstr(const char *s1, const char *s2);
+C89
+%
+char *strtok(char *s1, const char *s2);
+C89
+%
+void *memset(void *s, int c, size_t n);
+C89
+%
+char *strerror(int errnum);
+C89
+%
+size_t strlen(const char *s);
+C89
+%
+clock_t clock(void);
+C89
+%
+double difftime(time_t time1, time_t time0);
+C89
+%
+time_t mktime(struct tm *timeptr);
+C89
+%
+time_t time(time_t *timer);
+C89
+%
+char *asctime(const struct tm *timeptr);
+C89
+%
+char *ctime(const time_t *timer);
+C89
+%
+struct tm *gmtime(const time_t *timer);
+C89
+%
+struct tm *localtime(const time_t *timer);
+C89
+%
+size_t strftime(char *s, size_t maxsize, const char *format, const struct tm *timeptr);
+C89
+%
+int snprintf(char *str, size_t size, const char *format, ...);
+C99
+%
+int vsnprintf(char *str, size_t size, const char *format, va_list ap);
+C99
+%
+int strcasecmp(const char *s1, const char *s2);
+POSIX.1-2001
+%
+int strncasecmp(const char *s1, const char *s2, size_t n);
+POSIX.1-2001
