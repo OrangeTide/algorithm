@@ -444,3 +444,12 @@ POSIX.1-2001
 %
 int strncasecmp(const char *s1, const char *s2, size_t n);
 POSIX.1-2001
+%
+int fcntl(int fildes, int cmd, ...);
+POSIX.1-2001
+%
+unsigned alarm(unsigned seconds);
+POSIX.1-2001
+%
+int sigaction(int sig, const struct sigaction *restrict act, struct sigaction *restrict oact);
+POSIX.1-2001
