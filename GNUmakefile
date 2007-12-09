@@ -1,5 +1,6 @@
 LIBS:= -lm
-CFLAGS:= -Wall -O2 -pedantic
+CFLAGS:= -Wall -Wextra -O2 -pedantic
+CFLAGS+=-ggdb
 # enable to remove debugging tests
 # CFLAGS+= -DNDEBUG
 
