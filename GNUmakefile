@@ -8,12 +8,13 @@ EXEC:=bot
 SRCS:=\
 	bot.c \
 	calcdb.c \
+	calcnotfound.c \
 	dcalc.c \
-	wcalc.c \
-	rpn.c \
 	rc.c \
+	rpn.c \
 	strcasestr.c \
-	calcnotfound.c
+	udb.c \
+	wcalc.c
 
 include conf-$(shell uname -s).mk
 

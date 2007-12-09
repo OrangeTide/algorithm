@@ -304,6 +304,8 @@ int udb_lookup(struct udb_handle *h, const char *key) {
 
 	refresh_if_changed(h);
 
+	/* TODO: if key ends in '*' use a partial string lookup method */
+
 	new_hash=strhash(key)%HASH_SZ;
 
 	for(curr=&h->hash[new_hash];!UDB_IS_EMPTY(curr);curr=curr->next) {
@@ -364,8 +366,8 @@ void udb_close(struct udb_handle *h) {
 	free(h);
 }
 
-/* unit test */
-#if 1
+/*** UNIT TEST ***/
+#if 0
 void demo(struct udb_handle *h, const char *word) {
 	if(udb_lookup(h, word)) {
 		char word[64], def[256];
