@@ -1,6 +1,17 @@
 /* rc.c : database / configfile reader */
 /* CONTEXT-FREE PARSER */
 
+/* Config file syntax:
+ *
+ * comment can be # or C/C++ style comments
+ * identifier "string";  # assigns value to id 
+ * identifier="string";  # same as above 
+ *
+ * quotes around string are optional when string has no spaces
+ * there is only a string value
+ * semicolons are required.
+ */
+
 /* TODO:
  * - make use of the current_operation string for better diagnostic output
  * - support the following datatypes: numbers, strings, arrays/lists, flags 
