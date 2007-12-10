@@ -1,329 +1,438 @@
 void assert(int expression);
 C89
+<assert.h>
 %
 int isalnum(int c);
 C89
+<ctype.h>
 %
 int isalpha(int c);
 C89
+<ctype.h>
 %
 int iscntrl(int c);
 C89
+<ctype.h>
 %
 int isdigit(int c);
 C89
+<ctype.h>
 %
 int isgraph(int c);
 C89
+<ctype.h>
 %
 int islower(int c);
 C89
+<ctype.h>
 %
 int isprint(int c);
 C89
+<ctype.h>
 %
 int ispunct(int c);
 C89
+<ctype.h>
 %
 int isspace(int c);
 C89
+<ctype.h>
 %
 int isupper(int c);
 C89
+<ctype.h>
 %
 int isxdigit(int c);
 C89
+<ctype.h>
 %
 int tolower(int c);
 C89
+<ctype.h>
 %
 int toupper(int c);
 C89
+<ctype.h>
 %
 char *setlocale(int category, const char *locale);
 C89
+<locale.h>
 %
 struct lconv *localeconv(void);
 C89
+<locale.h>
 %
 double acos(double x);
 C89
+<math.h>
 %
 double asin(double x);
 C89
+<math.h>
 %
 double atan(double x);
 C89
+<math.h>
 %
 double atan2(double y, double x);
 C89
+<math.h>
 %
 double cos(double x);
 C89
+<math.h>
 %
 double sin(double x);
 C89
+<math.h>
 %
 double tan(double x);
 C89
+<math.h>
 %
 double cosh(double x);
 C89
+<math.h>
 %
 double sinh(double x);
 C89
+<math.h>
 %
 double tanh(double x);
 C89
+<math.h>
 %
 double exp(double x);
 C89
+<math.h>
 %
 double frexp(double value, int *exp);
 C89
+<math.h>
 %
 double ldexp(double x, int exp);
 C89
+<math.h>
 %
 double log(double x);
 C89
+<math.h>
 %
 double log10(double x);
 C89
+<math.h>
 %
 double modf(double value, double *iptr);
 C89
+<math.h>
 %
 double pow(double x, double y);
 C89
+<math.h>
 %
 double sqrt(double x);
 C89
+<math.h>
 %
 double ceil(double x);
 C89
+<math.h>
 %
 double fabs(double x);
 C89
+<math.h>
 %
 double floor(double x);
 C89
+<math.h>
 %
 double fmod(double x, double y);
 C89
+<math.h>
 %
 int setjmp(jmp_buf env);
 C89
+<setjmp.h>
 %
 void longjmp(jmp_buf env, int val);
 C89
+<setjmp.h>
 %
 void (*signal(int sig, void (*func)(int)))(int);
 C89
+<signal.h>
 %
 int raise(int sig);
 C89
+<signal.h>
 %
 void va_start(va_list ap, parmN);
 C89
+<stdarg.h>
 %
 type va_arg(va_list ap,  type);
 C89
+<stdarg.h>
 %
 void va_end(va_list ap);
 C89
+<stdarg.h>
 %
 int remove(const char *filename);
 C89
+<stdio.h>
 %
 int rename(const char *old, const char *new);
 C89
+<stdio.h>
 %
 FILE *tmpfile(void);
 C89
+<stdio.h>
 %
 char *tmpnam(char *s);
 C89
+<stdio.h>
 %
 int fclose(FILE *stream);
 C89
+<stdio.h>
 %
 int fflush(FILE *stream);
 C89
+<stdio.h>
 %
 FILE *fopen(const char *filename, const char *mode);
 C89
+<stdio.h>
 %
 FILE *freopen(const char *filename, const char *mode, FILE *stream);
 C89
+<stdio.h>
 %
 void setbuf(FILE *stream, char *buf);
 C89
+<stdio.h>
 %
 int setvbuf(FILE *stream, char *buf, int mode, size_t size);
 C89
+<stdio.h>
 %
 int fprintf(FILE *stream, const char *format, ...);
 C89
+<stdio.h>
 %
 int fscanf(FILE *stream, const char *format, ...);
 C89
+<stdio.h>
 %
 int printf(const char *format, ...);
 C89
+<stdio.h>
 %
 int scanf(const char *format, ...);
 C89
+<stdio.h>
 %
 int sprintf(char *s, const char *format, ...);
 C89
+<stdio.h>
 %
 int sscanf(const char *s, const char *format, ...);
 C89
+<stdio.h>
 %
 int vfprintf(FILE *stream, const char *format, va_list arg);
 C89
+<stdio.h>, <stdarg.h>
 %
 int vprintf(const char *format, va_list arg);
 C89
+<stdio.h>, <stdarg.h>
 %
 int vsprintf(char *s, const char *format, va_list arg);
 C89
+<stdio.h>, <stdarg.h>
 %
 int fgetc(FILE *stream);
 C89
+<stdio.h>
 %
 char *fgets(char *s, int n, FILE *stream);
 C89
+<stdio.h>
 %
 int fputc(int c, FILE *stream);
 C89
+<stdio.h>
 %
 int fputs(const char *s, FILE *stream);
 C89
+<stdio.h>
 %
 int getc(FILE *stream);
 C89
+<stdio.h>
 %
 int getchar(void);
 C89
+<stdio.h>
 %
 char *gets(char *s);
 C89
+<stdio.h>
 %
 int putc(int c, FILE *stream);
 C89
+<stdio.h>
 %
 int putchar(int c);
 C89
+<stdio.h>
 %
 int puts(const char *s);
 C89
+<stdio.h>
 %
 int ungetc(int c, FILE *stream);
 C89
+<stdio.h>
 %
 size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);
 C89
+<stdio.h>
 %
 size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
 C89
+<stdio.h>
 %
 int fgetpos(FILE *stream, fpos_t *pos);
 C89
+<stdio.h>
 %
 int fseek(FILE *stream, long int offset, int whence);
 C89
+<stdio.h>
 %
 int fsetpos(FILE *stream, const fpos_t *pos);
 C89
+<stdio.h>
 %
 long int ftell(FILE *stream);
 C89
+<stdio.h>
 %
 void rewind(FILE *stream);
 C89
+<stdio.h>
 %
 void clearerr(FILE *stream);
 C89
+<stdio.h>
 %
 int feof(FILE *stream);
 C89
+<stdio.h>
 %
 int ferror(FILE *stream);
 C89
+<stdio.h>
 %
 void perror(const char *s);
 C89
+<stdio.h>
 %
 double atof(const char *nptr);
 C89
+<stdlib.h>
 %
 int atoi(const char *nptr);
 C89
+<stdlib.h>
 %
 long int atol(const char *nptr);
 C89
+<stdlib.h>
 %
 double strtod(const char *nptr, char **endptr);
 C89
+<stdlib.h>
 %
 long int strtol(const char *nptr, char **endptr, int base);
 C89
+<stdlib.h>
 %
 unsigned long int strtoul(const char *nptr, char **endptr, int base);
 C89
+<stdlib.h>
 %
 int rand(void);
 C89
+<stdlib.h>
 %
 void srand(unsigned int seed);
 C89
+<stdlib.h>
 %
 void *calloc(size_t nmemb, size_t size);
 C89
+<stdlib.h>
 %
 void free(void *ptr);
 C89
+<stdlib.h>
 %
 void *malloc(size_t size);
 C89
+<stdlib.h>
 %
 void *realloc(void *ptr, size_t size);
 C89
+<stdlib.h>
 %
 void abort(void);
 C89
+<stdlib.h>
 %
 int atexit(void (*func)(void));
 C89
+<stdlib.h>
 %
 void exit(int status);
 C89
+<stdlib.h>
 %
 char *getenv(const char *name);
 C89
+<stdlib.h>
 %
 int system(const char *string);
 C89
+<stdlib.h>
 %
 void *bsearch(const void *key, const void *base, size_t nmemb, size_t size, int (*compar)(const void *, const void *));
 C89
+<stdlib.h>
 %
 void qsort(void *base, size_t nmemb, size_t size, int (*compar)(const void *, const void *));
 C89
+<stdlib.h>
 %
 int abs(int j);
 C89
+<stdlib.h>
 %
 div_t div(int numer, int denom);
 C89
+<stdlib.h>
 %
 long int labs(long int j);
 C89
+<stdlib.h>
 %
 ldiv_t ldiv(long int numer, long int denom);
 C89
+<stdlib.h>
 %
 int mblen(const char *s, size_t n);
 C89
@@ -342,27 +451,35 @@ C89
 %
 void *memcpy(void *s1, const void *s2, size_t n);
 C89
+<string.h>
 %
 void *memmove(void *s1, const void *s2, size_t n);
 C89
+<string.h>
 %
 char *strcpy(char *s1, const char *s2);
 C89
+<string.h>
 %
 char *strncpy(char *s1, const char *s2, size_t n);
 C89
+<string.h>
 %
 char *strcat(char *s1, const char *s2);
 C89
+<string.h>
 %
 char *strncat(char *s1, const char *s2, size_t n);
 C89
+<string.h>
 %
 int memcmp(const void *s1, const void *s2, size_t n);
 C89
+<string.h>
 %
 int strcmp(const char *s1, const char *s2);
 C89
+<string.h>
 %
 int strcoll(const char *s1, const char *s2);
 C89
@@ -447,9 +564,56 @@ POSIX.1-2001
 %
 int fcntl(int fildes, int cmd, ...);
 POSIX.1-2001
+<unistd.h>, <fcntl.h>
 %
 unsigned alarm(unsigned seconds);
 POSIX.1-2001
+<unistd.h>
 %
 int sigaction(int sig, const struct sigaction *restrict act, struct sigaction *restrict oact);
 POSIX.1-2001
+<signal.h>
+%
+int pselect(int nfds, fd_set *restrict readfds, fd_set *restrict writefds, fd_set *restrict errorfds, const struct timespec *restrict timeout, const sigset_t *restrict sigmask);
+POSIX.1-2001
+<sys/select.h>
+%
+int select(int nfds, fd_set *restrict readfds, fd_set *restrict writefds, fd_set *restrict errorfds, struct timeval *restrict timeout);
+POSIX.1-2001
+<sys/select.h>
+%
+void FD_CLR(int fd, fd_set *fdset);
+POSIX.1-2001
+<sys/select.h>
+%
+int FD_ISSET(int fd, fd_set *fdset);
+POSIX.1-2001
+<sys/select.h>
+%
+void FD_SET(int fd, fd_set *fdset);
+POSIX.1-2001
+<sys/select.h>
+%
+void FD_ZERO(fd_set *fdset);
+POSIX.1-2001
+<sys/select.h>
+%
+int open(const char *pathname, int flags, mode_t mode);
+POSIX.1-2001
+<sys/types.h>, <sys/stat.h>, <fcntl.h>
+%
+int creat(const char *pathname, mode_t mode);
+POSIX.1-2001
+<sys/types.h>, <sys/stat.h>, <fcntl.h>
+%
+int poll(struct pollfd fds[], nfds_t nfds, int timeout);
+POSIX.1-2001
+<poll.h>
+%
+size_t offsetof( type,  member-designator)
+C89
+<stddef.h>
+%
+char *strdup(const char *s);
+POSIX.1-2001
+<string.h>

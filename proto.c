@@ -162,7 +162,7 @@ void proto_shutdown(void) {
 int proto_result(char *dest, size_t max, const char *in) {
 	unsigned res;
 	char key[64];
-	char proto[200], from[80];
+	char proto[200], from[80], headers[100];
 
 	while(isspace(*in)) in++;
 
@@ -186,12 +186,15 @@ int proto_result(char *dest, size_t max, const char *in) {
 		return 0; /* not found / error */
 	}
 
-	if(udb_read_field(proto_h, from, sizeof from)) {
-		snprintf(dest, max, " %s /* %s */", proto, from);
+	if(!udb_read_field(proto_h, from, sizeof from)) {
+		snprintf(dest, max, "%s", proto);
+	} else if(!udb_read_field(proto_h, headers, sizeof headers)) {
+		snprintf(dest, max, "%s /* %s */", proto, from);
 	} else {
-		snprintf(dest, max, " %s", proto);
+		snprintf(dest, max, "%s %s /* %s */", headers, proto, from);
 	}
 	
+
 	return 1;
 }
 
