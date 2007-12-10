@@ -100,6 +100,7 @@ void listcalc_stub( void );
 void searchcalc_stub( void );
 void lsusers_stub( void );
 void rot13_stub( void );
+int proto_stub( void );
 
 
 /* this is what an irc message will be broken down to */
