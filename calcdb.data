@@ -2345,7 +2345,7 @@ whylinux CyrixLord|Linux was made in an effort to stop people from having to buy
 pascal megaton|(pascal is) <chorgy> nice safe and fugly.
 how_to_ask Setzer|How to ask a smart question: http://www.catb.org/~esr/faqs/smart-questions.html
 smartquestion Setzer|How to ask a smart question: http://www.catb.org/~esr/faqs/smart-questions.html
-getopts Setzer|a getopt() replacement:  http://www.dragon-ware.com/~steve/projects/getopts
+bottomupcs OrngeTide|Computer Science from the Bottom Up - a free training course - http://bottomupcs.sourceforge.net/csbu/book1.htm
 undone zobje|Strange but not a stranger.
 env Setzer|dave says, "The problem isn't your code, it is in your developer environment, which is outside the scope of this help channel.  Have a nice day."
 np Setzer|Don't paste in the channel.  http://www.nomorepasting.com
@@ -2650,7 +2650,7 @@ jedi aedinius|There is no emotion; there is peace.There is no ignorance; there i
 zombo aedinius|you can do ANYTHING at zombo com ... yes ... this is zombo com! this is zombo com and welcome to YOU at zombo com
 The_C_std_lib Dmi|"The Standard C Library, by P. J. Plauger,  ISBN: 0131315099, Prentice Hall PTR; 1st edition (July 1, 1991)"
 "The Dmi|Standard C Library, by P. J. Plauger,  ISBN: 0131315099, Prentice Hall PTR; 1st edition (July 1, 1991)"
-source OrngeTide|You can get the source to me at http://rm-f.net/algorithm/
+source OrngeTide|The source for me is available on git. git clone http://algorithm.rm-f.net/bot.git
 callgrind cout|callgrind is a really cool valgrind tool for profiling code.  Get it and the visualization tool, kcachegrind, at http://kcachegrind.sourceforge.net
 oprofile cout|oprofile is an open source profiler for linux that has almost no overhead - http://oprofile.sourceforge.net/
 juri OrngeTide|<DrgdHmstr> there is a young hacker named juri / who defends GPL with great fury / so she shared all her .c, to her helper's great glee / and her code's now unworkable slurry
@@ -2859,3 +2859,6 @@ commandment#1 Mish|if it works but we do not like it you should rewrite
 race Mish,Mish|"race condition", or simply "race": Bugs due to unexpected order of events that inexperienced programmers think "unlikely to happen". Is prevented by proper locking, reference counting, and other form of exclusive access.
 appearance Mish|For society, it's probably a good thing that engineers value function over appearance.  For example, you wouldn't want engineers to build nuclear power plants that only _look_ like they would keep all the radiation inside. (Scott Adams - The Dilbert principle)
 hmm Mish|hmm is short form of hmmm
+atheist2 Mish|God created me as an atheist, who are you to question this wisdom ?!
+getopts Setzer|http://rm-f.net/~setzer/projects/getopts
+wild_match Setzer|http://rm-f.net/~setzer/projects/wild_match/
