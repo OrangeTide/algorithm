@@ -54,12 +54,13 @@
  */
 
 #include "bot.h"
-#include "users.h"
 #include "calcdb.h"
 #include "dcalc.h"
-#include "wcalc.h"
-#include "rpn.h"
+#include "proto.h"
 #include "rc.h"
+#include "rpn.h"
+#include "users.h"
+#include "wcalc.h"
 #include <ctype.h>
 
 
@@ -301,21 +302,30 @@ void make_a_decision( void )
 	switch( tolower(cur_msg.msgarg1[0]) ) {
 		case 1:
 		  if( !strncasecmp( BOTNAME, cur_msg.msgto, MAXDATASIZE ) ) { do_ctcp(); return; }
+		  break;
 		case 'c':
 		  if( !strncasecmp( "chpass", cur_msg.msgarg1, MAXDATASIZE ) ) { chpass_stub(); return; }
 		  if( !strncasecmp( "calc", cur_msg.msgarg1, MAXDATASIZE ) ) { docalc_stub(); return; }
 		  if( !strncasecmp( "clac", cur_msg.msgarg1, MAXDATASIZE ) ) { docalc_stub(); return; }
 		  if( !strncasecmp( "chcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { chcalc_stub(); return; }
+		  break;
 		case 'o':
 		  if( !strncasecmp( "op", cur_msg.msgarg1, MAXDATASIZE ) ) { oppeople_stub(); return; }
 		  if( !strncasecmp( "owncalc", cur_msg.msgarg1, MAXDATASIZE ) ) { owncalc_stub(); return; }
+		  break;
+		case 'p':
+		  if( !strncasecmp( "proto", cur_msg.msgarg1, MAXDATASIZE ) ) { proto_stub(); return; }
+		  break;
 		case 'w':
 		  if( !strncasecmp( "whois", cur_msg.msgarg1, MAXDATASIZE ) ) { whois_stub(); return; }
 		  if( !strncasecmp( "wcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { wcalc_stub(); return; }
+		  break;
 		case 'a':
 		  if( !strncasecmp( "adduser", cur_msg.msgarg1, MAXDATASIZE ) ) { adduser_stub(); return; }
+		  break;
 		case 'h':
 		  if( !strncasecmp( "help", cur_msg.msgarg1, MAXDATASIZE ) ) { help(); return; }
+		  break;
 		case 'r':
 		  if( !strncasecmp( "rmuser", cur_msg.msgarg1, MAXDATASIZE ) ) { rmuser_stub(); return; }
 		  if( !strncasecmp( "rmcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { rmcalc_stub(); return; }
@@ -323,19 +333,23 @@ void make_a_decision( void )
 		  if( !strncasecmp( "rcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { rpn_stub(); return; }
 		  if( !strncasecmp( "recalc", cur_msg.msgarg1, MAXDATASIZE ) ) { chcalc_stub(); return; }
 		  if( !strncasecmp( "rot13", cur_msg.msgarg1, MAXDATASIZE ) ) { rot13_stub(); return; }
+		  break;
 		case 'm':
 		  if( !strncasecmp( "mkcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { mkcalc_stub(); return; }
+		  break;
 		case 'l':
 		  if( !strncasecmp( "listcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { listcalc_stub(); return; }
 		  if( !strncasecmp( "lsusers", cur_msg.msgarg1, MAXDATASIZE ) ) { lsusers_stub(); return; }
 		  if( !strncasecmp( "login", cur_msg.msgarg1, MAXDATASIZE ) ) { help(); return; }
+		  break;
 		case 'x':
 		  if( !strncasecmp( "xpln", cur_msg.msgarg1, MAXDATASIZE ) ) { docalc_stub(); return; }
+		  break;
 		case 'd':
 		  if( !strncasecmp( "dcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { dcalc_stub(); return; }
+		  break;
 		case 's':
 		  if( !strncasecmp( "searchcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { searchcalc_stub(); return; }
-		default:
 		  break;
 	}
 
@@ -604,6 +618,16 @@ int wcalc_stub( void )
   return 0;
 }
 
+int proto_stub( void )
+{
+  char tmpray[MAXDATASIZE];
+  size_t len;
+  snprintf(tmpray, MAXDATASIZE, "privmsg %s : ", MSGTO);
+  len = strlen(tmpray);
+  proto_result(tmpray+len, sizeof tmpray - len - 1, cur_msg.fulltext + (strlen( cur_msg.msgarg1 ) + 1) );
+  send_irc_message( tmpray );
+  return 0;
+}
 
 /********************************-----end stubs-----*************************************/
 
@@ -774,7 +798,7 @@ void rawirc( void )
 
 int clean_message( char *msg )
 {
-	register int x;
+	register size_t x;
 	register int boot = 0;
 	for( x = 0; x < strlen(msg); x++ ) {
 		if( *(msg+x) == 1 ) continue;
@@ -1034,6 +1058,7 @@ int prep( void )
 	if( load_cfg() ) { puts( "failed at end of load_cfg()"); return 10; }
 	if( loadusers( "user.list" ) ) { puts( "failed loading the user.list " ); return 15; }
 	if( loaddb( CALCDB, MAXCALCS ) ) { puts( "failed loading the calc database." ); return 20; }
+	if( !proto_init() ) { puts( "failed to load the proto database." ); return 30; }
 	return 0;
 }
 

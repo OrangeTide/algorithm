@@ -10,6 +10,7 @@ SRCS:=\
 	calcdb.c \
 	calcnotfound.c \
 	dcalc.c \
+	proto.c \
 	rc.c \
 	rpn.c \
 	strcasestr.c \
