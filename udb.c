@@ -337,7 +337,12 @@ int udb_read_field(struct udb_handle *h, char *buf, size_t len) {
 	}
 
 	if(!scrubnl(buf)) {
+		int ch;
 		fprintf(stderr, "Truncated record in %s\n", h->filename);
+		/* eat the remaining line */
+		do {
+			ch=fgetc(h->f);
+		} while(ch!=EOF && ch!='\n');
 	}
 	
 	if(buf[0]=='%' && buf[1]==0) {
