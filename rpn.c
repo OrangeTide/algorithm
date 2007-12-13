@@ -32,6 +32,11 @@
 // FLOAT is the best floating-point type we can get
 // (hopefully, HUGE_VALL should only be defined on C99 platforms, which should
 // have all the functions listed below)
+#ifdef __CYGWIN__
+#define MYTEMPVAL HUGE_VALL
+#undef HUGE_VALL
+#endif
+
 #ifdef HUGE_VALL
 #  define FLOAT long double
 #  define FLOOR floorl
@@ -59,6 +64,11 @@
 #  define MODF modf
 #  define FLOAT_DIG DBL_DIG
 #endif
+
+#ifdef __CYGWIN__
+#define HUGE_VALL MYTEMPVAL
+#endif
+
 
 #  define TRUNC(x) (((x) >= 0.0) ? (FLOOR(x)) : (CEIL(x)))
 
