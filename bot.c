@@ -61,7 +61,6 @@
 #include "rpn.h"
 #include "users.h"
 #include "wcalc.h"
-#include <ctype.h>
 
 
 /* yeah, i know that globals are considered evil. byte me. */
