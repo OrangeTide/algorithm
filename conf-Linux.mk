@@ -10,6 +10,6 @@ CPPFLAGS+= -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED
 
 # use the following for crypt() passwords
 SRCS+= users.c 
-LIBS+= -lcrypt
+LDLIBS+= -lcrypt
 
 ## end

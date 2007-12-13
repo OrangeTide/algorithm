@@ -1,4 +1,4 @@
-LIBS:= -lm
+LDLIBS:= -lm
 CFLAGS:= -Wall -Wextra -O2 -pedantic
 CFLAGS+=-ggdb
 # enable to remove debugging tests
@@ -21,7 +21,6 @@ include conf-$(shell uname -s).mk
 
 OBJS:=$(SRCS:%.c=%.o)
 
-$(EXEC) : LDFLAGS:=$(LIBS)
 $(EXEC) : $(OBJS)
 
 .PHONY: clean clean-all backup
