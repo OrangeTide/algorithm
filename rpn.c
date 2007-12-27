@@ -32,7 +32,6 @@
 // FLOAT is the best floating-point type we can get
 // (hopefully, HUGE_VALL should only be defined on C99 platforms, which should
 // have all the functions listed below)
-
 #ifdef __CYGWIN__
 #define MYTEMPVAL HUGE_VALL
 #undef HUGE_VALL
