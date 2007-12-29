@@ -443,13 +443,17 @@ void docalc_stub()
 
 void oppeople_stub()
 {
+    if( MSGTO[0] == '#' ) return; /* do not respond to op requests made in the channel */
+
 	/* making getting ops easier for other than the default channel */
+	
 	 if( (cur_msg.msgarg2[0] == '#') || (cur_msg.msgarg2[0] == '&') ) {
 		if( cur_msg.msgarg4[0] ) oppeople( cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.msgarg4, cur_msg.nick );
 		else oppeople( cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.nick, cur_msg.nick );
 		return;
 	}
 	/* op only in the default channel */
+	
 	if( DEF_CHAN[0] ) {
 		if( cur_msg.msgarg3[0] )
 			oppeople( DEF_CHAN, cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.nick );
@@ -887,7 +891,7 @@ int host_connect( char *exthost, int extport, int extsockfd )
 
 	their_addr.sin_family = AF_INET;
 	their_addr.sin_port = htons(extport);
-	their_addr.sin_addr = *((struct in_addr *)he->h_addr);
+	their_addr.sin_addr = *((struct in_addr *)he->h_addr_list[0]);
 	memset( &their_addr.sin_zero, '\0', 8 );
 
 	if (connect(extsockfd, (struct sockaddr *)&their_addr, sizeof(struct sockaddr)) == -1)
