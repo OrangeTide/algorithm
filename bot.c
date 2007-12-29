@@ -443,13 +443,17 @@ void docalc_stub()
 
 void oppeople_stub()
 {
+    if( MSGTO[0] == '#' ) return; /* do not respond to op requests made in the channel */
+
 	/* making getting ops easier for other than the default channel */
+	
 	 if( (cur_msg.msgarg2[0] == '#') || (cur_msg.msgarg2[0] == '&') ) {
 		if( cur_msg.msgarg4[0] ) oppeople( cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.msgarg4, cur_msg.nick );
 		else oppeople( cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.nick, cur_msg.nick );
 		return;
 	}
 	/* op only in the default channel */
+	
 	if( DEF_CHAN[0] ) {
 		if( cur_msg.msgarg3[0] )
 			oppeople( DEF_CHAN, cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.nick );
