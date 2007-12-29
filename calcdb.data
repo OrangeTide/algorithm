@@ -2345,7 +2345,7 @@ whylinux CyrixLord|Linux was made in an effort to stop people from having to buy
 pascal megaton|(pascal is) <chorgy> nice safe and fugly.
 how_to_ask Setzer|How to ask a smart question: http://www.catb.org/~esr/faqs/smart-questions.html
 smartquestion Setzer|How to ask a smart question: http://www.catb.org/~esr/faqs/smart-questions.html
-getopts Setzer|a getopt() replacement:  http://www.dragon-ware.com/~steve/projects/getopts
+bottomupcs OrngeTide|Computer Science from the Bottom Up - a free training course - http://bottomupcs.sourceforge.net/csbu/book1.htm
 undone zobje|Strange but not a stranger.
 env Setzer|dave says, "The problem isn't your code, it is in your developer environment, which is outside the scope of this help channel.  Have a nice day."
 np Setzer|Don't paste in the channel.  http://www.nomorepasting.com
@@ -2860,4 +2860,7 @@ race Mish,Mish|"race condition", or simply "race": Bugs due to unexpected order 
 appearance Mish|For society, it's probably a good thing that engineers value function over appearance.  For example, you wouldn't want engineers to build nuclear power plants that only _look_ like they would keep all the radiation inside. (Scott Adams - The Dilbert principle)
 hmm Mish|hmm is short form of hmmm
 atheist2 Mish|God created me as an atheist, who are you to question this wisdom ?!
-bottomupcs OrngeTide|Computer Science from the Bottom Up - a free training course - http://bottomupcs.sourceforge.net/csbu/book1.htm
+getopts Setzer|http://rm-f.net/~setzer/projects/getopts
+wild_match Setzer|http://rm-f.net/~setzer/projects/wild_match/
+rickroll OrngeTide|Some of us actually like Rick Astley.
+arm OrngeTide|Programming for ARM cpu in C? see http://devrs.com/gba/ and http://gbadev.org/ And for a toolchain check out http://devkitadv.sourceforge.net/
