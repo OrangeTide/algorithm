@@ -891,7 +891,7 @@ int host_connect( char *exthost, int extport, int extsockfd )
 
 	their_addr.sin_family = AF_INET;
 	their_addr.sin_port = htons(extport);
-	their_addr.sin_addr = *((struct in_addr *)he->h_addr);
+	their_addr.sin_addr = *((struct in_addr *)he->h_addr_list[0]);
 	memset( &their_addr.sin_zero, '\0', 8 );
 
 	if (connect(extsockfd, (struct sockaddr *)&their_addr, sizeof(struct sockaddr)) == -1)

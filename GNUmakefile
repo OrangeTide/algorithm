@@ -13,7 +13,6 @@ SRCS:=\
 	proto.c \
 	rc.c \
 	rpn.c \
-	strcasestr.c \
 	udb.c \
 	wcalc.c
 
