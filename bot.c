@@ -95,6 +95,9 @@
 	char MSGTO[MAXDATASIZE];	/* set to nick/channel on each incoming message */
 
 
+	sig_atomic_t keep_going=1;  /* flag to break out of the inner loop */
+	sig_atomic_t verbose=2;    /* flag to enable verbose debugging */
+
 /******************************----BEGIN CODE----*********************************/
 
 
@@ -142,8 +145,29 @@ int process_out( void )
 
 	fgets( tmp, MAXDATASIZE - 1, stdin );
 	if( tmp[0] == '/' ) {
-		strncpy( ray, (tmp + 1), MAXDATASIZE );
-		send_irc_message( ray );
+		size_t cmdlen, argstart;
+
+		/* handle some commands */
+		cmdlen = strcspn( tmp+1, " \t\n" );
+		argstart = 1 + cmdlen + strspn( tmp + 1 + cmdlen, " \t\n" );
+
+		if(cmdlen == 4 && !memcmp( "quit", tmp+1, 4 )) {
+			/* /quit was entered */
+			snprintf( ray, sizeof ray, "quit :%s", tmp + argstart );
+			send_irc_message( ray );
+			keep_going=0;
+		} else if(cmdlen == 3 && !memcmp( "msg", tmp+1, 3 )) {
+			/* /msg was entered . put the : in for people */
+			size_t nickstart, nicklen;
+			nickstart = argstart;
+			nicklen = strcspn( tmp+nickstart, " \t\n" );
+			argstart = nickstart + nicklen + strspn( tmp + nickstart + nicklen, " \t\n" );
+			snprintf( ray, sizeof ray, "privmsg %.*s :%s", nicklen, tmp + nickstart,  tmp + argstart );
+			send_irc_message( ray );
+		} else {
+			strncpy( ray, (tmp + 1), MAXDATASIZE );
+			send_irc_message( ray );
+		}
 	} else {
 		if(DEF_CHAN[0]) {
 			snprintf( ray, MAXDATASIZE, "PRIVMSG %s :%s", DEF_CHAN, tmp );
@@ -366,6 +390,9 @@ void make_a_decision( void )
 void send_irc_message( char *sndmsg )
 {
 	char newline = '\n';
+	if(verbose>1) {
+		fprintf(stderr, "OUT> %s\n", sndmsg);
+	}
 
 	if( send (sockfd, sndmsg, strlen( sndmsg ), 0) == -1) perror("send");
 	if( send (sockfd, &newline, 1, 0) == -1) perror("send");
@@ -1022,24 +1049,25 @@ int load_cfg( void )
 	curr=config_find(root,"bot");
 	if(!curr) return 0;
 	if(curr->child) { 
-		 curr=curr->child;
+		curr=curr->child;
 
-		 puts( "\n--------------- bot.cfg data ---------------\n" );
+		puts( "\n--------------- bot.cfg data ---------------\n" );
 
-		 ret= !(load_item_str(curr,"server",sizeof SERVER, SERVER, "irc server")
-		  && load_item_int(curr,"port", &PORT, "server port")
-		  && load_item_str(curr,"nick", sizeof NICK1, NICK1, "nick")
-		  && load_item_str(curr,"alt_nick", sizeof NICK2, NICK2, "alternate nick")
-		  && load_item_str(curr,"userline", sizeof USER, USER, "user line")
-		  && load_item_int(curr,"max_db", &MAXCALCS, "max db entries")
-		  && load_item_str(curr,"database", sizeof CALCDB, CALCDB, "calc database filename")
-		  && load_item_str(curr,"default_channel", sizeof DEF_CHAN, DEF_CHAN, "default channel")
-		  && load_item_str(curr,"on_connect", sizeof ON_CONNECT_SCRIPT, ON_CONNECT_SCRIPT, "script for connect"));
-		 puts( "\n--------------- data loaded ---------------\n" );
+		load_item_int(curr,"verbose", &verbose, "verbose debug level");
+		ret= !(load_item_str(curr,"server",sizeof SERVER, SERVER, "irc server")
+		&& load_item_int(curr,"port", &PORT, "server port")
+		&& load_item_str(curr,"nick", sizeof NICK1, NICK1, "nick")
+		&& load_item_str(curr,"alt_nick", sizeof NICK2, NICK2, "alternate nick")
+		&& load_item_str(curr,"userline", sizeof USER, USER, "user line")
+		&& load_item_int(curr,"max_db", &MAXCALCS, "max db entries")
+		&& load_item_str(curr,"database", sizeof CALCDB, CALCDB, "calc database filename")
+		&& load_item_str(curr,"default_channel", sizeof DEF_CHAN, DEF_CHAN, "default channel")
+		&& load_item_str(curr,"on_connect", sizeof ON_CONNECT_SCRIPT, ON_CONNECT_SCRIPT, "script for connect"));
+		puts( "\n--------------- data loaded ---------------\n" );
 
-		 if( !DEF_CHAN[0] )
-			printf("Warning. No default channel selected. Some commands may not work.\n");
-	
+		if( !DEF_CHAN[0] )
+		printf("Warning. No default channel selected. Some commands may not work.\n");
+
 	} else {
 		ret=1;
 	}
@@ -1085,7 +1113,7 @@ int main(int argc, char *argv[])
 		return 10;
 	}
 
-	for( ;; ) {
+	while(keep_going) {
 		printf( "\n\nattempting to connect to %s, please wait...\n\n", SERVER );
 		x = irc_connect();
 		sleep( 3 );	  /* 3 seconds to keep from hitting the server too much with reconnects */
@@ -1099,6 +1127,4 @@ int main(int argc, char *argv[])
 	}
 }
 
-
-
-/*************************************----end code----*************************************/
+/*****************************----end code----*****************************/

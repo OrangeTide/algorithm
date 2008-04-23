@@ -62,7 +62,9 @@
 #define MAXDATASIZE 515
 #define NEWLINE '\n'
 
-extern char MSGTO[MAXDATASIZE];
+extern char MSGTO[MAXDATASIZE]; /* set to nick/channel on each incoming message */
+extern sig_atomic_t keep_going; /* flag to break out of the inner loop */
+extern sig_atomic_t verbose;    /* flag to enable verbose debugging */
 
 void send_irc_message( char *sndmsg );
 void parse_incoming( char *ptr );
