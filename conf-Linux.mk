@@ -3,7 +3,7 @@
 # requires gcc 3.x or later
 CFLAGS+= -std=gnu99 
 
-CPPFLAGS+= -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED
+CPPFLAGS+= -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_GNU_SOURCE
 
 # use the following for MD5 style passwords
 # SRCS+=md5crypt.c users_md5.c
