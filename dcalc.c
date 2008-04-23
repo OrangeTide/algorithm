@@ -209,4 +209,5 @@ const char *dcalc (Value *result, const char *expression)
 	return complaint;
 }
 
-
+/*****************************----end code----*****************************/
+// vi: noet sts=0 ts=4 sw=4

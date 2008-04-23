@@ -15,3 +15,6 @@
 #define ERRORP(x)       perror("ERROR: " x)
 #define FAIL(...)       do{ fprintf(stderr, "FAILURE: " __VA_ARGS__); exit(EXIT_FAILURE); }while(0)
 #endif /* */
+
+/*****************************----end code----*****************************/
+// vi: noet sts=0 ts=4 sw=4

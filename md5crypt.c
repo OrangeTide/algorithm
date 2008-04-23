@@ -446,3 +446,5 @@ int compare_md5(const char *passwd, const char *crypt)
 	return !strcmp(crypt,crypt2); /* ret 1: match, 0: fail */
 }
 
+/*****************************----end code----*****************************/
+// vi: noet sts=0 ts=4 sw=4

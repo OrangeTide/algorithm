@@ -617,3 +617,5 @@ int rpn_calc(const char *input, char *output, size_t out_len) {
 	return rpn_calc_internal(input, output, out_len, stack);
 }
 
+/*****************************----end code----*****************************/
+// vi: noet sts=0 ts=4 sw=4

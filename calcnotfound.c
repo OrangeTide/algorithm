@@ -188,3 +188,6 @@ void calcnotfound_test() { /* probabilities tester for calcnotfound() */
 	if( fp != stdout)
 		pclose(fp);
 }
+
+/*****************************----end code----*****************************/
+// vi: noet sts=0 ts=4 sw=4

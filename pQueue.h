@@ -62,3 +62,6 @@ int pQueueRun(struct pQueue **theQueue, pQueueTime_t aTime);
 void pQueueDump(struct pQueue **theQueue);
 
 #endif  /* __PRIORITY_QUEUE_H__ */
+
+/*****************************----end code----*****************************/
+// vi: noet sts=0 ts=4 sw=4

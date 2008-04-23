@@ -12,4 +12,5 @@ typedef double Value;
    Return an error message string, or NULL if there was no error. */
 const char *dcalc (Value *result, const char *expression);
 
-
+/*****************************----end code----*****************************/
+// vi: noet sts=0 ts=4 sw=4

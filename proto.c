@@ -218,3 +218,6 @@ int main(int argc, char **argv) {
 	return 0;
 }
 #endif
+
+/*****************************----end code----*****************************/
+// vi: noet sts=0 ts=4 sw=4

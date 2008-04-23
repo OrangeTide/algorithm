@@ -78,3 +78,6 @@ void get_salt( char *ray );
 int list_users( char *nick );
 
 #endif /* !_USERS_H */
+
+/*****************************----end code----*****************************/
+// vi: noet sts=0 ts=4 sw=4

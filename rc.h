@@ -22,3 +22,6 @@ int config_get_int(struct config_node *item,int *i);
 
 
 #endif /* RC_H */
+
+/*****************************----end code----*****************************/
+// vi: noet sts=0 ts=4 sw=4

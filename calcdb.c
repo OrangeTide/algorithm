@@ -446,3 +446,6 @@ int loaddb( char *filename, int maxdbsize )
 
 	return 0;
 }
+
+/*****************************----end code----*****************************/
+// vi: noet sts=0 ts=4 sw=4

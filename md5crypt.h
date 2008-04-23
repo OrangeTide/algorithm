@@ -7,3 +7,5 @@ const char *saltgen_md5 ( unsigned int seed );
 int compare_md5 ( const char *passwd , const char *crypt );
 #endif /* MD5CRYPT_H */
 
+/*****************************----end code----*****************************/
+// vi: noet sts=0 ts=4 sw=4

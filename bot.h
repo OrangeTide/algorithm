@@ -148,3 +148,6 @@ struct message {
 #define ROT13 "rot13 will repeat your message in rot13. usage: rot13 this sentence will be encrypted in rot13."
 
 #endif /* !_BOT_H */
+
+/*****************************----end code----*****************************/
+// vi: noet sts=0 ts=4 sw=4

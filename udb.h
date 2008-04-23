@@ -9,3 +9,6 @@ int udb_read_field(struct udb_handle *h, char *buf, size_t len);
 int udb_ignore_field(struct udb_handle *h);
 void udb_close(struct udb_handle *h);
 #endif
+
+/*****************************----end code----*****************************/
+// vi: noet sts=0 ts=4 sw=4

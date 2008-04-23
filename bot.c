@@ -53,9 +53,11 @@
  * radical restructuring of all source code starting on 4 june 2001
  */
 
+#include "autovoice.h"
 #include "bot.h"
 #include "calcdb.h"
 #include "dcalc.h"
+#include "notify.h"
 #include "proto.h"
 #include "rc.h"
 #include "rpn.h"
@@ -95,8 +97,8 @@
 	char MSGTO[MAXDATASIZE];	/* set to nick/channel on each incoming message */
 
 
-	sig_atomic_t keep_going=1;  /* flag to break out of the inner loop */
-	sig_atomic_t verbose=2;    /* flag to enable verbose debugging */
+	sig_atomic_t keep_going=1;	/* flag to break out of the inner loop */
+	sig_atomic_t verbose=2;		 /* flag to enable verbose debugging */
 
 /******************************----BEGIN CODE----*********************************/
 
@@ -118,7 +120,7 @@ void main_loop( void )
 		FD_ZERO(&fdgroup);
 		FD_SET(STDIN_FILENO, &fdgroup);
 		FD_SET(sockfd, &fdgroup);
-		tv.tv_sec = 360;			  /* if no data for 6 minutes, something is wrong. */
+		tv.tv_sec = 360;				/* if no data for 6 minutes, something is wrong. */
 		tv.tv_usec = 0;
 
 		whatever = select( (sockfd + 1) , &fdgroup, NULL, NULL, &tv);
@@ -162,7 +164,7 @@ int process_out( void )
 			nickstart = argstart;
 			nicklen = strcspn( tmp+nickstart, " \t\n" );
 			argstart = nickstart + nicklen + strspn( tmp + nickstart + nicklen, " \t\n" );
-			snprintf( ray, sizeof ray, "privmsg %.*s :%s", nicklen, tmp + nickstart,  tmp + argstart );
+			snprintf( ray, sizeof ray, "privmsg %.*s :%s", nicklen, tmp + nickstart,	tmp + argstart );
 			send_irc_message( ray );
 		} else {
 			strncpy( ray, (tmp + 1), MAXDATASIZE );
@@ -249,7 +251,7 @@ void parse_incoming( char *ptr )
 
 	if( ptr[0] == 'P' ) {  /* this is will catch server PINGs */
 		reply_ping( ptr );
-		return;				  /* no need to continue parsing */
+		return;					/* no need to continue parsing */
 	}
 
 	memset( &cur_msg, 0, sizeof(cur_msg) );  /* clear the buffer... i want a safe default */
@@ -283,8 +285,10 @@ void parse_incoming( char *ptr )
 	}
 
 	/* console output with simple formatting */
-	if( !strncasecmp( cur_msg.msgtype, "PRIVMSG", MAXDATASIZE ) ) printf( "|%s|  %s: %s\n", cur_msg.msgto, cur_msg.nick, cur_msg.fulltext );
-	else puts( ptr );
+	if( !strncasecmp( cur_msg.msgtype, "PRIVMSG", MAXDATASIZE ) )
+		printf( "|%s|  %s: %s\n", cur_msg.msgto, cur_msg.nick, cur_msg.fulltext );
+	else
+		puts( ptr );
 
 	/* color and attribute boot */
 	if (boot && strncmp(cur_msg.msgto, BOTNAME, MAXDATASIZE) && strncmp(cur_msg.nick, BOTNAME, MAXDATASIZE)) {
@@ -324,56 +328,56 @@ void make_a_decision( void )
 	/* switch on the first character of the first "word" in the message */
 	switch( tolower(cur_msg.msgarg1[0]) ) {
 		case 1:
-		  if( !strncasecmp( BOTNAME, cur_msg.msgto, MAXDATASIZE ) ) { do_ctcp(); return; }
-		  break;
+			if( !strncasecmp( BOTNAME, cur_msg.msgto, MAXDATASIZE ) ) { do_ctcp(); return; }
+			break;
 		case 'c':
-		  if( !strncasecmp( "chpass", cur_msg.msgarg1, MAXDATASIZE ) ) { chpass_stub(); return; }
-		  if( !strncasecmp( "calc", cur_msg.msgarg1, MAXDATASIZE ) ) { docalc_stub(); return; }
-		  if( !strncasecmp( "clac", cur_msg.msgarg1, MAXDATASIZE ) ) { docalc_stub(); return; }
-		  if( !strncasecmp( "chcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { chcalc_stub(); return; }
-		  break;
+			if( !strncasecmp( "chpass", cur_msg.msgarg1, MAXDATASIZE ) ) { chpass_stub(); return; }
+			if( !strncasecmp( "calc", cur_msg.msgarg1, MAXDATASIZE ) ) { docalc_stub(); return; }
+			if( !strncasecmp( "clac", cur_msg.msgarg1, MAXDATASIZE ) ) { docalc_stub(); return; }
+			if( !strncasecmp( "chcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { chcalc_stub(); return; }
+			break;
 		case 'o':
-		  if( !strncasecmp( "op", cur_msg.msgarg1, MAXDATASIZE ) ) { oppeople_stub(); return; }
-		  if( !strncasecmp( "owncalc", cur_msg.msgarg1, MAXDATASIZE ) ) { owncalc_stub(); return; }
-		  break;
+			if( !strncasecmp( "op", cur_msg.msgarg1, MAXDATASIZE ) ) { oppeople_stub(); return; }
+			if( !strncasecmp( "owncalc", cur_msg.msgarg1, MAXDATASIZE ) ) { owncalc_stub(); return; }
+			break;
 		case 'p':
-		  if( !strncasecmp( "proto", cur_msg.msgarg1, MAXDATASIZE ) ) { proto_stub(); return; }
-		  break;
+			if( !strncasecmp( "proto", cur_msg.msgarg1, MAXDATASIZE ) ) { proto_stub(); return; }
+			break;
 		case 'w':
-		  if( !strncasecmp( "whois", cur_msg.msgarg1, MAXDATASIZE ) ) { whois_stub(); return; }
-		  if( !strncasecmp( "wcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { wcalc_stub(); return; }
-		  break;
+			if( !strncasecmp( "whois", cur_msg.msgarg1, MAXDATASIZE ) ) { whois_stub(); return; }
+			if( !strncasecmp( "wcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { wcalc_stub(); return; }
+			break;
 		case 'a':
-		  if( !strncasecmp( "adduser", cur_msg.msgarg1, MAXDATASIZE ) ) { adduser_stub(); return; }
-		  break;
+			if( !strncasecmp( "adduser", cur_msg.msgarg1, MAXDATASIZE ) ) { adduser_stub(); return; }
+			break;
 		case 'h':
-		  if( !strncasecmp( "help", cur_msg.msgarg1, MAXDATASIZE ) ) { help(); return; }
-		  break;
+			if( !strncasecmp( "help", cur_msg.msgarg1, MAXDATASIZE ) ) { help(); return; }
+			break;
 		case 'r':
-		  if( !strncasecmp( "rmuser", cur_msg.msgarg1, MAXDATASIZE ) ) { rmuser_stub(); return; }
-		  if( !strncasecmp( "rmcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { rmcalc_stub(); return; }
-		  if( !strncasecmp( "rawirc", cur_msg.msgarg1, MAXDATASIZE ) ) { rawirc(); return; }
-		  if( !strncasecmp( "rcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { rpn_stub(); return; }
-		  if( !strncasecmp( "recalc", cur_msg.msgarg1, MAXDATASIZE ) ) { chcalc_stub(); return; }
-		  if( !strncasecmp( "rot13", cur_msg.msgarg1, MAXDATASIZE ) ) { rot13_stub(); return; }
-		  break;
+			if( !strncasecmp( "rmuser", cur_msg.msgarg1, MAXDATASIZE ) ) { rmuser_stub(); return; }
+			if( !strncasecmp( "rmcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { rmcalc_stub(); return; }
+			if( !strncasecmp( "rawirc", cur_msg.msgarg1, MAXDATASIZE ) ) { rawirc(); return; }
+			if( !strncasecmp( "rcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { rpn_stub(); return; }
+			if( !strncasecmp( "recalc", cur_msg.msgarg1, MAXDATASIZE ) ) { chcalc_stub(); return; }
+			if( !strncasecmp( "rot13", cur_msg.msgarg1, MAXDATASIZE ) ) { rot13_stub(); return; }
+			break;
 		case 'm':
-		  if( !strncasecmp( "mkcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { mkcalc_stub(); return; }
-		  break;
+			if( !strncasecmp( "mkcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { mkcalc_stub(); return; }
+			break;
 		case 'l':
-		  if( !strncasecmp( "listcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { listcalc_stub(); return; }
-		  if( !strncasecmp( "lsusers", cur_msg.msgarg1, MAXDATASIZE ) ) { lsusers_stub(); return; }
-		  if( !strncasecmp( "login", cur_msg.msgarg1, MAXDATASIZE ) ) { help(); return; }
-		  break;
+			if( !strncasecmp( "listcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { listcalc_stub(); return; }
+			if( !strncasecmp( "lsusers", cur_msg.msgarg1, MAXDATASIZE ) ) { lsusers_stub(); return; }
+			if( !strncasecmp( "login", cur_msg.msgarg1, MAXDATASIZE ) ) { help(); return; }
+			break;
 		case 'x':
-		  if( !strncasecmp( "xpln", cur_msg.msgarg1, MAXDATASIZE ) ) { docalc_stub(); return; }
-		  break;
+			if( !strncasecmp( "xpln", cur_msg.msgarg1, MAXDATASIZE ) ) { docalc_stub(); return; }
+			break;
 		case 'd':
-		  if( !strncasecmp( "dcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { dcalc_stub(); return; }
-		  break;
+			if( !strncasecmp( "dcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { dcalc_stub(); return; }
+			break;
 		case 's':
-		  if( !strncasecmp( "searchcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { searchcalc_stub(); return; }
-		  break;
+			if( !strncasecmp( "searchcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { searchcalc_stub(); return; }
+			break;
 	}
 
 	return;
@@ -396,7 +400,7 @@ void send_irc_message( char *sndmsg )
 
 	if( send (sockfd, sndmsg, strlen( sndmsg ), 0) == -1) perror("send");
 	if( send (sockfd, &newline, 1, 0) == -1) perror("send");
-	sleep( 1 );	  /* pause for a second to help keep things from getting too crazy. */
+	sleep( 1 );		/* pause for a second to help keep things from getting too crazy. */
 	return;
 }
 
@@ -470,13 +474,15 @@ void docalc_stub()
 
 void oppeople_stub()
 {
-    if( MSGTO[0] == '#' ) return; /* do not respond to op requests made in the channel */
+	if( MSGTO[0] == '#' ) return; /* do not respond to op requests made in the channel */
 
 	/* making getting ops easier for other than the default channel */
 	
-	 if( (cur_msg.msgarg2[0] == '#') || (cur_msg.msgarg2[0] == '&') ) {
-		if( cur_msg.msgarg4[0] ) oppeople( cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.msgarg4, cur_msg.nick );
-		else oppeople( cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.nick, cur_msg.nick );
+	if( (cur_msg.msgarg2[0] == '#') || (cur_msg.msgarg2[0] == '&') ) {
+		if( cur_msg.msgarg4[0] )
+			oppeople( cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.msgarg4, cur_msg.nick );
+		else
+			oppeople( cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.nick, cur_msg.nick );
 		return;
 	}
 	/* op only in the default channel */
@@ -599,17 +605,19 @@ void searchcalc_stub()
 
 int rpn_stub( void )
 {
-  int x = 0;
-  char tmpray[MAXDATASIZE], answer[MAXDATASIZE];
+	int x = 0;
+	char tmpray[MAXDATASIZE], answer[MAXDATASIZE];
 
-  rpn_calc( cur_msg.fulltext + (strlen( cur_msg.msgarg1 ) + 1), answer, (MAXDATASIZE - 2) );
+	rpn_calc( cur_msg.fulltext + (strlen( cur_msg.msgarg1 ) + 1), answer, (MAXDATASIZE - 2) );
 
-  if( x != RPN_OK ) snprintf( tmpray, MAXDATASIZE, "privmsg %s :error: %s", MSGTO, answer );
-  else snprintf( tmpray, MAXDATASIZE, "privmsg %s :cout says: %s", MSGTO, answer );
+	if( x != RPN_OK )
+		snprintf( tmpray, MAXDATASIZE, "privmsg %s :error: %s", MSGTO, answer );
+	else
+		snprintf( tmpray, MAXDATASIZE, "privmsg %s :cout says: %s", MSGTO, answer );
 
-  send_irc_message( tmpray );
+	send_irc_message( tmpray );
 
-  return 0;
+	return 0;
 }
 
 
@@ -618,45 +626,47 @@ int rpn_stub( void )
 
 int dcalc_stub( void )
 {
-  char tmpray[MAXDATASIZE];
-  Value v;
-  const char *plaint;
+	char tmpray[MAXDATASIZE];
+	Value v;
+	const char *plaint;
 
 
-  plaint = dcalc(&v, cur_msg.fulltext + (strlen( cur_msg.msgarg1 ) + 1) );
+	plaint = dcalc(&v, cur_msg.fulltext + (strlen( cur_msg.msgarg1 ) + 1) );
 
-  if( plaint ) snprintf( tmpray, MAXDATASIZE, "privmsg %s :answer: %s", MSGTO, plaint);
-  else snprintf( tmpray, MAXDATASIZE, "privmsg %s :answer: %.16g", MSGTO, v);
+	if( plaint )
+		snprintf( tmpray, MAXDATASIZE, "privmsg %s :answer: %s", MSGTO, plaint);
+	else
+		snprintf( tmpray, MAXDATASIZE, "privmsg %s :answer: %.16g", MSGTO, v);
 
-  send_irc_message( tmpray );
+	send_irc_message( tmpray );
 
-  return 0;
+	return 0;
 }
 
 
 int wcalc_stub( void )
 {
-  char tmpray[MAXDATASIZE];
-  size_t len;
+	char tmpray[MAXDATASIZE];
+	size_t len;
 
-  snprintf(tmpray, MAXDATASIZE, "privmsg %s : ", MSGTO);
-  len = strlen(tmpray);
-  wcalc(tmpray + len, MAXDATASIZE - len - 1, cur_msg.fulltext + (strlen( cur_msg.msgarg1 ) + 1) );
+	snprintf(tmpray, MAXDATASIZE, "privmsg %s : ", MSGTO);
+	len = strlen(tmpray);
+	wcalc(tmpray + len, MAXDATASIZE - len - 1, cur_msg.fulltext + (strlen( cur_msg.msgarg1 ) + 1) );
 
-  send_irc_message( tmpray );
+	send_irc_message( tmpray );
 
-  return 0;
+	return 0;
 }
 
 int proto_stub( void )
 {
-  char tmpray[MAXDATASIZE];
-  size_t len;
-  snprintf(tmpray, MAXDATASIZE, "privmsg %s : ", MSGTO);
-  len = strlen(tmpray);
-  proto_result(tmpray+len, sizeof tmpray - len - 1, cur_msg.fulltext + (strlen( cur_msg.msgarg1 ) + 1) );
-  send_irc_message( tmpray );
-  return 0;
+	char tmpray[MAXDATASIZE];
+	size_t len;
+	snprintf(tmpray, MAXDATASIZE, "privmsg %s : ", MSGTO);
+	len = strlen(tmpray);
+	proto_result(tmpray+len, sizeof tmpray - len - 1, cur_msg.fulltext + (strlen( cur_msg.msgarg1 ) + 1) );
+	send_irc_message( tmpray );
+	return 0;
 }
 
 /********************************-----end stubs-----*************************************/
@@ -781,11 +791,11 @@ void do_ctcp( void )
 
 	switch( cur_msg.msgarg1[1] ) {
 		case 'V':
-		  snprintf( ray, MAXDATASIZE, "NOTICE %s :\001VERSION ircII.5 not quite all there yet.\001", cur_msg.nick );
-		  break;
+			snprintf( ray, MAXDATASIZE, "NOTICE %s :\001VERSION ircII.5 not quite all there yet.\001", cur_msg.nick );
+			break;
 		default:
-		  snprintf( ray, MAXDATASIZE, "NOTICE %s :%s\001", cur_msg.nick, cur_msg.msgarg1 );
-		  break;
+			snprintf( ray, MAXDATASIZE, "NOTICE %s :%s\001", cur_msg.nick, cur_msg.msgarg1 );
+			break;
 	}
 
 	send_irc_message( ray );
@@ -976,7 +986,7 @@ int irc_connect( void )
 
 	numbytes = recv( sockfd, ray, MAXDATASIZE, 0);
 	if( numbytes == -1 )
-	  {
+		{
 		perror("recv");
 		close( sockfd );
 		return 1;
@@ -984,7 +994,7 @@ int irc_connect( void )
 
 	if( strstr( ray, "PING" ) ) { reply_ping( ray ); }
 	if( strstr( ray, "Nickname is already in use" ) )
-	  {
+		{
 		strncpy( BOTNAME, NICK2, MAXDATASIZE );
 		memset( ray, '\0', sizeof(ray) );
 		snprintf( ray, MAXDATASIZE, "nick %s", BOTNAME );
@@ -1090,6 +1100,7 @@ int prep( void )
 	if( loadusers( "user.list" ) ) { puts( "failed loading the user.list " ); return 15; }
 	if( loaddb( CALCDB, MAXCALCS ) ) { puts( "failed loading the calc database." ); return 20; }
 	if( !proto_init() ) { puts( "failed to load the proto database." ); return 30; }
+		if( !autovoice_init() ) { puts( "failed to load the autovoice module." ); return 40; } 
 	return 0;
 }
 
@@ -1116,7 +1127,7 @@ int main(int argc, char *argv[])
 	while(keep_going) {
 		printf( "\n\nattempting to connect to %s, please wait...\n\n", SERVER );
 		x = irc_connect();
-		sleep( 3 );	  /* 3 seconds to keep from hitting the server too much with reconnects */
+		sleep( 3 );		/* 3 seconds to keep from hitting the server too much with reconnects */
 		if( x ) {
 			puts("hm. i could not connect dude.");
 			continue;
@@ -1128,3 +1139,4 @@ int main(int argc, char *argv[])
 }
 
 /*****************************----end code----*****************************/
+// vi: noet sts=0 ts=4 sw=4
