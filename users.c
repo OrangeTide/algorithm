@@ -54,8 +54,6 @@
 #include "users.h"
 #include "bot.h"
 
-extern char MSGTO[MAXDATASIZE];
-
 static struct user *usr;
 static struct user *trv;
 static struct user *lag;

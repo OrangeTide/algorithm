@@ -47,13 +47,6 @@
 #include "users.h"
 #include "strcasestr.h"
 
-
-/*
- * this holds the name of the person/channel we will talk to. set in bot.c
- */
-extern char MSGTO[MAXDATASIZE];
-
-
 /*
  * variables needed by many functions in the module.
  */

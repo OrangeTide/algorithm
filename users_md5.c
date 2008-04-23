@@ -55,8 +55,6 @@
 #include "bot.h"
 #include "md5crypt.h"
 
-extern char MSGTO[MAXDATASIZE];
-
 static struct user *usr;
 static struct user *trv;
 static struct user *lag;

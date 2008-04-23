@@ -62,7 +62,7 @@
 #define MAXDATASIZE 515
 #define NEWLINE '\n'
 
-
+extern char MSGTO[MAXDATASIZE];
 
 void send_irc_message( char *sndmsg );
 void parse_incoming( char *ptr );
