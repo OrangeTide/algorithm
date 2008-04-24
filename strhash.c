@@ -9,6 +9,7 @@
 
 #include <assert.h>
 #include <stddef.h>
+#include <ctype.h>
 #include "strhash.h"
 
 /** calculates a hash of a null terminated string */
@@ -20,6 +21,19 @@ unsigned strhash(const char *str) {
 	while(*str) {
 		/* same as: h = h * 65599 + *str++; */
 		h=*str+++(h<<6)+(h<<16)-h;
+	}
+	return h;
+}
+
+/** calculates a hash of a null terminated string of any case */
+unsigned strcasehash(const char *str) {
+	unsigned h=0;
+
+	assert(str!=NULL);
+
+	while(*str) {
+		/* same as: h = h * 65599 + *str++; */
+		h=tolower(*str++)+(h<<6)+(h<<16)-h;
 	}
 	return h;
 }

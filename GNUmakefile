@@ -6,13 +6,16 @@ CFLAGS+=-ggdb
 
 EXEC:=bot
 SRCS:=\
+	autovoice.c \
 	bot.c \
 	calcdb.c \
 	calcnotfound.c \
 	dcalc.c \
+	notify.c \
 	proto.c \
 	rc.c \
 	rpn.c \
+	strhash.c \
 	udb.c \
 	wcalc.c
 

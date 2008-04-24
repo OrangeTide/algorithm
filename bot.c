@@ -98,7 +98,7 @@
 
 
 	sig_atomic_t keep_going=1;	/* flag to break out of the inner loop */
-	sig_atomic_t verbose=2;		 /* flag to enable verbose debugging */
+	sig_atomic_t verbose=1;		 /* flag to enable verbose debugging */
 
 /******************************----BEGIN CODE----*********************************/
 
@@ -304,26 +304,15 @@ void parse_incoming( char *ptr )
 }
 
 
-
-/* after the message from the ircd has been parsed, i need to decide what course of
- * action to take based upon that input. this is where events are triggered.
- */
-
-void make_a_decision( void )
+/* found a PRIVMSG or NOTICE */
+static void has_message( void )
 {
-	/* don't let it talk to itself, so make sure this is first in the list. Changes botname if bot is changing its nick*/
-	if( !strncasecmp( BOTNAME, cur_msg.nick, MAXDATASIZE ) ) {
-		if (cur_msg.msgtype[0] == 'N' && cur_msg.msgtype[1] == 'I') {
-			strncpy(BOTNAME, cur_msg.msgto, MAXDATASIZE);
-		}
-		return;
-	}
-
-
 	/* this sets msgto to the msg sender's nick if it was a privmsg to the bot itself.*/
 	/* otherwise it makes it possible to talk to the channel that sent the message. */
-	if( !strcmp( cur_msg.msgto, BOTNAME ) ) strncpy( MSGTO, cur_msg.nick, MAXDATASIZE );
-	else strncpy( MSGTO, cur_msg.msgto, MAXDATASIZE );
+	if( !strcmp( cur_msg.msgto, BOTNAME ) )
+		strncpy( MSGTO, cur_msg.nick, MAXDATASIZE );
+	else
+		strncpy( MSGTO, cur_msg.msgto, MAXDATASIZE );
 
 	/* switch on the first character of the first "word" in the message */
 	switch( tolower(cur_msg.msgarg1[0]) ) {
@@ -380,9 +369,36 @@ void make_a_decision( void )
 			break;
 	}
 
-	return;
 }
 
+
+/* after the message from the ircd has been parsed, i need to decide what course of
+ * action to take based upon that input. this is where events are triggered.
+ */
+
+void make_a_decision( void )
+{
+	if(verbose>4) {
+		fprintf(stderr, "%s(): message type='%s'\n", __func__, cur_msg.msgtype);
+	}
+	/* don't let it talk to itself, so make sure this is first in the list. Changes botname if bot is changing its nick*/
+	if( !strncasecmp( BOTNAME, cur_msg.nick, MAXDATASIZE ) ) {
+		if (cur_msg.msgtype[0] == 'N' && cur_msg.msgtype[1] == 'I') {
+			strncpy(BOTNAME, cur_msg.msgto, MAXDATASIZE);
+		}
+		return;
+	}
+
+	notify_report_message(&cur_msg);
+
+	if(!strcasecmp(cur_msg.msgtype, "PRIVMSG") || !strcasecmp(cur_msg.msgtype, "NOTICE")) {
+		if(verbose>2) {
+			fprintf(stderr, "Got a message\n");
+		}
+		has_message();
+	}
+
+}
 
 
 /* how to comment? this function is almost pointless as is. its purpose will become
@@ -394,7 +410,7 @@ void make_a_decision( void )
 void send_irc_message( char *sndmsg )
 {
 	char newline = '\n';
-	if(verbose>1) {
+	if(verbose>0) {
 		fprintf(stderr, "OUT> %s\n", sndmsg);
 	}
 
@@ -1134,7 +1150,7 @@ int main(int argc, char *argv[])
 		}
 		main_loop();
 		close( sockfd );
-		puts( "disconnected... retrying" );
+		puts( "disconnected..." );
 	}
 }
 
