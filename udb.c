@@ -9,6 +9,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include "strhash.h"
 #include "udb.h"
 
 #define HASH_SZ 4096 /* hash table size - does not have to be power of 2 */
@@ -32,35 +33,6 @@ struct udb_handle {
 	struct stat last_stat; /* result of last stat() call */
 	struct udb_ent hash[HASH_SZ]; /* note: first level are not pointers */
 };
-
-/** calculates a hash of a null terminated string */
-static unsigned strhash(const char *str) {
-	unsigned h=0;
-
-	assert(str!=NULL);
-
-	while(*str) {
-		/* same as: h = h * 65599 + *str++; */
-		h=*str+++(h<<6)+(h<<16)-h;
-	}
-	return h;
-}
-
-#if 0 /* not used */
-/** calculates a hash of a series of characters */
-static unsigned strnhash(const char *str, size_t len) {
-	unsigned h=0;
-
-	assert(str!=NULL);
-
-	while(len) {
-		/* same as: h = h * 65599 + *str++; */
-		h=*str+++(h<<6)+(h<<16)-h;
-		len--;
-	}
-	return h;
-}
-#endif
 
 /** removed newline from end of a string 
  * return non-zero if a newline was found */
