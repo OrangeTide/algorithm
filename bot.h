@@ -78,7 +78,6 @@ int host_connect( char *exthost, int extport, int extsockfd );
 int chop( char *in, char *out, int position, char separator );
 int process_in( void );
 int irc_connect( void );
-int main(int argc, char *argv[]);
 void do_ctcp( void );
 int clean_message( char *msg );
 int prep( void );
