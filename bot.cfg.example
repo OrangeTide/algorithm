@@ -2,7 +2,7 @@
 # Bot configuration file
 #
 bot {
-    server "irc.dks.ca"; // this is a comment
+    server "irc.spoof.org"; 
     port=6667;
     #nick="algorithm";
     nick="memfrob";
@@ -11,10 +11,10 @@ bot {
     max_db=9999;
     database "calcdb.data";
     on_connect="startup.cmd";
-    default_channel="#c";
-    verbose=2;
+    default_channel="#test";
+    # verbose=2;
 }
 
 autovoice {
-    channels="#c";
+    channels="#test";
 }

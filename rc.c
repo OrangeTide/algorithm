@@ -51,6 +51,8 @@
 #define OPTIONAL(x)	   { DEBUG("OPTIONAL: " #x "\n"); if((x)==EOF) return EOF; }
 */
 
+int verbose;
+
 static char current_operation[64] = "doing nothing"; 
 
 static void reset_current_operation(void)
@@ -326,6 +328,9 @@ struct config_node *config_parser(const char *filename)
 	if(result==EOF) { 
 		reset_current_operation();
 		DEBUG("Success!\n");
+		if(verbose>3) {
+			dumptree(root, 0);
+		}
 		return root; /* success */
 	} else if(result==0) {
 		ERROR("Line %d:Parse Error while %s\n",line,current_operation);

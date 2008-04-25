@@ -56,6 +56,7 @@
 #include "autovoice.h"
 #include "bot.h"
 #include "calcdb.h"
+#include "command.h"
 #include "dcalc.h"
 #include "notify.h"
 #include "proto.h"
@@ -88,13 +89,13 @@
  */
 
 	static	int  sockfd;					/* used for the socket file descriptor */
-	static	char BOTNAME[MAXDATASIZE]; /* holds the actual nickname in use by the bot */
 	static	struct message cur_msg;		/* defined in bot.h, holds a parsed irc message */
 
 
 /* this variable is extern'ed to ALL modules needing to send their own irc messages */
 
 	char MSGTO[MAXDATASIZE];	/* set to nick/channel on each incoming message */
+	char BOTNAME[MAXDATASIZE]; /* holds the actual nickname in use by the bot */
 
 
 	sig_atomic_t keep_going=1;	/* flag to break out of the inner loop */
@@ -303,75 +304,6 @@ void parse_incoming( char *ptr )
 	return;
 }
 
-
-/* found a PRIVMSG or NOTICE */
-static void has_message( void )
-{
-	/* this sets msgto to the msg sender's nick if it was a privmsg to the bot itself.*/
-	/* otherwise it makes it possible to talk to the channel that sent the message. */
-	if( !strcmp( cur_msg.msgto, BOTNAME ) )
-		strncpy( MSGTO, cur_msg.nick, MAXDATASIZE );
-	else
-		strncpy( MSGTO, cur_msg.msgto, MAXDATASIZE );
-
-	/* switch on the first character of the first "word" in the message */
-	switch( tolower(cur_msg.msgarg1[0]) ) {
-		case 1:
-			if( !strncasecmp( BOTNAME, cur_msg.msgto, MAXDATASIZE ) ) { do_ctcp(); return; }
-			break;
-		case 'c':
-			if( !strncasecmp( "chpass", cur_msg.msgarg1, MAXDATASIZE ) ) { chpass_stub(); return; }
-			if( !strncasecmp( "calc", cur_msg.msgarg1, MAXDATASIZE ) ) { docalc_stub(); return; }
-			if( !strncasecmp( "clac", cur_msg.msgarg1, MAXDATASIZE ) ) { docalc_stub(); return; }
-			if( !strncasecmp( "chcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { chcalc_stub(); return; }
-			break;
-		case 'o':
-			if( !strncasecmp( "op", cur_msg.msgarg1, MAXDATASIZE ) ) { oppeople_stub(); return; }
-			if( !strncasecmp( "owncalc", cur_msg.msgarg1, MAXDATASIZE ) ) { owncalc_stub(); return; }
-			break;
-		case 'p':
-			if( !strncasecmp( "proto", cur_msg.msgarg1, MAXDATASIZE ) ) { proto_stub(); return; }
-			break;
-		case 'w':
-			if( !strncasecmp( "whois", cur_msg.msgarg1, MAXDATASIZE ) ) { whois_stub(); return; }
-			if( !strncasecmp( "wcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { wcalc_stub(); return; }
-			break;
-		case 'a':
-			if( !strncasecmp( "adduser", cur_msg.msgarg1, MAXDATASIZE ) ) { adduser_stub(); return; }
-			break;
-		case 'h':
-			if( !strncasecmp( "help", cur_msg.msgarg1, MAXDATASIZE ) ) { help(); return; }
-			break;
-		case 'r':
-			if( !strncasecmp( "rmuser", cur_msg.msgarg1, MAXDATASIZE ) ) { rmuser_stub(); return; }
-			if( !strncasecmp( "rmcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { rmcalc_stub(); return; }
-			if( !strncasecmp( "rawirc", cur_msg.msgarg1, MAXDATASIZE ) ) { rawirc(); return; }
-			if( !strncasecmp( "rcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { rpn_stub(); return; }
-			if( !strncasecmp( "recalc", cur_msg.msgarg1, MAXDATASIZE ) ) { chcalc_stub(); return; }
-			if( !strncasecmp( "rot13", cur_msg.msgarg1, MAXDATASIZE ) ) { rot13_stub(); return; }
-			break;
-		case 'm':
-			if( !strncasecmp( "mkcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { mkcalc_stub(); return; }
-			break;
-		case 'l':
-			if( !strncasecmp( "listcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { listcalc_stub(); return; }
-			if( !strncasecmp( "lsusers", cur_msg.msgarg1, MAXDATASIZE ) ) { lsusers_stub(); return; }
-			if( !strncasecmp( "login", cur_msg.msgarg1, MAXDATASIZE ) ) { help(); return; }
-			break;
-		case 'x':
-			if( !strncasecmp( "xpln", cur_msg.msgarg1, MAXDATASIZE ) ) { docalc_stub(); return; }
-			break;
-		case 'd':
-			if( !strncasecmp( "dcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { dcalc_stub(); return; }
-			break;
-		case 's':
-			if( !strncasecmp( "searchcalc", cur_msg.msgarg1, MAXDATASIZE ) ) { searchcalc_stub(); return; }
-			break;
-	}
-
-}
-
-
 /* after the message from the ircd has been parsed, i need to decide what course of
  * action to take based upon that input. this is where events are triggered.
  */
@@ -390,14 +322,6 @@ void make_a_decision( void )
 	}
 
 	notify_report_message(&cur_msg);
-
-	if(!strcasecmp(cur_msg.msgtype, "PRIVMSG") || !strcasecmp(cur_msg.msgtype, "NOTICE")) {
-		if(verbose>2) {
-			fprintf(stderr, "Got a message\n");
-		}
-		has_message();
-	}
-
 }
 
 
@@ -1062,25 +986,25 @@ static int load_item_int(struct config_node *root, const char *name, int *i, con
  * into global variables.
  */
 
-int load_cfg( void )
+static struct config_node *load_cfg( void )
 {
-	int ret=0;
 	struct config_node *root;
 	struct config_node *curr;
 
 	root=config_parser("bot.cfg");
-	if(!root) return 1;
+	if(!root) return 0;
 
 	/* look for a "bot" node */
 	curr=config_find(root,"bot");
 	if(!curr) return 0;
 	if(curr->child) { 
+		int res;
 		curr=curr->child;
 
 		puts( "\n--------------- bot.cfg data ---------------\n" );
 
 		load_item_int(curr,"verbose", &verbose, "verbose debug level");
-		ret= !(load_item_str(curr,"server",sizeof SERVER, SERVER, "irc server")
+		res= load_item_str(curr,"server",sizeof SERVER, SERVER, "irc server")
 		&& load_item_int(curr,"port", &PORT, "server port")
 		&& load_item_str(curr,"nick", sizeof NICK1, NICK1, "nick")
 		&& load_item_str(curr,"alt_nick", sizeof NICK2, NICK2, "alternate nick")
@@ -1088,17 +1012,17 @@ int load_cfg( void )
 		&& load_item_int(curr,"max_db", &MAXCALCS, "max db entries")
 		&& load_item_str(curr,"database", sizeof CALCDB, CALCDB, "calc database filename")
 		&& load_item_str(curr,"default_channel", sizeof DEF_CHAN, DEF_CHAN, "default channel")
-		&& load_item_str(curr,"on_connect", sizeof ON_CONNECT_SCRIPT, ON_CONNECT_SCRIPT, "script for connect"));
+		&& load_item_str(curr,"on_connect", sizeof ON_CONNECT_SCRIPT, ON_CONNECT_SCRIPT, "script for connect");
 		puts( "\n--------------- data loaded ---------------\n" );
 
 		if( !DEF_CHAN[0] )
 		printf("Warning. No default channel selected. Some commands may not work.\n");
-
-	} else {
-		ret=1;
+		if(!res) {
+			config_free(root);
+			return 0; /* failure */
+		}
 	}
-	config_free(root);
-	return ret;
+	return root;
 }
 
 
@@ -1109,14 +1033,20 @@ int load_cfg( void )
 
 int prep( void )
 {
+	struct config_node *config_root;
+
 	signal(SIGPIPE, SIG_IGN);
 	signal(SIGFPE, SIG_IGN);
 	srand( time( NULL ) );
-	if( load_cfg() ) { puts( "failed at end of load_cfg()"); return 10; }
+	config_root=load_cfg();
+
+	if( !config_root ) { puts( "failed at end of load_cfg()"); return 10; }
 	if( loadusers( "user.list" ) ) { puts( "failed loading the user.list " ); return 15; }
 	if( loaddb( CALCDB, MAXCALCS ) ) { puts( "failed loading the calc database." ); return 20; }
-	if( !proto_init() ) { puts( "failed to load the proto database." ); return 30; }
-		if( !autovoice_init() ) { puts( "failed to load the autovoice module." ); return 40; } 
+	if( !command_init() ) { puts( "failed to load the command module." ); return 30; } 
+	if( !proto_init() ) { puts( "failed to load the proto database." ); return 40; }
+	if( !autovoice_init(config_root) ) { puts( "failed to load the autovoice module." ); return 50; } 
+	config_free(config_root);
 	return 0;
 }
 

@@ -10,6 +10,7 @@ SRCS:=\
 	bot.c \
 	calcdb.c \
 	calcnotfound.c \
+	command.c \
 	dcalc.c \
 	notify.c \
 	proto.c \

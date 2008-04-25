@@ -63,6 +63,7 @@
 #define NEWLINE '\n'
 
 extern char MSGTO[MAXDATASIZE]; /* set to nick/channel on each incoming message */
+extern char BOTNAME[MAXDATASIZE]; /* holds the actual nickname in use by the bot */
 extern sig_atomic_t keep_going; /* flag to break out of the inner loop */
 extern sig_atomic_t verbose;    /* flag to enable verbose debugging */
 
@@ -72,13 +73,11 @@ void make_a_decision( void);
 void main_loop( void );
 void reply_ping( char *ptr );
 int prep( void );
-int load_cfg( void );
 int process_out( void );
 int host_connect( char *exthost, int extport, int extsockfd );
 int chop( char *in, char *out, int position, char separator );
 int process_in( void );
 int irc_connect( void );
-int load_cfg( void );
 int main(int argc, char *argv[]);
 void do_ctcp( void );
 int clean_message( char *msg );
