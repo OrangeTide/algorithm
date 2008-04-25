@@ -4,13 +4,15 @@
  * This work may be modified and/or redistributed, as long as this license and
  * copyright text is retained. There is no warranty, express or implied.
  *
- * Last Updated: April 22, 2008
+ * Original: April 22, 2008
+ * Last Updated: April 25, 2008
  */
 
 #include <assert.h>
 #include <stdlib.h>
 #include <string.h>
 #include "bot.h"
+#include "debug.h"
 #include "notify.h"
 #include "strhash.h"
 
@@ -116,17 +118,17 @@ void notify_report_message(struct message *msg)
 	if(!msg) return;
 	if(msg->msgtype[0]==0) return; /* ignore untyped messages*/
 	if(verbose>2) {
-		fprintf(stderr, "Reporting msgtype:%s\n", msg->msgtype);
+		INFO("Reporting msgtype:%s\n", msg->msgtype);
 	}
 	head=find_head(msg->msgtype, 0, 0);
 	if(!head) return; /* no handler - ignore */
 
 	if(verbose>2) {
-		fprintf(stderr, "Found head for msgtype:%s\n", msg->msgtype);
+		INFO("Found head for msgtype:%s\n", msg->msgtype);
 	}
 	for(curr=head->head;curr;curr=curr->next) {
 		if(verbose>2) {
-			fprintf(stderr, "calling func:%p for msgtype:%s\n", curr->func, msg->msgtype);
+			INFO("calling func:%p for msgtype:%s\n", curr->func, msg->msgtype);
 		}
 		if(curr->func) {
 			curr->func(curr->p, msg);
