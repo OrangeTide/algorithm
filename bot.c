@@ -175,7 +175,7 @@ int process_out( void )
 			strncpy( ray, (tmp + 1), MAXDATASIZE );
 			send_irc_message( ray );
 		}
-	} else {
+	} else if(tmp[0] && tmp[0]!='\n') {
 		if(DEF_CHAN[0]) {
 			snprintf( ray, MAXDATASIZE, "PRIVMSG %s :%s", DEF_CHAN, tmp );
 			send_irc_message( ray );
@@ -266,7 +266,7 @@ void parse_incoming( char *ptr )
 
 	if( *ptr != '\0' ) position = chop( ptr, cur_msg.userline, 1, ' ' );  /* 1 to skip the leading colon */
 	if( ptr[position] != '\0' ) position = chop( ptr, cur_msg.msgtype, position, ' ' );
-	if (cur_msg.msgtype[0] == 'N' && cur_msg.msgtype[1] == 'I') ++position; /*skip a colon since there is no "to", msgto holds new /nick */
+	if( ptr[position] == ':' ) position++; /* skip the colon if there is one */
 	if( ptr[position] != '\0' ) position = chop( ptr, cur_msg.msgto, position, ' ' ); /* holds new NICK if previous statements succeeds */
 
 	if( ptr[position] != '\0' ) position = chop( ptr, cur_msg.fulltext, ptr[position]==':' ? position + 1 : position, '\n' );  /* + 1 to skip the colon */
