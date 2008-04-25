@@ -60,6 +60,8 @@
 
 
 #define MAXDATASIZE 515
+#define MAXNICKSIZE 60				/* max length of a nick */
+#define MAX_CHANNEL_NAME 60			/* max length of an individual channel name */
 #define NEWLINE '\n'
 #define WHITESPACE " \t\r\n"
 
