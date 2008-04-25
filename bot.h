@@ -61,6 +61,7 @@
 
 #define MAXDATASIZE 515
 #define NEWLINE '\n'
+#define WHITESPACE " \t\r\n"
 
 extern char MSGTO[MAXDATASIZE]; /* set to nick/channel on each incoming message */
 extern char BOTNAME[MAXDATASIZE]; /* holds the actual nickname in use by the bot */

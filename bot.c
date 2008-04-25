@@ -151,8 +151,8 @@ int process_out( void )
 		size_t cmdlen, argstart;
 
 		/* handle some commands */
-		cmdlen = strcspn( tmp+1, " \t\n" );
-		argstart = 1 + cmdlen + strspn( tmp + 1 + cmdlen, " \t\n" );
+		cmdlen = strcspn( tmp+1, WHITESPACE );
+		argstart = 1 + cmdlen + strspn( tmp + 1 + cmdlen, WHITESPACE );
 
 		if(cmdlen == 4 && !memcmp( "quit", tmp+1, 4 )) {
 			/* /quit was entered */
@@ -167,8 +167,8 @@ int process_out( void )
 			/* /msg was entered . put the : in for people */
 			size_t nickstart, nicklen;
 			nickstart = argstart;
-			nicklen = strcspn( tmp+nickstart, " \t\n" );
-			argstart = nickstart + nicklen + strspn( tmp + nickstart + nicklen, " \t\n" );
+			nicklen = strcspn( tmp+nickstart, WHITESPACE );
+			argstart = nickstart + nicklen + strspn( tmp + nickstart + nicklen, WHITESPACE );
 			snprintf( ray, sizeof ray, "privmsg %.*s :%s", nicklen, tmp + nickstart,	tmp + argstart );
 			send_irc_message( ray );
 		} else {
