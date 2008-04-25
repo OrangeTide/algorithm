@@ -12,6 +12,7 @@ SRCS:=\
 	calcnotfound.c \
 	command.c \
 	dcalc.c \
+	mode.c \
 	notify.c \
 	proto.c \
 	rc.c \
