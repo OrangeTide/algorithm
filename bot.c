@@ -156,7 +156,11 @@ int process_out( void )
 
 		if(cmdlen == 4 && !memcmp( "quit", tmp+1, 4 )) {
 			/* /quit was entered */
-			snprintf( ray, sizeof ray, "quit :%s", tmp + argstart );
+			if(tmp[argstart]) {
+				snprintf( ray, sizeof ray, "quit :%s", tmp + argstart );
+			} else {
+				snprintf( ray, sizeof ray, "quit" );
+			}
 			send_irc_message( ray );
 			keep_going=0;
 		} else if(cmdlen == 3 && !memcmp( "msg", tmp+1, 3 )) {
@@ -184,10 +188,11 @@ int process_out( void )
 
 
 
-/* ugh. this one is impossible to comment on. what it does is make sure that only
- * complete lines are processed. It uses a static buffer to hold the incomplete
- * information until the next packet comes in. X is the placeholder index.
- * marked High Priority for recoding. this code sucks badly... even though it works
+/* ugh. this one is impossible to comment on. what it does is make sure that
+ * only complete lines are processed. It uses a static buffer to hold the
+ * incomplete information until the next packet comes in. X is the placeholder
+ * index. marked High Priority for recoding. this code sucks badly... even
+ * though it works
  * this hurts my eyes every time i see it.
  */
 
@@ -259,30 +264,30 @@ void parse_incoming( char *ptr )
 
 	/* do an initial breakup of the message based on whitespace */
 
-	if( *(ptr + position) != '\0' ) position = chop( ptr, cur_msg.userline, 1, ' ' );  /* 1 to skip the leading colon */
-	if( *(ptr + position) != '\0' ) position = chop( ptr, cur_msg.msgtype, position, ' ' );
+	if( *ptr != '\0' ) position = chop( ptr, cur_msg.userline, 1, ' ' );  /* 1 to skip the leading colon */
+	if( ptr[position] != '\0' ) position = chop( ptr, cur_msg.msgtype, position, ' ' );
 	if (cur_msg.msgtype[0] == 'N' && cur_msg.msgtype[1] == 'I') ++position; /*skip a colon since there is no "to", msgto holds new /nick */
-	if( *(ptr + position) != '\0' ) position = chop( ptr, cur_msg.msgto, position, ' ' ); /* holds new NICK if previous statements succeeds */
+	if( ptr[position] != '\0' ) position = chop( ptr, cur_msg.msgto, position, ' ' ); /* holds new NICK if previous statements succeeds */
 
-	if( *(ptr + position) != '\0' ) position = chop( ptr, cur_msg.fulltext, position + 1, '\n' );  /* + 1 to skip the colon */
+	if( ptr[position] != '\0' ) position = chop( ptr, cur_msg.fulltext, ptr[position]==':' ? position + 1 : position, '\n' );  /* + 1 to skip the colon */
 
 	/*break down the host/nick type stuff */
 
 	position = chop( ptr, cur_msg.nick, 1, '!' );
-	if( *(ptr + position) != '\0' ) position = chop( ptr, cur_msg.logname, position, '@' );
-	if( *(ptr + position) != '\0' ) position = chop( ptr, cur_msg.hostname, position, ' ' );
+	if( ptr[position] != '\0' ) position = chop( ptr, cur_msg.logname, position, '@' );
+	if( ptr[position] != '\0' ) position = chop( ptr, cur_msg.hostname, position, ' ' );
 
 	/* now that the protocol crap is gone, let's parse what the person said. */
 	if( (cur_msg.msgtype[0] == 'P') || (cur_msg.msgtype[0] == 'N') ) { /*PRIVMSG or NOTICE, NICK triggers too though */
 		position = chop( cur_msg.fulltext, cur_msg.msgarg1, 0, ' ' );
-		if( *(ptr + position) != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg2, position, ' ' );
-		if( *(ptr + position) != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg3, position, ' ' );
-		if( *(ptr + position) != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg4, position, ' ' );
-		if( *(ptr + position) != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg5, position, ' ' );
-		if( *(ptr + position) != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg6, position, ' ' );
-		if( *(ptr + position) != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg7, position, ' ' );
-		if( *(ptr + position) != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg8, position, ' ' );
-		if( *(ptr + position) != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg9, position, ' ' );
+		if( ptr[position] != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg2, position, ' ' );
+		if( ptr[position] != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg3, position, ' ' );
+		if( ptr[position] != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg4, position, ' ' );
+		if( ptr[position] != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg5, position, ' ' );
+		if( ptr[position] != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg6, position, ' ' );
+		if( ptr[position] != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg7, position, ' ' );
+		if( ptr[position] != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg8, position, ' ' );
+		if( ptr[position] != '\0' ) position = chop( cur_msg.fulltext, cur_msg.msgarg9, position, ' ' );
 	}
 
 	/* console output with simple formatting */
