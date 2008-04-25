@@ -21,13 +21,8 @@ TODO:
     * if a response appears in the channel identical to the calc, don't do a
       calc. (collision feature)
 
-    +v
-    * if something +v's someone after you have, then put a bigger delay on +v
-      (up to a threshold of perhaps 30 seconds?)
-    * if something +v's something you already planned on, then don't +v
 - more effecient calcdb access
 - regex calc searching
-- auto-voice feature
 - dice rolling
 - some commands require the nick to be used "algorithm: roll 2d6"
 - DCC feature to download calc database
@@ -35,13 +30,16 @@ TODO:
 - SQLite user database
 - channel log files (place into SQLite)
 - web stats
-- +v support (don't +v if there was a -v on them)
 - crypto user certificates
 - +o/-o bans (take-over protection)
 - persistent bans. use pQueue to maintain
 - -v on bold/colors with a 'calc bold' sent to the offender. make +o immune
 - SILC protocol support
 - permaban requests
+- idle kicker (if idle for more than 2 hours, kick)
+- list of hostmasks to never voice
+- +l support, increase as more people enter
+- queue up +v ops and combine them into +vvvv
 
 DONE:
 + slick config file
@@ -49,3 +47,5 @@ DONE:
 + configurable DEF_CHAN (default channel)
 + change the 3 space indentation to tab indentation
 + remove case sensitive calcs
++ auto-voice feature
++ +v support (don't +v if there was a -v on them)
