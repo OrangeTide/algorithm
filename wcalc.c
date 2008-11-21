@@ -7,6 +7,8 @@
 #include <float.h>
 #include <stdio.h>
 
+#include "isinf.h"
+
 /* dear diary,
  * this is the type of nodes we're dealing with.
  * there are nodes with 0 arguments (values), 1 argument (unary operators) and
