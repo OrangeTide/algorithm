@@ -1907,7 +1907,7 @@ ralph aerid|mrs. hoover, my cat's breath smelles like cat food.
 heh aerid|when someone says 'heh' over and over it generally means that they do not have a fucking clue what's going on and are trying to make friends or keep from offending anyone with their ignorance/idiocy.
 d.*r.*g.*d platypus|echo `grep '^d.*r.*g.*d' /usr/dict/words`\nderegulated discharged discouraged disorganized disregard disregarded disregarding disregards diverged dragged dragonhead dragooned
 bitch riscgrl|riscgrl!
-strdel Teckla|void strdel(char *str, size_t pos, size_t num) { memmove(str + pos, str + pos + num, strlen(str + pos + num) + 1); }
+clang Mish|C is excellent language with terrible library.
 zhivago_secret_life Omnibus-|<Zhivago> I'd just like to say that FF8 is very good
 botfood undone|Please do not feed the bot.
 microsoft Teckla|Microsoft: http://www.microsoft.com/
@@ -2845,7 +2845,7 @@ inplace OrngeTide|To pack a string inplace (remove spaces) try: for(i=0,j=0;str[
 california Gambit-|The following #C people live in California: OrngeTide, mEAt, voxel, Pennywise, alycat, blueberry.
 rand() Gambit-|How can I get random integers in a certain range? - http://www.eskimo.com/~scs/C-faq/q13.16.html
 gamble Setzer|<Setzer> Life is a hilarious gamble.  I bet on it daily and win!
-strrep Mish|void StrRep(char *Str, char *o, char *n) { char *p = strstr(Str,o); if(!p) return; memmove(p+strlen(n), p+strlen(o), 1+strlen(p+strlen(o))); memcpy(p, n, strlen(n)); }
+heck Mish|"Heck is for people who do not believe in gosh."
 bitops Mish,Mish|Four basic bit operations are: 1. & - bitwise AND. 2. | - bitwise OR. 3. ^ - bitwise XOR (addition module 2). 4. ~ - bitwise NOT, the bitwise negation. For truth tables of each operations, refer to the literature. See also bitfields (unsigned int name:3). For more advanced bit juggling, try calc hackersdelight 
 ncurses Gambit-|http://web.cs.mun.ca/~rod/ncurses/ncurses.html or http://www.magitech.org/ncurses.txt.gz
 string-constant Mish,Mish|I am trying to modify a string. Why modifying char string foo does not work ? I defined foo as char *foo = "abcdefgh". A: Because compiler is free to place string constants into read-only memory. Trying to modify such string will crash your program. What is the solution ? A: The solution is to declare it as char foo[] = "abcdefgh"; This guarantees that foo is writable memory.
@@ -2888,3 +2888,20 @@ example Mish|"One Example is Worth Thousand Explanations" (tm)
 batshua- Mish|<Batshua> Does that include surprise buttsex? <Batshua> Because that's definitely MY favorite kind!  :p
 inheritance Teckla|Some people, when confronted with a problem, think "I know, I'll use inheritance."  Now they have two problems.
 nogod palisade|<NoGods> God, that's painful.
+sexchange OrngeTide|Don't do it! http://www.anticlockwise.com/dani/personal/changes/dont.htm
+xy mauke|They ask how to do X, but that's because they really want to do Y but think X will get them there and most of the time they are wrong.
+xyz mauke|They ask how to do Z, but that's because they think they want to do Y and think that Z will get them there, but really it's because they're a lunkhead, and that's the main (X) problem
+prng OrngeTide|for good Pseudo Random Number Generators: http://www.qbrundage.com/michaelb/pubs/essays/random_number_generation.html
+obama Anonymous|I'd vote for McCain before Obama, but luckily there are other options, like not voting or suicide.
+codewiki Mish|http://codecodex.com wiki-based code library where you can request code and contribute code
+codex Mish|http://codecodex.com wiki-based code library where you can request code and contribute code
+CTrivia1 Mish|The Unix operating system is well known for being written entirely using only the letter C.
+advancedgl OrngeTide|Programming with OpenGL: Advanced Rendering - http://www.opengl.org/resources/code/samples/advanced/advanced97/notes/notes.html
+water? OrngeTide|Water? You Mean Like Outta the Toilet?
+satisfied Mish|satisfied, content, fulfilled, gratified, happy, pacified, pleased.
+strdel Teckla|char *strdel(char *str, int pos, int num) { char *dest = str + pos; char *src = dest + num; memmove(dest, src, strlen(src) + 1); return str; }
+strins Teckla|char *strins(char *str, int pos, const char *ins) { char *tmp = str + pos; int len = strlen(ins); memmove(tmp + len, tmp, strlen(tmp) + 1); memcpy(tmp, ins, len); return str; }
+strrep Teckla|char *strrep(char *str, int pos, int num, const char *rep) { return strins(strdel(str, pos, num), pos, rep); }
+resp Mish|Choose your response (1) sarcastic (2) offensive (3) demeaning 
+bitfields Mish|You must use 'unsigned int' (or uint) as bitfield type for bitfield to be standard-compliant. All other types for bitfields are nonstandard compiler extension and are discouraged. Even with 'uint', bitfields layout depend on CPU endianness. The common trick/technique is to #ifdef two different, opposite, layouts based on endianness.
+oriented Mish|C is pointer-oriented language.
