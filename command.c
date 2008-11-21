@@ -100,6 +100,9 @@ static void got_message(void *p, struct message *msg)
 		case 's':
 			if( !strncasecmp( "searchcalc", msg->msgarg1, MAXDATASIZE ) ) { searchcalc_stub(); return; }
 			break;
+		case '8':
+			if( !strncasecmp( "8ball", msg->msgarg1, MAXDATASIZE) ) { mball_stub(); return; }
+			break;
 	}
 }
 

@@ -85,6 +85,7 @@
 
     /* By default, the bot supports features. */
     /* This behavior can be customized in bot.cfg.   */
+    char is_mball_enabled[MAXDATASIZE]      = "true";
     char is_chpass_enabled[MAXDATASIZE]     = "true";
     char is_calc_enabled[MAXDATASIZE]       = "true";
     char is_chcalc_enabled[MAXDATASIZE]     = "true";
@@ -726,6 +727,50 @@ int proto_stub( void )
 	send_irc_message( tmpray );
 
 	return 0;
+}
+
+
+void mball_stub( void )
+{
+	char tmpray[MAXDATASIZE];
+	unsigned int seed = 0;
+	static char const * const responses[] = {
+		"As I see it, Yes",
+		"Ask again later",
+		"Better not tell you now",
+		"Cannot predict now",
+		"Concentrate and ask again",
+		"Don't count on it",
+		"It is certain",
+		"It is decidedly so",
+		"Most likely",
+		"My reply is no",
+		"My sources say no",
+		"Outlook good",
+		"Outlook not so good",
+		"Reply hazy, try again",
+		"Signs point to yes",
+		"Very doubtful",
+		"Without a doubt",
+		"Yes",
+		"Yes - definitely",
+		"You may rely on it"
+	};
+	char const *msg;
+
+    if (strcmp(is_mball_enabled, "true"))
+    {
+        return;
+    }
+
+	msg = cur_msg.fulltext + (strlen( cur_msg.msgarg1 ) + 1);
+
+	while (*msg) { seed = *msg++ + (seed << 6) + (seed << 16) - seed; };
+	seed = ((seed >> 8) ^ (seed & 0xFF)) & 0x1F;
+	if (seed > 19) seed ^= 0x1F;
+
+	snprintf(tmpray, MAXDATASIZE, "PRIVMSG %s :%s", MSGTO, responses[seed]);
+	send_irc_message(tmpray);
 }
 
 /********************************-----end stubs-----*************************************/
