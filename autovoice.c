@@ -226,20 +226,17 @@ int autovoice_init(struct config_node *config_root)
 
 	/* get a list of channel names seperated by whitespace */
 	for(i=0;channels[i];) {
-
 		/* null terminate the token */
 		len=strcspn(channels+i, WHITESPACE);
 		if(!len) break;
-		if(channels[i+len]) {
-			next=i+len;
-		} else {
-			next=i+len+1; /* move past the null terminator */
-			channels[i+len]=0;
+		next=i+len;
+		if(channels[next]) {
+			channels[next]=0; /* null terminate */
+			next++;
+			next+=strspn(channels+next, WHITESPACE);
 		}
 		autovoice_enable_channel(channels+i);
-
-		i=next; /* go to point after the token */
-		i+=strspn(channels+i, WHITESPACE);
+		i=next;
 	}
 		
 	
