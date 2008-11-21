@@ -1,4 +1,3 @@
-user.list
 *.o
 bot
 depend.mk
