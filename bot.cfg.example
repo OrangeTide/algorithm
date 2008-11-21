@@ -18,3 +18,30 @@ bot {
 autovoice {
     channels="#test";
 }
+
+#
+# This node/section determines which features are enabled on the bot.
+#
+features {
+    is_chpass_enabled="true";
+    is_calc_enabled="true";
+    is_chcalc_enabled="true";
+    is_op_enabled="true";
+    is_owncalc_enabled="true";
+    is_proto_enabled="true";
+    is_whois_enabled="true";
+    is_wcalc_enabled="true";
+    is_adduser_enabled="true";
+    is_help_enabled="true";
+    is_rmuser_enabled="true";
+    is_rmcalc_enabled="true";
+    is_rawirc_enabled="true";
+    is_rcalc_enabled="true";
+    is_rot13_enabled="true";
+    is_mkcalc_enabled="true";
+    is_listcalc_enabled="true";
+    is_lsusers_enabled="true";
+    is_dcalc_enabled="true";
+    is_searchcalc_enabled="true";
+    is_autovoice_enabled="false";
+}
