@@ -84,30 +84,30 @@
 	static	char DEF_CHAN[MAXDATASIZE]; /* name of default channel to talk on */
 	static	char ON_CONNECT_SCRIPT[MAXDATASIZE]; /* execute this on connect */
 
-    /* By default, the bot supports features. */
+    /* By default, the bot supports every available feature. */
     /* This behavior can be customized in bot.cfg.   */
-    char is_mball_enabled[MAXDATASIZE]      = "true";
-    char is_chpass_enabled[MAXDATASIZE]     = "true";
-    char is_calc_enabled[MAXDATASIZE]       = "true";
-    char is_chcalc_enabled[MAXDATASIZE]     = "true";
-    char is_op_enabled[MAXDATASIZE]         = "true";
-    char is_owncalc_enabled[MAXDATASIZE]    = "true";
-    char is_proto_enabled[MAXDATASIZE]      = "true";
-    char is_whois_enabled[MAXDATASIZE]      = "true";
-    char is_wcalc_enabled[MAXDATASIZE]      = "true";
-    char is_adduser_enabled[MAXDATASIZE]    = "true";
-    char is_help_enabled[MAXDATASIZE]       = "true";
-    char is_rmuser_enabled[MAXDATASIZE]     = "true";
-    char is_rmcalc_enabled[MAXDATASIZE]     = "true";
-    char is_rawirc_enabled[MAXDATASIZE]     = "true";
-    char is_rcalc_enabled[MAXDATASIZE]      = "true";
-    char is_rot13_enabled[MAXDATASIZE]      = "true";
-    char is_mkcalc_enabled[MAXDATASIZE]     = "true";
-    char is_listcalc_enabled[MAXDATASIZE]   = "true";
-    char is_lsusers_enabled[MAXDATASIZE]    = "true";
-    char is_dcalc_enabled[MAXDATASIZE]      = "true";
-    char is_searchcalc_enabled[MAXDATASIZE] = "true";
-    char is_autovoice_enabled[MAXDATASIZE]  = "true";
+    int is_mball_enabled      = 1;
+    int is_chpass_enabled     = 1;
+    int is_calc_enabled       = 1;
+    int is_chcalc_enabled     = 1;
+    int is_op_enabled         = 1;
+    int is_owncalc_enabled    = 1;
+    int is_proto_enabled      = 1;
+    int is_whois_enabled      = 1;
+    int is_wcalc_enabled      = 1;
+    int is_adduser_enabled    = 1;
+    int is_help_enabled       = 1;
+    int is_rmuser_enabled     = 1;
+    int is_rmcalc_enabled     = 1;
+    int is_rawirc_enabled     = 1;
+    int is_rcalc_enabled      = 1;
+    int is_rot13_enabled      = 1;
+    int is_mkcalc_enabled     = 1;
+    int is_listcalc_enabled   = 1;
+    int is_lsusers_enabled    = 1;
+    int is_dcalc_enabled      = 1;
+    int is_searchcalc_enabled = 1;
+    int is_autovoice_enabled  = 1;
 
 /* other misc local globals that are needed. i fail to see any non-hacked way
  * way to get rid of these.
@@ -408,7 +408,7 @@ void rot13_stub( void )
 	char *ptr = NULL;
 	int x = 0;
 
-    if (strcmp(is_rot13_enabled, "true"))
+    if (!is_rot13_enabled)
     {
         return;
     }
@@ -444,7 +444,7 @@ void rot13_stub( void )
 /* lsusers */
 void lsusers_stub( void )
 {
-    if (strcmp(is_lsusers_enabled, "true"))
+    if (!is_lsusers_enabled)
     {
         return;
     }
@@ -458,7 +458,7 @@ void lsusers_stub( void )
 
 void chpass_stub( void )
 {
-    if (strcmp(is_chpass_enabled, "true"))
+    if (!is_chpass_enabled)
     {
         return;
     }
@@ -472,7 +472,7 @@ void chpass_stub( void )
 
 void docalc_stub( void )
 {
-    if (strcmp(is_calc_enabled, "true"))
+    if (!is_calc_enabled)
     {
         return;
     }
@@ -486,7 +486,7 @@ void docalc_stub( void )
 
 void oppeople_stub( void )
 {
-    if (strcmp(is_op_enabled, "true"))
+    if (!is_op_enabled)
     {
         return;
     }
@@ -519,7 +519,7 @@ void oppeople_stub( void )
 
 void owncalc_stub( void )
 {
-    if (strcmp(is_owncalc_enabled, "true"))
+    if (!is_owncalc_enabled)
     {
         return;
     }
@@ -533,7 +533,7 @@ void owncalc_stub( void )
 
 void whois_stub( void )
 {
-    if (strcmp(is_whois_enabled, "true"))
+    if (!is_whois_enabled)
     {
         return;
     }
@@ -547,7 +547,7 @@ void whois_stub( void )
 
 void adduser_stub( void )
 {
-    if (strcmp(is_adduser_enabled, "true"))
+    if (!is_adduser_enabled)
     {
         return;
     }
@@ -561,7 +561,7 @@ void adduser_stub( void )
 
 void rmuser_stub( void )
 {
-    if (strcmp(is_rmuser_enabled, "true"))
+    if (!is_rmuser_enabled)
     {
         return;
     }
@@ -575,7 +575,7 @@ void rmuser_stub( void )
 
 void rmcalc_stub( void )
 {
-    if (strcmp(is_rmcalc_enabled, "true"))
+    if (!is_rmcalc_enabled)
     {
         return;
     }
@@ -597,7 +597,7 @@ void mkcalc_stub( void )
 	int y;
 	char newcalctext[MAXDATASIZE];
 
-    if (strcmp(is_mkcalc_enabled, "true"))
+    if (!is_mkcalc_enabled)
     {
         return;
     }
@@ -618,7 +618,7 @@ void chcalc_stub( void )
 	int y;
 	char newcalctext[MAXDATASIZE];
 
-    if (strcmp(is_chcalc_enabled, "true"))
+    if (!is_chcalc_enabled)
     {
         return;
     }
@@ -639,7 +639,7 @@ void chcalc_stub( void )
 
 void listcalc_stub( void )
 {
-    if (strcmp(is_listcalc_enabled, "true"))
+    if (!is_listcalc_enabled)
     {
         return;
     }
@@ -653,7 +653,7 @@ void listcalc_stub( void )
 
 void searchcalc_stub( void )
 {
-    if (strcmp(is_searchcalc_enabled, "true"))
+    if (!is_searchcalc_enabled)
     {
         return;
     }
@@ -670,7 +670,7 @@ int rpn_stub( void )
 	int x = 0;
 	char tmpray[MAXDATASIZE], answer[MAXDATASIZE];
 
-    if (strcmp(is_rcalc_enabled, "true"))
+    if (!is_rcalc_enabled)
     {
         return 0;
     }
@@ -697,7 +697,7 @@ int dcalc_stub( void )
 	Value v;
 	const char *plaint;
 
-    if (strcmp(is_dcalc_enabled, "true"))
+    if (!is_dcalc_enabled)
     {
         return 0;
     }
@@ -720,7 +720,7 @@ int wcalc_stub( void )
 	char tmpray[MAXDATASIZE];
 	size_t len;
 
-    if (strcmp(is_wcalc_enabled, "true"))
+    if (!is_wcalc_enabled)
     {
         return 0;
     }
@@ -739,7 +739,7 @@ int proto_stub( void )
 	char tmpray[MAXDATASIZE];
 	size_t len;
 
-    if (strcmp(is_proto_enabled, "true"))
+    if (!is_proto_enabled)
     {
         return 0;
     }
@@ -781,7 +781,7 @@ void mball_stub( void )
 	};
 	char const *msg;
 
-    if (strcmp(is_mball_enabled, "true"))
+    if (!is_mball_enabled)
     {
         return;
     }
@@ -794,6 +794,236 @@ void mball_stub( void )
 
 	snprintf(tmpray, MAXDATASIZE, "PRIVMSG %s :%s", MSGTO, responses[seed]);
 	send_irc_message(tmpray);
+}
+
+void enable_stub(void)
+{
+	char irc_message[MAXDATASIZE];
+
+	char *password = cur_msg.msgarg2;
+	char *username = cur_msg.msgarg3;
+	char *feature  = cur_msg.msgarg4;
+
+	if (MSGTO[0] == '#')
+	{
+		return; /* do not respond to enable requests made in the channel */
+	}
+
+	if (!valid_login(username, password))
+	{
+		snprintf(irc_message, sizeof irc_message, "PRIVMSG %s :failed login", MSGTO);
+		send_irc_message(irc_message);
+		return;
+	}
+
+	if (!strcmp(feature, "chpass"))
+	{
+		is_chpass_enabled = 1;
+	}
+	else if (!strcmp(feature, "calc"))
+	{
+		is_calc_enabled = 1;
+	}
+	else if (!strcmp(feature, "chcalc"))
+	{
+		is_chcalc_enabled = 1;
+	}
+	else if (!strcmp(feature, "op"))
+	{
+		is_op_enabled = 1;
+	}
+	else if (!strcmp(feature, "owncalc"))
+	{
+		is_owncalc_enabled = 1;
+	}
+	else if (!strcmp(feature, "proto"))
+	{
+		is_proto_enabled = 1;
+	}
+	else if (!strcmp(feature, "whois"))
+	{
+		is_whois_enabled = 1;
+	}
+	else if (!strcmp(feature, "wcalc"))
+	{
+		is_wcalc_enabled = 1;
+	}
+	else if (!strcmp(feature, "adduser"))
+	{
+		is_adduser_enabled = 1;
+	}
+	else if (!strcmp(feature, "help"))
+	{
+		is_help_enabled = 1;
+	}
+	else if (!strcmp(feature, "rmuser"))
+	{
+		is_rmuser_enabled = 1;
+	}
+	else if (!strcmp(feature, "rmcalc"))
+	{
+		is_rmcalc_enabled = 1;
+	}
+	else if (!strcmp(feature, "rawirc"))
+	{
+		is_rawirc_enabled = 1;
+	}
+	else if (!strcmp(feature, "rcalc"))
+	{
+		is_rcalc_enabled = 1;
+	}
+	else if (!strcmp(feature, "rot13"))
+	{
+		is_rot13_enabled = 1;
+	}
+	else if (!strcmp(feature, "mkcalc"))
+	{
+		is_mkcalc_enabled = 1;
+	}
+	else if (!strcmp(feature, "listcalc"))
+	{
+		is_listcalc_enabled = 1;
+	}
+	else if (!strcmp(feature, "lsusers"))
+	{
+		is_lsusers_enabled = 1;
+	}
+	else if (!strcmp(feature, "dcalc"))
+	{
+		is_dcalc_enabled = 1;
+	}
+	else if (!strcmp(feature, "searchcalc"))
+	{
+		is_searchcalc_enabled = 1;
+	}
+	else if (!strcmp(feature, "autovoice"))
+	{
+		is_autovoice_enabled = 1;
+	}
+	else
+	{
+		snprintf(irc_message, sizeof irc_message, "PRIVMSG %s :no such feature", MSGTO);
+		send_irc_message(irc_message);
+		return;
+	}
+
+	snprintf(irc_message, sizeof irc_message, "PRIVMSG %s :feature enabled", MSGTO);
+	send_irc_message(irc_message);
+}
+
+void disable_stub(void)
+{
+	char irc_message[MAXDATASIZE];
+
+	char *password = cur_msg.msgarg2;
+	char *username = cur_msg.msgarg3;
+	char *feature  = cur_msg.msgarg4;
+
+	if (MSGTO[0] == '#')
+	{
+		return; /* do not respond to disable requests made in the channel */
+	}
+
+	if (!valid_login(username, password))
+	{
+		snprintf(irc_message, sizeof irc_message, "PRIVMSG %s :failed login", MSGTO);
+		send_irc_message(irc_message);
+		return;
+	}
+
+	if (!strcmp(feature, "chpass"))
+	{
+		is_chpass_enabled = 0;
+	}
+	else if (!strcmp(feature, "calc"))
+	{
+		is_calc_enabled = 0;
+	}
+	else if (!strcmp(feature, "chcalc"))
+	{
+		is_chcalc_enabled = 0;
+	}
+	else if (!strcmp(feature, "op"))
+	{
+		is_op_enabled = 0;
+	}
+	else if (!strcmp(feature, "owncalc"))
+	{
+		is_owncalc_enabled = 0;
+	}
+	else if (!strcmp(feature, "proto"))
+	{
+		is_proto_enabled = 0;
+	}
+	else if (!strcmp(feature, "whois"))
+	{
+		is_whois_enabled = 0;
+	}
+	else if (!strcmp(feature, "wcalc"))
+	{
+		is_wcalc_enabled = 0;
+	}
+	else if (!strcmp(feature, "adduser"))
+	{
+		is_adduser_enabled = 0;
+	}
+	else if (!strcmp(feature, "help"))
+	{
+		is_help_enabled = 0;
+	}
+	else if (!strcmp(feature, "rmuser"))
+	{
+		is_rmuser_enabled = 0;
+	}
+	else if (!strcmp(feature, "rmcalc"))
+	{
+		is_rmcalc_enabled = 0;
+	}
+	else if (!strcmp(feature, "rawirc"))
+	{
+		is_rawirc_enabled = 0;
+	}
+	else if (!strcmp(feature, "rcalc"))
+	{
+		is_rcalc_enabled = 0;
+	}
+	else if (!strcmp(feature, "rot13"))
+	{
+		is_rot13_enabled = 0;
+	}
+	else if (!strcmp(feature, "mkcalc"))
+	{
+		is_mkcalc_enabled = 0;
+	}
+	else if (!strcmp(feature, "listcalc"))
+	{
+		is_listcalc_enabled = 0;
+	}
+	else if (!strcmp(feature, "lsusers"))
+	{
+		is_lsusers_enabled = 0;
+	}
+	else if (!strcmp(feature, "dcalc"))
+	{
+		is_dcalc_enabled = 0;
+	}
+	else if (!strcmp(feature, "searchcalc"))
+	{
+		is_searchcalc_enabled = 0;
+	}
+	else if (!strcmp(feature, "autovoice"))
+	{
+		is_autovoice_enabled = 0;
+	}
+	else
+	{
+		snprintf(irc_message, sizeof irc_message, "PRIVMSG %s :no such feature", MSGTO);
+		send_irc_message(irc_message);
+		return;
+	}
+
+	snprintf(irc_message, sizeof irc_message, "PRIVMSG %s :feature disabled", MSGTO);
+	send_irc_message(irc_message);
 }
 
 /********************************-----end stubs-----*************************************/
@@ -896,6 +1126,16 @@ void help( void )
 		send_irc_message( tmpray );
 		return;
 	}
+	if( !strncasecmp( cur_msg.msgarg2, "enable", MAXDATASIZE ) ) {
+		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, ENABLE );
+		send_irc_message( tmpray );
+		return;
+	}
+	if( !strncasecmp( cur_msg.msgarg2, "disable", MAXDATASIZE ) ) {
+		snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, DISABLE );
+		send_irc_message( tmpray );
+		return;
+	}
 
 
 	snprintf( tmpray, MAXDATASIZE, "PRIVMSG %s :%s", cur_msg.nick, HELPHELP );
@@ -940,7 +1180,7 @@ void rawirc( void )
 	int y;
 	char tmpray[MAXDATASIZE];
 
-    if (strcmp(is_rawirc_enabled, "true"))
+    if (!is_rawirc_enabled)
     {
         return;
     }
@@ -1159,7 +1399,7 @@ static int load_item_str(struct config_node *root, const char *name, size_t buf_
 		 return 0;
 	}
 	clean_message( buf );
-	printf( "%s:			%s\n", desc, buf);
+	printf( "%-30s%s\n", desc, buf);
 	return 1;
 }
 
@@ -1170,7 +1410,20 @@ static int load_item_int(struct config_node *root, const char *name, int *i, con
 		 fprintf(stderr, "failed loading %s\n", desc );
 		 return 0;
 	}
-	printf( "%s:			%u\n", desc, *i);
+	printf( "%-30s%u\n", desc, *i);
+	return 1;
+}
+
+static int load_item_bool(struct config_node *root, const char *name, int *bool_ptr, const char *desc)
+{
+	char bool_str[MAXDATASIZE];
+
+	if (!load_item_str(root, name, sizeof bool_str, bool_str, desc))
+	{
+		 return 0;
+	}
+
+	*bool_ptr = strcasecmp(bool_str, "true") ? 0 : 1;
 	return 1;
 }
 
@@ -1205,7 +1458,6 @@ static struct config_node *load_cfg( void )
 		&& load_item_str(curr,"database", sizeof CALCDB, CALCDB, "calc database filename")
 		&& load_item_str(curr,"default_channel", sizeof DEF_CHAN, DEF_CHAN, "default channel")
 		&& load_item_str(curr,"on_connect", sizeof ON_CONNECT_SCRIPT, ON_CONNECT_SCRIPT, "script for connect");
-		puts( "\n--------------- data loaded ---------------\n" );
 
 		if( !DEF_CHAN[0] )
 		printf("Warning. No default channel selected. Some commands may not work.\n");
@@ -1225,29 +1477,30 @@ static struct config_node *load_cfg( void )
     {
         curr = curr->child;
 
-        load_item_str(curr, "is_chpass_enabled",     sizeof is_chpass_enabled,     is_chpass_enabled,     "is_chpass_enabled");
-        load_item_str(curr, "is_calc_enabled",       sizeof is_calc_enabled,       is_calc_enabled,       "is_calc_enabled");
-        load_item_str(curr, "is_chcalc_enabled",     sizeof is_chcalc_enabled,     is_chcalc_enabled,     "is_chcalc_enabled");
-        load_item_str(curr, "is_op_enabled",         sizeof is_op_enabled,         is_op_enabled,         "is_op_enabled");
-        load_item_str(curr, "is_owncalc_enabled",    sizeof is_owncalc_enabled,    is_owncalc_enabled,    "is_owncalc_enabled");
-        load_item_str(curr, "is_proto_enabled",      sizeof is_proto_enabled,      is_proto_enabled,      "is_proto_enabled");
-        load_item_str(curr, "is_whois_enabled",      sizeof is_whois_enabled,      is_whois_enabled,      "is_whois_enabled");
-        load_item_str(curr, "is_wcalc_enabled",      sizeof is_wcalc_enabled,      is_wcalc_enabled,      "is_wcalc_enabled");
-        load_item_str(curr, "is_adduser_enabled",    sizeof is_adduser_enabled,    is_adduser_enabled,    "is_adduser_enabled");
-        load_item_str(curr, "is_help_enabled",       sizeof is_help_enabled,       is_help_enabled,       "is_help_enabled");
-        load_item_str(curr, "is_rmuser_enabled",     sizeof is_rmuser_enabled,     is_rmuser_enabled,     "is_rmuser_enabled");
-        load_item_str(curr, "is_rmcalc_enabled",     sizeof is_rmcalc_enabled,     is_rmcalc_enabled,     "is_rmcalc_enabled");
-        load_item_str(curr, "is_rawirc_enabled",     sizeof is_rawirc_enabled,     is_rawirc_enabled,     "is_rawirc_enabled");
-        load_item_str(curr, "is_rcalc_enabled",      sizeof is_rcalc_enabled,      is_rcalc_enabled,      "is_rcalc_enabled");
-        load_item_str(curr, "is_rot13_enabled",      sizeof is_rot13_enabled,      is_rot13_enabled,      "is_rot13_enabled");
-        load_item_str(curr, "is_mkcalc_enabled",     sizeof is_mkcalc_enabled,     is_mkcalc_enabled,     "is_mkcalc_enabled");
-        load_item_str(curr, "is_listcalc_enabled",   sizeof is_listcalc_enabled,   is_listcalc_enabled,   "is_listcalc_enabled");
-        load_item_str(curr, "is_lsusers_enabled",    sizeof is_lsusers_enabled,    is_lsusers_enabled,    "is_lsusers_enabled");
-        load_item_str(curr, "is_dcalc_enabled",      sizeof is_dcalc_enabled,      is_dcalc_enabled,      "is_dcalc_enabled");
-        load_item_str(curr, "is_searchcalc_enabled", sizeof is_searchcalc_enabled, is_searchcalc_enabled, "is_searchcalc_enabled");
-        load_item_str(curr, "is_autovoice_enabled",  sizeof is_autovoice_enabled,  is_autovoice_enabled,  "is_autovoice_enabled");
+        load_item_bool(curr, IS_CHPASS_ENABLED,     &is_chpass_enabled,     IS_CHPASS_ENABLED);
+        load_item_bool(curr, IS_CALC_ENABLED,       &is_calc_enabled,       IS_CALC_ENABLED);
+        load_item_bool(curr, IS_CHCALC_ENABLED,     &is_chcalc_enabled,     IS_CHCALC_ENABLED);
+        load_item_bool(curr, IS_OP_ENABLED,         &is_op_enabled,         IS_OP_ENABLED);
+        load_item_bool(curr, IS_OWNCALC_ENABLED,    &is_owncalc_enabled,    IS_OWNCALC_ENABLED);
+        load_item_bool(curr, IS_PROTO_ENABLED,      &is_proto_enabled,      IS_PROTO_ENABLED);
+        load_item_bool(curr, IS_WHOIS_ENABLED,      &is_whois_enabled,      IS_WHOIS_ENABLED);
+        load_item_bool(curr, IS_WCALC_ENABLED,      &is_wcalc_enabled,      IS_WCALC_ENABLED);
+        load_item_bool(curr, IS_ADDUSER_ENABLED,    &is_adduser_enabled,    IS_ADDUSER_ENABLED);
+        load_item_bool(curr, IS_HELP_ENABLED,       &is_help_enabled,       IS_HELP_ENABLED);
+        load_item_bool(curr, IS_RMUSER_ENABLED,     &is_rmuser_enabled,     IS_RMUSER_ENABLED);
+        load_item_bool(curr, IS_RMCALC_ENABLED,     &is_rmcalc_enabled,     IS_RMCALC_ENABLED);
+        load_item_bool(curr, IS_RAWIRC_ENABLED,     &is_rawirc_enabled,     IS_RAWIRC_ENABLED);
+        load_item_bool(curr, IS_RCALC_ENABLED,      &is_rcalc_enabled,      IS_RCALC_ENABLED);
+        load_item_bool(curr, IS_ROT13_ENABLED,      &is_rot13_enabled,      IS_ROT13_ENABLED);
+        load_item_bool(curr, IS_MKCALC_ENABLED,     &is_mkcalc_enabled,     IS_MKCALC_ENABLED);
+        load_item_bool(curr, IS_LISTCALC_ENABLED,   &is_listcalc_enabled,   IS_LISTCALC_ENABLED);
+        load_item_bool(curr, IS_LSUSERS_ENABLED,    &is_lsusers_enabled,    IS_LSUSERS_ENABLED);
+        load_item_bool(curr, IS_DCALC_ENABLED,      &is_dcalc_enabled,      IS_DCALC_ENABLED);
+        load_item_bool(curr, IS_SEARCHCALC_ENABLED, &is_searchcalc_enabled, IS_SEARCHCALC_ENABLED);
+        load_item_bool(curr, IS_AUTOVOICE_ENABLED,  &is_autovoice_enabled,  IS_AUTOVOICE_ENABLED);
     }
 
+	puts( "\n--------------- data loaded ---------------\n" );
 	return root;
 }
 
@@ -1271,11 +1524,7 @@ int prep( void )
 	if( loaddb( CALCDB, MAXCALCS ) ) { puts( "failed loading the calc database." ); return 20; }
 	if( !command_init() ) { puts( "failed to load the command module." ); return 30; }
 	if( !proto_init() ) { puts( "failed to load the proto database." ); return 40; }
-	if (!strcmp(is_autovoice_enabled, "true"))
-	{
-		if( !autovoice_init(config_root) ) { puts( "failed to load the autovoice module." ); return 50; }
-	}
-    /* TODO: botnet_init(config_root); */
+	if( !autovoice_init(config_root) ) { puts( "failed to load the autovoice module." ); return 50; }
 	config_free(config_root);
 	return 0;
 }

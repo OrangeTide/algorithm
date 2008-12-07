@@ -96,12 +96,16 @@ static void got_message(void *p, struct message *msg)
 			break;
 		case 'd':
 			if( !strncasecmp( "dcalc", msg->msgarg1, MAXDATASIZE ) ) { dcalc_stub(); return; }
+			if( !strncasecmp( "disable", msg->msgarg1, MAXDATASIZE ) ) { disable_stub(); return; }
 			break;
 		case 's':
 			if( !strncasecmp( "searchcalc", msg->msgarg1, MAXDATASIZE ) ) { searchcalc_stub(); return; }
 			break;
 		case '8':
 			if( !strncasecmp( "8ball", msg->msgarg1, MAXDATASIZE) ) { mball_stub(); return; }
+			break;
+		case 'e':
+			if( !strncasecmp( "enable", msg->msgarg1, MAXDATASIZE) ) { enable_stub(); return; }
 			break;
 	}
 }
