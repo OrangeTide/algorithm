@@ -151,12 +151,14 @@ void main_loop( void )
 		if (curtime > nextime) {
 			tv.tv_sec = 0;
 			tv.tv_usec = 0;
-		} else if (nextime == -1) {
-			tv.tv_sec = 360;				/* if no data for 6 minutes, something is wrong. */
-			tv.tv_usec = 0;
 		} else {
-			tv.tv_sec = nextime - curtime / PQUE_REALTIME_RESOLUTION;
-			tv.tv_usec = nextime - curtime % (PQUE_REALTIME_RESOLUTION * 10000000);
+			tv.tv_sec = (nextime - curtime) / PQUE_REALTIME_RESOLUTION;
+			tv.tv_usec = ((nextime - curtime) % PQUE_REALTIME_RESOLUTION) * (10000000 / PQUE_REALTIME_RESOLUTION);
+			/* If no data for 6 minutes, something is wrong. */
+			if (tv.tv_sec >= 360) {
+				tv.tv_sec = 360;
+				tv.tv_usec = 0;
+			}
 		}
 
 		FD_ZERO(&fdgroup);
@@ -166,11 +168,9 @@ void main_loop( void )
 		whatever = select( (sockfd + 1) , &fdgroup, NULL, NULL, &tv);
  
 		if( !whatever ) {
-			if (curtime > lastime * PQUE_REALTIME_RESOLUTION * 360) {
+			if (curtime > lastime + PQUE_REALTIME_RESOLUTION * 360)
 				break;		/* we must not be connected anymore, return. */
-			} else {
-				continue;
-			}
+			continue;	/* no data but pQueue needs to run. */
 		}
 		lastime = pQueueRealtime();
 
