@@ -56,6 +56,7 @@
 #include <unistd.h>
 #include <signal.h>
 #include <ctype.h>
+#include "pQueue.h"
 
 
 
@@ -69,6 +70,8 @@ extern char MSGTO[MAXDATASIZE]; /* set to nick/channel on each incoming message 
 extern char BOTNAME[MAXDATASIZE]; /* holds the actual nickname in use by the bot */
 extern sig_atomic_t keep_going; /* flag to break out of the inner loop */
 extern sig_atomic_t verbose;    /* flag to enable verbose debugging */
+
+extern struct pQueue *action_queue;
 
 void send_irc_message( char *sndmsg );
 void parse_incoming( char *ptr );

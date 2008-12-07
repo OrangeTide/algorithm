@@ -92,7 +92,7 @@ int pQueueAdd(struct pQueue **theQueue, pQueueTime_t executeTime, void (*func)(v
  *
  * Returns: success
 */
-int pQueueRun(struct pQueue **theQueue, pQueueTime_t executeTime)
+pQueueTime_t pQueueRun(struct pQueue **theQueue, pQueueTime_t executeTime)
 {
 	struct pQueue *cur,*last;
 	cur=*theQueue;
@@ -103,7 +103,10 @@ int pQueueRun(struct pQueue **theQueue, pQueueTime_t executeTime)
 		last->func(last->args);
 		free(last);
 	}
-	return 1;
+	if (!*theQueue)
+		return -1;
+	else
+		return (*theQueue)->timeExecute;
 }
 
 /** pQueueDump()

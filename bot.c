@@ -64,6 +64,7 @@
 #include "rpn.h"
 #include "users.h"
 #include "wcalc.h"
+#include "pQueue.h"
 
 
 /* yeah, i know that globals are considered evil. byte me. */
@@ -127,7 +128,7 @@
 
 /******************************----BEGIN CODE----*********************************/
 
-
+struct pQueue *action_queue = NULL;
 
 /* return if there are network difficulties, otherwise, this is where the main purpose
  * of this program really begins. an endless loop around select().
@@ -139,18 +140,40 @@ void main_loop( void )
 	int whatever;
 	fd_set fdgroup;
 	struct timeval tv;
+	pQueueTime_t curtime, nextime, lastime;
 
+	lastime = pQueueRealtime();
 	for( ;; )
 	 {
+		curtime = pQueueRealtime();
+		nextime = pQueueRun(&action_queue, curtime);
+		curtime = pQueueRealtime();
+		if (curtime > nextime) {
+			tv.tv_sec = 0;
+			tv.tv_usec = 0;
+		} else if (nextime == -1) {
+			tv.tv_sec = 360;				/* if no data for 6 minutes, something is wrong. */
+			tv.tv_usec = 0;
+		} else {
+			tv.tv_sec = nextime - curtime / PQUE_REALTIME_RESOLUTION;
+			tv.tv_usec = nextime - curtime % (PQUE_REALTIME_RESOLUTION * 10000000);
+		}
+
 		FD_ZERO(&fdgroup);
 		FD_SET(STDIN_FILENO, &fdgroup);
 		FD_SET(sockfd, &fdgroup);
-		tv.tv_sec = 360;				/* if no data for 6 minutes, something is wrong. */
-		tv.tv_usec = 0;
 
 		whatever = select( (sockfd + 1) , &fdgroup, NULL, NULL, &tv);
  
-		if( !whatever ) break;		/* we must not be connected anymore, return. */
+		if( !whatever ) {
+			if (curtime > lastime * PQUE_REALTIME_RESOLUTION * 360) {
+				break;		/* we must not be connected anymore, return. */
+			} else {
+				continue;
+			}
+		}
+		lastime = pQueueRealtime();
+
 		if( FD_ISSET( sockfd, &fdgroup ) ) if( process_in( ) ) break;
 		if( FD_ISSET( STDIN_FILENO, &fdgroup ) ) if( process_out( ) ) break;
 

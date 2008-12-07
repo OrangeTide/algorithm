@@ -58,7 +58,7 @@ struct pQueue
 
 pQueueTime_t pQueueRealtime(void);
 int pQueueAdd(struct pQueue **theQueue, pQueueTime_t executeTime, void (*func)(void*), void *args);
-int pQueueRun(struct pQueue **theQueue, pQueueTime_t aTime);
+pQueueTime_t pQueueRun(struct pQueue **theQueue, pQueueTime_t aTime);
 void pQueueDump(struct pQueue **theQueue);
 
 #endif  /* __PRIORITY_QUEUE_H__ */

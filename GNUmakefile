@@ -6,6 +6,7 @@ CFLAGS+=-ggdb
 
 EXEC:=bot
 SRCS:=\
+	pQueue.c \
 	autovoice.c \
 	bot.c \
 	calcdb.c \
