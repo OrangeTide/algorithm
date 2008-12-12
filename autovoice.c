@@ -160,7 +160,7 @@ static void av_onjoin(void *p, struct message *msg)
 			if(verbose>0) {
 				INFO("autovoice: nick %s won't be voiced in %s.\n", msg->nick, msg->msgto);
 			}
-			
+
 			return; /* do no voice people who were -v'd */
 		}
 		/* TODO: delay and forget voicing if someone voices first */
@@ -245,8 +245,8 @@ int autovoice_init(struct config_node *config_root)
 		autovoice_enable_channel(channels+i);
 		i=next;
 	}
-		
-	
+
+
 	notify_register("JOIN", av_onjoin, 0);
 	notify_register("MODE", av_onmode, 0);
 	/* get the CHANMODES */

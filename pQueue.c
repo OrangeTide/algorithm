@@ -58,7 +58,7 @@ pQueueTime_t pQueueRealtime(void)
 int pQueueAdd(struct pQueue **theQueue, pQueueTime_t executeTime, void (*func)(void*), void *args)
 {
   struct pQueue *cur, *prv, *tmp;
-	
+
   tmp = calloc(1, sizeof(struct pQueue));
 
   tmp->timeExecute = executeTime;

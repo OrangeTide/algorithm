@@ -90,7 +90,7 @@ static void straddch(char *str, int *idx, char ch)
 
 static int comment(FILE *f, int *line)
 {
-	int ch;	
+	int ch;
 	while((ch=fgetc(f))!=EOF) {
 		if(ch=='\n') {
 						(*line)++;
@@ -363,7 +363,7 @@ int config_get_int(struct config_node *item,int *i)
 int main()
 {
 	struct config_node *root;
-	
+
 	root=parser(stdin);
 	dumptree(root,0);
 	return 0;

@@ -114,7 +114,7 @@ static int parse_proto_key(const char *line, char *key_out, size_t max) {
 				break; /* found an ident */
 			}
 			ofs+=res;
-		}	
+		}
 		ofs+=eat_spaces_and_others(line+ofs);
 	} else {
 		/* anything else like size_t, FILE*, etc */
@@ -193,7 +193,7 @@ int proto_result(char *dest, size_t max, const char *in) {
 	} else {
 		snprintf(dest, max, "%s %s /* %s */", headers, proto, from);
 	}
-	
+
 
 	return 1;
 }

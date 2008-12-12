@@ -245,7 +245,7 @@ int process_out( void )
 int process_in( void )
 {
 	char buf[MAXDATASIZE], *ptr;
-	int numbytes = 0;	
+	int numbytes = 0;
 	int z = 0;
 	int y = 0;
 	static int x = 0;
@@ -493,7 +493,7 @@ void oppeople_stub( void )
 	if( MSGTO[0] == '#' ) return; /* do not respond to op requests made in the channel */
 
 	/* making getting ops easier for other than the default channel */
-	
+
 	if( (cur_msg.msgarg2[0] == '#') || (cur_msg.msgarg2[0] == '&') ) {
 		if( cur_msg.msgarg4[0] )
 			oppeople( cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.msgarg4, cur_msg.nick );
@@ -502,7 +502,7 @@ void oppeople_stub( void )
 		return;
 	}
 	/* op only in the default channel */
-	
+
 	if( DEF_CHAN[0] ) {
 		if( cur_msg.msgarg3[0] )
 			oppeople( DEF_CHAN, cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.nick );
@@ -606,7 +606,7 @@ void mkcalc_stub( void )
 	y = chop( cur_msg.fulltext, newcalctext, y, ' ' );
 	y = chop( cur_msg.fulltext, newcalctext, y, ' ' );
 	y = chop( cur_msg.fulltext, newcalctext, y, '\0' );
-	
+
 	mkcalc( cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.msgarg4, newcalctext );
 	return;
 }
@@ -627,7 +627,7 @@ void chcalc_stub( void )
 	y = chop( cur_msg.fulltext, newcalctext, y, ' ' );
 	y = chop( cur_msg.fulltext, newcalctext, y, ' ' );
 	y = chop( cur_msg.fulltext, newcalctext, y, '\0' );
-	
+
 	chcalc( cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.msgarg4, newcalctext );
 	return;
 }

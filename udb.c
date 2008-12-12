@@ -99,7 +99,7 @@ static void free_hash(struct udb_handle *h) {
 		for(curr=h->hash[i].next;curr;curr=next) {
 			next=curr->next;
 			free(curr->key);
-			free(curr);	
+			free(curr);
 		}
 		/* clear out entry */
 		memset(&h->hash[i], 0, sizeof h->hash[i]);
@@ -154,9 +154,9 @@ static int add_hash_entry(struct udb_handle *h, const char *key, fpos_t ofs) {
 		fprintf(stderr, "Duplicate key '%s' found in DB file %s\n", key, h->filename);
 		return 0; /* failure */
 	}
-		
+
 	/* at the end of this bit, ent points to the entry to fill in */
-	/* right now ent points to the h->hash[new_hash] */	
+	/* right now ent points to the h->hash[new_hash] */
 	if(!UDB_IS_EMPTY(ent)) { /* detected collision, create linked list entry */
 		struct udb_ent *new_ent;
 		new_ent=malloc(sizeof *new_ent);
@@ -316,7 +316,7 @@ int udb_read_field(struct udb_handle *h, char *buf, size_t len) {
 			ch=fgetc(h->f);
 		} while(ch!=EOF && ch!='\n');
 	}
-	
+
 	if(buf[0]=='%' && buf[1]==0) {
 		return 0; /* end of record */
 	}

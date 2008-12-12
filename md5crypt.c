@@ -411,7 +411,7 @@ const char *saltgen_md5(unsigned int seed)
 		salt[i]=itoa64[((unsigned)rand_r(&seed)) % 64];
 	}
 	salt[i]=0;
-	return salt;	
+	return salt;
 }
 
 static int MD5getsalt(const char *passwd, const char **salt, int *len)
@@ -436,7 +436,7 @@ int compare_md5(const char *passwd, const char *crypt)
 	const char *saltptr;
 	int saltlen;
 	char salt[9];
-	const char *crypt2;	
+	const char *crypt2;
 
 	MD5getsalt(crypt,&saltptr,&saltlen);
 	memcpy(salt,saltptr,saltlen);

@@ -136,7 +136,7 @@ void rmuser( char *passwd, char *name, char *rmname )
 	lag->next = trv->next;
 	free( trv );
 	--total_users;
-	
+
 
 	snprintf( sndmsg, MAXDATASIZE, "privmsg %s :user: %s removed.", name, rmname );
 	send_irc_message( sndmsg );
