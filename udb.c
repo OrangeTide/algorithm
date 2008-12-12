@@ -1,4 +1,4 @@
-/* udb.c : micro database 
+/* udb.c : micro database
  * a simple text-base database for POSIX systems
  */
 #include <assert.h>
@@ -34,7 +34,7 @@ struct udb_handle {
 	struct udb_ent hash[HASH_SZ]; /* note: first level are not pointers */
 };
 
-/** removed newline from end of a string 
+/** removed newline from end of a string
  * return non-zero if a newline was found */
 static int scrubnl(char *s) {
 	assert(s!=NULL);
@@ -56,7 +56,7 @@ static void update_stat(struct udb_handle *h) {
 	}
 }
 
-/** return non-zero if file stat has changed 
+/** return non-zero if file stat has changed
  */
 static int file_has_changed(struct udb_handle *h) {
 	struct stat st;
@@ -296,7 +296,7 @@ int udb_lookup(struct udb_handle *h, const char *key) {
 	return 0; /* failure */
 }
 
-/** read next field in the current record 
+/** read next field in the current record
  * return 0 when end of record is reached */
 int udb_read_field(struct udb_handle *h, char *buf, size_t len) {
 	assert(h!=NULL);

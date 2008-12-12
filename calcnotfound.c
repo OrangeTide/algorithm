@@ -135,7 +135,7 @@ void calcnotfound(char *response, int max, char *calcstring)
 			numresp = BUILTIN_NUMRESP;       // fall back
 
 			if( testmode )
-				fprintf(stderr, 
+				fprintf(stderr,
 				"File responses.txt not present, using builtin table\n" );
 		} else if( testmode ) {
 			fprintf(stderr, "Using responses.txt file, %d entries\n",
@@ -158,7 +158,7 @@ void calcnotfound(char *response, int max, char *calcstring)
 	for( k = 0; k < numresp; k++ ) {
 		rrand -= responses[k].probability;
 		if( rrand <= 0.0 || k == numresp - 1) {
-			snprintf( response, max, 
+			snprintf( response, max,
 				  responses[k].response, calcstring );
 			break;
 		}

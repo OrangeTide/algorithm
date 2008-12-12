@@ -1,4 +1,4 @@
-/** pQueue.h : Priority Queue for functions. 
+/** pQueue.h : Priority Queue for functions.
  *
  * Copyright (c) 2002 Steve Mertz <steve@dragon-ware.com>
  * All rights reserved.
@@ -41,18 +41,18 @@ typedef unsigned long long pQueueTime_t;
 #define PQUE_HOURS    *(3600 PQUE_SECONDS)
 #define PQUE_DAYS     *(86400 PQUE_SECONDS)
 #define PQUE_WEEKS    *(604800 PQUE_SECONDS)
-#define PQUE_MONTHS   *(2592000 PQUE_SECONDS) 
-#define PQUE_YEARS    *(31557600 PQUE_SECONDS)	/* 365.25 days a year */ 
+#define PQUE_MONTHS   *(2592000 PQUE_SECONDS)
+#define PQUE_YEARS    *(31557600 PQUE_SECONDS)	/* 365.25 days a year */
 
 struct pQueue
 {
   unsigned long number;   /* Number in the Queue */
   pQueueTime_t timeEntered;     /* Time entered in the Queue */
   pQueueTime_t timeExecute;     /* Time we should execute */
-  
+
   void (*func)(void *);   /* Function we are going to hold */
   void *args;             /* The arguments for the function */
-  
+
   struct pQueue *next;
 };
 

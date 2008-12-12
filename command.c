@@ -1,7 +1,7 @@
 /*
  *	 Copyright (c) 2001 David T. Stiles
  *	 All rights reserved.
- * 
+ *
  *	 Redistribution and use in source and binary forms, with or without
  *	 modification, are permitted provided that the following conditions
  *	 are met:
@@ -16,7 +16,7 @@
  *	 4. The name David T. Stiles may not be used to endorse or promote
  *		 products derived from this software without specific prior written
  *		 permission.
- * 
+ *
  *	 THIS SOFTWARE IS PROVIDED BY DAVID T. STILES `AS IS'' AND ANY
  *	 EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  *	 IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE

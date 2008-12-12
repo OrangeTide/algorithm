@@ -27,7 +27,7 @@ strcasestr ( const char *haystack, const char *needle)
 		}
 	}
 	return NULL;
-} 
+}
 
 /*****************************----end code----*****************************/
 // vi: noet sts=0 ts=4 sw=4

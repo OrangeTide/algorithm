@@ -344,7 +344,7 @@ static int rpn_make_string(FLOAT input, char *str, int len, int base) {
 	if(exponent < str_len) {
 		// The number includes all the information we need.
 		if(exponent > 0) {
-			// We must add a decimal point, since 
+			// We must add a decimal point, since
 			rpn_insert_decimal(str, len, str_len, exponent);
 		} else {
 			// The number is much less than zero.

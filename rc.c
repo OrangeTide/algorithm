@@ -4,8 +4,8 @@
 /* Config file syntax:
  *
  * comment can be # or C/C++ style comments
- * identifier "string";  # assigns value to id 
- * identifier="string";  # same as above 
+ * identifier "string";  # assigns value to id
+ * identifier="string";  # same as above
  *
  * quotes around string are optional when string has no spaces
  * there is only a string value
@@ -14,7 +14,7 @@
 
 /* TODO:
  * - make use of the current_operation string for better diagnostic output
- * - support the following datatypes: numbers, strings, arrays/lists, flags 
+ * - support the following datatypes: numbers, strings, arrays/lists, flags
  * - move loop out of parser into expr()
  * - support C style comments
  * - use buf_max in ident() function
@@ -23,12 +23,12 @@
  * - allow 1-word strings without "" around them
  */
 
-/* DONE: 
+/* DONE:
  * - basic parse syntax
  * - C++ style comments
  * - make ; optional at the end of a group or list or assignment
  * - make = optional
- * 
+ *
  */
 
 
@@ -53,7 +53,7 @@
 
 int verbose;
 
-static char current_operation[64] = "doing nothing"; 
+static char current_operation[64] = "doing nothing";
 
 static void reset_current_operation(void)
 {
@@ -90,7 +90,7 @@ static void straddch(char *str, int *idx, char ch)
 
 static int comment(FILE *f, int *line)
 {
-	int ch;	   
+	int ch;	
 	while((ch=fgetc(f))!=EOF) {
 		if(ch=='\n') {
 						(*line)++;
@@ -150,7 +150,7 @@ static int ident(FILE *f,char *buf,int buf_max)
 	 * found some data? : ok
 	 * no data : parse error
 	 */
-	return ch==EOF ? EOF : bufi!=0; 
+	return ch==EOF ? EOF : bufi!=0;
 }
 
 static int chm(FILE *f, int ch)
@@ -325,7 +325,7 @@ struct config_node *config_parser(const char *filename)
 		}
 	while((result=expr(f,&line,&root,&curr))>0) ;
 
-	if(result==EOF) { 
+	if(result==EOF) {
 		reset_current_operation();
 		DEBUG("Success!\n");
 		if(verbose>3) {

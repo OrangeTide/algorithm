@@ -1,7 +1,7 @@
 #ifndef RC_H
 #define RC_H
 
-typedef enum { NODETYPE_NIL, NODETYPE_TREE, NODETYPE_NUMBER, NODETYPE_STRING } nodetype_t; 
+typedef enum { NODETYPE_NIL, NODETYPE_TREE, NODETYPE_NUMBER, NODETYPE_STRING } nodetype_t;
 
 struct config_node {
 	struct config_node *next;

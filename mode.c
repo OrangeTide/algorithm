@@ -36,7 +36,7 @@ int parse_mode_next(struct mode_parser *st, char mode_flag[2], char *arg, size_t
 
     if(!st->arg_curr || !st->arg_curr[0]) return 0; /* done */
     if(!st->mode_curr) return 0; /* done */
-    
+
     /* resolve any + or - characters */
     while(1) {
         if(!st->mode_curr[0] || isspace(st->mode_curr[0]))
