@@ -151,14 +151,13 @@ void main_loop( void )
 		if (curtime > nextime) {
 			tv.tv_sec = 0;
 			tv.tv_usec = 0;
+		} else if (nextime > curtime + 360 * PQUE_REALTIME_RESOLUTION) {
+			/* If no data for 6 minutes, something is wrong. */
+			tv.tv_sec = 360;
+			tv.tv_usec = 0;
 		} else {
 			tv.tv_sec = (nextime - curtime) / PQUE_REALTIME_RESOLUTION;
 			tv.tv_usec = ((nextime - curtime) % PQUE_REALTIME_RESOLUTION) * (10000000 / PQUE_REALTIME_RESOLUTION);
-			/* If no data for 6 minutes, something is wrong. */
-			if (tv.tv_sec >= 360) {
-				tv.tv_sec = 360;
-				tv.tv_usec = 0;
-			}
 		}
 
 		FD_ZERO(&fdgroup);
