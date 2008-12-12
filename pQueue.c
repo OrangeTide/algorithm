@@ -104,7 +104,7 @@ pQueueTime_t pQueueRun(struct pQueue **theQueue, pQueueTime_t executeTime)
 		free(last);
 	}
 	if (!*theQueue)
-		return -1;
+		return (pQueueTime_t)-1;
 	else
 		return (*theQueue)->timeExecute;
 }

@@ -16,6 +16,8 @@
 #include "mode.h"
 #include "notify.h"
 
+extern int is_autovoice_enabled;
+
 #define MAX_CHANNEL_LIST	1024	/* string used to hold all channel names */
 
 struct naughty_list {
@@ -136,6 +138,11 @@ static void av_onjoin(void *p, struct message *msg)
 {
 	char ray[MAXDATASIZE];
 	struct channel_list *ch;
+
+	if (!is_autovoice_enabled)
+	{
+		return;
+	}
 
 	assert(msg!=NULL);
 	if(!msg) return;

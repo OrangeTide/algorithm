@@ -108,6 +108,8 @@ void lsusers_stub( void );
 void rot13_stub( void );
 int proto_stub( void );
 void mball_stub( void );
+void enable_stub( void );
+void disable_stub( void );
 
 
 /* this is what an irc message will be broken down to */
@@ -134,7 +136,7 @@ struct message {
 
 
 #define HELPHELP "you should /msg me help commands or help <command-name>."
-#define COMMANDS "calc, op, chpass, whois, rmcalc, mkcalc, chcalc, owncalc, searchcalc, listcalc, rmuser, adduser, rawirc, lsusers, rot13. Try, help syntax or help commandname."
+#define COMMANDS "calc, op, chpass, whois, rmcalc, mkcalc, chcalc, owncalc, searchcalc, listcalc, rmuser, adduser, rawirc, lsusers, rot13, enable, disable. Try, help syntax or help commandname."
 #define SYNTAX "Most user commands take the form of COMMAND PASSWORD USERNAME ARGUMENT/S. The op command requires only a password if your nick is the same as your username."
 #define ADDUSER "adduser yourpass yourlogin newpass newlogin"
 #define CHPASS "chpass yourpass yourlogin newpass"
@@ -151,6 +153,30 @@ struct message {
 #define WHOIS "whois username."
 #define LSUSERS "lsusers will list all known users in as few messages as possible."
 #define ROT13 "rot13 will repeat your message in rot13. usage: rot13 this sentence will be encrypted in rot13."
+#define ENABLE "enable yourpass yourlogin feature"
+#define DISABLE "disable yourpass yourlogin feature"
+
+#define IS_CHPASS_ENABLED     "is_chpass_enabled"
+#define IS_CALC_ENABLED       "is_calc_enabled"
+#define IS_CHCALC_ENABLED     "is_chcalc_enabled"
+#define IS_OP_ENABLED         "is_op_enabled"
+#define IS_OWNCALC_ENABLED    "is_owncalc_enabled"
+#define IS_PROTO_ENABLED      "is_proto_enabled"
+#define IS_WHOIS_ENABLED      "is_whois_enabled"
+#define IS_WCALC_ENABLED      "is_wcalc_enabled"
+#define IS_ADDUSER_ENABLED    "is_adduser_enabled"
+#define IS_HELP_ENABLED       "is_help_enabled"
+#define IS_RMUSER_ENABLED     "is_rmuser_enabled"
+#define IS_RMCALC_ENABLED     "is_rmcalc_enabled"
+#define IS_RAWIRC_ENABLED     "is_rawirc_enabled"
+#define IS_RCALC_ENABLED      "is_rcalc_enabled"
+#define IS_ROT13_ENABLED      "is_rot13_enabled"
+#define IS_MKCALC_ENABLED     "is_mkcalc_enabled"
+#define IS_LISTCALC_ENABLED   "is_listcalc_enabled"
+#define IS_LSUSERS_ENABLED    "is_lsusers_enabled"
+#define IS_DCALC_ENABLED      "is_dcalc_enabled"
+#define IS_SEARCHCALC_ENABLED "is_searchcalc_enabled"
+#define IS_AUTOVOICE_ENABLED  "is_autovoice_enabled"
 
 #endif /* !_BOT_H */
 
