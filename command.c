@@ -113,7 +113,6 @@ static void got_message(void *p, struct message *msg)
 int command_init(void)
 {
 	notify_register("PRIVMSG", got_message, 0);
-	notify_register("NOTICE", got_message, 0);
 	return 1; /* succcess */
 }
 
