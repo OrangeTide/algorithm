@@ -94,7 +94,7 @@ OSI_Layers bjarne|OSI layers = application, presentation, session, transport, ne
 crap bjarne|A recyclable waste product that can be extracted from a mammal.  Warm, fuzzy, and soft describe this product quite well.
 brown bjarne|Ralf Brown's Files = http://www.cs.cmu.edu/afs/cs/user/ralf/pub/WWW/files.html
 BestCompiler bjarne|Watcom C/C++ 10.x
-spore palisade|http://www.spore.com/
+commandment#1 Mish|if it works but we do not like it you should rewrite
 errmsg bjarne|An error message is a concise description of an error, providing ALL information needed to solve it! "It does not work" is thus gibberish!
 randseed bjarne|To use a pseudo random number generator, you have to SEED it. To do this, use the call srand(time(NULL)) _ONCE_ at the start of your program.
 dejanews bjarne|[Dejanews: Search for Usenet articles] http://www.dejanews.com/
@@ -327,7 +327,7 @@ Compression SNIBRIL|Paper that surveys a variety of data compression methods spa
 qsort zhivago|int sort(char **a, char **b) { return strcmp(*a, *b); } int main() { int i; char *buf[] = {"one", "two", "three", "four"}; qsort(buf, 4, sizeof(char *), sort); for(i=0;i<4;i++) { puts(buf[i]); } return 0; }
 win95 kage`|"Windows 95: n. 32 bit extensions and a graphical shell for a 16 bit patch to an 8 bit operating system originally coded for a 4 bit microprocessor, written by a 2 bit company, that can't stand 1 bit of competition." - UGU
 harsh_mistress SNIBRIL|The Hugo Award-winning classic that helped launch modern libertarianism, "The Moon Is a Harsh Mistress" is Heinlein's unforgettable tale of a Lunar revolution in 2076. Led by a one-armed computer technician, a radical blonde bombshell, an aging academic, and a sentient, all-knowing computer, the revolution'sproclamation--"TANSTAAFL" (There Ain't No Such Thing As A Free Lunch)--remains a slogan of the libertarian movement today.
-IDE SNIBRIL|Integrated Development Environment, a/k/a I Don't know what the fuck makE is.
+c-ide Mish|http://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments
 cplusplus Justino|C++: a slightly more convienient way to do OO than C.
 MSDNInfo Sputnix|You can find out information about MSDN Subscriptions (there are currently four different levels) at http://www.microsoft.com/msdn/join/subdetails.htm
 stuff kestrel|The all encompassing word for every occasion: STUFF!
@@ -641,7 +641,7 @@ gnustep x86|GNUstep is a GNU (read Free) OpenStep implementation. For more info:
 christmas Triffix|The Christmas obfuscated code: http://www.go2net.com/internet/deep/1997/01/08/christmas-obfus.c
 stw x86|Search The Web!
 gameprogramming _Zaphod|See Amit's Game Programming Resources at http://www-cs-students.stanford.edu/~amitp/gameprog.html
-emacs x86|Emacs is a very powefull editor, you can love it or you can hate it. But stop bitching it.
+pointer+integer Mish|pointer+integer = (char*)pointer + sizeof(*pointer)*integer
 PERL x86|PERL - a language written by Larry Wall - Practical Extraction and Report Language. For more information visit: http://www.perl.org
 afaik Gambit-|AFAIK: As Far As I Know
 Setz Setz|Real programmers debug with an anolog multi-meter!
@@ -1012,7 +1012,7 @@ programmers Gambit-|Gambit is a bigger dick then Palisade.
 zen MaineCoon|Q: How many Zen masters does it take to screw in a light bulb? A: None. The Universe spins the bulb, and the Zen master stays out of the way.
 history MaineCoon|http://www.cs.uregina.ca/~bayko/cpu.html
 optimization Nossenus|http://www.cs.orst.edu/~crowl/programming/Bentley82.html
-squirrels palisade|Honey... if you and I were both squirrels, would you let me bust a nut in your hole?
+resp Mish|Choose your response (1) sarcastic (2) offensive (3) demeaning 
 blueberrysuck OrngeTide|If blueberry were here, she would say that "is suck".
 damnation Tybstar|The top ten reasons Eternal Damnation is better than Windows Software Development: http://www.fourmilab.ch/documents/top10.html
 atheism poorboy|"I'm an atheist, thank God!"
@@ -1469,7 +1469,7 @@ atheist_quotes Perly| http://www.math.unl.edu/~augustyn/godisdead.html THANKS Ps
 atheist Perly|"The atheist does not say "there is no God," but he says "I know not what you mean by God; I am without idea of God; the word 'God' is to me a sound conveying no clear or distinct affirmation. ... The Bible God I deny; the Christian God I disbelieve in; but I am not rash enough to say there is no God as long as you tell me you are unprepared to define God to me."" [Charles Bradlaugh, "Plea for Atheism"]
 hrml Setz| hrml:  Something that Setzer's brain does when he tries thinking.  This saying is usually followed by a puff of smoke and an exclamation 'OW!'
 kcin4 Gambit-|The previous calc was incorrect.  Drgd really means 'Drugged'.  Thank you, pass through.
-suffer MaineCoon|http://bitch.shutdown.com/make_the_children_suffer.html
+tencommands cout|Ten commands every Linux developer should know: http://www.linuxjournal.com/node/7330/print
 reality Perly|The reality of this situation is a car running fast cannot creat a food web where a second order from the internet was follow by a princesses funeral which lead to a devastating earth quake among the canadians causing us to think that the aliens really exist.
 pimping kcin|No pimping allowed!
 bbqttjoajra eee_|Be Back Quicker Than Two Jiggles Of A Jack Rabbit's Ass
@@ -1584,7 +1584,7 @@ win32coding DrgdHmstr|<OGL> Isk: well, I'm looking at this win32 code, and the w
 jack glamdring|That fellow that nobody seems to know.
 newbiesign eee_|Speed limit: 35mph (newbie crossing)
 your dePorted|Is it that hard for you people to distinguish the word "You're" from "Your"? "Your" is possessive and "You're" is a conjunction. Get it right for one god-damned time!
-WTF Triffix|What The Fuck
+post Mish|Please paste your code (or a complete example that demonstrates your problem) here: http://rafb.net/paste/
 jam t-Q-b-F|Jam/MR is a free make(1) replacement that makes building simple things simple and building complicated things manageable. http://www.perforce.com/jam/jam.html. STOP USING MAKE!
 mirrors Aegis|CScene mirrors at: http://www.gmonline.demon.co.uk/cscene/  http://www.night-flyer.com/cscene/index.html  http://www.eng.chula.ac.th/ecc/cscene  http://megaton.obfuscated.net/cscene  http://cscene.kung-foo.org
 cbot Aegis|The online version of the #C mailing list! http://www.night-flyer.com/cbot/cbot.exe    You can post directly to cbot by sending mail to: cbot@www.night-flyer.com or just post to one of the #C mail lists.
@@ -1663,7 +1663,7 @@ mipsgrrl-gc venus|GMUd?s:!aC---UBISXP---L-EW--N-o--K-W---O----M+V--PS+++PEY---PG
 voidptr-gc voidptr|GIT/MU d- s a-- C+++ U+++$ P+ L+++ E W N+ o- K w--- O M? V? PS+ PE Y+ PGP+ t s? X+ R tv b+++ DI+ D G e h----(*) r+++ y+++
 ascetic undone|[19:35] <Zhivago> whip it for christ!
 sample flub| get your free sample of the ADDICTING Jelly Belly Jelly Beans at http://www.jellybelly.com
-MFC OGL| More FUcking Crap ;-)
+string-constant Mish,Mish|I am trying to modify a string. Why modifying char string foo does not work ? I defined foo as char *foo = "abcdefgh". A: Because compiler is free to place string constants into read-only memory. Trying to modify such string will crash your program. What is the solution ? A: The solution is to declare it as char foo[] = "abcdefgh"; This guarantees that foo is writable memory.
 linux-sex OGL|date ; talk ; wine ; touch ; unzip ; mount ; fsck ; yes ; yes ; yes ; umount ; sleep
 exceptions t-Q-b-F|Tom Cargill's "Exceptions are Evil" Article: http://cseng.awl.com/bookdetail.qry?ISBN=0-201-63371-X&ptype=636
 physics Gambit-|Lab #41 has been filled with a strange orange substance that keeps demanding a lawyer, and lab #32 has been inverted and left this plane of existence.  Classes will be canceled for the remainder of the week.
@@ -1677,7 +1677,7 @@ funny venus|<Spock> Captain, I am detecting highly amusement-oriented energy fie
 date Gambit-|<mipsgrrl> i can think of nothing more enjoyable than a pleasant evening head-butting several walls.
 web Gambit-|<Iter> vexillum: And I suppose we should keep every programming url we've ever heard of close to hand just in case an lazy twit dosn't want to use a search engine to answer their obscure question!
 i_fixed_it! kcin|<BadBit> YEAH!  HOOCHIE MAMA, i got me a different error!
-opme kcin|op me bitches!
+matrix Mish,Mish|Three ways to allocate a "matrix" with array of n pointers pointing to the "rows": (1) T **pp = malloc(n*sizeof(T*)+m*n*sizeof(T)); for(k=0; k<n; k++) pp[k]=(T*)((char*)pp+n*sizeof(T*)+k*m*sizeof(T)); (2) T **pp=malloc(n*sizeof(T*)); T *buf=malloc(m*n*sizeof(T)); for(k=0;k<n;k++) pp[k]=buf+k*m; (3) T **p=malloc(n*sizeof(T*)); for(k=0; k<n;k++) pp[k]=malloc(m*sizeof(T));
 goto_tybstar alycat|I think its foolish to use goto on the fear of using up 4 bytes, you are cutting off your nose despite your face, how many (young) programmers go through ridiculous "optimization" rituals in order to get a buggy exacutable that is marginally faster than a stable one that is well written. a quote.  "Premature optimization is the root of all evil" - Donald Knuth
 lights flub|There are two lights on the way to work- the bathroom light and the kitchen light.
 perly_quote Perly|The probability of my connection getting terminated increases by a 100% every time i turn on my modem.
@@ -1774,7 +1774,7 @@ buildhelp t-Q-b-F|If you didn't write the program you're asking about, and you'r
 law cam2|186,000 miles per second.  Its not only a good idea... Its the LAW!
 argue Notagod|Nothing can keep an argument going like two persons who aren't sure what they're arguing about. -- O.A. Batista
 rsa wem|RSA encryption model (demonstrates how the RSA algorithm works) http://www.orst.edu/dept/honors/makmur/
-parade aerid|<aerid> don't rain on my fucking parade!
+ncurses Gambit-|http://web.cs.mun.ca/~rod/ncurses/ncurses.html or http://www.magitech.org/ncurses.txt.gz
 intlen eee_|to see how many characters x is, int c=0, x=45783; while(x) { x/=10; c++; }
 spaces aerid|please refrain from putting spaces before punctuation. it is gramatically incorrect and a waste of bandwidth. (see calc ?? as well)
 c++beauty aerid|for (i = ListMap.begin (); i != ListMap.end (); i++) for (j = i->second.begin (); j != i->second.end (); j++)... try to iterate through a complex binary tree of doubly linked lists indexed by truly variable length strings in C in that many lines.
@@ -1785,8 +1785,8 @@ meat mEAt|The dude abides...
 omni_bookmarks Omnibus-|Omnibus' bookmark collection: http://bookmark.kung-foo.org
 juice MaineCoon|Juice: a better portable language/binary format: http://www.ics.uci.edu/~juice/
 FINE Gambit-|FINE: Fucked-up, Insecure, Neurotic, and Emotional
-cute2 wem|cute is deadly. don't fuck with the adorable
-cute wem|cute can be deadly. don't fuck with the adorable.
+heck Mish|"Heck is for people who do not believe in gosh."
+bitops Mish,Mish|Four basic bit operations are: 1. & - bitwise AND. 2. | - bitwise OR. 3. ^ - bitwise XOR (addition module 2). 4. ~ - bitwise NOT, the bitwise negation. For truth tables of each operations, refer to the literature. See also bitfields (unsigned int name:3). For more advanced bit juggling, try calc hackersdelight 
 springphil zhivago|http://www.primenet.com/~benmoss/humor/springer.html
 bill-gates Wazm|I am Locutus of Borg.
 system() aerid|system shoudl only be used buy peeple who can spel and youse proper grammer, NOT bye aerid!
@@ -1797,7 +1797,7 @@ halflife MaineCoon|A radioactive geek doesn't even have a half-life.
 terrier Gambit-|<Teckla> arf arf arf arf arf arf *BLAM BLAM* NO TERRIER
 FOLDOC SNIBRIL|Free On-Line Dictionary Of Computing - http://foldoc.doc.ic.ac.uk/
 woo aerid|Woo College is an elite technical/liberal arts college. It's graduates are looked at with a more curious eye than any other college. Woo College only accepts the top 1% of applicants. To apply to Woo College contact aerid.
-aerid_name aerid|<aerid> don't fuck with the name.
+gamble Setzer|<Setzer> Life is a hilarious gamble.  I bet on it daily and win!
 sprong MaineCoon|Sprong - the best way to dereference double pointers: yourDoublePtr[0]->itsMember;
 noon aerid|this is the time when all the haxor kiddies come out and harass people with their l33t skills.
 SQL-Tutorial aerid|http://w3.one.net/~jhoffman/sqltut.htm
@@ -1897,16 +1897,16 @@ calc_nazi Omnibus-|*** Teckla is the Calc Nazi.
 bugfree Setz|People that really write bug free code: http://www.fastcompany.com/online/06/writestuff.html
 ex CyrixBoy|please choose from the following: 1. My cd got scratched 2. A friend has/is borrowing it 3. I lost the software altogether 4. I am a kiddiepirate and stole it so there are no docs/ocx/dll or help file 5. I am lazy/think everything is like cut and paste: show me the way AND take me there (write the code for me)
 DNA Perly|DNA: National Dyslexic Association
-mozilla_development riscgrl|<shaver> what the FLYING BAT FROM HELL FUCK is that?
+rand() Gambit-|How can I get random integers in a certain range? - http://www.eskimo.com/~scs/C-faq/q13.16.html
 why_windows_breaks riscgrl|<shaver> because your OS sucks wet farts from dead pigeons?
 engineers dhartmei|I know engineers. They love to change things. -- Dr. McCoy
 laziness aerid|fortunately, laziness transcends boredum.
 aerid aerid|#c's official resident psychopathic schizophrenic mkcalc abusing hermit and C++ zealot. * aerid makes passionate love to STL.
 icbmX2 buttmunch|icbmX2
 ralph aerid|mrs. hoover, my cat's breath smelles like cat food.
-heh aerid|when someone says 'heh' over and over it generally means that they do not have a fucking clue what's going on and are trying to make friends or keep from offending anyone with their ignorance/idiocy.
+california Gambit-|The following #C people live in California: OrngeTide, mEAt, voxel, Pennywise, alycat, blueberry.
 d.*r.*g.*d platypus|echo `grep '^d.*r.*g.*d' /usr/dict/words`\nderegulated discharged discouraged disorganized disregard disregarded disregarding disregards diverged dragged dragonhead dragooned
-bitch riscgrl|riscgrl!
+fpt OrngeTide|Function Pointer Tutorials: http://www.newty.de/fpt/fpt.html
 clang Mish|C is excellent language with terrible library.
 zhivago_secret_life Omnibus-|<Zhivago> I'd just like to say that FF8 is very good
 botfood undone|Please do not feed the bot.
@@ -1948,7 +1948,7 @@ mscode OrngeTide|<Perly> if you apply to microsoft, they'll re-teach you program
 banned Wazm|Hey stupid.. YOU'RE BANNED.
 chars OrngeTide|<mEAt> chars are just itty bitty integers anyway
 typedef zhivago|typedef declaration; makes  alias to the type of declaration with the name of the declaration. ie typedef int i32; or typedef void (*fun)(int, ...); alias to i32, and fun respectively.
-niv palisade|<niv_> i really despise the new case for the G5... give me an x86 with a brushed steel case, a side window and a cathode blue light and i'm happy!
+strrep Teckla|char *strrep(char *str, int pos, int num, const char *rep) { return strins(strdel(str, pos, num), pos, rep); }
 moo DrgdHmstr|MOOOO!
 botdesires undone|[03:05] <terr2> I wish Bjarne had bigger boobs
 wrox-tutes OrngeTide|www.wrox.com - Programming Tutorials, downloadable books.
@@ -1968,26 +1968,26 @@ tea palisade|void code(long *v, long *k) { unsigned long y=v[0],z=v[1],sum=0,del
 nostril SgtUnix|<noss2> SgtUnix: nostril? Did you know that I can wave my nostrils?
 sco SgtUnix|Scumbag Corporate Oligarchy
 god SgtUnix|Puppet Master
-boycott Palisade|Stop the Linux monopoly!! Buy Windows98!
+strins Teckla|char *strins(char *str, int pos, const char *ins) { char *tmp = str + pos; int len = strlen(ins); memmove(tmp + len, tmp, strlen(tmp) + 1); memcpy(tmp, ins, len); return str; }
 mcrypt cout|Simple encryption library - http://mcrypt.sourceforge.net/
 Eris Palisade|May the chaos beneath thy feet divide and may thou fall into the arms of Eris.
 insults Palisade|Insulting someone to win an argument is the lowest and most despicable thing one can do in a debate.
 BOFH_lotus riscgrl|o/~ i was held.. my quake was doing well. the day my phone top rung.. i'm done.. i zigged and zagged when i should have run.. god damn.. its the man. he'll be dipped, and canned.. hey hey. hey hey.. my boss can cry like a big bad man.. so happy to show us.. my boss installed lotus.. without any notice.. my boss installed lotus.. at my terminal, i reflect, just last week i was wringing his neck. the system failed.. he was held.. he
-what Palisade|Programming, what's that? Only eye doctors here...
+strdel Teckla|char *strdel(char *str, int pos, int num) { char *dest = str + pos; char *src = dest + num; memmove(dest, src, strlen(src) + 1); return str; }
 inferno palisade|Inferno is an experimental OS, spin off from Plan 9: http://www.vitanuova.com/inferno/
 pali_sense Palisade|Suicide is silly... it is better to live to regret your mistakes than to die because you were afraid of the ones you might make.
-heterophobia Palisade|Homosexuals are all heterophobes!! Haters! Bigots!
+satisfied Mish|satisfied, content, fulfilled, gratified, happy, pacified, pleased.
 quitslashdot cout|http://www.cs.washington.edu/homes/klee/misc/slashdot.html
 sus OrngeTide|The Single UNIX Specification, Version 2 http://www.unix-systems.org/version2/
 immoral Palisade|Warez is bad, mmm'kay?
-OTOH Triffix|On The Other Hand
-masturbation Palisade|Sex is for people with weak imaginations.
+water? OrngeTide|Water? You Mean Like Outta the Toilet?
+advancedgl OrngeTide|Programming with OpenGL: Advanced Rendering - http://www.opengl.org/resources/code/samples/advanced/advanced97/notes/notes.html
 prices Palisade|Want help? Answers are a dollar. Answers which require thought are 5 dollars. Correct answers are 20 dollars. Dumb looks and newbie torment are always, always free.
 feminism Triffix|<rkeene> kvanals, There are some women in here, but they know they suck ass.
 gdb_tutorials cout|http://www.dirac.org/linux/gdb/ and http://www.unknownroad.com/rtfm/gdbtut/gdbtoc.html and http://heather.cs.ucdavis.edu/~matloff/UnixAndC/CLanguage/Debug.html
 limbo palisade|limbo is a programming language developed for inferno -- http://www.vitanuova.com/inferno/papers/limbo.html
-dd palisade|GIRLS GONE DOUBLE D
-pc Palisade|if everyone was a gay black female transsexual pedophile we wouldn't have a need for political correctness
+CTrivia1 Mish|The Unix operating system is well known for being written entirely using only the letter C.
+oriented Mish|C is pointer-oriented language.
 palisade Palisade|HI!HI!HI!HIHI!IH
 political_quiz OrngeTide|World's Smallest Political Quiz: http://www.theadvocates.org/quiz.html
 thx cout|it's spelled "thanks" or "thank you", not "thx".
@@ -1995,44 +1995,44 @@ pickles Setzer|http://www.exrx.net/ExInfo/Pickles.html
 linus_drunk Palisade|"If budweiser can have a frog to sell beer, why ask about the penguin?" --Linus
 totalitarian Palisade|"A totalitarian regime crushes all autonomous institutions in its drive to seize the human soul." -- Arthur M. Schlesinger, Jr.
 linus Palisade|Conan the Barbarian, starring, Linus Torvalds as Conan, Alan Cox, as the crazy wizard, and Bill Gates, as yet another evil sorcerer dude who likes snakes...
-flying_circus Palisade|Help! Help! I'm being repressed!!!
-loins palisade|<ParisHilton> I want to feast on your loins, oooh.
+codex Mish|http://codecodex.com wiki-based code library where you can request code and contribute code
+codewiki Mish|http://codecodex.com wiki-based code library where you can request code and contribute code
 debian palisade|debian, apt-get rocks, what more can i say? www.debian.org
-anti-family Palisade|Anti-families consist of adults lowering their children. One example of this is, to some degree, putting them through a school as ridiculous as the one they went to when they were a child. And even then, realizing they will be bombarded with mindless activities to waste their mind until they are ready for the greatest lobotomy, college.
+obama Anonymous|I'd vote for McCain before Obama, but luckily there are other options, like not voting or suicide.
 precedence aedinius|(::), (., ->, [], ()[call/ction], ++[post], +--[post], typeid, dynamic_cast, static_cast, reinterpret_cast, const_cast), +(sizeof, ++[pre], --[pre], ~, !, -[negate], +[unary], &, *, new, delete, +()[cast]), (.*, ->*), (*, /, +[add], -[subtract]), (<<, >>), (<, <=, >, >=), +(==, !=), (&), (^), (|), (&&), (||), (=, *=, /=, +=, -=, <<=, >>=, &=, |=, +^=), (:?), (throw), (\,)
-open_source2 Palisade|<s00shy> the inquisition has started! burn the free source coder!
+prng OrngeTide|for good Pseudo Random Number Generators: http://www.qbrundage.com/michaelb/pubs/essays/random_number_generation.html
 problems Palisade|In 2000 opensource was prohibited by the U.S. government in effort to help proprietary vendors. They saw OSS as a threat to commercialism, and sought its destruction. That same year Mafias started focusing on providing users with the opensource apps that were now illegal. Open source and mafias now thrived. Years later, the prohibition was dropped, and OSS is now considered a "standard" solution. Freedom, yeah.
-open_source3 Palisade|<PsychoOne> Open source must die. Its key advocates drawn and quartered. Its minions dispersed and its memories forever erased from history.
+xyz mauke|They ask how to do Z, but that's because they think they want to do Y and think that Z will get them there, but really it's because they're a lunkhead, and that's the main (X) problem
 shortaclc Perly|Long calcs suck. Short calcs swallow.
 software_rain Palisade|"In the Linux storm washing across the Internet landscape, each of us is a drop of rain. Only together, does our might become apparent." -- Matt Michie "Software from the sky"
 conspiracy Palisade|<Palisade> the great thing about conspiracy theory is that it might not be a theory
-uandzoo palisade|<OEks> it's "fuck, fuck, fuck a duck, screw a kangaroo! finger bang an orangutan, support your local zoo!"
+xy mauke|They ask how to do X, but that's because they really want to do Y but think X will get them there and most of the time they are wrong.
 shortcalc nossenus|Short calcs are perferred.
 linux-technology palisade|Nice link site to visit that lists some embedded linux devices and information. -- http://www.linuxdevices.com/
-homonims Palisade|<Teckla> Palisade: You might want to change your "insults" calc to say that insulting someone during a debate is called an "ad hominem" attack.
+sexchange OrngeTide|Don't do it! http://www.anticlockwise.com/dani/personal/changes/dont.htm
 afterlife Palisade|There's always a light at the end of the tunnel. The real question is, who is it that's holding that light?!
 sprintf eddy|sprintf, the S is for Secure!
 nonlp eddy|non linear programming faq: http://www-unix.mcs.anl.gov/otc/Guide/faq/nonlinear-programming-faq.html
 visual-c++ noss|Available without fee at http://msdn.microsoft.com/visualc/vctoolkit2003/
-retarded palisade|<Akkard> lol... i'm retarded, DING fries are done!
+race Mish,Mish|"race condition", or simply "race": Bugs due to unexpected order of events that inexperienced programmers think "unlikely to happen". Is prevented by proper locking, reference counting, and other form of exclusive access.
 franklin Palisade|"Beer is proof that God loves us and wants us to be happy." -- Ben Franklin
 trinux Palisade|Trinux, a mini-linux distro, pretty nifty. -- www.trinux.org/
 lp eddy|linear programming faq: http://www-unix.mcs.anl.gov/otc/Guide/faq/linear-programming-faq.html
-pali_depressed Palisade|Suicide is inevitable for me, it's just a matter of when, where, and how. I'll place my bet on: tomorrow, in the laundry room, rattled to death by an angry washing machine.
-hammie_welcome_mat Palisade|hello... welcome to #c... for tutorials, C code, and the source to wolfenstein 3d, quake 1, and unreal type: /msg drgdhmstr !files
+inheritance Teckla|Some people, when confronted with a problem, think "I know, I'll use inheritance."  Now they have two problems.
+batshua- Mish|<Batshua> Does that include surprise buttsex? <Batshua> Because that's definitely MY favorite kind!  :p
 eic Palisade|An embeddable/extensible interactive, pointer-safe, bytecode C interpreter/compiler. -- http://www.datagrid.com/~eic/  --  http://www.anarchos.com/eic/
 plan9 SgtUnix|Experimental OS:  http://www.cs.bell-labs.com/plan9dist/
 cint Palisade|A C/C++ interpreter that can even interpret itself! 95% Ansi C compliant and 85% C++ compliant. -- http://root.cern.ch/root/Cint.html
 married Triffix|<rkeene> Married:  pathetic, in a good way.
-arbitrary Palisade|see ***LIST_TRUNCATED***
+example Mish|"One Example is Worth Thousand Explanations" (tm)
 astroturf Palisade|When we refer to "grass roots" we mean something that is home brewn, fresh, imaginative, personal, down to earth, independant, and empowering to individuals everywhere. When referring to "astroturf" we regard a large face-less corporation that is trying to get a piece of the hype surrounding grass root projects. Fortunately, astroturf is easy to detect because it looks, sounds, and smells just like bullshit.
 sex0rz Palisade|<OrngeTide> pali, everything has something to do with sex0r, you wouldn't even be here if there wasn't sex0ring going on:)
 sourceforge Palisade|SourceForge is a free service to Open Source developers offering easy access to the best in CVS, mailing lists, bug tracking, message boards/forums, task management, site hosting, permanent file archival, full backups, and total web-based administration. -- www.sourceforge.net
-apathy palisade|apathy is as good as cooperation
+irony Mish|You know what's ironic ? This: http://store.swatch.com/irony
 OrngeTide OrngeTide|<OrngeTide> i made that calc? I think it's stupid.
 color OGL|<OGL> C is limited to 16 colors
 free_crap_compiler OrngeTide|http://community.borland.com/museum .. fill out the forms and get a free copy of Turbo C 2.01 lite, among other old cheesy things.
-zerog palisade|freak
+ironic Mish|Elaine: It's ironic.       Women: What's ironic?      Elaine: This, that we've come all this way, we have made all this progress, but you know we've lost the little things, the niceties.      Woman: No, I mean what does 'ironic' mean?        Elaine: Oh...
 div_by_zero aerid|division by zero from this day forth yields the value woodruff's constant. "<eric-w> it's unfortunate that computers so far can only aproximate it"
 joke35 MaineCoon|A surgeon, a civil engineer and a software engineer were chatting at a bar. The discussion rolled around to whose profession was the oldest. The surgeon said that his was, since in the book of Genesis, God created Eve from one of Adam's ribs, and surly that involved surgery. (see joke35b)
 joke35b MaineCoon|The civil engineer countered by saying that before God created man, he created the heavens and the Earth from chaos, surly a feat of civil engineering. The software engineer just smiled and said "Where do you think the chaos came from?"
@@ -2040,17 +2040,17 @@ info.socks nossenus|A network traversal protocol - http://spiderman.socks.nec.co
 odp nossenus|Open Directory Project - yahoo like service - http://dmoz.org/
 dmoz nossenus|Open Directory Project - yahoo like service - http://dmoz.org/
 jobsecurity Palisade|"How To Write Unmaintainable Code" By Roedy Green -- http://mindprod.com/unmain.html
-fade_oops Palisade|<fade_> oh fuck! a girl walked in here and i'm not sure if she could see my dick or not \ <fade_> she had no fucking right to walk in here without knocking! \ <fade_> i was all naked in front of the computer with a sheet across my lap
-hammie_responds Palisade|<DrgdHmstr> fade_: You don't notice people entering while you're IRCing naked?
-chaotic_instances Palisade|Neugierig genug, war die einzige Sache, die den Verstand der Sch ssel der Petunie durchlief, w hrend sie fiel, OH-Nr., nicht wieder.
+xor-encryption Mish|XOR-based encryption is the STRONGEST encryption known to mankind!!!!!!!!!11
+gc Mish|in C, everyone collects his garbage himself
+bryno Mish|<bryno> hahha, i never connected that suravad was davarus
 fleuch Wazm|The greatest game ever!!!! http://homepages.tu-darmstadt.de/~meucho/index2.html (Linux, DOS, Amiga)
 aerid_laptop aerid|ok, you can fuck with myname i guess sometimes, you can fuck with me, fuck with my server, fuck with my code, but DONT FUCK WITH MY LAPTOP
-another_satisfied_customer DrgdHmstr|<eric-w> FUCK WINDOWS
+^DX^ Mish|<^DX^> I have a memory leak compiled in
 madlib aerid|see adlib
-DROMFP aerid|don't rain on my fucknig parade!
-adlib Palisade|according to darklord, neither adlibs nor madlib exist
+inplace OrngeTide|To pack a string inplace (remove spaces) try: for(i=0,j=0;str[i];i++) if(str[i]!=' ') str[j++]=str[i]; str[j]=0; 
+official Mish|suravad (aka davarus) is official troll of the channel.
 STLPort aerid|www.stlport.org -- a cross platform _working_ ANSI/ISO C++ compliaint STL.
-firefox palisade|A better web experience, faster browsing, automatic updates, tabbed browsing, popup blocking, searching, security, live bookmarks, and customization through plugins. Best browser ever: http://www.mozilla.com/firefox/
+cooking Gambit-|<Sam> Coding in C is like sending a 3 year old to do groceries. You gotta tell them exactly what you want or you'll end up with a cupboard full of pop tarts and pancake mix.
 undones_caffeine_rule undone|"caffeine".  If you're going to worship it, you're going to spell it correctly.
 zhiv_celebration undone|<Zhivago:#c> I must celebrate by going shopping and buying frozen yoghurt and soap
 proggedin OGL|if you think you will gain useful information by asking "what was such and such programmed in?", then you're an idiot
@@ -2058,8 +2058,8 @@ pacific_c megaton|a free msdos C compiler: http://www.htsoft.com/products/pacifi
 bestide gfoot|The best IDE in the world ever is bash.
 CDD SaintN|Clue Deficit Disorder
 Synapse Palisade|Synapse is a 3-D windowmanager for X/Linux, it's GPL'd. -- http://www.oreality.com/
-Mysterio palisade|<Mysterio> when i think of you!!! i TOUCH myself!
-xenophobia Palisade|<Wazm> palisade: Which makes us vulnerable by attack from inter-planetary space tribes.
+i Mish|like it when the guy who does not know a bit about XYZ blames me that I do not know XYZ when I know about XYZ I know 1000 times more than him. It's time to call it stupidity.
+explain Mish|Smart people value the correct answer. Stupid people don't understand that correct answer is correct. They demand the "explanations". Most of the time, they do not understand the explanations, and no amount of explanations can make them understand what smart people understand without explanations.
 sunlight OGL|hazerdous radiation which makes monitor screens hard to read; avoid at all costs
 gutenburg Omnibus-|http://promo.net/pg/
 frink OGL|Well it should be obvious to even the most dim-witted individual who holds an advanced degree in hyperbolic topology...
@@ -2092,7 +2092,7 @@ data_algo_course Iskander|a useful course in data structures and algorithms can 
 socket_error Iskander|If a packet hits a pocket on a socket on a port, And the bus is interrupted as a very last resort, And the address of the memory makes your floppy disk abort, Then the socket packet pocket has an error to report!
 kcin_man Iskander| <kcin> blueberry: Isk made semene. <kcin> smene. <kcin> semen
 2+2 Iskander|bc sais: 5, for large values of 2
-open_source Iskander|<Palisade> open source is a work of the devil to tempt us!!! stay away from it!!! evil!!! sacrafice stallman!!! inquistion!!! begin the crusades we must find all these "free software" heretics and torture them into converting!!
+exp Mish|Smart people value the correct answer. Stupid people don't understand that correct answer is correct. They demand the "explanations". Most of the time, they do not understand the explanations, and no amount of explanations can make them understand what smart people understand without explanations.
 mersenne Iskander|The Mersenne Primes information site can be found at http://www.mersenne.org
 gimps Iskander| The Great Internet Mersenne Prime Search project, http://www.mersenne.org/prime.htm
 PTAPG OrngeTide|Parsing Techniques - A Practical Guide. ISBN 0 13 651431 6 Free PDFs at http://www.cs.vu.nl/~dick/PTAPG.html
@@ -2127,7 +2127,7 @@ tryit Gambit-|Stop asking if something works and just TRY IT!
 1337 aerid|aerid
 fuckifiknow Gambit-|Gambit-'s universal response.
 base26 OrngeTide|bijective base-26 numeration system is the numbering system used on spreadsheet programs. AA..AZ,BA..BZ,...ZA..ZZ. It is not actually base-26 because there is actually no positional zero. Example code: http://rm-f.net/~orange/code/base26.c
-milf palisade|mother i'd like to doink
+warranty Mish|These answers come without warranty, implied or explicit. Void where prohibited. Use at your own risk.
 linux-x-win32 Palisade|Linux to win32 cross-platform gcc compiler. -- ftp://ftp.objsw.com/pub/crossgcc/linux-x-win32/
 bjarne Para-dox|We are bot. Resistance is futile.
 TCG aerid|trench coat gangs, aka role playing kids. if you see them lock them up, they're deeply distrubed individuals.
@@ -2291,7 +2291,7 @@ mexicans poorboy| Why kill all the mexicans?  Then you won't have anyone to mow 
 ddjcresource OrngeTide|Dr.Dobb Journal. Links to C/C++ resources, specifications and tutorials: http://www.ddj.com/topics/cpp/
 freebsd poorboy|Not just a teletype based hobbyist os!  but one of the damn good ones... FreeBSD (http://www.freebsd.org)
 logic undone|Logic, I hate you. / You promised me everything, / but gave me nothing.
-boner palisade|8========================================================================================================================================================D~~~
+bitfields Mish|You must use 'unsigned int' (or uint) as bitfield type for bitfield to be standard-compliant. All other types for bitfields are nonstandard compiler extension and are discouraged. Even with 'uint', bitfields layout depend on CPU endianness. The common trick/technique is to #ifdef two different, opposite, layouts based on endianness.
 noecho Glammie|http://rm-f.net/~aedinius/files/getpass.c
 crap_code Setzer| Crap Code: Yes, your code.  If you are in here asking for help, then it's obviously crap.
 prime2 dave117|main(i,j){for(;i<99;j||printf("%d,",i))for(j=i++;i%j--;);}
@@ -2307,7 +2307,7 @@ turtle undone|I LOVE BEING A TURTLE!
 hownice Setzer|How Nice == Fuck You.
 stfucup undone|How about a nice cup of.. http://punkdork.net/images/stfu.jpg
 gmp Para-dox|GNU Multiple Precision Arithmetic Library - http://www.swox.com/gmp/
-fuck undone|LOOK OUT 'CAUSE I'm GONNA SAY "FUCK"!
+delpart Mish,Mish|To delete part of a character buffer: void delpart(char *buf, int buflen, int pos, int ndel) { memmove(buf+pos, buf+pos+ndel, buflen-pos-ndel); }, and adjust buffer lengh yourself as buflen-=ndel;
 k&r2 cout|Brian W. Kernighan and Dennis M. Ritchie, The C Programming Language, Second Edition, Prentice Hall, 1988, ISBN 0-13-110362-8, 0-13-110370-9. [K&R2]
 ow Setzer|OW! That hurt dammit!
 walrus undone|Hey you kids!  Cut that crap out!  Hey!  Come back here!  I know who you parents are!  You wouldn't do that if Nixon was in the White House!  C'mon!  I'm the walrus, damnit!
@@ -2329,7 +2329,7 @@ metoo aedinius|<AOL> Me too! </AOL>
 mos bighawk|Modern Operating Systems (2nd Edition), A.S. Tanenbaum, Prentice Hall, ISBN 0130313580
 test2 Pennywise|blah
 easter.eggs Pennywise|http://news.bbc.co.uk/2/hi/technology/2953619.stm
-EAFC poorboy|EAFC stands for: Eat a fucking cock.
+delstr Mish,Mish,Mish,Mish,Mish|To delete part of a null-terminated string: void delstr(char *s, int pos, int len) { int LEN = strlen(s+pos); memmove(s+pos, s+pos+len, LEN+1-len); }
 sqrt(pi) Setzer|1.772453850905516027298167483341145182797549456122387128213807789852911284591032181374950656738544665416226823624282570666236152865724422602525093709602787068462037698653105122849925173028950826228932095379267962
 vc++free Setzer|Get VC++ Free: http://msdn.microsoft.com/library/default.asp?url=/downloads/list/netdevframework.asp
 cyrix Setzer|<CyrixLord> becuase if you were any more a drama queen, youd be gay
@@ -2372,7 +2372,7 @@ board Gambit-|The best keyboard in existence: http://www.kinesis-ergo.com/contou
 nourl alycat|Do not post a url to your crappy code here either.
 cheapbook Setzer|A good place for cheap (ie. FREE) books is your local library!
 C-Style Setzer|C and C++ Style Guides: http://www.chris-lott.org/resources/cstyle/
-not_working poorboy|X is "NOT WORKING" doesn't fucking cut the cake.  Please be a little more descriptive buddy.
+kernel-books Mish,Mish|(1) Robert Love "Linux Kernel Development" isbn 0672327201 (2) Corbet "Linux Device Drivers 3rd ed" isbn 0596005903 aka LDD3, avail online http://lwn.net/Kernel/LDD3/
 whatswrong CyrixLord|What's wrong is that you're trying to make a career in computer science. thats what's wrong
 rejoin Setzer|You have been devoiced for a reason.  Rejoining will not get your voice back, and in fact do it again and it may get you banned.  Have a nice day!
 urgent Setzer| Your piss poor planning is not our emergency.
@@ -2426,7 +2426,7 @@ interesting eddy|not your homework
 osdi eddy|Operating Systems: Design and Implementation, 2nd Edition by Tanenbaum, Woodhull, and Woodhull. ISBN 
 shootout cout|The Great Computer Language Shootout and The Great Win32 Computer Language Shootout: http://www.bagley.org/~doug/shootout/ and http://dada.perl.it/shootout/
 myarray eddy|Won't marry eddy.
-realdeep palisade|<mauke> #C helps those who help themselves; #C++ helps those who don't help themselves. Does #C++ help itself?
+war Mish|These answers come without warranty, implied or explicit. Void where prohibited. Use at your own risk.
 icarus_verilog palisade|http://www.icarus.com/eda/verilog/
 bubble_fusion palisade|http://www.rpi.edu/web/News/press_releases/2004/lahey.htm
 speex palisade|speex is a patent-free open source voice codec made by the team that made ogg vorbis -- http://www.speex.org/
@@ -2435,7 +2435,7 @@ portaudio palisade|PortAudio is a free, cross platform, open-source, audio I/O l
 asmbook cout|Art of Assembly Language - http://webster.cs.ucr.edu/AoA/index.html
 dicksize OrngeTide|"A word to the wise: a credentials dicksize war is usually a bad idea on the net." (David Parsons in c.o.l.development.system, about coding in C.)
 foreskin Triffix|<noss> I should get a "I have foreskin"-teeshirt from thinkgeek.
-jrfgim Triffix|<noss> just read the fucking gcc info manual.
+offen2 Mish|Abstain from using offensive words in this channel.
 english Triffix|Please speak English on the channel. We do not understand French, Swedish, German or jibberish.
 clrscr Triffix|There are a few ways to clear the screen in C (none quite ANSI C compliant): One is int i; for(i = 0; i < 13; i++) printf("\n\n");. Another, under an ANSI terminal, is printf("\x1b[2J");. The third is to use ncurses/conio (for UNIX/DOS+Windows respectively).
 rtfm Triffix|RTFM stands for: Read The Fucking Manual. You can find a fucking manual at http://www.openbsd.org/cgi-bin/man.cgi
@@ -2453,9 +2453,9 @@ fire Gambit-|You know what they say; light a man a fire and keep him warm for th
 backplane SgtUnix|Replicated, transactional and fault-tolerant relational database. http://www.backplane.com/
 fork SgtUnix|An instrument used chiefly for the purpose of putting dead animals into the mouth.  See also the fork(2) manpage.
 datacide SgtUnix|Author of this book (HAHAHA): http://images-eu.amazon.com/images/P/3826630157.03.LZZZZZZZ.jpg
-open_source4 palisade|<zerog_> lo, a free slot
+sbahra palisade|<sbahra> i'm going to take my pants off, whee!
 echelon palisade|Echelon is perhaps the most powerful intelligence gathering organization in the world. ECHELON attempts to capture staggering volumes of satellite, microwave, cellular and fiber-optic traffic, including communications to and from North America. This vast quantity of voice and data communications are then processed through sophisticated filtering technologies.
-euphoria palisade|the state of being euphoric, as in, "I got real high off this kind bud yesterday, it made me euphoric in that ethereal kindof way, man."
+notc Mish|How is this a C question ?
 huffman palisade|Huffman Encoding -- http://compression.graphicon.ru/download/articles/huff/huffman_1952_minimum-redundancy-codes.pdf
 smoker Triffix|lay off the crack, smokah
 devilbook eddy|The Design and Implementation of the 4.3BSD UNIX Operating System by Leffler, McKusick, Karels and Quarterman. ISBN 0201061961
@@ -2464,7 +2464,7 @@ oopc OrngeTide|Object Oriented Programming in C -- http://www.accu.org/acornsig/
 ascii OrngeTide|ASCII Table: http://www.asciitable.com/ | ASCII Database Utility: http://rm-f.net/cgi-bin/ascii.cgi or http://www.catb.org/~esr/ascii/
 libpcap somatose|http://reactor-core.org/libpcap-tutorial.html
 suggest CyrixLord|We have helped you all we can. If you STILL need more help, you might try the advice on this link to better answer your question: http://www.ambassor.com/ride.html
-satriani palisade|the best guitarist ever!
+johnny cout|Johnny was a chemist, but Johnny is no more, for what he thought was H2O was H2SO4
 arguing OrngeTide|Arguing on the internet is like running in the Special Olypics.  Even if you win, you're still retarded. http://www.gyroshot.com/images/arguing.jpg
 llobjc aedinius|http://www.rasterburn.org/~aedinius/code/objc/libcont/ # Linked list, stack, and queue implementation demonstrating simple inheritance and ADTs, written in ObjectiveC
 fflush-stdin cout|NEVER try to fflush(stdin); it won't work.  For more information type: calc io_faq
@@ -2536,21 +2536,21 @@ operator-precedence OrngeTide|Operator Precedence Table: http://www.difranco.net
 aedinius aedinius|<DrgdHmstr> Theory of Aedi's existance disproven by scientists! Many speculate that he is really CyrixBorg's straight side!
 worst Triffix|#winprog
 xwindows palisade|<DrgdHmstr> im remote desktop-ing, so i have keyboard lag. kind of like running xfree locally.
-conundrum palisade|* Caelum using xfree 3.4 with ati drivers atm   <Caelum> works very nicely, except display hangs once in a while...
-porncollection palisade|<Palisade> Triffix, are you relying on the existance of the web for your porno, consider that one day the world may be destroyed, and the frayed links between humans and their porn will be severed, you should be creating a collection.
-nothingwrong palisade|<Palisade> Caelum, there's nothing wrong with using whatever OS you prefer, just don't be doing it cause you're following some grand religion, or because of strange phenominom like groupthink
+judgment Setzer|"Don't depend on your judgment, when your imagination is out of focus"
+jasabella Setzer|jasabella is your worst nightmare!!!
+precedence-table Mish|http://www.difranco.net/cop2220/op-prec.htm
 loathing palisade|<DrgdHmstr> well I'd spend all night expressing my deep loathing, hatred and contempt for people, but wife says its bedtime and she wins by default
 dijkstra SgtUnix|See ewd
 ewd SgtUnix|CS professor and pioneer Edsger Wybe Dijkstra (1930-2002); http://www.cs.utexas.edu/users/UTCS/notices/dijkstra/ewdobit.html
 eraser OrngeTide|Occam's eraser: The philosophical principle that even the simplest solution is bound to have something wrong with it.
-dave palisade|What do you think you are doing, Dave?
-positronic palisade|A positronic brain is a technological device whose role is to serve as a central processing unit for an artificially intellient machine capable of human thought, e.g. ..providing a form of consciousness recognisable to humans. The capacity of positrons and electrons to be formed in pairs and to annihilate each other conveys the evanescence of thought.
+precedence-url Mish|http://www.difranco.net/cop2220/op-prec.htm
+sdrr Setzer|Setzer's Demented Random Ramblings: http://rm-f.net/~setzer/ramblings/
 safesex aedinius|Sexual activities depicted in this Video/DVD may be medically harmful. In addition they are not necessarily healthy, safe, or suggested.
 pop eddy|The Practice of Programming by Kernighan, and Pike. Addison-Wesley Pub Co, ISBN 020161586X
 clever eddy|"Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it." - Brian W. Kernighan
 ipv9 SgtUnix|http://www.faqs.org/rfcs/rfc1606.html
 swapcontext OrngeTide|Implementing a Thread Library on Linux http://www.eng.uwaterloo.ca/~ejones/software/threading.html
-reallife palisade|It is often said that a disproportionate obsession with purely academic or abstract matters indicates a retreat from the problems of real life. However, most of the people engaged in such matters say that this attitude is based on three things: ignorance, stupidity and nothing else.
+arm OrngeTide|Programming for ARM cpu in C? see http://devrs.com/gba/ and http://gbadev.org/ And for a toolchain check out http://devkitadv.sourceforge.net/
 c.faq.book OrngeTide|C Programming FAQs book: http://www.awprofessional.com/titles/0-201-84519-9 ISBN:0201845199
 mathematica palisade|Wolfram's Mathematica, the swiss army knife of mathematics. Mathematica seamlessly integrates a numeric and symbolic computational engine, graphics system, programming language, documentation system, and advanced connectivity to other applications.-- http://www.wolfram.com/products/mathematica/index.html
 flac SgtUnix|Free Lossless Audio Codec: http://flac.sourceforge.net/
@@ -2642,7 +2642,7 @@ mexican Setzer|abenson:#c> My friends family made me an Honorary Mexican <DrthHm
 serialz aedinius| Y34H-R1GH-TYOU-N3RD-4SS-H0L3
 sscanf aedinius|the 's' is for "secure"
 ouch aedinius|owowowowowoooooohooohohohicantbreatheoowowhohwowh
-oldfriend palisade|"There's a war out there, old friend. A world war! And it's not about who has the most bullets. It's about who controls the information. What we see, what we hear, how we work, how we feel... it's all about who controls the INFORMATION." -- Ben Kinsley, SNEAKERS
+rickroll OrngeTide|Some of us actually like Rick Astley.
 javatutorial OrngeTide|RTFT at http://java.sun.com/tutorial/
 mauke2 Mish|<mauke> my %h; my @s; my $t; my $p = \%h; while (<$f>) { chomp; /^\s*\z/ || /^\s*;/ and next; if (/^\s*\{\s*\z/) { push @s, $p; $p = $p->{$t} ||= {} } else if (/^\s*\}\s*\z/) { $p = pop @s } else if (/^\s*(\w+)=(.*)/) { $p->{$1} = $2 } else if (/^\s*(\w+)\s*\z) { $t = $1 } else { die "blargh" } }
 pants Setzer|I'm not wearing any pants!
@@ -2709,7 +2709,7 @@ socket-faq Gambit-|http://www.cs.rpi.edu/courses/sysprog/sockets/sock.html
 manpage SgtUnix|Man pages here: http://www.gsp.com/support/man/
 bithacks SgtUnix|Bit Twiddling Hacks at: http://graphics.stanford.edu/~seander/bithacks.html
 c89 Teckla|ANSI/ISO 9899-1989: The C Programming Language - http://rm-f.net/~orange/devel/specifications/c89-draft.html
-ohfuck palisade|<b1999> fuck..now i have 1000 processes because of bad programming
+wild_match Setzer|http://rm-f.net/~setzer/projects/wild_match/
 fourcc cout|There's lots of video codec information available at http://www.fourcc.org/
 thecbook aedinius|Free C Book: http://publications.gbdirect.co.uk/c_book/
 dupstr Teckla|char *dupstr(const char *str) { char *tmp = malloc(strlen(str) + 1); if (tmp) { strcpy(tmp, str); } return tmp; }
@@ -2720,7 +2720,7 @@ specifications SgtUnix|http://rm-f.net/~orange/devel/specifications/
 specs SgtUnix|http://rm-f.net/~orange/devel/specifications/
 btdt mauke|Been There Done That
 ianal SgtUnix|I Am Not A Lawyer
-wheresmybeer aedinius|<+CrayZed_> aedinius: With a few beers I could fuck you.
+offen Mish|Abstain from using offensive words in this channel. If you must use offensive word, go to bathroom, you offensive words, then come back.
 :) Gambit-|We may be evil, but at least we're happy!
 saber aedinius|I want a light saber!
 jews OrngeTide|http://www.jewfaq.org/
@@ -2765,13 +2765,13 @@ sleep OrngeTide|system("echo 'int sleep(int); int atoi(char*); int main(int argc
 browneye OrngeTide|browneye, n. -- The eye that don't wink, it only stinks.
 doesnotwork Gambit-|Telling us that it "do(es)n't work" doesn't tell us very much.  We can much more easily help you if give us an exact description of the error or problem you are experiencing.
 goto Mish|If your project coding conventions allow goto, use gogo sparingly when it makes code more clear, maintainable and readable. Don't use backward goto. Typical case where goto is justified is jumping to common cleanup before end of function. Another acceptable case is breaking the nested loop. Don's use goto if your team leader is sensitive to it's components.
-piggies palisade|hakware has a fetish for small, round ears <hakware> and small, upturned noses <hakware> kinda odd... <palisade> hakware: piggies
+getopts Setzer|http://rm-f.net/~setzer/projects/getopts
 carrotcake OrngeTide|Carrot cake, carrot cake, have ye any nuts? [picks up a piece of cake and puts it to his ear] / The carrot cake contains? no nuts. 
 hakmem OrngeTide|HAKMEM -- Programming Hacks. http://home.pipeline.com/~hbaker1/hakmem/hakmem.html
 eefwak AaronWL|<davarus> eefwak, Our very own retarded ewok
 rnm Setzer|RNM stands for, Retarded Network Monkey
 factor OrngeTide|http://factorcode.org/ - Factor is a dynamically typed, stack-based programming language. Like Forth with complex data types and extensive support for matrix operations.
-nubsauce palisade|<Drgd> Lagging like Laggy McLagsalot presiding over the Lag Parade on Lag Day in Lag City
+atheist2 Mish|God created me as an atheist, who are you to question this wisdom ?!
 palilesson palisade|<palisade> oh noes i let the smoke out, how do i put it back in ot!? <OrngeTide> palisade, you can't. it will never run again without its smoke.
 brownorgy palisade|<galexand> wow my mom got me this chocolate with chipotle and cinamon <galexand> it's like an orgy in my mouth and i don't know the guestlist
 dup2 OrngeTide|#include <stdio.h> #include <unistd.h> #include <sys/types.h> #include <sys/stat.h> #include <fcntl.h> int main() { int logfd; logfd=open("mylog.txt", O_APPEND|O_WRONLY|O_CREAT, 0666); dup2(logfd, 1); close(logfd); printf("Hey. guess where this goes!\n"); return 0; }
@@ -2782,7 +2782,7 @@ ctx OrngeTide|CTX - Creativyst Table eXchange Format. replacement for CSV and si
 CGod Mish|C was given to KR directly from God, and KR are his prophet
 data-structures Mish|Most data structures are combination of arrays and linked lists. (c)
 quick Mish|"I have quick question" usually means:   "You guys shall stop all you are doing right now and turn you total attention to answering my questions as quickly as possible and as completely as possible, without asking me for any clarifications. If you do not, I become venomous and will bite anybody"
-asinine palisade|foolish, unintelligent, or silly; stupid: It is surprising that supposedly intelligent people can make such asinine statements.
+hmm Mish|hmm is short form of hmmm
 restrict OrngeTide|C99 "restrict" keyword is used to indicate a pointer is not aliased to allow for more complete optimizations by the compiler. http://www.cellperformance.com/mike_acton/2006/05/demystifying_the_restrict_keyw.html
 cross Mish|<davarus> I love being nailed to a cross... It's so sexy.
 so.libs Mish|In order to make your app independent on the .so libraries of the target Linux, (1) put needed .so libs into /opt/Company/lib including glibc (2) export LD_LIBRARY_PATH properly in the wrapper script , and (3) You are all set.
@@ -2801,7 +2801,7 @@ select-lib Mish|libevent: a lightweight library for dealing with event notificat
 gumbybrain Mish|<GumbyBRAIN> A cow. A trampoline. Together, they fight crime!
 davarus Mish,Mish,Mish|David Russel, davarus, disgrunt, crayZed, id1otix, m0nkey, stryst, OmniTSR, suravad. God in under-$700-color laser printers with cardholders and low toner and ink consumption. And they work with Linux! Ask him
 Moony Mish| <+Moony> Hello, I'm a 25 year old woman in need of some assistance with my server / client chat problem, could someone look at my server.
-paligeekcode palisade|GCS d-(+) s+++:++ a- C++++$ UBL P-- !E- W+ w+++$ !M-- !V-- PS PE++ Y+ PGP--- t+++ 5++ X- R- tv+ b+ DI- D+ G+ e++ h r-
+appearance Mish|For society, it's probably a good thing that engineers value function over appearance.  For example, you wouldn't want engineers to build nuclear power plants that only _look_ like they would keep all the radiation inside. (Scott Adams - The Dilbert principle)
 jeffloc Mish|<gummy> oMish: Jeffloc goes to the function that does anything you can see from the carcass of bulls and cows.
 gummy Mish|<gummy> oMish: Jeffloc goes to the function that does anything you can see from the carcass of bulls and cows.
 gummy1 Mish,Mish,Mish|<gummy> oMish: Jeffloc goes to the function that does anything you can see from the carcass of bulls and cows.
@@ -2835,73 +2835,7 @@ Q: Mish|longest What is the longest penis ever recorded on a human male? A: http
 longest Mish|Q: What is the longest penis ever recorded on a human male? A: http://www.answerbag.com/q_view/4089
 vagina Mish|The Holy door to Happiness
 topiclength OrngeTide|The maximum topic length that works on all EFnet servers is 120 character.
-offen Mish|Abstain from using offensive words in this channel. If you must use offensive word, go to bathroom, you offensive words, then come back.
-offen2 Mish|Abstain from using offensive words in this channel.
-kernel-books Mish,Mish|(1) Robert Love "Linux Kernel Development" isbn 0672327201 (2) Corbet "Linux Device Drivers 3rd ed" isbn 0596005903 aka LDD3, avail online http://lwn.net/Kernel/LDD3/
-delstr Mish,Mish,Mish,Mish,Mish|To delete part of a null-terminated string: void delstr(char *s, int pos, int len) { int LEN = strlen(s+pos); memmove(s+pos, s+pos+len, LEN+1-len); }
-delpart Mish,Mish|To delete part of a character buffer: void delpart(char *buf, int buflen, int pos, int ndel) { memmove(buf+pos, buf+pos+ndel, buflen-pos-ndel); }, and adjust buffer lengh yourself as buflen-=ndel;
-inplace OrngeTide|To pack a string inplace (remove spaces) try: for(i=0,j=0;str[i];i++) if(str[i]!=' ') str[j++]=str[i]; str[j]=0; 
-^DX^ Mish|<^DX^> I have a memory leak compiled in
-california Gambit-|The following #C people live in California: OrngeTide, mEAt, voxel, Pennywise, alycat, blueberry.
-rand() Gambit-|How can I get random integers in a certain range? - http://www.eskimo.com/~scs/C-faq/q13.16.html
-gamble Setzer|<Setzer> Life is a hilarious gamble.  I bet on it daily and win!
-heck Mish|"Heck is for people who do not believe in gosh."
-bitops Mish,Mish|Four basic bit operations are: 1. & - bitwise AND. 2. | - bitwise OR. 3. ^ - bitwise XOR (addition module 2). 4. ~ - bitwise NOT, the bitwise negation. For truth tables of each operations, refer to the literature. See also bitfields (unsigned int name:3). For more advanced bit juggling, try calc hackersdelight 
-ncurses Gambit-|http://web.cs.mun.ca/~rod/ncurses/ncurses.html or http://www.magitech.org/ncurses.txt.gz
-string-constant Mish,Mish|I am trying to modify a string. Why modifying char string foo does not work ? I defined foo as char *foo = "abcdefgh". A: Because compiler is free to place string constants into read-only memory. Trying to modify such string will crash your program. What is the solution ? A: The solution is to declare it as char foo[] = "abcdefgh"; This guarantees that foo is writable memory.
-post Mish|Please paste your code (or a complete example that demonstrates your problem) here: http://rafb.net/paste/
-c-ide Mish|http://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments
-fpt OrngeTide|Function Pointer Tutorials: http://www.newty.de/fpt/fpt.html
-matrix Mish,Mish|Three ways to allocate a "matrix" with array of n pointers pointing to the "rows": (1) T **pp = malloc(n*sizeof(T*)+m*n*sizeof(T)); for(k=0; k<n; k++) pp[k]=(T*)((char*)pp+n*sizeof(T*)+k*m*sizeof(T)); (2) T **pp=malloc(n*sizeof(T*)); T *buf=malloc(m*n*sizeof(T)); for(k=0;k<n;k++) pp[k]=buf+k*m; (3) T **p=malloc(n*sizeof(T*)); for(k=0; k<n;k++) pp[k]=malloc(m*sizeof(T));
-tencommands cout|Ten commands every Linux developer should know: http://www.linuxjournal.com/node/7330/print
-pointer+integer Mish|pointer+integer = (char*)pointer + sizeof(*pointer)*integer
-commandment#1 Mish|if it works but we do not like it you should rewrite
-race Mish,Mish|"race condition", or simply "race": Bugs due to unexpected order of events that inexperienced programmers think "unlikely to happen". Is prevented by proper locking, reference counting, and other form of exclusive access.
-appearance Mish|For society, it's probably a good thing that engineers value function over appearance.  For example, you wouldn't want engineers to build nuclear power plants that only _look_ like they would keep all the radiation inside. (Scott Adams - The Dilbert principle)
-hmm Mish|hmm is short form of hmmm
-atheist2 Mish|God created me as an atheist, who are you to question this wisdom ?!
-getopts Setzer|http://rm-f.net/~setzer/projects/getopts
-wild_match Setzer|http://rm-f.net/~setzer/projects/wild_match/
-rickroll OrngeTide|Some of us actually like Rick Astley.
-arm OrngeTide|Programming for ARM cpu in C? see http://devrs.com/gba/ and http://gbadev.org/ And for a toolchain check out http://devkitadv.sourceforge.net/
-sdrr Setzer|Setzer's Demented Random Ramblings: http://rm-f.net/~setzer/ramblings/
-precedence-url Mish|http://www.difranco.net/cop2220/op-prec.htm
-precedence-table Mish|http://www.difranco.net/cop2220/op-prec.htm
-jasabella Setzer|jasabella is your worst nightmare!!!
-judgment Setzer|"Don't depend on your judgment, when your imagination is out of focus"
-johnny cout|Johnny was a chemist, but Johnny is no more, for what he thought was H2O was H2SO4
-notc Mish|How is this a C question ?
-sbahra palisade|<sbahra> i'm going to take my pants off, whee!
-war Mish|These answers come without warranty, implied or explicit. Void where prohibited. Use at your own risk.
-warranty Mish|These answers come without warranty, implied or explicit. Void where prohibited. Use at your own risk.
-exp Mish|Smart people value the correct answer. Stupid people don't understand that correct answer is correct. They demand the "explanations". Most of the time, they do not understand the explanations, and no amount of explanations can make them understand what smart people understand without explanations.
-explain Mish|Smart people value the correct answer. Stupid people don't understand that correct answer is correct. They demand the "explanations". Most of the time, they do not understand the explanations, and no amount of explanations can make them understand what smart people understand without explanations.
-i Mish|like it when the guy who does not know a bit about XYZ blames me that I do not know XYZ when I know about XYZ I know 1000 times more than him. It's time to call it stupidity.
-cooking Gambit-|<Sam> Coding in C is like sending a 3 year old to do groceries. You gotta tell them exactly what you want or you'll end up with a cupboard full of pop tarts and pancake mix.
-official Mish|suravad (aka davarus) is official troll of the channel.
-bryno Mish|<bryno> hahha, i never connected that suravad was davarus
-gc Mish|in C, everyone collects his garbage himself
-xor-encryption Mish|XOR-based encryption is the STRONGEST encryption known to mankind!!!!!!!!!11
-ironic Mish|Elaine: It's ironic.       Women: What's ironic?      Elaine: This, that we've come all this way, we have made all this progress, but you know we've lost the little things, the niceties.      Woman: No, I mean what does 'ironic' mean?        Elaine: Oh...
-irony Mish|You know what's ironic ? This: http://store.swatch.com/irony
-example Mish|"One Example is Worth Thousand Explanations" (tm)
-batshua- Mish|<Batshua> Does that include surprise buttsex? <Batshua> Because that's definitely MY favorite kind!  :p
-inheritance Teckla|Some people, when confronted with a problem, think "I know, I'll use inheritance."  Now they have two problems.
-nogod palisade|<NoGods> God, that's painful.
-sexchange OrngeTide|Don't do it! http://www.anticlockwise.com/dani/personal/changes/dont.htm
-xy mauke|They ask how to do X, but that's because they really want to do Y but think X will get them there and most of the time they are wrong.
-xyz mauke|They ask how to do Z, but that's because they think they want to do Y and think that Z will get them there, but really it's because they're a lunkhead, and that's the main (X) problem
-prng OrngeTide|for good Pseudo Random Number Generators: http://www.qbrundage.com/michaelb/pubs/essays/random_number_generation.html
-obama Anonymous|I'd vote for McCain before Obama, but luckily there are other options, like not voting or suicide.
-codewiki Mish|http://codecodex.com wiki-based code library where you can request code and contribute code
-codex Mish|http://codecodex.com wiki-based code library where you can request code and contribute code
-CTrivia1 Mish|The Unix operating system is well known for being written entirely using only the letter C.
-advancedgl OrngeTide|Programming with OpenGL: Advanced Rendering - http://www.opengl.org/resources/code/samples/advanced/advanced97/notes/notes.html
-water? OrngeTide|Water? You Mean Like Outta the Toilet?
-satisfied Mish|satisfied, content, fulfilled, gratified, happy, pacified, pleased.
-strdel Teckla|char *strdel(char *str, int pos, int num) { char *dest = str + pos; char *src = dest + num; memmove(dest, src, strlen(src) + 1); return str; }
-strins Teckla|char *strins(char *str, int pos, const char *ins) { char *tmp = str + pos; int len = strlen(ins); memmove(tmp + len, tmp, strlen(tmp) + 1); memcpy(tmp, ins, len); return str; }
-strrep Teckla|char *strrep(char *str, int pos, int num, const char *rep) { return strins(strdel(str, pos, num), pos, rep); }
-resp Mish|Choose your response (1) sarcastic (2) offensive (3) demeaning 
-bitfields Mish|You must use 'unsigned int' (or uint) as bitfield type for bitfield to be standard-compliant. All other types for bitfields are nonstandard compiler extension and are discouraged. Even with 'uint', bitfields layout depend on CPU endianness. The common trick/technique is to #ifdef two different, opposite, layouts based on endianness.
-oriented Mish|C is pointer-oriented language.
+tencommandments Teckla|The Ten Commandments for C Programmers: http://www.lysator.liu.se/c/ten-commandments.html
+poop palisade|yuck
+prenup palisade|My prenup will say... 'Bitch, what's mine is mine, what's yours is mine, and that's that.'
+rgb OrngeTide|RGB to Grayscale conversion(assuming RGB are 8-bit quantities cast to a short or larger): float lumf=.299*(r/255.) + .587*(g/255.) + .114*(b/255.); ushort lum16=77*r+151*g+29*b; ushort lum16_alt=r<<6+r<<4+g<<7+g<<4+g+b<<5; /* 80*r+145*g+32*b */ uchar lum8=lum16>>8; uchar lum4=lum16>>12;
