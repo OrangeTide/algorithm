@@ -34,7 +34,7 @@ struct notify_head {
 static struct notify_head *notify_hash[HASH_SZ];
 /* TODO: add a table for event based notification. like myname events */
 
-/* if should_create is non-zero, it can only return error for out of memory */ 
+/* if should_create is non-zero, it can only return error for out of memory */
 static struct notify_head *find_head(const char *type, int should_create, struct notify_head ***prev)
 {
 	unsigned h;
@@ -85,7 +85,7 @@ static struct notify_handler *add_entry(struct notify_handler **head, void (*fun
     return ret;
 }
 
-static void remove_and_free_handler(struct notify_handler *h) 
+static void remove_and_free_handler(struct notify_handler *h)
 {
     if(h) {
         /* remove from list */
@@ -136,7 +136,7 @@ void notify_report_message(struct message *msg)
 	}
 }
 
-/* register a notify handler 
+/* register a notify handler
  * returns 0 on failure */
 int notify_register(const char *type, void (*func)(void *p, struct message *msg), void *p)
 {

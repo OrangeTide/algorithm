@@ -1,4 +1,4 @@
-/* udb.c : micro database 
+/* udb.c : micro database
  * a simple text-base database for POSIX systems
  */
 #include <assert.h>
@@ -34,7 +34,7 @@ struct udb_handle {
 	struct udb_ent hash[HASH_SZ]; /* note: first level are not pointers */
 };
 
-/** removed newline from end of a string 
+/** removed newline from end of a string
  * return non-zero if a newline was found */
 static int scrubnl(char *s) {
 	assert(s!=NULL);
@@ -56,7 +56,7 @@ static void update_stat(struct udb_handle *h) {
 	}
 }
 
-/** return non-zero if file stat has changed 
+/** return non-zero if file stat has changed
  */
 static int file_has_changed(struct udb_handle *h) {
 	struct stat st;
@@ -99,7 +99,7 @@ static void free_hash(struct udb_handle *h) {
 		for(curr=h->hash[i].next;curr;curr=next) {
 			next=curr->next;
 			free(curr->key);
-			free(curr);	
+			free(curr);
 		}
 		/* clear out entry */
 		memset(&h->hash[i], 0, sizeof h->hash[i]);
@@ -154,9 +154,9 @@ static int add_hash_entry(struct udb_handle *h, const char *key, fpos_t ofs) {
 		fprintf(stderr, "Duplicate key '%s' found in DB file %s\n", key, h->filename);
 		return 0; /* failure */
 	}
-		
+
 	/* at the end of this bit, ent points to the entry to fill in */
-	/* right now ent points to the h->hash[new_hash] */	
+	/* right now ent points to the h->hash[new_hash] */
 	if(!UDB_IS_EMPTY(ent)) { /* detected collision, create linked list entry */
 		struct udb_ent *new_ent;
 		new_ent=malloc(sizeof *new_ent);
@@ -296,7 +296,7 @@ int udb_lookup(struct udb_handle *h, const char *key) {
 	return 0; /* failure */
 }
 
-/** read next field in the current record 
+/** read next field in the current record
  * return 0 when end of record is reached */
 int udb_read_field(struct udb_handle *h, char *buf, size_t len) {
 	assert(h!=NULL);
@@ -316,7 +316,7 @@ int udb_read_field(struct udb_handle *h, char *buf, size_t len) {
 			ch=fgetc(h->f);
 		} while(ch!=EOF && ch!='\n');
 	}
-	
+
 	if(buf[0]=='%' && buf[1]==0) {
 		return 0; /* end of record */
 	}

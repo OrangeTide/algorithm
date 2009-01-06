@@ -94,7 +94,7 @@
 // A modified verison of dave2548's power() function.
 static FLOAT ipow(FLOAT number, int power) {
 	FLOAT temp;
-	
+
 	if(power == 0.0) {
 		return 1.0;
 	} else if(power == 1.0) {
@@ -109,7 +109,7 @@ static FLOAT ipow(FLOAT number, int power) {
 		return(temp * temp * number);
 	}
 }
-	
+
 // A helper macro for my_atof; take a digit, do error checking, and add it
 // on to the mantissa
 #define ADD_DIGIT(fl, dig, mult, coeff) \
@@ -199,7 +199,7 @@ static void my_ftoa(FLOAT input, int base, char *buf, size_t buflen, int *exp) {
 	FLOAT whole;
 	int j;
 	int max_digits;
-	
+
 	// Check for negative value
 	if(input < 0.0) {
 		BUF_ADD(buf, end, '-');
@@ -216,7 +216,7 @@ static void my_ftoa(FLOAT input, int base, char *buf, size_t buflen, int *exp) {
 
 	// Find the number of digits we want
 	max_digits = LOG(10)/LOG(base) * FLOAT_DIG;
-	
+
 	// Don't put a leading zero on the string
 	input = MODF(input, &whole);
 	if(TRUNC(whole) != 0) {
@@ -344,7 +344,7 @@ static int rpn_make_string(FLOAT input, char *str, int len, int base) {
 	if(exponent < str_len) {
 		// The number includes all the information we need.
 		if(exponent > 0) {
-			// We must add a decimal point, since 
+			// We must add a decimal point, since
 			rpn_insert_decimal(str, len, str_len, exponent);
 		} else {
 			// The number is much less than zero.
@@ -449,7 +449,7 @@ static int rpn_calc_internal(
 
 		// Check for end of string
 		if(*input == 0) break;
-		
+
 		// Operation
 		switch(*input) {
 			case '+':
@@ -458,7 +458,7 @@ static int rpn_calc_internal(
 				stack[ssize-2] += stack[ssize-1];
 				ssize--;
 				break;
-				
+
 			case '-':
 				// Subtract
 				STACK_CHECK(2);
@@ -472,7 +472,7 @@ static int rpn_calc_internal(
 				stack[ssize-2] *= stack[ssize-1];
 				ssize--;
 				break;
-				
+
 			case '/':
 				// Divide
 				STACK_CHECK(2);
@@ -579,7 +579,7 @@ static int rpn_calc_internal(
 		STRNCPY(output, "Stack not empty", out_len);
 		return RPN_NONEMPTY_STACK;
 	}
-	
+
 	return RPN_OK;
 }
 

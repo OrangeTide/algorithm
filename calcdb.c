@@ -226,7 +226,7 @@ void rmcalc( char *passwd, char *name, char *rmstring )
 
 	total_calcs--;
 
-#if 0 /* "mish"lerner. 
+#if 0 /* "mish"lerner.
        *   the code till end of the function can rewritten mush shorter as: */
        * and ptr is not needed */
 	free( *(calc + x) );

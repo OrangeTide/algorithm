@@ -78,7 +78,7 @@ static const char *p;
 static int token;
 static Value token_value;
 
-static void next () 
+static void next ()
 {
 	char *endptr;
 
@@ -99,11 +99,11 @@ static void next ()
 			p = endptr;
 			break;
 
-		case '+': 
-		case '-': 
-		case '*': 
-		case '/': 
-		case '%': 
+		case '+':
+		case '-':
+		case '*':
+		case '/':
+		case '%':
 		case '^':
 		case '(':
 		case ')':
@@ -129,7 +129,7 @@ static void next ()
 
 static void parse_expr (int precedence);
 
-static void parse_factor () 
+static void parse_factor ()
 {
 	switch (token)
 		{
@@ -159,23 +159,23 @@ static void parse_factor ()
 		}
 }
 
-static void parse_expr (int precedence) 
+static void parse_expr (int precedence)
 {
 	parse_factor ();
-	for (;;) 
+	for (;;)
 		{
 			int l, r, rator;	 /* left precedence, right precedence, and operator */
 
 			switch (token) {
 			case '+': l = 1; r = 2; rator = ADD; break;
 			case '-': l = 1; r = 2; rator = SUB; break;
-	
+
 			case '*': l = 3; r = 4; rator = MUL; break;
 			case '/': l = 3; r = 4; rator = DIV; break;
 			case '%': l = 3; r = 4; rator = MOD; break;
 
 			case '^': l = 5; r = 5; rator = POWER; break;
-	
+
 			default: return;
 			}
 

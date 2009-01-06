@@ -44,7 +44,7 @@
 #ifndef _CALCDB_H
 #define _CALCDB_H 1
 
-        
+
 #include "bot.h"
 
 

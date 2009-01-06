@@ -1,4 +1,4 @@
-/** pQueue.c : Priority Queue for functions. 
+/** pQueue.c : Priority Queue for functions.
  *
  * Copyright (c) 2002 Steve Mertz <steve@dragon-ware.com>
  * All rights reserved.
@@ -58,14 +58,14 @@ pQueueTime_t pQueueRealtime(void)
 int pQueueAdd(struct pQueue **theQueue, pQueueTime_t executeTime, void (*func)(void*), void *args)
 {
   struct pQueue *cur, *prv, *tmp;
-	
+
   tmp = calloc(1, sizeof(struct pQueue));
 
   tmp->timeExecute = executeTime;
   tmp->func = func;
   tmp->args = args;
   tmp->next = NULL;
-  
+
   prv = NULL;
   cur = *theQueue;
   /* Make sure we put it in the correct spot. */

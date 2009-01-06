@@ -10,7 +10,7 @@
 /*
  *	 Copyright (c) 2001 David T. Stiles
  *	 All rights reserved.
- * 
+ *
  *	 Redistribution and use in source and binary forms, with or without
  *	 modification, are permitted provided that the following conditions
  *	 are met:
@@ -25,7 +25,7 @@
  *	 4. The name David T. Stiles may not be used to endorse or promote
  *		 products derived from this software without specific prior written
  *		 permission.
- * 
+ *
  *	 THIS SOFTWARE IS PROVIDED BY DAVID T. STILES `AS IS'' AND ANY
  *	 EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  *	 IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -136,7 +136,7 @@ struct pQueue *action_queue = NULL;
  */
 
 void main_loop( void )
-{ 
+{
 	int whatever;
 	fd_set fdgroup;
 	struct timeval tv;
@@ -165,7 +165,7 @@ void main_loop( void )
 		FD_SET(sockfd, &fdgroup);
 
 		whatever = select( (sockfd + 1) , &fdgroup, NULL, NULL, &tv);
- 
+
 		if( !whatever ) {
 			if (curtime > lastime + PQUE_REALTIME_RESOLUTION * 360)
 				break;		/* we must not be connected anymore, return. */
@@ -245,7 +245,7 @@ int process_out( void )
 int process_in( void )
 {
 	char buf[MAXDATASIZE], *ptr;
-	int numbytes = 0;	 
+	int numbytes = 0;
 	int z = 0;
 	int y = 0;
 	static int x = 0;
@@ -493,7 +493,7 @@ void oppeople_stub( void )
 	if( MSGTO[0] == '#' ) return; /* do not respond to op requests made in the channel */
 
 	/* making getting ops easier for other than the default channel */
-	
+
 	if( (cur_msg.msgarg2[0] == '#') || (cur_msg.msgarg2[0] == '&') ) {
 		if( cur_msg.msgarg4[0] )
 			oppeople( cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.msgarg4, cur_msg.nick );
@@ -502,7 +502,7 @@ void oppeople_stub( void )
 		return;
 	}
 	/* op only in the default channel */
-	
+
 	if( DEF_CHAN[0] ) {
 		if( cur_msg.msgarg3[0] )
 			oppeople( DEF_CHAN, cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.nick );
@@ -606,7 +606,7 @@ void mkcalc_stub( void )
 	y = chop( cur_msg.fulltext, newcalctext, y, ' ' );
 	y = chop( cur_msg.fulltext, newcalctext, y, ' ' );
 	y = chop( cur_msg.fulltext, newcalctext, y, '\0' );
-	
+
 	mkcalc( cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.msgarg4, newcalctext );
 	return;
 }
@@ -627,7 +627,7 @@ void chcalc_stub( void )
 	y = chop( cur_msg.fulltext, newcalctext, y, ' ' );
 	y = chop( cur_msg.fulltext, newcalctext, y, ' ' );
 	y = chop( cur_msg.fulltext, newcalctext, y, '\0' );
-	
+
 	chcalc( cur_msg.msgarg2, cur_msg.msgarg3, cur_msg.msgarg4, newcalctext );
 	return;
 }
@@ -1314,8 +1314,8 @@ int host_connect( char *exthost, int extport, int extsockfd )
 
 }
 
-int run_script( const char *filename ) 
-{ 
+int run_script( const char *filename )
+{
 	char ray[MAXDATASIZE];
 	FILE *f;
 
@@ -1393,7 +1393,7 @@ int irc_connect( void )
 static int load_item_str(struct config_node *root, const char *name, size_t buf_max, char *buf, const char *desc) {
 	struct config_node *item;
 	item=config_find(root,name);
-	if(!item || !config_get_str(item,buf,buf_max)) { 
+	if(!item || !config_get_str(item,buf,buf_max)) {
 		 fprintf(stderr, "failed loading %s\n", desc );
 		 return 0;
 	}
@@ -1405,7 +1405,7 @@ static int load_item_str(struct config_node *root, const char *name, size_t buf_
 static int load_item_int(struct config_node *root, const char *name, int *i, const char *desc) {
 	struct config_node *item;
 	item=config_find(root,name);
-	if(!item || !config_get_int(item,i)) { 
+	if(!item || !config_get_int(item,i)) {
 		 fprintf(stderr, "failed loading %s\n", desc );
 		 return 0;
 	}
@@ -1441,7 +1441,7 @@ static struct config_node *load_cfg( void )
 	/* look for a "bot" node */
 	curr=config_find(root,"bot");
 	if(!curr) return 0;
-	if(curr->child) { 
+	if(curr->child) {
 		int res;
 		curr=curr->child;
 

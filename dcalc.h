@@ -1,7 +1,7 @@
 /* contributed by demoncrat@efnet.#c on march 2001. */
 /* edited by megaton. added double precision numbers */
 
-enum { 
+enum {
   CODESIZE = 1000,
   STACKSIZE = 1000
 };

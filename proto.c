@@ -9,8 +9,8 @@
 static struct udb_handle *proto_h;
 
 /* ignore this class */
-static const char *keywords_ignore[] = { 
-	"static", "const", 
+static const char *keywords_ignore[] = {
+	"static", "const",
 };
 
 /* if this class, then only this class but multiple of them are allowed */
@@ -20,8 +20,8 @@ static const char *keywords_types[] = {
 };
 
 /* if this class, then a single identifier follows */
-static const char *keywords_single[] = { 
-	"enum", "union", "struct", 
+static const char *keywords_single[] = {
+	"enum", "union", "struct",
 };
 
 static unsigned match_word(const char *line, const char *word) {
@@ -31,7 +31,7 @@ static unsigned match_word(const char *line, const char *word) {
 		line++;
 		word++;
 	}
-	if(*word) 
+	if(*word)
 		return 0; /* failure, did not use all of word */
 
 	return i; /* success */
@@ -114,7 +114,7 @@ static int parse_proto_key(const char *line, char *key_out, size_t max) {
 				break; /* found an ident */
 			}
 			ofs+=res;
-		}	
+		}
 		ofs+=eat_spaces_and_others(line+ofs);
 	} else {
 		/* anything else like size_t, FILE*, etc */
@@ -137,7 +137,7 @@ static int parse_proto_key(const char *line, char *key_out, size_t max) {
 	}
 	memcpy(key_out, line+ofs, res);
 	key_out[res]=0;
-	/* 
+	/*
 	fprintf(stderr, "PROTO: '%s'\n", key_out);
 	*/
 	return 1; /* success */
@@ -193,7 +193,7 @@ int proto_result(char *dest, size_t max, const char *in) {
 	} else {
 		snprintf(dest, max, "%s %s /* %s */", headers, proto, from);
 	}
-	
+
 
 	return 1;
 }
